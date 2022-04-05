@@ -17,3 +17,22 @@
 	Prove that the grasshopper can move from any point $A_i$ to $A_j$ in a finite sequence of moves.
 	\aops{12394250}
 \end{probMB}
+
+\begin{probEG}[Pedro Alegría, Spain]
+	Demostrar que $x$ es racional si y solo si la sucesión
+	\[x,x+1,x+2,\dots\]
+	contiene al menos tres términos en progresión geométrica.
+\end{probEG}
+
+\begin{proof}
+	Supongamos que $x$ es un número racional. Si $x$ no es positivo, vamos a sumarle $1$ hasta que sea positivo. Sea $x=\frac pq$ donde $p,q\in\ZZ^+$. Luego, los números $x$, $x+p$ y $x+p(q+2)$ están en una progresión geométrica. Ahora, supongamos que existen tres enteros $i,j,k\ge 0$ tales que $x+i$, $x+j$ y $x+k$ están en una progresión geométrica. En efecto, $(x+i)(x+k)=(x+j)^2$ de donde $x(i+k-2j)=j^2-ik$. Si $i+k=2j$, tenemos que $(i-k)^2=(i+k)^2-4ik=4(j^2-ik)=0$ de donde $i=k$, lo cual es un absurdo. Por ende, $x$ es racional.
+\end{proof}
+
+\begin{probEG}[CGMO 2008/8]
+	Let $f_n=\floor{2^n\sqrt{2008}}+\floor{2^n\sqrt{2009}}$ for all $n\in\ZZ^+$. Prove there are infinitely many odd numbers and infinitely many even numbers in the sequence $f_1,f_2,\dots$.
+	\aops{1236876}
+\end{probEG}
+
+\begin{proof}
+	Sea $a_n=1$ si $\left\{2^n\sqrt{2008}\right\}>\half$ y $0$ de lo contrario. Análogamente se define $b_n$ con respecto a $2009$. Si solamente hay finitos números de alguna paridad, tenemos que $f_{n+1}-2f_n=a_n+b_n$ tiene la misma paridad para $n$ suficientemente grande. Luego, $a_n=b_n$ o $a_n+b_n=1$ para todo $n\ge N$ donde $N\in\ZZ^+$. Por ende, $2^N\sqrt{2008}\pm2^N\sqrt{2009}$ es racional, lo cual es un absurdo. Finalmente, existen infinitos números pares e impares en la secuencia.
+\end{proof}
