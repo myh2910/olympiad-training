@@ -1,0 +1,43 @@
+\usepackage[sexy]{evan}
+\usepackage{bold-extra}
+% \usepackage[spanish,es-nosectiondot]{babel}
+% \addto\captionsspanish{%
+% 	\renewcommand{\proofname}{Solución}%
+% }
+
+\usepackage{tabularray}
+\SetTblrInner{%
+	hlines,%
+	vlines,%
+	rows={16pt,rowsep=0pt},%
+	columns={16pt,colsep=0pt}%
+}
+
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
+
+\newcommand{\aops}[2][break]{%
+	\ifstrequal{#1}{break}{\\[4pt]\null}{}%
+	\hfill\href{https://artofproblemsolving.com/community/p#2}{[AoPS:#2]}%
+}
+\newcommand{\customgreen}[1]{\bgroup\color{green!40!black}#1\egroup}
+\newcommand{\customblue}[1]{\bgroup\color{blue!70!black}#1\egroup}
+\newcommand{\customred}[1]{\bgroup\color{red!80!black}#1\egroup}
+\newcommand{\clubG}[1]{\customgreen{[\texttt{#1}]}}
+\newcommand{\clubB}[1]{\customblue{[\texttt{#1}]}}
+\newcommand{\clubR}[1]{\customred{[\texttt{#1}]}}
+
+\newtheorem{probEG}[problem]{\clubG{E} Problem}
+\newtheorem{probMG}[problem]{\clubG{M} Problem}
+\newtheorem{probHG}[problem]{\clubG{H} Problem}
+\newtheorem{probZG}[problem]{\clubG{Z} Problem}
+
+\newtheorem{probEB}[problem]{\clubB{E} Problem}
+\newtheorem{probMB}[problem]{\clubB{M} Problem}
+\newtheorem{probHB}[problem]{\clubB{H} Problem}
+\newtheorem{probZB}[problem]{\clubB{Z} Problem}
+
+\newtheorem{probER}[problem]{\clubR{E} Problem}
+\newtheorem{probMR}[problem]{\clubR{M} Problem}
+\newtheorem{probHR}[problem]{\clubR{H} Problem}
+\newtheorem{probZR}[problem]{\clubR{Z} Problem}
