@@ -3,3 +3,9 @@
 This is a LaTeX source code that contains math olympiad problems and solutions
 from [Emerson Soriano](https://www.facebook.com/emerson.sorianoperez)'s class.
 See [here](problemset.pdf) the compiled document.
+
+# To-do
+
+- [ ] Write more solutions to the problems.
+- [ ] Add AoPS links to the problems.
+- [ ] Find problem sources in AoPS.
