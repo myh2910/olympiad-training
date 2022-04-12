@@ -1,6 +1,5 @@
 **/*.asy
 **/*.pdf
-!problemset.pdf
 
 **/*.aux
 **/*.fdb_latexmk

@@ -1,8 +1,7 @@
 # olympiad-training
 
-This is a LaTeX source code that contains math olympiad problems and solutions
-from [Emerson Soriano](https://www.facebook.com/emerson.sorianoperez)'s class.
-See [here](problemset.pdf) the compiled document.
+This is a collection of math olympiad problems and solutions. See
+[here](https://myh2910.github.io/assets/olympiad-training.pdf) the compiled document.
 
 # To-do
 
