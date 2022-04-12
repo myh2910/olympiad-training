@@ -312,13 +312,13 @@
 \end{probMG}
 
 \begin{proof}
-	Si $\abs{M}=1$, es trivial. Ahora, supongamos que $\abs{M}>1$. Note que $\mcm(1,2,3)=1+2+3$. Si para algún entero $n>1$ existen enteros positivos distintos $x_1,x_2,\dots,x_k$ tales que
+	Si $\abs{M}=1$, es trivial. Ahora, supongamos que $\abs{M}>1$. Si para algún entero $n>1$ existen enteros positivos distintos $x_1,x_2,\dots,x_k$ tales que
 	\[\mcm(n-1,x_1,x_2,\dots,x_k)=1+x_1+x_2+\dots+x_k\]
 	tenemos que
 	\[\mcm(n,n-1,nx_1,nx_2,\dots,nx_k)=1+(n-1)+nx_1+nx_2+\dots+nx_k\]
 	y
 	\[\mcm(n,n^2-1,y_1,y_2,\dots,y_k)=(n+1)+(n^2-1)+y_1+y_2+\dots+y_k\]
-	donde $y_i=n(n+1)x_i$ para todo $1\le i\le k$. Sea $n>1$ el mínimo común múltiplo de los elementos de $M$. Por inducción, existen enteros positivos distintos $x_1,x_2,\dots,x_k$ mayores que $n$ tales que
+	donde $y_i=n(n+1)x_i$ para todo $1\le i\le k$. Sea $n>1$ el mínimo común múltiplo de los elementos de $M$. Como $\mcm(1,2,3)=1+2+3$, por inducción existen enteros positivos distintos $x_1,x_2,\dots,x_k$ mayores que $n$ tales que
 	\[\mcm(n,x_1,x_2,\dots,x_k)=n+1+x_1+x_2+\dots+x_k.\]
 	Si $S$ es la suma de los elementos de $M$, tenemos que
 	\[\mcm(n,Sn,Sx_1,Sx_2,\dots,Sx_k)=S+Sn+Sx_1+Sx_2+\dots+Sx_k.\]

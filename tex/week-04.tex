@@ -1,5 +1,164 @@
 \section{Week 4 (04/04 -- 04/08)}
 
+\begin{probEG}
+	Si $a^2<b^2$ son dos números de $1001$ dígitos, demuestre que existe un número capicúa en el intervalo $(a^2,b^2)$.
+\end{probEG}
+
+\begin{proof}
+	Es claro que entre $a^2+1,a^2+2,\dots,a^2+10^{500}$ existe un múltiplo de $10^{500}$ y sea $\overline{a_{500}a_{499}\dots a_1a_0}\cdot 10^{500}$ dicho número. Luego,
+	\[a^2<\overline{a_{500}a_{499}\dots a_1a_0a_1\dots a_{499}a_{500}}\le a^2+2\cdot 10^{500}<(a+1)^2\le b^2\]
+	y aquí se termina la prueba.
+\end{proof}
+
+\begin{probEG}[IMO 2014/1]
+	Let $a_0<a_1<a_2<\cdots$ be an infinite sequence of positive integers. Prove that there exists a unique integer $n\ge 1$ such that
+	\[a_n<\frac{a_0+a_1+a_2+\dots+a_n}{n}\le a_{n+1}.\]
+	\aops{3542095}
+\end{probEG}
+
+\begin{probEG}
+	Sean $a_1,a_2,\dots,a_n$, $k$ y $M$ enteros positivos tales que
+	\[\frac{1}{a_1}+\frac{1}{a_2}+\dots+\frac{1}{a_n}=k\quad\text{y}\quad M=a_1a_2\cdots a_n.\]
+	Si $M>1$, demuestre que el polinomio
+	\[P(x)=M(x+1)^k-(x+a_1)(x+a_2)\cdots(x+a_n)\]
+	no tiene raíces positivos.
+\end{probEG}
+
+\begin{proof}
+	Si $r>0$ es una raíz de $P(x)$, tenemos que
+	\[\prod_{i=1}^n\frac{a_i(r+1)^\frac{1}{a_i}}{r+a_i}=1\]
+	pero note que
+	\[a^a(r+1)=\binom{a}{1}ra^{a-1}+a^a\le(r+a)^a\]
+	de donde
+	\[\frac{a(r+1)^\frac{1}{a}}{r+a}\le 1\]
+	para todo $a\in\ZZ^+$. Es decir, $a_i=1$ para todo $1\le i\le n$ de donde $M=1$ lo cual es un absurdo.
+\end{proof}
+
+\begin{probEG}
+	Determine todas las parejas $(x,y)$ de enteros positivos tales que
+	\[\sqrt[3]{7x^2-13xy+7y^2}=\abs{x-y}+1.\]
+\end{probEG}
+
+\begin{proof}
+	Sin pérdida de generalidad, supongamos que $x\ge y$. No es difícil ver que
+	\[(x-y-2)^2(4x-4y+1)=(x+y)^2\]
+	de donde $x-y=k^2+k$ para algún $k\in\ZZ^+_0$. Si $k=0$, tenemos que $x-y=0$ y $x+y=2$ de donde $x=y=1$. Si $k\ge 1$, note que
+	\[x+y=(k^2+k-2)(2k+1)=2k^3+3k^2-3k-2\]
+	de donde $(x,y)=(k^3+2k^2-k-1,k^3+k^2-2k-1)$ para algún $k\ge 2$.
+\end{proof}
+
+\begin{problem}
+	Para cada entero positivo $n$, el Banco de Ciudad del Cabo produce monedas de valor $\frac1n$. Dada una colección finita de tales monedas (no necesariamente de distintos valores) cuyo valor total no supera $99+\frac12$, demostrar que es posible separar esta colección en $100$ o menos montones, de modo que el valor total de cada montón sea como máximo $1$.
+\end{problem}
+
+\begin{probEG}[EGMO 2022/1]
+	Let $ABC$ be an acute-angled triangle in which $BC<AB$ and $BC<CA$. Let point $P$ lie on segment $AB$ and point $Q$ lie on segment $AC$ such that $P\ne B$, $Q\ne C$ and $BQ=BC=CP$. Let $T$ be the circumcentre of triangle $APQ$, $H$ the orthocentre of triangle $ABC$, and $S$ the point of intersection of the lines $BQ$ and $CP$. Prove that $T$, $H$ and $S$ are collinear.
+	\begin{probSP}
+		Sea $ABC$ un triángulo acutángulo con $BC<AB$ y $BC<AC$. Considere los puntos $P$ y $Q$ en los segmentos $AB$ y $AC$, respectivamente, tales que $P\ne B$, $Q\ne C$ y $BQ=BC=CP$. Sea $T$ el circuncentro del triángulo $APQ$, $H$ el ortocentro del triángulo $ABC$ y $S$ el punto de intersección de las rectas $BQ$ y $CP$. Pruebe que los puntos $T$, $H$ y $S$ están en una misma recta.
+	\end{probSP}
+\end{probEG}
+
+\begin{proof}
+	Como $BH$ y $CH$ son las bisectrices del triángulo $SBC$, la recta $HS$ biseca al ángulo $\angle BSC$. Note que
+	\[\angle PSQ=\angle BSC=2\angle BHC-180\dg=2(180\dg-\angle BAC)-180\dg=180\dg-\angle PTQ\]
+	de donde $TPSQ$ es cíclico. Como $T$ es el punto medio del arco $PQ$ que no contiene a $S$, la recta $TS$ biseca al ángulo $\angle PSQ$. Por ende, $T$, $H$ y $S$ pertenecen a la bisectriz del ángulo $\angle BSC$.
+\end{proof}
+
+\begin{probMG}[EGMO 2022/2]
+	Find all functions $f:\NN\to\NN$ such that for any positive integers $a$ and $b$, the following two conditions hold:
+	\begin{enumerate}[(1)]
+		\ii $f(ab)=f(a)f(b)$, and
+		\ii at least two of the numbers $f(a)$, $f(b)$ and $f(a+b)$ are equal.
+	\end{enumerate}
+	\begin{probSP}
+		Determine todas las funciones $f:\NN\to\NN$ tales que para cualquier pareja de enteros positivos $a$ y $b$, se cumplen las siguientes dos condiciones:
+		\begin{enumerate}[(1)]
+			\ii $f(ab)=f(a)f(b)$, y
+			\ii al menos dos de los números $f(a)$, $f(b)$ y $f(a+b)$ son iguales.
+		\end{enumerate}
+	\end{probSP}
+\end{probMG}
+
+\begin{proof}
+	Si $p\in\ZZ^+$ es el menor tal que $f(p)>1$, es claro que $p$ es primo. Si $a>p$ es el menor número coprimo con $p$ tal que $f(a)>1$, considerando a $f(p)>1$, $f(a-p)=1$ y $f(a)>1$ tenemos que $f(a)=f(p)$. Si $a>p^2$, considerando a $f(p^2)=f(p)^2>1$, $f(a-p^2)=1$ y $f(a)>1$ tenemos que $f(p)=f(a)=f(p)^2$ lo cual es un absurdo. Ahora, sea $k=\floor{p^2/a}$ donde $0<k<p$. Como $0<p^2-ka<a$, considerando a $f(ka)=f(p)$, $f(p^2-ka)=1$ y $f(p^2)=f(p)^2$ tenemos un absurdo. Por ende, $f(a)=1$ para todo $a\in\ZZ^+$ coprimo con $p$ de donde $f(n)=a^{\nu_p(n)}$ para algún $a\in\ZZ^+$. Por lo tanto, $f(n)=1$ o $f(n)=a^{\nu_p(n)}$ para algún entero $a>1$ y un primo $p$.
+\end{proof}
+
+\begin{probEG}[EGMO 2022/3]
+	An infinite sequence of positive integers $a_1,a_2,\dots$ is called \emph{good} if
+	\begin{enumerate}[(1)]
+		\ii $a_1$ is a perfect square, and
+		\ii for any integer $n\ge 2$, $a_n$ is the smallest positive integer such that
+		\[na_1+(n-1)a_2+\dots+2a_{n-1}+a_n\]
+		is a perfect square.
+	\end{enumerate}
+	Prove that for any good sequence $a_1,a_2,\dots$, there exists a positive integer $k$ such that $a_n=a_k$ for all integers $n\ge k$.
+	\begin{probSP}
+		Se dice que una sucesión infinita de enteros positivos $a_1,a_2,\dots$ es \emph{húngara} si
+		\begin{enumerate}[(1)]
+			\ii $a_1$ es un cuadrado perfecto, y
+			\ii para todo entero $n\ge 2$, $a_n$ es el menor entero positivo tal que
+			\[na_1+(n-1)a_2+\dots+2a_{n-1}+a_n\]
+			es un cuadrado perfecto.
+		\end{enumerate}
+		Pruebe que si $a_1,a_2,\dots$ es una sucesión húngara, entonces existe un entero positivo $k$ tal que $a_n=a_k$ para todo entero $n\ge k$.
+	\end{probSP}
+\end{probEG}
+
+\begin{proof}
+	Sea $c_n^2=na_1+(n-1)a_2+\dots+2a_{n-1}+a_n$. Note que $c_n-c_{n-1}$ es decreciente y $c_n$ es estrictamente creciente, de donde existe un $k\in\ZZ^+$ tal que $(c_n-c_{n-1}-1)^2\le c_n$ para todo $n\ge k$. Es decir,
+	\[(2c_n-c_{n-1}-1)^2-c_n^2\le c_n^2-c_{n-1}^2<(2c_n-c_{n-1})^2-c_n^2\]
+	de donde $c_{n+1}-c_n=c_n-c_{n-1}=d$ donde $d\in\ZZ^+$ es fijo. Es decir,
+	\[a_{n+1}=(c_{n+1}^2-c_n^2)-(c_n^2-c_{n-1}^2)=2d^2\]
+	es fijo para todo $n\ge k$.
+\end{proof}
+
+\subsection{Homework}
+
+\begin{probEG}[EGMO 2022/4]
+	Given a positive integer $n\ge 2$, determine the largest positive integer $N$ for which there exist $N+1$ real numbers $a_0,a_1,\dots,a_N$ such that
+	\begin{enumerate}[(1)]
+		\ii $a_0+a_1=-\frac1n$, and
+		\ii $(a_k+a_{k-1})(a_k+a_{k+1})=a_{k-1}-a_{k+1}$ for $1\le k\le N-1$.
+	\end{enumerate}
+	\begin{probSP}
+		Para cada entero positivo $n\ge 2$, determine el mayor entero positivo $N$ con la propiedad de que existen $N+1$ números reales $a_0,a_1,\dots,a_N$ tales que
+		\begin{enumerate}[(1)]
+			\ii $a_0+a_1=-\frac1n$, y
+			\ii $(a_k+a_{k-1})(a_k+a_{k+1})=a_{k-1}-a_{k+1}$ para todo $1\le k\le N-1$.
+		\end{enumerate}
+	\end{probSP}
+\end{probEG}
+
+\begin{proof}
+	Sea $S_i=a_i+a_{i+1}$ para todo $0\le i\le N-1$. Luego, $(1-S_k)(1+S_{k-1})=1$ para todo $1\le k\le N-1$ de donde si $S_{k-1}=-\frac{1}{n-k+1}$ entonces $S_k=-\frac{1}{n-k}$. Es fácil ver que el mayor valor de $N$ es $n$.
+\end{proof}
+
+\begin{probEG}[EGMO 2022/5]
+	For all positive integers $n,k$, let $f(n,2k)$ be the number of ways an $n\times 2k$ board can be fully covered by $nk$ dominoes of size $2\times 1$. (For example, $f(2,2)=2$ and $f(3,2)=3$.) Find all positive integers $n$ such that for every positive integer $k$, the number $f(n,2k)$ is odd.
+	\begin{probSP}
+		Dados $n$ y $k$ enteros positivos, sea $f(n,2k)$ el número de formas en que un tablero de tamaño $n\times 2k$ puede ser completamente cubierto por $nk$ fichas de dominó de tamaño $2\times 1$. Encuentre todos los enteros positivos $n$ tales que para todo entero positivo $k$, el número $f(n,2k)$ es impar.
+	\end{probSP}
+\end{probEG}
+
+\begin{proof}
+	Si $n$ es impar, por simetría con respecto a la fila central, podemos notar que $f(n,2k)\equiv f(\frac{n-1}{2},2k)\pmod 2$. Si $n$ es par, por simetría con respecto a la diagonal principal, podemos notar que $f(n,n)$ es par. Ahora, sea $n=2^tn_1-1$ donde $n_1$ es impar. Si $n_1>1$,
+	\[f(2^tn_1-1,n_1-1)\equiv f(2^{t-1}n_1-1,n_1-1)\equiv\dots\equiv f(n_1-1,n_1-1)\equiv 0\pmod 2\]
+	de donde $n_1=1$. Por ende,
+	\[f(n,2k)=f(2^t-1,2k)\equiv f(2^{t-1}-1,2k)\equiv\dots\equiv f(1,2k)=1\pmod 2\]
+	para todo $k\in\ZZ^+$. Aquí se termina la prueba.
+\end{proof}
+
+\begin{probEG}[EGMO 2022/6]
+	Let $ABCD$ be a cyclic quadrilateral with circumcentre $O$. Let the internal angle bisectors at $A$ and $B$ meet at $X$, the internal angle bisectors at $B$ and $C$ meet at $Y$, the internal angle bisectors at $C$ and $D$ meet at $Z$, and the internal angle bisectors at $D$ and $A$ meet at $W$. Further, let $AC$ and $BD$ meet at $P$. Suppose that the points $X$, $Y$, $Z$, $W$, $O$ and $P$ are distinct. Prove that $O$, $X$, $Y$, $Z$ and $W$ lie on the same circle if and only if $P$, $X$, $Y$, $Z$ and $W$ lie on the same circle.
+	\begin{probSP}
+		Sea $ABCD$ un cuadrilátero cíclico con circuncentro $O$. Sea $X$ el punto de intersección de las bisectrices de los ángulos $\angle DAB$ y $\angle ABC$; sea $Y$ el punto de intersección de las bisectrices de los ángulos $\angle ABC$ y $\angle BCD$; sea $Z$ el punto de intersección de las bisectrices de los ángulos $\angle BCD$ y $\angle CDA$; y sea $W$ el punto de intersección de las bisectrices de los ángulos $\angle CDA$ y $\angle DAB$. Sea $P$ el punto de intersección de las rectas $AC$ y $BD$. Suponga que los puntos $O$, $P$, $X$, $Y$, $Z$ y $W$ son distintos. Pruebe que $O$, $X$, $Y$, $Z$ y $W$ están sobre una misma circunferencia si y solo si $P$, $X$, $Y$, $Z$ y $W$ están sobre una misma circunferencia.
+	\end{probSP}
+\end{probEG}
+
+\begin{proof}
+	Si $Q=AB\cap CD$, $R=AD\cap BC$, $S=OQ\cap PR$ y $T=OR\cap PQ$ entonces $QS\cdot QO=QA\cdot QB=QY\cdot QW$. Luego, si $\odot(XYZW)\neq\odot(OSPT)$ entonces $QR$ es el eje radical de ellas. Es decir, como $O$ y $P$ no pertenecen a $QR$, entonces $O$ y $P$ no están sobre $\odot(XYZW)$. Si $\odot(XYZW)=\odot(OSPT)$ entonces $O$ y $P$ están sobre $\odot(XYZW)$. Con esto se termina la prueba.
+\end{proof}
+
 \subsection{Practice Problems}
 
 \begin{probMR}[Balkan MO 2005/4]
