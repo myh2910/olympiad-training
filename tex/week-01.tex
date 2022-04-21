@@ -13,9 +13,9 @@
 	de donde
 	\begin{align*}
 		\frac13\left(\cycsum\frac{\sqrt{b+c-a}}{\sqrt b+\sqrt c-\sqrt a}\right)^2
-		&\le\cycsum\left(\frac{\sqrt{b+c-a}}{\sqrt b+\sqrt c-\sqrt a}\right)^2 \\
-		&=\frac{x^2+xy+xz-yz}{2x^2} \\
-		&=3-\cycsum\frac{(x-y)(x-z)}{2x^2} \\
+		&\le\cycsum\left(\frac{\sqrt{b+c-a}}{\sqrt b+\sqrt c-\sqrt a}\right)^2\\
+		&=\frac{x^2+xy+xz-yz}{2x^2}\\
+		&=3-\cycsum\frac{(x-y)(x-z)}{2x^2}\\
 		&\le 3
 	\end{align*}
 	y esto resuelve el problema.
@@ -29,8 +29,8 @@
 	El problema es trivial cuando $n$ es una potencia de $2$. Ahora, supongamos que para algún $n\in\ZZ^+$ existe un $m\in\ZZ^+$ tal que $n\mid 2^m+m$. En efecto, sea $k=\frac{2^m+m}{n}$ y sea $p$ un primo impar arbitrario mayor o igual que todos los factores primos de $n$. Sea $n=p^en_0$ donde $p\nmid n_0$. Sea $m_0=m+\phi(p^{e+1}n_0)t$ para algún $n_0\mid t$ tal que $n_0k\equiv\phi(n_0)t\pmod p$. Luego,
 	\begin{align*}
 		2^{m_0}+m_0
-		&\equiv 2^m+m+p^e(p-1)\phi(n_0)t \\
-		&=p^e\left(n_0k+(p-1)\phi(n_0)t\right) \\
+		&\equiv 2^m+m+p^e(p-1)\phi(n_0)t\\
+		&=p^e\left(n_0k+(p-1)\phi(n_0)t\right)\\
 		&\equiv 0\pmod{p^{e+1}n_0}
 	\end{align*}
 	y aquí terminamos por inducción.

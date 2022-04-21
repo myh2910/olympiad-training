@@ -35,6 +35,14 @@
 	Sea $a_n=1$ si $\left\{2^n\sqrt{2008}\right\}>\half$ y $0$ de lo contrario. Análogamente se define $b_n$ con respecto a $2009$. Si solamente hay finitos números de alguna paridad, tenemos que $f_{n+1}-2f_n=a_n+b_n$ tiene la misma paridad para $n$ suficientemente grande. Luego, $a_n=b_n$ o $a_n+b_n=1$ para todo $n\ge N$ donde $N\in\ZZ^+$. Por ende, $2^N\sqrt{2008}\pm2^N\sqrt{2009}$ es racional, lo cual es un absurdo. Finalmente, existen infinitos números pares e impares en la secuencia.
 \end{proof}
 
+\begin{probEB}[IMO Shortlist 2003 A1]
+	Let $a_{ij}$ ($i=1,2,3$, $j=1,2,3$) be real numbers such that $a_{ij}$ is positive for $i=j$ and negative for $i\ne j$.
+
+	Prove the existence of positive real numbers $c_{1}$, $c_{2}$, $c_{3}$ such that the numbers
+	\[a_{11}c_{1}+a_{12}c_{2}+a_{13}c_{3},\quad a_{21}c_{1}+a_{22}c_{2}+a_{23}c_{3},\quad a_{31}c_{1}+a_{32}c_{2}+a_{33}c_{3}\]
+	are either all negative, all positive, or all zero.
+\end{probEB}
+
 \begin{probEG}
 	Si $a^2<b^2$ son dos números de $1001$ dígitos, demuestre que existe un número capicúa en el intervalo $(a^2,b^2)$.
 \end{probEG}
@@ -146,6 +154,16 @@
 	\[a_{n+1}=(c_{n+1}^2-c_n^2)-(c_n^2-c_{n-1}^2)=2d^2\]
 	es fijo para todo $n\ge k$.
 \end{proof}
+
+\begin{probEG}
+	Determine todos los polinomios $f(x)$ y $g(x)$ con coeficientes enteros tales que
+	\[f(g(x))=x^{2015}+2x+1\]
+	para todo $x\in\RR$.
+\end{probEG}
+
+\begin{probEG}
+	Determine si existe una secuencia $(a_i)_{i\ge 1}$ de enteros positivos tales que cada entero positivo aparece exactamente una vez en las secuencias $(a_i)_{i\ge 1}$ y $(\abs{a_i-a_{i-1}})_{i\ge 1}$.
+\end{probEG}
 
 \begin{probEG}[EGMO 2022/4]
 	Given a positive integer $n\ge 2$, determine the largest positive integer $N$ for which there exist $N+1$ real numbers $a_0,a_1,\dots,a_N$ such that

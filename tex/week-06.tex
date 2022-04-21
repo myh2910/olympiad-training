@@ -1,0 +1,96 @@
+\section{Week 6 (04/18 -- 04/24)}
+
+\begin{probEG}
+	Sean $a,b,c,d,e,f$ números reales no negativos que suman $6$. Determine el máximo valor de
+	\[abc+bcd+cde+def+efa+fab.\]
+\end{probEG}
+
+\begin{proof}
+	La respuesta es $8$ (un ejemplo es $(a,b,c,d,e,f)=(2,2,2,0,0,0)$). Es claro que la expresión dada es igual a $a(bc+ef+fb)+d(bc+ce+ef)$. Analizando por casos, tenemos que $0\in\{a,d\}\cap\{b,e\}\cap\{c,f\}$. Es decir, la expresión dada es igual a $0$ o sin pérdida de generalidad $a,b,c\ne 0$ y $d,e,f=0$. Luego, la expresión dada es igual a $abc\le\left(\frac{a+b+c}{3}\right)^3=8$.
+\end{proof}
+
+\begin{probMR}
+	Una secuencia $(a_n)$ de números reales no negativos satisface
+	\[\abs{a_m-a_n}\ge\frac{1}{m+n},\quad\forall\,m\ne n.\]
+	Demuestre que si $a_n<c$ para todo $n\in\ZZ^+$, entonces $c\ge 1$.
+\end{probMR}
+
+\begin{proof}
+	Note que si $i_1,i_2,\dots,i_n$ es una permutación de $1,2,\dots,n$ tal que $a_{i_1}\ge a_{i_2}\ge\dots\ge a_{i_n}$, entonces
+	\begin{align*}
+		c&\ge a_{i_1}-a_{i_n}
+		=\sum_{j=1}^{n-1}(a_{i_j}-a_{i_{j+1}})\\
+		&\ge\sum_{j=1}^{n-1}\frac{1}{i_j+i_{j+1}}
+		\ge\frac{(n-1)^2}{2(i_1+i_2+\dots+i_n)-i_1-i_n}\\
+		&>\frac{(n-1)^2}{n(n+1)}
+	\end{align*}
+	para todo $n>1$ de donde $c\ge 1$.
+\end{proof}
+
+\begin{theorem}[Hall's Marriage Theorem]
+	Let $G$ be a finite bipartite graph with bipartite sets $X$ and $Y$. Then, there is an $X$-perfect matching if and only if
+	\[\abs{W}\le\abs{N_G(W)}\]
+	for every subset $W$ of $X$.
+\end{theorem}
+
+\begin{probEG}
+	Tenemos dos superficies congruentes compuestas por $2022$ regiones de área $1$. Demostrar que si superponemos las dos superficies, es posible pinchar las $4044$ regiones en solo $2022$ pinchazos.
+\end{probEG}
+
+\begin{probEG}
+	En cada fila y columna de un tablero de $n\times n$ hay $k$ fichas. Demuestre que es posible elegir $n$ fichas que están en filas diferentes y columnas diferentes.
+\end{probEG}
+
+\begin{probEG}
+	En un tablero de $4\times 13$ se colocan $52$ cartas de naipe (una en cada casilla). Demuestre que existen $13$ cartas de números distintos que están en columnas distintas.
+\end{probEG}
+
+\begin{probEB}
+	En cada casilla de un tablero de $n\times n$ está escrito un $0$ o un $1$ de tal manera que entre cualesquiera $n$ casillas que no están en la misma fila ni en la misma columna, al menos una de ellas tiene escrito el número $1$. Demuestre que existen $i$ filas y $j$ columnas de tal manera que $i+j\ge n+1$ y en las $ij$ casillas de sus intersecciones esté escrito el número $1$.
+\end{probEB}
+
+\begin{probEG}
+	Sea $\cal X$ un conjunto finito y sean
+	\[\bigcup_{i=1}^n X_i={\cal X}\quad\bigcup_{j=1}^n Y_j={\cal X}\]
+	dos descomposiciones disjuntas de $\cal X$, de tal manera que los $2n$ subconjuntos $X_i$ y $Y_j$ tengan el mismo número de elementos. Demuestre que podemos elegir $n$ elementos $z_1,z_2,\dots,z_n$ de $\cal X$ de tal manera que estos $n$ elementos estén en diferentes conjuntos en cada descomposición.
+\end{probEG}
+
+\begin{probEG}
+	En cada casilla de un tablero de $n\times n$ se ha escrito un número entero no negativo de tal manera que la suma de los $n$ números en cada fila y en cada columna es $1$. Demuestre que es posible elegir $n$ números de diferentes filas y diferentes columnas que son positivos.
+\end{probEG}
+
+\begin{probEB}
+	Para cada conjunto finito $\cal S$ de números enteros positivos, sea $\cal S^\ast$ el conjunto que se obtiene al sumar $2$ a cada elemento de $\cal S$. ¿Para cuántos conjuntos $\cal S$ se cumple que la unión de $\cal S$ con $\cal S^\ast$ es el conjunto de todos los enteros positivos del $1$ al $2022$?
+\end{probEB}
+
+\begin{proof}
+	La respuesta es $f_{1010}^2$. Pista: recurrencias.
+\end{proof}
+
+\begin{probEG}[IberoAmerican 1999/6]
+	Sean $A$ y $B$ puntos del plano y $C$ un punto de la mediatriz del segmento $AB$. Se construye una secuencia de puntos $(C_i)$ de la siguiente manera: $C_1=C$ y para $n\ge 1$, si $C_n$ no pertenece al segmento $AB$, entonces $C_{n+1}$ es el circuncentro del triángulo $ABC_n$. Determine todos los puntos $C$ para los cuales la secuencia $(C_n)$ está definida para todo entero positivo $n$ y es eventualmente periódica.
+\end{probEG}
+
+\begin{probEG}[IberoAmerican 2002/3]
+	Un punto $P$, en el interior de un triángulo equilátero $ABC$, es tal que $\angle APC=120\dg$. Sea $M$ el punto de intersección de las rectas $CP$ y $AB$, y sea $N$ el punto de intersección de las rectas $AP$ y $BC$. Determine el lugar geométrico del circuncentro del triángulo $MBN$ al variar $P$.
+\end{probEG}
+
+\begin{proof}
+	Respuesta: El segmento que une los puntos medios de los arcos $\widehat{AB}$ y $\widehat{BC}$ de $\odot(ABC)$.
+\end{proof}
+
+\begin{probMB}
+	Sea $X$ un punto variable sobre el arco $AC$, del circuncírculo del triángulo $ABC$, que no contiene al punto $B$. El punto $Y$ está sobre la prolongación de $BA$ por $A$ y es tal que $AY=AX$, donde $A$ está entre $B$ y $Y$. El punto $Z$ está en la prolongación de $BC$ por $C$ y es tal que $CZ=CX$, donde $C$ está entre $B$ y $Z$. Determine el lugar geométrico de todos los puntos medios del segmento $YZ$ al variar $X$.
+\end{probMB}
+
+\begin{proof}
+	Si $M$ y $P$ son puntos medios de $AC$ y $YZ$ respectivamente, note que
+	\begin{align*}
+		4\cdot\abs{MP}^2
+		&=\norm{2\cdot\ray{MP}}^2=\norm{\ray{AY}+\ray{CZ}}^2\\
+		&=\abs{AY}^2+\abs{CZ}^2+2\cdot\abs{AY}\cdot\abs{CZ}\cdot\cos{\angle ABC}\\
+		&=\abs{XA}^2+\abs{XC}^2-2\cdot\abs{XA}\cdot\abs{XC}\cdot\cos{\angle AXC}\\
+		&=\abs{AC}^2
+	\end{align*}
+	de donde $P$ pertenece a la semicircunferencia de diámetro $AC$.
+\end{proof}

@@ -93,7 +93,7 @@
 \end{proof}
 
 \begin{probEB}[Peru EGMO TST 2022/1]
-	En cada casilla de un tablero $4\times 4$ se escribe un número entero positivo de modo que el número escrito en cada casilla es igual a la cantidad de números distintos entre sí escritos en sus casillas vecinas. ¿Cuántos números distintos como máximo pueden haber en el tablero? \\[4pt]
+	En cada casilla de un tablero $4\times 4$ se escribe un número entero positivo de modo que el número escrito en cada casilla es igual a la cantidad de números distintos entre sí escritos en sus casillas vecinas. ¿Cuántos números distintos como máximo pueden haber en el tablero?\\[4pt]
 	\emph{Nota: Casillas vecinas son las que comparten un lado en común o un vértice en común.}
 \end{probEB}
 
@@ -101,19 +101,19 @@
 	Supongamos que hay $n$ números distintos en el tablero, donde $M$ es el máximo de ellos. Luego, $M=n$ y $1,2,\dots,n$ son los números que están en el tablero. Si $n\ge 3$, existe un $1$ que es vecino de $n$. Considerando la posición del $1$, es fácil ver que $1$ está en una esquina del tablero. Es decir, tenemos lo siguiente.
 
 	\[\begin{tblr}{cccc}
-		1 & n & & \\
-		n & n & & \\
-		& & & \\
-		& & & \\
+		1&n& & \\
+		n&n& & \\
+		 & & & \\
+		 & & & \\
 	\end{tblr}\]
 
 	Es fácil ver que $n\in\{3,4\}$, pero analizando por casos tenemos un absurdo. Por ende, la máxima cantidad de números distintos en el tablero es $2$. Como ejemplo considere el siguiente tablero.
 
 	\[\begin{tblr}{cccc}
-		1 & 2 & 2 & 1 \\
-		2 & 2 & 2 & 2 \\
-		2 & 2 & 2 & 2 \\
-		1 & 2 & 2 & 1 \\
+		1&2&2&1\\
+		2&2&2&2\\
+		2&2&2&2\\
+		1&2&2&1\\
 	\end{tblr}\]
 \end{proof}
 
@@ -149,9 +149,9 @@
 	Si $n\ge 3$, note que
 	\begin{align*}
 		a^{n^2+1}-(a^n+1)^n
-		&\ge a^{n^2+1}-\left(a^{n^2}+\sum_{i=0}^{n-1}\binom{n}{i}a^{n(n-1)}\right) \\
-		&=a^{n^2+1}-a^{n^2}-(2^n-1)a^{n(n-1)} \\
-		&=a^{n(n-1)}\left(a^n(a-1)-2^n+1\right) \\
+		&\ge a^{n^2+1}-\left(a^{n^2}+\sum_{i=0}^{n-1}\binom{n}{i}a^{n(n-1)}\right)\\
+		&=a^{n^2+1}-a^{n^2}-(2^n-1)a^{n(n-1)}\\
+		&=a^{n(n-1)}\left(a^n(a-1)-2^n+1\right)\\
 		&>a^2
 	\end{align*}
 	de donde $a^m-(a^n+1)^n\ge a^{n^2+1}-(a^n+1)^n>a^2$. Finalmente, concluimos que las ternas $(m,n,a)=(m,1,1),(1,1,a),(2,1,a)$ cumplen, donde $m\ge 1$ y $a>1$ son enteros positivos.
@@ -221,8 +221,8 @@
 	lo cual es una contradicción. Por ende, $t\ge 1=\frac{10^6}{10^6}>\frac{i_1-i_0}{i_0-1}$ de donde $2^t-1\ge t>\frac{2t+(i_1-i_0-t)}{i_0}$. Sea $P=a_{i_0+1}a_{i_0+2}\cdots a_{i_1}\ge 2^t$. Luego,
 	\begin{align*}
 		1
-		&>\frac{1}{2^t}+\frac{1}{i_0}\left(\frac{t}{2^{t-1}}+\frac{i_1-i_0-t}{2^t}\right) \\
-		&\ge\frac{1}{P}+\frac{1}{a_1+a_2+\dots+a_{i_0}}\left(\frac{a_{i_0+1}+a_{i_0+2}+\dots+a_{i_1}}{P}\right) \\
+		&>\frac{1}{2^t}+\frac{1}{i_0}\left(\frac{t}{2^{t-1}}+\frac{i_1-i_0-t}{2^t}\right)\\
+		&\ge\frac{1}{P}+\frac{1}{a_1+a_2+\dots+a_{i_0}}\left(\frac{a_{i_0+1}+a_{i_0+2}+\dots+a_{i_1}}{P}\right)\\
 		&=\frac{b_{i_0}}{b_{i_1}}
 	\end{align*}
 	de donde $b_{i_1}>b_{i_0}$. Por lo tanto, existe una secuencia estrictamente creciente de índices $\{i_j\}_{j\ge 0}$ tal que $\{b_{i_j}\}_{j\ge 0}$ es una secuencia estrictamente creciente de enteros. Luego, existe un $b_i$ tal que $b_i>M$, lo cual es una contradicción. Es decir, la secuencia $\{b_i\}_{i\ge 1}$ no es acotada superiormente. Aquí se termina la prueba.
@@ -290,8 +290,8 @@
 	de donde $\abs{H_i}+\abs{H_{i+1}}+2\abs{V_i}\le 2n-1+\abs{V_i}+1-k$. Luego,
 	\begin{align*}
 		2\sum_{i=1}^m\abs{H_i}+2\sum_{i=1}^m\abs{V_i}
-		&\le\abs{H_1}+\abs{H_m}+(2n-1)(m-1) \\
-		&=(\abs{H_1}-n)+(\abs{H_m}-n)+2mn-m+1 \\
+		&\le\abs{H_1}+\abs{H_m}+(2n-1)(m-1)\\
+		&=(\abs{H_1}-n)+(\abs{H_m}-n)+2mn-m+1\\
 		&\le 2mn-m+1
 	\end{align*}
 	de donde $mn-\floor{\frac{m}{2}}$ es el mayor número de fichas de dominó en el tablero.

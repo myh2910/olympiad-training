@@ -20,8 +20,8 @@
 	Supongamos que $\floor{\frac{n}{S(n)}}=\floor{\frac{n+1}{S(n+1)}}=k\in\ZZ^+_0$. Si $1\le a\le 9$ y $\alpha\ge 3$ son enteros tales que $a\cdot 10^\alpha\le n<(a+1)\cdot 10^\alpha$, tenemos
 	\begin{align*}
 		n
-		&\ge a\cdot 10^\alpha>a\cdot 100\alpha^2>a\cdot(81\alpha^2+27\alpha+10) \\
-		&\ge (a+9\alpha)(a+9\alpha+1) \\
+		&\ge a\cdot 10^\alpha>a\cdot 100\alpha^2>a\cdot(81\alpha^2+27\alpha+10)\\
+		&\ge (a+9\alpha)(a+9\alpha+1)\\
 		&\ge S(n)\cdot(S(n)+1)
 	\end{align*} 
 	de donde $k>\frac{n}{S(n)}-1>S(n)$. Luego,
@@ -49,7 +49,7 @@
 \begin{proof}
 	El mayor valor de $k$ es $1011$ y un ejemplo es
 	\[a_i=\begin{cases}
-		2i&\text{si }i\le 1011, \\
+		2i&\text{si }i\le 1011,\\
 		2i-2023&\text{si }i>1011.
 	\end{cases}\]
 	Ahora, supongamos que $k\ge 1012$. Sea
@@ -57,17 +57,17 @@
 	para todo índice $i$. Luego, existen dos índices $i>j\ge 1011$ tales que $A_i,A_j>1$ son enteros. Si $A_i\ge 3$, tenemos que
 	\begin{align*}
 		2023i-\frac{i(i+1)}{2}
-		&=2022+2021+\dots+(2023-i) \\
-		&\ge a_1+a_2+\dots+a_i \\
-		&\ge 3(1+2+\dots+i) \\
+		&=2022+2021+\dots+(2023-i)\\
+		&\ge a_1+a_2+\dots+a_i\\
+		&\ge 3(1+2+\dots+i)\\
 		&=\frac{3i(i+1)}{2}
 	\end{align*}
 	de donde $i\le 1010$, lo cual es un absurdo. Por ende, $A_i=2$ y análogamente $A_j=2$. Luego,
 	\begin{align*}
 		a_{j+1}+a_{j+2}+\dots+a_i
-		&=(a_1+a_2+\dots+a_i)-(a_1+a_2+\dots+a_j) \\
-		&=2(1+2+\dots+i)-2(1+2+\dots+j) \\
-		&=2((j+1)+(j+2)+\dots+i) \\
+		&=(a_1+a_2+\dots+a_i)-(a_1+a_2+\dots+a_j)\\
+		&=2(1+2+\dots+i)-2(1+2+\dots+j)\\
+		&=2((j+1)+(j+2)+\dots+i)\\
 		&>\underbrace{2022+2022+\dots+2022}_{i-j\text{ veces}}
 	\end{align*}
 	lo cual es un absurdo.
@@ -110,8 +110,8 @@
 		\ii Si $n\ge 4$ es par, sean $(x_1,x_{n-1},x_n)=\left(3\cdot 2^\frac{n-2}{2},2^{n-2},3\cdot 2^{n-3}\right)$ y $x_i=2^\frac{n-2}{2}$ para todo $2\le i\le n-2$. Luego,
 		\begin{align*}
 			\sum_{i=1}^n\frac{2^{i-1}}{x_i^2}
-			&=\frac{1}{9\cdot 2^{n-2}}+\sum_{i=2}^{n-2}\frac{2^{i-1}}{2^{n-2}}+\frac{2^{n-2}}{(2^{n-2})^2}+\frac{2^{n-1}}{9\cdot(2^{n-3})^2} \\
-			&=\frac{1}{2^{n-2}}+\frac{2^{n-2}-2}{2^{n-2}}+\frac{1}{2^{n-2}} \\
+			&=\frac{1}{9\cdot 2^{n-2}}+\sum_{i=2}^{n-2}\frac{2^{i-1}}{2^{n-2}}+\frac{2^{n-2}}{(2^{n-2})^2}+\frac{2^{n-1}}{9\cdot(2^{n-3})^2}\\
+			&=\frac{1}{2^{n-2}}+\frac{2^{n-2}-2}{2^{n-2}}+\frac{1}{2^{n-2}}\\
 			&=1.
 		\end{align*}
 	\end{itemize}
