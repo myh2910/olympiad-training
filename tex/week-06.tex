@@ -94,3 +94,103 @@
 	\end{align*}
 	de donde $P$ pertenece a la semicircunferencia de diámetro $AC$.
 \end{proof}
+
+\begin{probEG}
+	Let $ABCD$ be a trapezoid with parallel sides $AB>CD$. Points $K$ and $L$ lie on the line segments $AB$ and $CD$, respectively, so that $AK/KB=DL/LC$. Suppose that there are points $P$ and $Q$ on the line segment $KL$ satisfying
+	\[\angle APB=\angle BCD\quad\text{and}\quad\angle CQD=\angle ABC.\]
+	Prove that the points $P$, $Q$, $B$ and $C$ are concyclic.
+\end{probEG}
+
+\begin{proof}
+	Pista: semejanza y angulitos.
+\end{proof}
+
+\begin{probEG}
+	Para cada entero positivo $n$, denotemos por $P(n)$ al mayor divisor primo del número $n^2+n+1$. Demuestre que
+	\[P(n)>2n+\sqrt{2n}\]
+	para infinitos enteros positivos $n$.
+\end{probEG}
+
+\begin{proof}
+	Pista: demuestra primero que $P(n)>2n$ y luego que $2n<P(n)\le 2n+\sqrt{2n}$ no cumple.
+\end{proof}
+
+\begin{probEG}
+	Demuestre que existe un $c\in\RR^+$ tal que para cualesquiera $a,b,n\in\ZZ^+$, con $n>1$ y $a!b!\mid n!$, se cumple la desigualdad
+	\[a+n<n+c\cdot\ln(n).\]
+\end{probEG}
+
+\begin{proof}
+	Pista: sale con la identidad
+	\[\nu_p(n)=\sum_{i=1}^\infty\floor{\frac{n}{p^i}}=\frac{n-s_p(n)}{p-1}\]
+	con $p=3$ (también con $p=2$).
+\end{proof}
+
+\begin{probEG}
+	Demuestre que para todo $n\in\ZZ^+$,
+	\[n!\mid\prod_{k=0}^{n-1}(2^n-2^k).\]
+\end{probEG}
+
+\begin{proof}
+	Pista: para todo primo $p=2$ y $2\nmid p$, demuestra que el $\nu_p$ del lado izquierdo es menor o igual que el del lado derecho.
+\end{proof}
+
+\begin{probEG}
+	Demuestre que la ecuación
+	\[\frac{1}{10^n}=\frac{1}{n_1!}+\frac{1}{n_2!}+\dots+\frac{1}{n_k!}\]
+	no tiene soluciones enteras, con $1\le n_1<n_2<\dots<n_k$.
+\end{probEG}
+
+\begin{proof}
+	Pista: demuestra que si la ecuación es verdadera, se cumple que $n=\nu_5(n_k!)$.
+\end{proof}
+
+\begin{probEG}
+	Sea $n>1$ un número entero. Demuestre que
+	\[n\nmid 2^{n-1}+1.\]
+\end{probEG}
+
+\begin{proof}
+	Pista: demuestra que $2^{\nu_2(n-1)+1}\mid\ord_p(2)\mid p-1$ para todo $p\mid n$.
+\end{proof}
+
+\begin{probMG}
+	Sean $a_1,a_2,\dots,a_n\in\ZZ$. Demuestre que
+	\[\prod_{1\le i<j\le n}\frac{a_i-a_j}{i-j}\in\ZZ.\]
+\end{probMG}
+
+\begin{probMR}
+	Sea $n>1$ un número entero, y sean $1<a_1<a_2<\dots<a_k<n$ enteros positivos tales que $\mcm(a_i,a_j)>n$ para todo $i\ne j$. Demuestre que
+	\[\frac{1}{a_1}+\frac{1}{a_2}+\dots+\frac{1}{a_k}<\frac32.\]
+\end{probMR}
+
+\begin{proof}
+	Pista: considere la cantidad de números divisibles por algún $a_i$ menores o iguales que $n$.
+\end{proof}
+
+\begin{probEG}
+	Miguel tiene una lista de varios subconjuntos de $10$ elementos de $\{1,2,\dots,100\}$. Él le dice a Cecilia: si eliges cualquier subconjunto de $10$ elementos de $\{1,2,\dots,100\}$, será disjunto con al menos un subconjunto de mi lista.
+
+	¿Cuál es la mínima cantidad de subconjuntos que puede tener la lista de Miguel, si lo que le dice a Cecilia es cierto?
+\end{probEG}
+
+\begin{proof}
+	La respuesta es $13$ y se puede conseguir con subconjuntos
+	\[A_1\cup A_2,A_2\cup A_3,A_3\cup A_1,A_4\cup A_5,A_5\cup A_6,A_6\cup A_4,A_7\cup A_8,A_9\cup A_{10},\dots,A_{19}\cup A_{20}\]
+	donde $A_1,A_2,\dots,A_{20}$ son subconjuntos disjuntos de tamaño $5$.
+\end{proof}
+
+\begin{probEG}
+	Sean $\Omega_1$, $\Omega_2$, $\Omega_3$ y $\Omega_4$ circunferencias distintas tales que $\Omega_1$ y $\Omega_3$ son tangentes externas en el punto $P$, y $\Omega_2$ y $\Omega_4$ son tangentes externas en el mismo punto $P$. Suponga que $\Omega_1$ y $\Omega_2$, $\Omega_2$ y $\Omega_3$, $\Omega_3$ y $\Omega_4$, $\Omega_4$ y $\Omega_1$ se intersectan en los puntos $A,B,C,D$, respectivamente, y que esos cuatro puntos son distintos de $P$. Demuestre que
+	\[\frac{AB\cdot BC}{AD\cdot DC}=\frac{PB^2}{PD^2}.\]
+\end{probEG}
+
+\begin{proof}
+	Pista: inversión centrada en $P$ de radio $1$.
+\end{proof}
+
+\begin{problem}
+	La secuencia $a_0,a_1,a_2,\dots$ está definida de la siguiente manera:
+	\[a_0=2\quad\text{y}\quad a_{k+1}=2a_k^2-1,\text{ para }k\ge 0.\]
+	Demuestre que si un primo impar $p$ divide a $a_n$, entonces $2^{n+3}$ divide a $p^2-1$.
+\end{problem}
