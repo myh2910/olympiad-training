@@ -23,6 +23,10 @@
 
 \begin{probEB}[IMO Shortlist 2006 N7]
 	For all positive integers $n$, show that there exists a positive integer $m$ such that $n$ divides $2^m+m$.
+	\begin{probSP}
+		Demuestre que para todo entero positivo $n$, existe un entero positivo $m$ tal que $n\mid 2^m+m$.
+	\end{probSP}
+	\aops{867486}
 \end{probEB}
 
 \begin{proof}
@@ -38,27 +42,50 @@
 
 \begin{probMR}[IMO Shortlist 2007 A4]
 	Find all functions $f:\RR^+\to\RR^+$ satisfying $f(x+f(y))=f(x+y)+f(y)$ for all pairs of positive reals $x$ and $y$.
+	\begin{probSP}
+		Determine todas las funciones $f:\RR^+\to\RR^+$ tales que $f(x+f(y))=f(x+y)+f(y)$ para todo $x,y\in\RR^+$.
+	\end{probSP}
+	\aops{1165901}
 \end{probMR}
 
 \begin{probMR}[IMO Shortlist 2007 N3]
 	Let $X$ be a set of $10000$ integers, none of them is divisible by $47$. Prove that there exists a $2007$-element subset $Y$ of $X$ such that $a-b+c-d+e$ is not divisible by $47$ for any $a,b,c,d,e\in Y$.
+	\begin{probSP}
+		Sea $X\subset\ZZ$ tal que $\abs{X}=10^4$ y $47\nmid n$ para todo $n\in X$. Demuestre que existe $Y\subset X$ con $\abs{Y}=2007$, tal que $47\nmid a-b+c-d+e$ para todo $a,b,c,d,e\in Y$.
+	\end{probSP}
+	\aops{1187204}
 \end{probMR}
 
 \begin{probEG}[Iran MO 2000 3rd Round]
 	A sequence of natural numbers $c_1,c_2,\dots$ is called \emph{perfect} if every natural number $m$ with $1\le m\le c_1+c_2+\dots+c_n$ can be represented as
 	\[m=\frac{c_1}{a_1}+\frac{c_2}{a_2}+\dots+\frac{c_n}{a_n}.\]
 	Given $n$, find the maximum possible value of $c_n$ in a perfect sequence $(c_i)$.
+	\begin{probSP}
+		La secuencia $(c_i)$ de enteros positivos satisface la siguiente condición: para todo $m,n\in\ZZ^+$ con $1\le m\le c_1+c_2+\dots+c_n$, existen enteros positivos $a_1,a_2,\dots,a_n$ tales que
+		\[m=\frac{c_1}{a_1}+\frac{c_2}{a_2}+\dots+\frac{c_n}{a_n}.\]
+		Para todo índice dado $i$, ¿cuál es el mayor valor de $c_i$?
+	\end{probSP}
 	\aops{389506}
 \end{probEG}
 
 \begin{probMR}[IMO Shortlist 2008 N3]
 	Let $a_0,a_1,a_2,\dots$ be a sequence of positive integers such that $\gcd(a_i,a_{i+1})>a_{i-1}$. Prove that $a_n\ge 2^n$ for all $n\ge 0$.
+	\begin{probSP}
+		Sea $(a_{i\ge 0})$ una secuencia de enteros positivos tal que $\mcd(a_i,a_{i+1})>a_{i-1}$ para todo $i\ge 1$. Demuestre que $a_n\ge 2^n$ para todo $n\ge 0$.
+	\end{probSP}
+	\aops{1555931}
 \end{probMR}
 
 \begin{probEG}[IMO Shortlist 2018 A1]
 	Determine all functions $f:\QQ^+\to\QQ^+$ satisfying
 	\[f(x^2f(y)^2)=f(x)^2f(y)\]
 	for all $x,y\in\QQ^+$.
+	\begin{probSP}
+		Determine todas las funciones $f:\QQ^+\to\QQ^+$ tales que
+		\[f(x^2f(y)^2)=f(x)^2f(y)\]
+		para todo $x,y\in\QQ^+$.
+	\end{probSP}
+	\aops{12752810}
 \end{probEG}
 
 \begin{proof}
@@ -69,6 +96,12 @@
 	Find all integers $n\ge 3$ for which there exist real numbers $a_1,a_2,\dots,a_n,a_{n+1}=a_1,a_{n+2}=a_2$ such that
 	\[a_ia_{i+1}+1=a_{i+2}\]
 	for all $i=1,2,\dots,n$.
+	\begin{probSP}
+		Determine todos los enteros positivos $n$ para los cuales existen números reales $a_1,a_2,\dots,a_{n+2}$ donde $a_{n+1}=a_1$ y $a_{n+2}=a_2$, tales que
+		\[a_ia_{i+1}+1=a_{i+2}\]
+		para todo $i=1,2,\dots,n$.
+	\end{probSP}
+	\aops{10626524}
 \end{probMR}
 
 \begin{proof}

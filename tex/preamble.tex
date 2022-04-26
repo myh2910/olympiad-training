@@ -1,25 +1,26 @@
 \usepackage[sexy]{evan}
-\newenvironment{probSP}{\hrulebar\color{Maroon}\small}{}
-
-\usepackage{bold-extra}
 % \usepackage[spanish,es-nosectiondot]{babel}
+\usepackage{bold-extra}
+\usepackage{ifthen}
+\usepackage{tabularray}
+
+\reversemarginpar
 % \addto\captionsspanish{%
 \renewcommand{\proofname}{Solución}
 % }
-
-\usepackage{tabularray}
-\SetTblrInner{%
-	hlines,%
-	vlines,%
-	rows={16pt,rowsep=0pt},%
-	columns={16pt,colsep=0pt}%
+\newcommand{\note}[2][]{%
+	\ifthenelse{\equal{#1}{}}%
+		{\todo{#2}}%
+		{\todo{#2\\[-6pt]\rule{\textwidth}{0.3pt}\vspace{-1em}\begin{flushright}#1\end{flushright}}}%
 }
+\SetTblrInner{hlines,vlines,rows={16pt,rowsep=0pt},columns={16pt,colsep=0pt}}
 
 \DeclareMathOperator{\mcd}{mcd}
 \DeclareMathOperator{\mcm}{mcm}
 
 \newcommand{\aops}[1]{%
-	\par\vspace{1pt}\hspace{\fill}\href{https://artofproblemsolving.com/community/p#1}{[AoPS:#1]}%
+	\par\vspace{1pt}\hspace{\fill}%
+	\href{https://artofproblemsolving.com/community/p#1}{[AoPS:#1]}%
 }
 \newcommand{\customgreen}[1]{\bgroup\color{green!40!black}#1\egroup}
 \newcommand{\customblue}[1]{\bgroup\color{blue!70!black}#1\egroup}
@@ -27,6 +28,8 @@
 \newcommand{\clubG}[1]{\customgreen{[\texttt{#1}]}}
 \newcommand{\clubB}[1]{\customblue{[\texttt{#1}]}}
 \newcommand{\clubR}[1]{\customred{[\texttt{#1}]}}
+
+\newenvironment{probSP}{\hrulebar\color{Maroon}\small}{}
 
 \newtheorem{probEG}[problem]{\clubG{E} Problem}
 \newtheorem{probMG}[problem]{\clubG{M} Problem}

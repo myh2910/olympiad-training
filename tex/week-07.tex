@@ -1,0 +1,57 @@
+\section{Week 7 (04/25 -- 05/01)}
+
+\note[Álgebra]{Lunes\\2022-04-25}
+
+\begin{probEG}
+	Determine todas las parejas $(a,b)$ de números reales tales que
+	\[a\floor{bn}=b\floor{an},\]
+	para todo entero positivo $n$.
+\end{probEG}
+
+\begin{proof}
+	Respuesta: $a,b\in\ZZ$ o $(a,b)=(0,k),(k,0),(k,k)$ donde $k\in\RR$.
+\end{proof}
+
+\begin{probEG}[Indonesia MO Shortlist 2014 A1]
+	Let $a,b$ be positive real numbers such that there exist infinite number of natural numbers $k$ such that $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$. Prove that
+	\[\floor{a^{2014}}+\floor{b^{2014}}=\floor{a}^{2014}+\floor{b}^{2014}.\]
+	\begin{probSP}
+		Sean $a$ y $b$ números reales positivos tales que $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$ para infinitos enteros positivos $k$. Demuestre que
+		\[\floor{a^{2014}}+\floor{b^{2014}}=\floor{a}^{2014}+\floor{b}^{2014}.\]
+	\end{probSP}
+	\aops{12396258}
+\end{probEG}
+
+\begin{proof}
+	Note que $a^k\ge\floor{a}^k$ de donde $\floor{a^k}\ge\floor{a}^k$ para todo $k\in\ZZ^+$. Luego, se cumple la igualdad para infinitos $k\in\ZZ^+$ de donde $a,b\in\ZZ^+\cup(0,1)$. Finalmente, $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$ para todo $k\in\ZZ^+$.
+\end{proof}
+
+\begin{probEG}
+	Determine todas las parejas $(a,b)$ de números reales tales que
+	\[\floor{a\floor{bn}}=n-1,\]
+	para todo entero positivo $n$.
+\end{probEG}
+
+\begin{proof}
+	Si $a>0$ tenemos que $-1\le n(ab-1)<a$ y si $a<0$ tenemos que $0>n(ab-1)>a-1$ de donde $n\abs{ab-1}$ es acotado. Por ende, $ab=1$ y $a>0$.
+\end{proof}
+
+\begin{probMG}
+	Sea $n\ge 2$ un número entero. Los $n$ conjuntos finitos $A_1,A_2,\dots,A_n$ satisfacen:
+	\[\abs{A_i\,\triangle\,A_j}=\abs{i-j},\quad\forall\,i,j=1,2,\dots,n.\]
+	Determine el mínimo valor de
+	\[\sum_{i=1}^n\abs{A_i}.\]
+\end{probMG}
+
+\begin{proof}
+	La respuesta es $\floor{n^2/4}$ y un ejemplo es cuando $A_i$ es el conjunto de todos los enteros $x\ne\floor{\frac{n+1}{2}}$ que están entre $i$ y $\floor{\frac{n+1}{2}}$ (tenemos $\abs{A_i}=\abs{\floor{\frac{n+1}{2}}-i}$ en este caso). Ahora, note que
+	\[\abs{A_i}+\abs{A_{n+1-i}}\ge\abs{A_i\,\triangle\,A_{n+1-i}}=\abs{n+1-2i}\]
+	para todo $1\le i\le n$ de donde
+	\[\sum_{i=1}^n\abs{A_i}=\half\sum_{i=1}^n(\abs{A_i}+\abs{A_{n+1-i}})\ge\half\sum_{i=1}^n\abs{n+1-2i}=\floor{\frac{n^2}{4}}.\]
+\end{proof}
+
+\begin{problem}
+	Sea $\alpha\ge 1$ un número real y sea $n$ un entero positivo tal que
+	\[\floor{\alpha^{n+1}},\floor{\alpha^{n+2}},\dots,\floor{\alpha^{4n}}\]
+	son todos cuadrados perfectos. Demuestre que $\floor{\alpha}$ es un cuadrado perfecto.
+\end{problem}
