@@ -1,16 +1,21 @@
-\usepackage[sexy,nothm]{evan}
+\usepackage[sexy,nothm,hints]{evan}
 \usepackage[english,spanish,es-nosectiondot,es-lcroman]{babel}
 \usepackage{bold-extra}
 \usepackage{ifthen}
 \usepackage{tabularray}
 
 \reversemarginpar
-\addto\captionsspanish{\renewcommand{\proofname}{Solución}}
+\newcommand{\notecolor}{green!35}
+\newcommand{\emphasize}[1]{\sffamily\bfseries\color{blue}#1}
 \newcommand{\note}[2][]{%
 	\ifthenelse{\equal{#1}{}}%
-		{\todo{#2}}%
-		{\todo{#2\\[-6pt]\rule{\textwidth}{0.3pt}\vspace{-1em}\begin{flushright}#1\end{flushright}}}%
+		{\todo[color=\notecolor]{#2}}%
+		{\ifthenelse{\equal{#2}{}}%
+			{\todo[color=\notecolor]{\emphasize{#1}}}%
+			{\todo[color=\notecolor]{#2\\[-6pt]\rule{\textwidth}{0.3pt}\\\emphasize{#1}}}%
+		}%
 }
+\addto\captionsspanish{\renewcommand{\proofname}{Solución}}
 \SetTblrInner{hlines,vlines,rows={16pt,rowsep=0pt},columns={16pt,colsep=0pt}}
 
 \DeclareMathOperator{\mcd}{mcd}
@@ -26,8 +31,6 @@
 \newcommand{\clubG}[1]{\customgreen{[\texttt{#1}]}}
 \newcommand{\clubB}[1]{\customblue{[\texttt{#1}]}}
 \newcommand{\clubR}[1]{\customred{[\texttt{#1}]}}
-
-\newenvironment{probSM}{\hrulebar\color{Maroon}\small}{}
 
 \theoremstyle{definition}
 \declaretheorem[style=thmbluebox,name=Teorema,numberwithin=section]{theorem}

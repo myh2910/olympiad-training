@@ -1,5 +1,7 @@
 \section{Semana 3 (03/28 -- 04/03)}
 
+\note[EGMO TST Día 2]{Lunes\\2022-03-28}
+
 \begin{probEG}[Peru EGMO TST 2022/5]
 	Sean $x_0,x_1,x_2,\dots,x_n$ números reales distintos entre sí tales que
 	\[x_{k-1}x_k\le x_k\le x_kx_{k+1},\quad\text{para todo }k=1,2,\dots,n-1.\]
@@ -23,7 +25,7 @@
 		&\ge a\cdot 10^\alpha>a\cdot 100\alpha^2>a\cdot(81\alpha^2+27\alpha+10)\\
 		&\ge (a+9\alpha)(a+9\alpha+1)\\
 		&\ge S(n)\cdot(S(n)+1)
-	\end{align*} 
+	\end{align*}
 	de donde $k>\frac{n}{S(n)}-1>S(n)$. Luego,
 	\[S(n)-S(n+1)<\frac{k\cdot (S(n)+1)}{k+1}-\frac{n+1}{k+1}\le\frac{k-1}{k+1}<1\]
 	de donde $S(n+1)=S(n)+1$. Por ende,
@@ -39,10 +41,17 @@
 	Si $m=n(n-1)-1$ es un $n$-colorido, existe un color $C_i$ que se repite a lo sumo $n-2$ veces. Si consideramos una ficha de color $C_i$, podemos dividir las fichas restantes en $n-2$ sectores de $n+1$ fichas consecutivos. Entonces, existe un sector que no contiene al color $C_i$, lo cual es un absurdo. Ahora, sea $m=nq+r$ un entero positivo donde $q$ y $0\le r<n$ son enteros. Si $m\ge n(n-1)$, probaremos que $m$ es $n$-colorido. Primero, vamos a dividir el círculo en $q$ sectores, donde en cada sector colocaremos $n$ fichas de colores $C_1,C_2,\dots,C_n$ en ese orden. Como $q\ge n-1\ge r$, es posible elegir $r$ pares de sectores adyacentes $(S_i,S_{i+1})$ e insertar una ficha de cualquier color entre $S_i$ y $S_{i+1}$. Es fácil ver que esto cumple, así que $m$ es un $n$-colorido. Finalmente, $n^2-n-1$ es el mayor entero que no es $n$-colorido.
 \end{proof}
 
+\note{Martes\\2022-03-29}
+
 \begin{probEG}[Kyiv City MO 2022 Round 2/11.3]
-	Find the largest $k$ for which there exists a permutation $(a_1,a_2,\dots,a_{2022})$ of integers from $1$ to $2022$ such that for at least $k$ distinct $i$ with $1\le i\le 2022$ the number
+	Hallar el mayor $k\in\ZZ^+$ para el cual existe una permutación $a_1,a_2,\dots,a_{2022}$ de los números $1,2,\dots,2022$ tal que para al menos $k$ índices $1\le i\le 2022$, el siguiente número
 	\[\frac{a_1+a_2+\dots+a_i}{1+2+\dots+i}\]
-	is an integer larger than $1$.
+	es un entero mayor que $1$.
+	\begin{hint}
+		Find the largest $k$ for which there exists a permutation $(a_1,a_2,\dots,a_{2022})$ of integers from $1$ to $2022$ such that for at least $k$ distinct $i$ with $1\le i\le 2022$ the number
+		\[\frac{a_1+a_2+\dots+a_i}{1+2+\dots+i}\]
+		is an integer larger than $1$.
+	\end{hint}
 	\aops{24269928}
 \end{probEG}
 
@@ -73,12 +82,21 @@
 	lo cual es un absurdo.
 \end{proof}
 
+\note{Miércoles\\2022-03-30}
+
 \begin{probMB}[MEMO 2021 T-2]
-	Given a positive integer $n$, we say that a polynomial $P$ with real coefficients is \emph{n-pretty} if the equation $P(\floor{x})=\floor{P(x)}$ has exactly $n$ real solutions. Show that for each positive integer $n$
+	Dado un entero positivo $n$, decimos que un polinomio $P(x)\in\RR[x]$ es \emph{n-bonito} si la ecuación $P(\floor{x})=\floor{P(x)}$ tiene exactamente $n$ soluciones. Demuestre que para todo $n\in\ZZ^+$
 	\begin{enumerate}[(a)]
-		\ii there exists an $n$-pretty polynomial;
-		\ii any $n$-pretty polynomial has a degree of at least $\frac{2n+1}{3}$.
+		\ii existe algún polinomio $n$-bonito;
+		\ii todo polinomio $n$-bonito tiene grado mayor o igual que $\frac{2n+1}{3}$.
 	\end{enumerate}
+	\begin{hint}
+		Given a positive integer $n$, we say that a polynomial $P$ with real coefficients is \emph{n-pretty} if the equation $P(\floor{x})=\floor{P(x)}$ has exactly $n$ real solutions. Show that for each positive integer $n$
+		\begin{enumerate}[(a)]
+			\ii there exists an $n$-pretty polynomial;
+			\ii any $n$-pretty polynomial has a degree of at least $\frac{2n+1}{3}$.
+		\end{enumerate}
+	\end{hint}
 	\aops{23091282}
 \end{probMB}
 
@@ -95,8 +113,12 @@
 \end{proof}
 
 \begin{probMG}[MEMO 2020 I-4]
-	Find all positive integers $n$ for which there exist positive integers $x_1,x_2,\dots,x_n$ such that
+	Determine todos los enteros positivos $n$ para los cuales existen enteros positivos $x_1,x_2,\dots,x_n$ tales que
 	\[\frac{1}{x_1^2}+\frac{2}{x_2^2}+\frac{4}{x_3^2}+\dots+\frac{2^{n-1}}{x_n^2}=1.\]
+	\begin{hint}
+		Find all positive integers $n$ for which there exist positive integers $x_1,x_2,\dots,x_n$ such that
+		\[\frac{1}{x_1^2}+\frac{2}{x_2^2}+\frac{4}{x_3^2}+\dots+\frac{2^{n-1}}{x_n^2}=1.\]
+	\end{hint}
 	\aops{17377469}
 \end{probMG}
 
@@ -117,14 +139,25 @@
 	\end{itemize}
 \end{proof}
 
+\note{Viernes\\2022-04-01}
+
 \begin{probEG}[MEMO 2018 I-4]
 	\begin{enumerate}[(a)]
-		\ii Prove that for every positive integer $m$ there exists an integer $n\ge m$ such that
+		\ii Demuestre que para todo $m\in\ZZ^+$ existe un entero $n\ge m$ tal que
 		\begin{equation}\label{eq:floor_product}\tag{$\ast$}
 			\floor{\frac n1}\cdot\floor{\frac n2}\cdots\floor{\frac nm}=\binom nm.
 		\end{equation}
-		\ii Denote by $p(m)$ the smallest integer $n\ge m$ such that the equation \eqref{eq:floor_product} holds. Prove that $p(2018)=p(2019)$.
+		\ii Sea $p(m)$ el menor entero $n\ge m$ tal que la ecuación \eqref{eq:floor_product} cumple. Demuestre que $p(2018)=p(2019)$.
 	\end{enumerate}
+	\begin{hint}
+		\begin{enumerate}[(a)]
+			\ii Prove that for every positive integer $m$ there exists an integer $n\ge m$ such that
+			\begin{equation}\tag{$\ast$}
+				\floor{\frac n1}\cdot\floor{\frac n2}\cdots\floor{\frac nm}=\binom nm.
+			\end{equation}
+			\ii Denote by $p(m)$ the smallest integer $n\ge m$ such that the equation ($\ast$) holds. Prove that $p(2018)=p(2019)$.
+		\end{enumerate}
+	\end{hint}
 	\aops{10959197}
 \end{probEG}
 
@@ -137,9 +170,14 @@
 \end{proof}
 
 \begin{probEG}[MEMO 2018 T-7]
-	Let $a_1,a_2,a_3,\dots$ be the sequence of positive integers such that
-	\[a_1=1\quad\text{and}\quad a_{k+1}=a^3_k+1,\text{ for all positive integers }k.\]
-	Prove that for every prime number $p$ of the form $3\ell+2$, where $\ell$ is a non-negative integer, there exists a positive integer $n$ such that $a_n$ is divisible by $p$.
+	Sea $(a_n)_{n\ge 1}$ una secuencia definida por
+	\[a_1=1\quad\text{y}\quad a_{k+1}=a_k^3+1,\text{ para todo }k\in\ZZ^+.\]
+	Demuestre que para todo número primo $p$ de la forma $3\ell+2$ con $\ell\in\ZZ^+_0$, existe $n\in\ZZ^+$ tal que $p\mid a_n$.
+	\begin{hint}
+		Let $a_1,a_2,a_3,\dots$ be the sequence of positive integers such that
+		\[a_1=1\quad\text{and}\quad a_{k+1}=a_k^3+1,\text{ for all positive integers }k.\]
+		Prove that for every prime number $p$ of the form $3\ell+2$, where $\ell$ is a non-negative integer, there exists a positive integer $n$ such that $a_n$ is divisible by $p$.
+	\end{hint}
 	\aops{10935321}
 \end{probEG}
 
@@ -150,12 +188,20 @@
 \end{proof}
 
 \begin{probMB}[MEMO 2018 T-8]
-	An integer $n$ is called \emph{Silesian} if there exist positive integers $a$, $b$ and $c$ such that
+	Un entero positivo $n$ es llamado \emph{interesante} si existen enteros positivos $a$, $b$ y $c$ tales que
 	\[n=\frac{a^2+b^2+c^2}{ab+bc+ca}.\]
 	\begin{enumerate}[(a)]
-		\ii Prove that there are infinitely many Silesian integers.
-		\ii Prove that not every positive integer is Silesian.
+		\ii Demuestre que existen infinitos números interesantes.
+		\ii Demuestre que no todos los enteros positivos son interesantes.
 	\end{enumerate}
+	\begin{hint}
+		An integer $n$ is called \emph{Silesian} if there exist positive integers $a$, $b$ and $c$ such that
+		\[n=\frac{a^2+b^2+c^2}{ab+bc+ca}.\]
+		\begin{enumerate}[(a)]
+			\ii Prove that there are infinitely many Silesian integers.
+			\ii Prove that not every positive integer is Silesian.
+		\end{enumerate}
+	\end{hint}
 	\aops{10931715}
 \end{probMB}
 

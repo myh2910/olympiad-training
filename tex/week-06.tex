@@ -1,5 +1,7 @@
 \section{Semana 6 (04/18 -- 04/24)}
 
+\note[Álgebra]{Lunes\\2022-04-18}
+
 \begin{probEG}
 	Sean $a,b,c,d,e,f$ números reales no negativos que suman $6$. Determine el máximo valor de
 	\[abc+bcd+cde+def+efa+fab.\]
@@ -26,6 +28,16 @@
 	\end{align*}
 	para todo $n>1$ de donde $c\ge 1$.
 \end{proof}
+
+\note{Martes\\2022-04-19}
+
+\begin{problem}[Iran TST 2019 Test 1/5]
+	Find all functions $f:\RR\to\RR$ such that for all $x,y\in\RR$:
+	\[f\left(f(x)^2-y^2\right)^2+f(2xy)^2=f\left(x^2+y^2\right)^2.\]
+	\aops{12147602}
+\end{problem}
+
+\note[Combinatoria]{}
 
 \begin{theorem}[Hall's Marriage Theorem]
 	Let $G$ be a finite bipartite graph with bipartite sets $X$ and $Y$. Then, there is an $X$-perfect matching if and only if
@@ -67,6 +79,8 @@
 	La respuesta es $f_{1010}^2$. Pista: recurrencias.
 \end{proof}
 
+\note[Geometría]{Miércoles\\2022-04-20}
+
 \begin{probEG}[IberoAmerican 1999/6]
 	Sean $A$ y $B$ puntos del plano y $C$ un punto de la mediatriz del segmento $AB$. Se construye una secuencia de puntos $(C_i)$ de la siguiente manera: $C_1=C$ y para $n\ge 1$, si $C_n$ no pertenece al segmento $AB$, entonces $C_{n+1}$ es el circuncentro del triángulo $ABC_n$. Determine todos los puntos $C$ para los cuales la secuencia $(C_n)$ está definida para todo entero positivo $n$ y es eventualmente periódica.
 \end{probEG}
@@ -95,6 +109,8 @@
 	de donde $P$ pertenece a la semicircunferencia de diámetro $AC$.
 \end{proof}
 
+\note{Viernes\\2022-04-22}
+
 \begin{probEG}
 	Let $ABCD$ be a trapezoid with parallel sides $AB>CD$. Points $K$ and $L$ lie on the line segments $AB$ and $CD$, respectively, so that $AK/KB=DL/LC$. Suppose that there are points $P$ and $Q$ on the line segment $KL$ satisfying
 	\[\angle APB=\angle BCD\quad\text{and}\quad\angle CQD=\angle ABC.\]
@@ -104,6 +120,8 @@
 \begin{proof}
 	Pista: semejanza y angulitos.
 \end{proof}
+
+\note[Teoría de Números]{}
 
 \begin{probEG}
 	Para cada entero positivo $n$, denotemos por $P(n)$ al mayor divisor primo del número $n^2+n+1$. Demuestre que
@@ -168,6 +186,8 @@
 	Pista: considere la cantidad de números divisibles por algún $a_i$ menores o iguales que $n$.
 \end{proof}
 
+\note[Simulacro]{Sábado\\2022-04-23}
+
 \begin{probEG}
 	Miguel tiene una lista de varios subconjuntos de $10$ elementos de $\{1,2,\dots,100\}$. Él le dice a Cecilia: si eliges cualquier subconjunto de $10$ elementos de $\{1,2,\dots,100\}$, será disjunto con al menos un subconjunto de mi lista.
 
@@ -176,8 +196,10 @@
 
 \begin{proof}
 	La respuesta es $13$ y se puede conseguir con subconjuntos
-	\[A_1\cup A_2,A_2\cup A_3,A_3\cup A_1,A_4\cup A_5,A_5\cup A_6,A_6\cup A_4,A_7\cup A_8,A_9\cup A_{10},\dots,A_{19}\cup A_{20}\]
-	donde $A_1,A_2,\dots,A_{20}$ son subconjuntos disjuntos de tamaño $5$.
+	\[A_1\cup A_2,A_2\cup A_3,A_3\cup A_1,\]
+	\[A_4\cup A_5,A_5\cup A_6,A_6\cup A_4,\]
+	\[A_7\cup A_8,A_9\cup A_{10},\dots,A_{19}\cup A_{20}\]
+	donde $A_1,A_2,\dots,A_{20}\subset\{1,2,\dots,100\}$ son subconjuntos disjuntos de tamaño $5$. Ahora, si la lista de Miguel tuviera $12$ o menos subconjuntos, podemos añadir algún subconjunto que ya está en la lista, así que supongamos que Miguel tiene $12$ subconjuntos. Como hay $12\times 10=120$ números en la lista, existe un número $x$ que pertenece a al menos $2$ subconjuntos de la lista. Además de esos dos subconjuntos, tenemos $10$ subconjuntos de la lista. Si $x$ pertenece a alguno de esos $10$ subconjuntos, de cada uno de los otros $9$ subconjuntos podemos elegir $9$ números (no necesariamente distintos). De lo contrario, existe un número $y$ que pertenece a al menos $2$ de esos $10$ subconjuntos, y de cada uno de los otros $8$ subconjuntos podemos elegir $8$ números. Es decir, existe un subconjunto $B\subset\{1,2,\dots,100\}$ de tamaño $10$ tal que $B$ no es disjunto con ningún subconjunto de la lista, lo cual es una contradicción.
 \end{proof}
 
 \begin{probEG}

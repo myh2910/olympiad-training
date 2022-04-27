@@ -13,12 +13,12 @@
 \end{proof}
 
 \begin{probEG}[Indonesia MO Shortlist 2014 A1]
-	Let $a,b$ be positive real numbers such that there exist infinite number of natural numbers $k$ such that $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$. Prove that
+	Sean $a$ y $b$ números reales positivos tales que $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$ para infinitos enteros positivos $k$. Demuestre que
 	\[\floor{a^{2014}}+\floor{b^{2014}}=\floor{a}^{2014}+\floor{b}^{2014}.\]
-	\begin{probSM}
-		Sean $a$ y $b$ números reales positivos tales que $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$ para infinitos enteros positivos $k$. Demuestre que
+	\begin{hint}
+		Let $a,b$ be positive real numbers such that there exist infinite number of natural numbers $k$ such that $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$. Prove that
 		\[\floor{a^{2014}}+\floor{b^{2014}}=\floor{a}^{2014}+\floor{b}^{2014}.\]
-	\end{probSM}
+	\end{hint}
 	\aops{12396258}
 \end{probEG}
 
@@ -44,7 +44,7 @@
 \end{probMG}
 
 \begin{proof}
-	La respuesta es $\floor{n^2/4}$ y un ejemplo es cuando $A_i$ es el conjunto de todos los enteros $x\ne\floor{\frac{n+1}{2}}$ que están entre $i$ y $\floor{\frac{n+1}{2}}$ (tenemos $\abs{A_i}=\abs{\floor{\frac{n+1}{2}}-i}$ en este caso). Ahora, note que
+	La respuesta es $\floor{n^2/4}$ y un ejemplo es cuando $A_i$ es el conjunto de todos los enteros $x\ne\floor{\frac{n+1}{2}}$ que están entre $i$ y $\floor{\frac{n+1}{2}}$ (tendremos $\abs{A_i}=\abs{\floor{\frac{n+1}{2}}-i}$ en este caso). Ahora, note que
 	\[\abs{A_i}+\abs{A_{n+1-i}}\ge\abs{A_i\,\triangle\,A_{n+1-i}}=\abs{n+1-2i}\]
 	para todo $1\le i\le n$ de donde
 	\[\sum_{i=1}^n\abs{A_i}=\half\sum_{i=1}^n(\abs{A_i}+\abs{A_{n+1-i}})\ge\half\sum_{i=1}^n\abs{n+1-2i}=\floor{\frac{n^2}{4}}.\]
@@ -55,3 +55,43 @@
 	\[\floor{\alpha^{n+1}},\floor{\alpha^{n+2}},\dots,\floor{\alpha^{4n}}\]
 	son todos cuadrados perfectos. Demuestre que $\floor{\alpha}$ es un cuadrado perfecto.
 \end{problem}
+
+\note[Combinatoria]{Martes\\2022-04-26}
+
+\begin{probEG}
+	Sea $A=(a_1,a_2,\dots,a_{2001})$ una secuencia de enteros positivos. Sea $m$ el número de subsecuencias de tres términos $(a_i,a_j,a_k)$ tales que $a_k=a_j+1$ y $a_j=a_i+1$. Considerando todas las secuencias $A$, determine el mayor valor de $m$.
+\end{probEG}
+
+\begin{proof}
+	Respuesta: $667^3$.
+\end{proof}
+
+\begin{probEG}
+	Para $i=1,2,\dots,11$, sea $M_i$ un conjunto de $5$ elementos, y asuma que para $1\le i<j\le 11$, $M_i\cap M_j\ne\varnothing$. Sea $m$ el mayor número para el cual existen $m$ conjuntos $M_{x_1},M_{x_2},\dots,M_{x_m}$ tales que $M_{x_1}\cap M_{x_2}\cap\dots\cap M_{x_m}\ne\varnothing$. Determine el mínimo valor de $m$ sobre todos los posibles conjuntos iniciales.
+\end{probEG}
+
+\begin{proof}
+	Respuesta: $4$.
+\end{proof}
+
+\begin{probMR}
+	Determine cuantos subconjuntos de $\{1,2,\dots,2000\}$ tienen suma de elemento múltiplo de $5$.
+\end{probMR}
+
+\begin{proof}
+	Sea
+	\[P(x)=\prod_{i=1}^{2000}(x^i+1)=\sum_{j=0}^{\deg P}c_jx^j\]
+	un polinomio y sea $\alpha$ una raíz de $x^5-1$ tal que $\alpha^4+\alpha^3+\alpha^2+\alpha+1=0$. Luego,
+	\[2^{2000}+4\cdot 2^{400}=\sum_{i=0}^4 P(\alpha^i)=\sum_{j=0}^{\deg P}c_j\cdot\sum_{i=0}^4\alpha^{ij}=5\sum_{5\,\mid\,j}c_j\]
+	de donde la respuesta es $\dfrac{2^{2000}+4\cdot 2^{400}}{5}$.
+\end{proof}
+
+\begin{probEG}
+	Sea $X$ un conjunto finito y no vacío de enteros positivos, y sea $A$ un subconjunto de $X$. Demuestre que existe $B\subset X$ tal que $A$ es el conjunto de todos los elementos de $X$ que dividen a un número impar de elementos de $B$.
+\end{probEG}
+
+\begin{proof}
+	Nos basta probar que la función $f:X\to X$ tal que
+	\[f(A)=\{x\in X:x\text{ divide a un número impar de elementos de }A\}\]
+	es biyectiva. Primero, probaremos que $f$ es inyectiva y para eso supongamos que existen $A,B\subset X$ tales que $f(A)=f(B)$. Si $A\ne B$, sea $x$ el mayor elemento de $A\,\triangle\,B$ donde $x\in A$ sin pérdida de generalidad. Luego, $x$ divide a un número más del conjunto $A$ que de $B$, de donde $x\in f(A)\,\triangle\,f(B)=\varnothing$, lo cual es un absurdo. Por lo tanto, $f$ es inyectiva y por ende biyectiva pues $X$ es finito.
+\end{proof}
