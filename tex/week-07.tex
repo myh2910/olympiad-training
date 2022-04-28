@@ -95,3 +95,41 @@
 	\[f(A)=\{x\in X:x\text{ divide a un número impar de elementos de }A\}\]
 	es biyectiva. Primero, probaremos que $f$ es inyectiva y para eso supongamos que existen $A,B\subset X$ tales que $f(A)=f(B)$. Si $A\ne B$, sea $x$ el mayor elemento de $A\,\triangle\,B$ donde $x\in A$ sin pérdida de generalidad. Luego, $x$ divide a un número más del conjunto $A$ que de $B$, de donde $x\in f(A)\,\triangle\,f(B)=\varnothing$, lo cual es un absurdo. Por lo tanto, $f$ es inyectiva y por ende biyectiva pues $X$ es finito.
 \end{proof}
+
+\note[Geometría]{Miércoles\\2022-04-27}
+
+\begin{probEG}
+	Las reflexiones de la diagonal $BD$ de un cuadrilátero convexo $ABCD$ (el cual no tiene lados iguales), con respecto a las bisectrices de los ángulos interiores $\angle B$ y $\angle D$, pasan por el punto medio del lado $AC$. Demuestre que las reflexiones de la diagonal $AC$ con respecto a las bisectrices interiores $\angle A$ y $\angle C$, pasan por el punto medio de $BD$.
+\end{probEG}
+
+\begin{probEG}
+	Sea $ABC$ un triángulo. Sobre los lados $BC$, $CA$ y $AB$ se toman los puntos $X$, $Y$ y $Z$, respectivamente, tales que las rectas $AX$, $BY$ y $CZ$ son concurrentes y $AY=AZ$. La bisectriz interior del ángulo $\angle BAC$ corta a la recta $XZ$ en el punto $T$. Si $M$ y $N$ son los puntos medios de los lados $BC$ y $CA$, respectivamente, demuestre que los puntos $M$, $N$ y $T$ son colineales.
+\end{probEG}
+
+\begin{probEG}
+	Sea $ABC$ un triángulo y sea $A'B'C'$ la reflexión de $ABC$ con respecto a un punto cualquiera $P$ del plano. Demuestre que los circuncírculos de $AB'C'$, $BC'A'$ y $CA'B'$ pasan por un mismo punto en el circuncírculo del triángulo $ABC$.
+\end{probEG}
+
+\begin{probEG}
+	Sean $P$ y $Q$ dos puntos distintos sobre el circuncírculo del triángulo $ABC$ de tal manera que las rectas de Simson de $P$ y $Q$ se intersectan perpendicularmente en el punto $X$. Demuestre que $X$ es un punto de la circunferencia de los nueve puntos del triángulo $ABC$.
+\end{probEG}
+
+\begin{probEG}
+	Sea $\Omega$ el circuncírculo de un triángulo escaleno $ABC$. Las rectas tangentes a $\Omega$ que pasan por $B$ y $C$ se intersectan en el punto $Q$. Sea $P$ un punto sobre la semirecta $BC$ de tal manera que $AP$ y $AQ$ son perpendiculares. Los puntos $D$ y $E$ están sobre la semirecta $PQ$, con $E$ entre $D$ y $P$, y son tales que $DQ=BQ=EQ$. Demuestre que los triángulos $ABC$ y $ADE$ son semejantes.
+\end{probEG}
+
+\begin{probEG}
+	Sea $ABCD$ un rectángulo. Los puntos $P$, $Q$, $R$ y $S$ pertenecen a los lados $AB$, $BC$, $CD$ y $DA$, respectivamente. Demuestre que el perímetro de $PQRS$ es mayor o igual que el doble de la diagonal de $ABCD$.
+\end{probEG}
+
+\begin{probEG}
+	Sea $\Gamma$ una circunferencia y sea $P$ un punto en su exterior. Las tangentes por $P$ a $\Gamma$ tocan a la circunferencia en $A$ y $B$. Sea $M$ el punto medio del segmento $AB$. La mediatriz de $AM$ intersecta a $\Gamma$ en un punto $C$ del interior del triángulo $ABP$. La recta $AC$ corta a $PM$ en $G$, y $PM$ corta a $\Gamma$ en un punto $D$ exterior al triángulo $ABP$. Si $BD\parallel AC$, demuestre que $G$ es el baricentro del triángulo $ABP$.
+\end{probEG}
+
+\begin{probEG}
+	Determine el mayor entero positivo $k$ para el cual existe un polígono $P_1P_2\cdots P_{2015}$ tal que exactamente $k$ de los cuadriláteros $P_iP_{i+1}P_{i+2}P_{i+3}$, con $i=1,2,\dots,2015$ (con índices en el módulo $2015$) tienen una circunferencia inscrita.
+\end{probEG}
+
+\begin{proof}
+	Respuesta: $1007$. Se puede probar que no existen $\abs{i_1-i_2}=1$ tales que $P_iP_{i+1}P_{i+2}P_{i+3}$ tenga una circunferencia inscrita para $i=i_1,i_2$. Ahora, si $k=2007$, el polígono debe ser cíclico y se puede probar que existe uno que cumple.
+\end{proof}
