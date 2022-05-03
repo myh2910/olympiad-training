@@ -216,3 +216,9 @@
 	\[a_0=2\quad\text{y}\quad a_{k+1}=2a_k^2-1,\text{ para }k\ge 0.\]
 	Demuestre que si un primo impar $p$ divide a $a_n$, entonces $2^{n+3}$ divide a $p^2-1$.
 \end{probMR}
+
+\begin{proof}
+	Se puede probar que
+	\[a_n=\half\left((2+\sqrt{3})^{2^n}+(2-\sqrt{3})^{2^n}\right)=\sum_{i=0}^{2^{n-1}}\binom{2^n}{2k}2^{2k}3^{2^{n-1}-k}\]
+	para todo $n\ge 0$.
+\end{proof}
