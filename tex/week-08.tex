@@ -2,23 +2,50 @@
 
 \note[Álgebra]{Lunes\\2022-05-02}
 
-\begin{probEG}
+\begin{probEG}[IMO Shortlist 2001 A2]
 	Sea $(a_n)_{n\ge 0}$ una secuencia infinita de números reales positivos. Demuestre que
 	\[1+a_n>a_{n-1}\sqrt[n]{2}\]
 	para infinitos $n\in\ZZ^+$.
 \end{probEG}
 
-\begin{probMR}
+\begin{probMR}[IMO Shortlist 2001 A3]
 	Sean $x_1,x_2,\dots,x_n\in\RR$. Demuestre que
 	\[\frac{x_1}{1+x_1^2}+\frac{x_2}{1+x_1^2+x_2^2}+\dots+\frac{x_n}{1+x_1^2+\dots+x_n^2}<\sqrt{n}.\]
 \end{probMR}
 
 \note[Combinatoria]{Martes\\2022-05-03}
 
-\begin{probEG}[IMO Shortlist C3]
+\begin{probEG}[IMO Shortlist 2001 C3]
 	Define a \emph{k-clique} to be a set of $k$ people such that every pair of them are acquainted with each other. At a certain party, every pair of $3$-cliques has at least one person in common, and there are no $5$-cliques. Prove that there are two or fewer people at the party whose departure leaves no $3$-clique remaining.
 \end{probEG}
 
-\begin{probMB}[IMO Shortlist C4]
+\begin{probMB}[IMO Shortlist 2001 C4]
 	A set of three nonnegative integers $\{x,y,z\}$ with $x<y<z$ is called historic if $\{z-y,y-x\}=\{1776,2001\}$. Show that the set of all nonnegative integers can be written as the union of pairwise disjoint historic sets.
 \end{probMB}
+
+\note[Geometría]{Miércoles\\2022-05-04}
+
+\begin{probEG}[IMO Shortlist 2001 G1]
+	Let $A_1$ be the center of the square inscribed in acute triangle $ABC$ with two vertices of the square on side $BC$. Thus one of the two remaining vertices of the square is on side $AB$ and the other is on $AC$. Points $B_1$, $C_1$ are defined in a similar way for inscribed squares with two vertices on sides $AC$ and $AB$, respectively. Prove that lines $AA_1$, $BB_1$, $CC_1$ are concurrent.
+	\aops{119194}
+\end{probEG}
+
+\begin{probMG}[IMO Shortlist 2001 G2]
+	In acute triangle $ABC$ with circumcenter $O$ and altitude $AP$, $\angle C\ge\angle B+30\dg$. Prove that $\angle A+\angle COP<90\dg$.
+\end{probMG}
+
+\begin{probMR}[IMO Shortlist 2001 G3]
+	Let $ABC$ be a triangle with centroid $G$. Determine, with proof, the position of the point $P$ in the plane of $ABC$ such that $AP\cdot AG+BP\cdot BG+CP\cdot CG$ is a minimum, and express this minimum value in terms of the side lengths of $ABC$.
+\end{probMR}
+
+\note[Teoría de Números]{Viernes\\2022-05-06}
+
+\begin{probEG}
+	Demuestre que todo entero positivo coprimo con $3$ posee un múltiplo cuya suma de dígitos es un número primo.
+\end{probEG}
+
+\begin{proof}
+	Como $n$ es coprimo con $3$, existe $m=\ol{a_{k-1}a_{k-2}\cdots a_1a_0}$ tal que $m$ es coprimo con $30$ y $n\mid 10^\alpha\cdot m$ para algún $\alpha\in\ZZ^+$. Luego,
+	\[m\cdot(10^t-1)=\ol{a_{k-1}a_{k-2}\cdots a_1(a_0-1)\underbrace{99\cdots 9}_{t-k\text{ veces}}(9-a_{k-1})(9-a_{k-2})\cdots(9-a_1)(10-a_0)}\]
+	de donde $S(m\cdot(10^t-1))=9t$ para todo $t>k$. Por ende, existe un $m\mid M$ tal que $S(M)$ es coprimo con $S(m)$ y por Dirichlet, la suma de dígitos de $\ol{\underbrace{(M)(M)\cdots (M)}_{\beta\text{ veces}}(m)\underbrace{00\cdots 0}_{\alpha\text{ veces}}}$ es un primo para algún $\beta\in\ZZ^+$. Con esto se termina la prueba, pues $M$ y $m$ son múltiplos de $n$.
+\end{proof}
