@@ -92,6 +92,36 @@
 	Un número es \emph{ascendente} si sus dígitos están en orden creciente, de izquierda a derecha. Por ejemplo, $123$ y $11224$ son ascendentes. Demuestre que para todo entero positivo $n$, es posible encontrar un cuadrado perfecto de exactamente $n$ dígitos que sea ascendente.
 \end{problem}
 
+\begin{proof}
+	Note que
+	\begin{align*}
+		2^2&=4\\
+		17^2&=289\\
+		167^2&=27889\\
+		1667^2&=2778889\\
+		&\vdotswithin{=}
+	\end{align*}
+	y
+	\begin{align*}
+		4^2&=16\\
+		34^2&=1156\\
+		334^2&=111556\\
+		3334^2&=11115556\\
+		&\vdotswithin{=}
+	\end{align*}
+	así que con esto es suficiente.
+\end{proof}
+
 \begin{problem}
 	Demostrar que para cualquier entero positivo $N$, al menos uno de los números $N$ y $N+1$ se puede representar de la forma $k+s(k)$ para algún entero positivo $k$.
 \end{problem}
+
+\begin{proof}
+	Note que si $k=\ol{(a-1)\underbrace{99\dots 9}_{t\text{ veces}}}$ donde $1\le a\le 9$ y $t\ge 0$ son enteros, tenemos que
+	\begin{align*}
+		k+s(k)&=a\cdot 10^t+s(a)+9t-2\\
+		k+1+s(k+1)&=a\cdot 10^t+s(a)
+	\end{align*}
+	y por inducción,
+	\[\bigcup_{k=1}^\infty\{k+s(k)-1,k+s(k),k+s(k)+1\}=\ZZ.\]
+\end{proof}
