@@ -20,3 +20,45 @@
 	for all real $x,y,z,t$.
 	\aops{118703}
 \end{probMB}
+
+\note[Combinatoria]{Martes\\2022-05-17}
+
+\begin{probEG}[IMO Shortlist 2002 C1]
+	Let $n$ be a positive integer. Each point $(x,y)$ in the plane, where $x$ and $y$ are non-negative integers with $x+y<n$, is coloured red or blue, subject to the following condition: if a point $(x,y)$ is red, then so are all points $(x',y')$ with $x'\le x$ and $y'\le y$. Let $A$ be the number of ways to choose $n$ blue points with distinct $x$-coordinates, and let $B$ be the number of ways to choose $n$ blue points with distinct $y$-coordinates. Prove that $A=B$.
+\end{probEG}
+
+\begin{probEG}[IMO Shortlist 2002 C2]
+	For $n$ an odd positive integer, the unit squares of an $n\times n$ chessboard are coloured alternately black and white, with the four corners coloured black. A \emph{tromino} is an $L$-shape formed by three connected unit squares. For which values of $n$ is it possible to cover all the black squares with non-overlapping trominos? When it is possible, what is the minimum number of trominos needed?
+\end{probEG}
+
+\begin{proof}
+	Respuesta: $n\ge 7$ y el mínimo es $\left(\frac{n+1}{2}\right)^2$.
+\end{proof}
+
+\begin{probMR}[IMO Shortlist 2002 C3]
+	Let $n$ be a positive integer. A sequence of $n$ positive integers (not necessarily distinct) is called \emph{full} if it satisfies the following condition: for each positive integer $k\ge 2$, if the number $k$ appears in the sequence then so does the number $k-1$, and moreover the first occurrence of $k-1$ comes before the last occurrence of $k$. For each $n$, how many full sequences are there?
+\end{probMR}
+
+\begin{proof}
+	Respuesta: $n!$, considerando una biyección.
+\end{proof}
+
+\note[Teoría de Números]{}
+
+\begin{probEG}
+	Demuestre que existe un entero positivo $b$ que tiene la siguiente propiedad: para todo entero $n>b$, la suma de los dígitos del número $n!$ es mayor o igual que $10^{100}$.
+\end{probEG}
+
+\begin{proof}
+	Note que si $n>b$, entonces $b\mid n!$. Además, $s(x-y)\ge s(x)-s(y)$ para todo $x,y\in\ZZ^+$. Sea $b=\underbrace{99\cdots 9}_{N\text{ veces}}$ donde $N\in\ZZ^+$ es suficientemente grande, y sea $M\cdot 10^k\cdot b$ un múltiplo de $b$ donde $10\nmid M$. Luego,
+	\begin{align*}
+		s(M\cdot 10^k\cdot b)
+		&=s(M\cdot(10^N-1))\\
+		&=s\left(\ol{(M-1)\underbrace{99\cdots 9}_{N\text{ veces}}}-(M-1)\right)\\
+		&\ge s(M-1)+9N-s(M-1)\\
+		&=9N
+	\end{align*}
+	de donde $s(n!)\ge 9N>10^{100}$ para todo $n>b$.
+\end{proof}
+
+\note[Geometría]{Miércoles\\2022-05-18}
