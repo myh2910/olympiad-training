@@ -1,51 +1,70 @@
 \usepackage[sexy,nothm,hints]{evan}
 \usepackage[english,spanish,es-nosectiondot,es-lcroman]{babel}
-\usepackage{bold-extra}
-\usepackage{ifthen}
-\usepackage{tabularray}
-
-\reversemarginpar
-\newcommand{\notecolor}{green!35}
-\newcommand{\emphasize}[1]{\sffamily\bfseries\color{blue}#1}
-\newcommand{\note}[2][]{%
-	\ifthenelse{\equal{#1}{}}%
-		{\todo[color=\notecolor]{#2}}%
-		{\ifthenelse{\equal{#2}{}}%
-			{\todo[color=\notecolor]{\emphasize{#1}}}%
-			{\todo[color=\notecolor]{#2\\[-6pt]\rule{\textwidth}{0.3pt}\\\emphasize{#1}}}%
-		}%
-}
 \addto\captionsspanish{\renewcommand{\proofname}{Solución}}
+\usepackage{tabularray}
 \SetTblrInner{hlines,vlines,rows={16pt,rowsep=0pt},columns={16pt,colsep=0pt}}
+\reversemarginpar
 
 \DeclareMathOperator{\mcd}{mcd}
 \DeclareMathOperator{\mcm}{mcm}
 
-\newcommand{\aops}[1]{%
-	\par\vspace{1pt}\hspace{\fill}%
-	\href{https://artofproblemsolving.com/community/p#1}{\ttfamily [aops:#1]}%
+%%fakesection New commands
+\usepackage{ifthen}
+\newcommand{\notecolor}{green!35}
+\newcommand{\notestyle}{\fontfamily{qpl}\selectfont}
+\newcommand{\note}[2][]{%
+	\ifthenelse{\equal{#1}{}}%
+		{\todo[color=\notecolor]{\notestyle#2}}%
+		{\ifthenelse{\equal{#2}{}}%
+			{\todo[color=\notecolor]{\notestyle\bfseries\color{blue}#1}}%
+			{\todo[color=\notecolor]{\notestyle#2\\[-6pt]\rule{\textwidth}{0.3pt}\\\bfseries\color{blue}#1}}%
+		}%
 }
-\newcommand{\omaforos}[1]{%
+\newcommand{\forum}[2][]{%
 	\par\vspace{1pt}\hspace{\fill}%
-	\href{https://omaforos.com.ar/viewtopic.php?t=#1}{\ttfamily [omaforos:#1]}%
+	\ifthenelse{\equal{#1}{aops}}%
+		{\href{https://artofproblemsolving.com/community/p#2}{\ttfamily[aops:#2]}}%
+		{\ifthenelse{\equal{#1}{oma}}%
+			{\href{https://omaforos.com.ar/viewtopic.php?t=#2}{\ttfamily[omaforos:#2]}}%
+			{\url{#2}}%
+		}%
 }
-\newcommand{\customgreen}[1]{\bgroup\color{green!40!black}#1\egroup}
-\newcommand{\customblue}[1]{\bgroup\color{blue!70!black}#1\egroup}
-\newcommand{\customred}[1]{\bgroup\color{red!80!black}#1\egroup}
-\newcommand{\clubG}[1]{\customgreen{[\texttt{#1}]}}
-\newcommand{\clubB}[1]{\customblue{[\texttt{#1}]}}
-\newcommand{\clubR}[1]{\customred{[\texttt{#1}]}}
 
+\usepackage{bold-extra}
+\newcommand{\cgreen}[1]{\bgroup\ttfamily\color{green!40!black}#1\egroup}
+\newcommand{\cblue}[1]{\bgroup\ttfamily\color{blue!70!black}#1\egroup}
+\newcommand{\cred}[1]{\bgroup\ttfamily\color{red!80!black}#1\egroup}
+
+%%fakesection Theorems
 \theoremstyle{definition}
 \declaretheorem[style=thmbluebox,name=Teorema,numberwithin=section]{theorem}
 \declaretheorem[name=Problema,sibling=theorem]{problem}
 
-\newtheorem{probEG}[problem]{\clubG{E} Problema}
-\newtheorem{probMG}[problem]{\clubG{M} Problema}
-\newtheorem{probHG}[problem]{\clubG{H} Problema}
-\newtheorem{probEB}[problem]{\clubB{E} Problema}
-\newtheorem{probMB}[problem]{\clubB{M} Problema}
-\newtheorem{probHB}[problem]{\clubB{H} Problema}
-\newtheorem{probER}[problem]{\clubR{E} Problema}
-\newtheorem{probMR}[problem]{\clubR{M} Problema}
-\newtheorem{probHR}[problem]{\clubR{H} Problema}
+\newtheorem{probEG}[problem]{\cgreen{[E]} Problema}
+\newtheorem{probMG}[problem]{\cgreen{[M]} Problema}
+\newtheorem{probHG}[problem]{\cgreen{[H]} Problema}
+\newtheorem{probEB}[problem]{\cblue{[H]} Problema}
+\newtheorem{probMB}[problem]{\cblue{[H]} Problema}
+\newtheorem{probHB}[problem]{\cblue{[H]} Problema}
+\newtheorem{probER}[problem]{\cred{[E]} Problema}
+\newtheorem{probMR}[problem]{\cred{[M]} Problema}
+\newtheorem{probHR}[problem]{\cred{[H]} Problema}
+\newtheorem{probE}[problem]{\texttt{[E]} Problema}
+\newtheorem{probM}[problem]{\texttt{[M]} Problema}
+\newtheorem{probH}[problem]{\texttt{[H]} Problema}
+
+%%fakesection Bibliography
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\usepackage{csquotes}
+\DeclareLabelalphaTemplate{
+	\labelelement{
+		\field[final]{shorthand}
+		\field{label}
+		\field[strwidth=2,strside=left]{labelname}
+	}
+	\labelelement{
+		\field[strwidth=2,strside=right]{year}
+	}
+}
+\DeclareFieldFormat{labelalpha}{\textbf{\scriptsize #1}}
+\addbibresource{references.bib}
