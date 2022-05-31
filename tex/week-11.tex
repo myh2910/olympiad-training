@@ -166,10 +166,30 @@
 	Respuesta: $n=p^e$ para todo número primo $p$ y $e\in\ZZ^+_0$.
 \end{proof}
 
-\begin{probHR}[Peru IMO TST 2022/6]
+\begin{probHB}[Peru IMO TST 2022/6]
 	Sea $n\ge 2$ un entero y sean $a_1,a_2,\dots,a_n$ números reales positivos cuya suma es $1$. Pruebe que
 	\[\sum_{k=1}^n\frac{a_k}{1-a_k}(a_1+a_2+\dots+a_{k-1})^2<\frac13.\]
-\end{probHR}
+\end{probHB}
+
+\begin{proof}
+	Sea $S_k=a_1+a_2+\dots+a_k$ para todo índice $0\le k\le n$. Luego,
+	\[0=S_0<S_1<\cdots<S_{n-1}<S_n=1.\]
+	Note que
+	\[\frac{a_k}{1-a_k}(a_1+a_2+\dots+a_{k-1})^2=\frac{S_{k-1}^2(S_k-S_{k-1})}{1-S_k+S_{k-1}}.\]
+	Ahora, probaremos que si $1\ge a>b\ge 0$ entonces
+	\[\frac{b^2(a-b)}{1-a+b}\le\frac{a^3-b^3}{3}\]
+	donde la igualdad se cumple si y solo si $(a,b)=(1,0)$. Note que
+	\begin{align*}
+		3b^2-3b^2(1-a+b)
+		&=(a-b)\cdot 3b\cdot b\\
+		&\le(a-b)(a+2b)(1-a+b)\\
+		&=(a^2+ab+b^2)(1-a+b)-3b^2(1-a+b)
+	\end{align*}
+	de donde
+	\[3b^2\le(a^2+ab+b^2)(1-a+b)\]
+	y de esto obtenemos lo deseado. Como $n\ge 2$, es claro que $(S_k,S_{k-1})\ne(1,0)$, así que
+	\[\sum_{k=1}^n\frac{a_k}{1-a_k}(a_1+a_2+\dots+a_{k-1})^2<\sum_{k=1}^n\frac{S_k^3-S_{k-1}^3}{3}=\frac{S_n^3-S_0^3}{3}=\frac13.\]
+\end{proof}
 
 \begin{probMB}[Peru IMO TST 2022/7]
 	Sea $m>1$ un entero. Considere un tablero de tamaño $3m\times 3m$. Una rana se ubica en la casilla de la esquina inferior izquierda $S$ del tablero y quiere llegar mediante saltos a la casilla de la esquina superior derecha $F$ del tablero. La rana solo puede saltar a la casilla vecina derecha o a la casilla vecina de arriba de la casilla en la que se encuentra.
