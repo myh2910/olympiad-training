@@ -74,16 +74,19 @@
 	Respuesta: $4$.
 \end{proof}
 
-\begin{probMR}
+\begin{probMR}[High-School Mathematics 1994/1, China \cite{ref:titu-102}]
 	Determine cuantos subconjuntos de $\{1,2,\dots,2000\}$ tienen suma de elemento múltiplo de $5$.
+	\begin{hint}
+		Find the number of subsets of $\{1,\dots,2000\}$, the sum of whose elements is divisible by $5$.
+	\end{hint}
 \end{probMR}
 
 \begin{proof}
 	Sea
 	\[P(x)=\prod_{i=1}^{2000}(x^i+1)=\sum_{j=0}^{\deg P}c_jx^j\]
-	un polinomio y sea $\alpha$ una raíz de $x^5-1$ tal que $\alpha^4+\alpha^3+\alpha^2+\alpha+1=0$. Luego,
-	\[2^{2000}+4\cdot 2^{400}=\sum_{i=0}^4 P(\alpha^i)=\sum_{j=0}^{\deg P}c_j\cdot\sum_{i=0}^4\alpha^{ij}=5\sum_{5\,\mid\,j}c_j\]
-	de donde la respuesta es $\dfrac{2^{2000}+4\cdot 2^{400}}{5}$.
+	un polinomio y sea $\zeta=e^{2\pi i/5}$ una raíz compleja de la ecuación $z^5=1$. Luego, $1+\zeta^1+\zeta^2+\zeta^3+\zeta^4=0$ y
+	\[2^{2000}+4\cdot 2^{400}=\sum_{i=0}^4 P(\zeta^i)=\sum_{j=0}^{\deg P}c_j\cdot\sum_{i=0}^4\zeta^{ij}=5\sum_{5\,\mid\,j}c_j.\]
+	Por lo tanto, la respuesta es $\dfrac{2^{2000}+4\cdot 2^{400}}{5}$.
 \end{proof}
 
 \begin{probEG}[MOSP 1999]

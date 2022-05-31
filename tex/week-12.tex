@@ -1,3 +1,77 @@
 \section{Semana 12 (05/30 -- 06/05)}
 
-\note{Lunes\\2022-05-30}
+\note[Ecuaciones Funcionales]{Lunes\\2022-05-30}
+
+\begin{probMG}
+	Determine todas las funciones $f:\RR\to\RR$ tales que
+	\[f(x+yf(x))+f(xf(y)-y)=f(x)-f(y)+2xy\]
+	para todo $x,y\in\RR$.
+\end{probMG}
+
+\begin{proof}
+	Con $(x,y)=(0,0)$ obtenemos $f(0)=0$. Con $(x,y)=(0,x)$ obtenemos $f(-x)=-f(x)$. Con $(x,y)=(-x,y)$ obtenemos
+	\[f(x+yf(x))+f(xf(y)+y)=f(x)+f(y)+2xy\]
+	de donde
+	\[f(y+xf(y))+f(y-xf(y))=2f(y)\]
+	y así $f$ es aditiva. Luego, de la ecuación original
+	\[f(yf(x))+f(xf(y))=2xy\]
+	y
+	\[f(xf(x))=x^2.\]
+	Si $f(a)=f(b)$, entonces $f(x+a)=f(x+b)$ de donde
+	\[2\cdot(a-b)\cdot 2(a-b)=f(3(a-b)f(a-b))=2\cdot 0\cdot 3(a-b)\]
+	y $a=b$. Es decir, $f$ es inyectiva. Con $(x,y)=(xf(x),1/x)$ obtenemos
+	\[f(xf(x)f(1/x))=f(x)\]
+	de donde
+	\[f(1/x)=1/f(x)\]
+	y con $(x,y)=(x,1/x)$ obtenemos
+	\[f(a)+1/f(a)=2\]
+	donde $a=f(x)/x$. Luego, $f(a)=1$ de donde $f(x)=xc$ siendo $c\in\RR$ una constante. Finalmente, $f(x)=x$ y $f(x)=-x$ son las únicas que cumplen.
+\end{proof}
+
+\begin{probEG}
+	Determine todas las funciones $f:\RR\to\RR$ tales que
+	\[f(x)^2+2yf(x)+f(y)=f(y+f(x))\]
+	para todo $x,y\in\RR$.
+\end{probEG}
+
+\begin{proof}
+	Es claro que $f(x)=0$ es una solución. Ahora, si existe un $a\in\RR$ tal que $f(a)\ne 0$, con $(x,y)=\left(a,\frac{x-f(a)^2}{2f(a)}\right)$ obtenemos
+	\[x=f(a)^2+(x-f(a)^2)=f(t)-f(s)\]
+	para algunos $t,s\in\RR$. Con $(x,y)=(s,-f(s))$ obtenemos
+	\[f(s)^2-2f(s)^2+f(-f(s))=f(0)\]
+	de donde $f(-f(s))=f(s)^2+f(0)$. Luego, con $(x,y)=(t,-f(s))$ obtenemos
+	\[(f(t)-f(s))^2+f(0)=f(t)^2-2f(t)f(s)+(f(s)^2+f(0))=f(f(t)-f(s))\]
+	de donde $f(x)=x^2+c$ para algún $c\in\RR$ fijo.
+\end{proof}
+
+\begin{probMB}
+	Determine todas las funciones $f:\RR\to\RR$ tales que
+	\[f(f(x)+y)=2x+f(f(y)-x)\]
+	para todo $x,y\in\RR$.
+\end{probMB}
+
+\begin{proof}
+	Si $x=\half(f(0)-t)$ y $y=-f(x)$ para algún $t\in\RR$, entonces
+	\[f(0)=f(0)-t+f(f(y)-x)\]
+	de donde $f$ es sobreyectiva. Luego, existe un $a\in\RR$ tal que $f(a)=0$. Si $x=a$, tenemos que
+	\[f(y)=2a+f(f(y)-a)\]
+	de donde $f(x)=x+c$ siendo $c\in\RR$ una constante.
+\end{proof}
+
+\begin{probEG}
+	Determine todas las funciones $f:\RR\to\RR$ tales que
+	\[f(x^2+f(y))=y+f(x)^2\]
+	para todo $x,y\in\RR$.
+\end{probEG}
+
+\begin{proof}
+	Si $x=0$ tenemos que $f(f(x))=x+f(0)^2$. Es decir, $f$ es biyectiva. Luego, existe un $a\in\RR$ tal que $f(a)=0$. Con $(x,y)=(a,f(x))$ obtenemos
+	\[f(a^2+f(f(x)))=f(x)+f(a)^2=f(x)\]
+	de donde
+	\[x+f(0)^2=f(f(x))=x-a^2\]
+	y así $f(0)=0$, es decir, $f(f(x))=x$. Luego, si $y=0$ tenemos que $f(x^2)=f(x)^2$ de donde
+	\[f(-x)^2=f(x^2)=f(x)^2\]
+	y $f(-x)=-f(x)$. Con $y=f(y^2)$ obtenemos
+	\[f(x^2+y^2)=f(x^2)+f(y^2)\]
+	y $f(x^2)\ge 0$ para todo $x\in\RR$, de donde $f$ satisface las condiciones de la ecuación funcional de Cauchy en el intérvalo $[0,+\infty)$. Es decir, $f(x)=cx$ para algún $c\in\RR$ fijo. Es fácil ver que $c=1$, por lo que $f(x)=x$ para todo $x\in\RR$.
+\end{proof}

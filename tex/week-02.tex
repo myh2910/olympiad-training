@@ -134,26 +134,23 @@
 
 \begin{probEB}[Peru EGMO TST 2022/1]
 	En cada casilla de un tablero $4\times 4$ se escribe un número entero positivo de modo que el número escrito en cada casilla es igual a la cantidad de números distintos entre sí escritos en sus casillas vecinas. ¿Cuántos números distintos como máximo pueden haber en el tablero?\\[4pt]
-	\emph{Nota: Casillas vecinas son las que comparten un lado en común o un vértice en común.}
+	\emph{Nota:} Casillas vecinas son las que comparten un lado en común o un vértice en común.
 \end{probEB}
 
 \begin{proof}
 	Supongamos que hay $n$ números distintos en el tablero, donde $M$ es el máximo de ellos. Luego, $M=n$ y $1,2,\dots,n$ son los números que están en el tablero. Si $n\ge 3$, existe un $1$ que es vecino de $n$. Considerando la posición del $1$, es fácil ver que $1$ está en una esquina del tablero. Es decir, tenemos lo siguiente.
-
-	\[\begin{tblr}{cccc}
+	\[\begin{tblr}{}
 		1&n& & \\
 		n&n& & \\
 		 & & & \\
-		 & & & \\
+		 & & &
 	\end{tblr}\]
-
 	Es fácil ver que $n\in\{3,4\}$, pero analizando por casos tenemos un absurdo. Por ende, la máxima cantidad de números distintos en el tablero es $2$. Como ejemplo considere el siguiente tablero.
-
-	\[\begin{tblr}{cccc}
+	\[\begin{tblr}{}
 		1&2&2&1\\
 		2&2&2&2\\
 		2&2&2&2\\
-		1&2&2&1\\
+		1&2&2&1
 	\end{tblr}\]
 \end{proof}
 
