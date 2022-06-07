@@ -78,4 +78,107 @@
 
 \note[Combinatoria]{Martes\\2022-05-31}
 
+\begin{probEG}
+	Sea $n>2$ un número entero. Hay $n$ lámparas alrededor de una circunferencia, las cuales están etiquetadas con los números del $1$ al $n$ en sentido horario. Cada lámpara puede estar encendida o apagada. Un \emph{movimiento} consiste en cambiar simultáneamente el estado de dos lámparas adyacentes. Si al inicio todas las lámparas están apagadas, ¿cuántas configuraciones distintas de estados de lámparas es posible lograr usando algunos movimientos?
+\end{probEG}
 
+\begin{probEG}
+	¿De cuántas formas podemos escribir los números del $1$ al $3n$ en las casillas de un tablero de $3$ filas y $n$ columnas, sin repetir, de tal manera que cualesquiera dos números consecutivos estén en casillas vecinas (que comparten un lado) y que los números $1$ y $3n$ estén en casillas vecinas?
+\end{probEG}
+
+\begin{probEG}
+	¿De cuántas formas podemos escribir los números del $1$ al $3n$ en las casillas de un tablero de $3$ filas y $n$ columnas, sin repetir, de tal manera que el número $1$ esté en la primera columna, el número $3n$ esté en la última columna, y cualesquiera dos números consecutivos estén en casillas vecinas (que comparten un lado)?
+\end{probEG}
+
+\begin{probEG}
+	Un tablero finito ha sido cubierto por fichas de $1\times 2$ cumpliendo las siguientes reglas:
+	\begin{itemize}
+		\ii los bordes de las fichas están sobre las líneas del tablero;
+		\ii ninguna ficha puede salir del tablero;
+		\ii cada casilla está cubierta por exactamente dos fichas.
+	\end{itemize}
+	Demuestre que es posible quitar algunas fichas del tablero de tal manera que cada casilla esté cubierta por exactamente una ficha.
+\end{probEG}
+
+\begin{probEG}
+	Sea $n$ un entero positivo. Hay $2^n$ soldados en una fila. Los soldados se pueden reacomodar en una nueva fila respetando la siguiente regla: los soldados que se encuentran en posiciones impares se mueven al frente de la fila, manteniendo sus posiciones entre sí; mientras que los soldados que están en posiciones pares se mueven al frente de la fila, al final de la nueva fila, manteniendo sus posiciones entre sí. Demuestre que después de $n$ reordenamientos los soldados estarán en el mismo orden que al principio.
+\end{probEG}
+
+\begin{probMG}[Estonia TST 2021/4]
+	\begin{enumerate}[(a)]
+		\ii There are $2n$ rays marked in a plane, with $n$ being a natural number. Given that no two marked rays have the same direction and no two marked rays have a common initial point, prove that there exists a line that passes through none of the initial points of the marked rays and intersects with exactly $n$ marked rays.
+		\ii Would the claim still hold if the assumption that no two marked rays have a common initial point was dropped?
+	\end{enumerate}
+	\forum[aops]{23997712}
+\end{probMG}
+
+\begin{proof}
+	Respuesta: sí.
+\end{proof}
+
+\begin{probEG}[Estonia National Olympiad 2020/10.1]
+	A room of the shape of a rectangular parallelepiped has vertical walls covered by mirrors. A laser beam of diameter $0$ enters the room from one corner and moves horizontally along the bisector of that corner. After reflecting from some wall, the beam continues moving horizontally according to the laws of reflection (i.e. the bisector of the angle between the imaginary continuation of the trajectory of the beam before reflection and the real continuation trajectory is along the wall). When the beam reaches a corner, it will return along the way it arrived.\footnote{Vi un video interesante: \url{https://www.youtube.com/watch?v=5PAGXnPTE94}.}
+	\begin{enumerate}[(a)]
+		\ii Prove that if the ratio of the side lengths of the floor of the room is rational then the beam eventually returns to the point of entrance.
+		\ii Prove that if the ratio of the side lengths of the floor of the room is irrational then the beam never returns to the point of entrance.
+	\end{enumerate}
+\end{probEG}
+
+\begin{probEG}[Estonia National Olympiad 2020/12.4]
+	On a horizontal line, one colors $2k$ points red and, in the right of them, $2l$ points blue. On every move, one chooses two points of different color, such that there is exactly one colored point between them, and interchanges the colors of the chosen points. How many different configurations can one obtain using these moves?
+\end{probEG}
+
+\begin{proof}
+	Respuesta: $\binom{k+l}{k}^2$.
+\end{proof}
+
+\begin{problem}[Estonia National Olympiad 2020/12.5]
+	Let $n$ be a positive integer, $n\ge 3$. In a regular $n$-gon, one draws a maximal set of diagonals, no two of which intersect in the interior of the $n$-gon. Every diagonal is labelled with the number of sides of the $n$-gon between the endpoints of the diagonal along the shortest path. Find the maximum value of the sum of the labels.
+\end{problem}
+
+\note[Teoría de Números]{Miércoles\\2022-06-01}
+
+\begin{probMG}[CSMO 2020/10.4]
+	Sea $a_1,a_2,\dots,a_{17}$ una permutación de los números $1,2,\dots,17$ tal que
+	\[(a_1-a_2)(a_2-a_3)\cdots(a_{17}-a_1)=n^{17}\]
+	para algún número entero $n$. Determine el máximo valor de $n$.
+	\forum[aops]{16999538}
+	\begin{hint}
+		Let $a_1,a_2,\dots,a_{17}$ be a permutation of $1,2,\dots,17$ such that $(a_1-a_2)(a_2-a_3)\cdots(a_{17}-a_1)=n^{17}$. Find the maximum possible value of $n$.
+	\end{hint}
+\end{probMG}
+
+\begin{proof}
+	La respuesta es $6$. Por MA-MG, es fácil ver que $n\le 8$. Si $n=8$, hay al menos $15$ índices $i$ tal que $\abs{a_i-a_{i+1}}=8$, absurdo. Si $n=7$, $a_i-a_{i+1}$ es impar para todo $i$, absurdo. Así que $n\le 6$ y un ejemplo es
+	\[17,8,16,7,15,6,14,5,13,4,2,11,10,1,3,12,9.\]
+\end{proof}
+
+\begin{probEG}[CSMO 2020/11.1]
+	Let $a_1,a_2,\dots,a_{17}$ be a permutation of $1,2,\dots,17$ such that $(a_1-a_2)(a_2-a_3)\cdots(a_{17}-a_1)=2^n$. Find the maximum possible value of positive integer $n$.
+	\forum[aops]{16999514}
+\end{probEG}
+
+\begin{proof}
+	Respuesta: $38$. Como ejemplo considere a lo siguiente:
+	\[1,17,9,13,5,3,11,15,7,8,16,12,4,6,14,10,2.\]
+\end{proof}
+
+\begin{probMR}[CSMO 2020/11.7]
+	Sea $a_1,a_2,a_3,\dots$ la secuencia de todos los enteros positivos libres de cuadrados, en forma creciente. Demuestre que $a_{n+1}-a_n=2020$ para infinitos enteros positivos $n$.
+	\forum[aops]{16952166}
+	\begin{hint}
+		Arrange all square-free positive integers in ascending order $a_1,a_2,a_3,\dots,a_n,\dots$. Prove that there are infinitely many positive integers $n$, such that $a_{n+1}-a_n=2020$.
+	\end{hint}
+\end{probMR}
+
+\begin{proof}
+	Por el teorema chino del resto, existe un $x\in\ZZ^+$ tal que $p_i\mid x+i$ para todo $1\le i\le 2019$, donde $p_1,p_2,\dots,p_{2019}$ son algunos primos distintos. Luego, sea $M=p_1p_2\dots p_{2019}$ y $p$ un primo. Si fijamos un $N\in\ZZ^+$ suficientemente grande, hay a lo sumo $\ceiling{\frac{N}{p^2}}$ números $1\le k\le N$ tales que $p^2\mid kM^2+x$. Análogamente, hay a lo sumo $\ceiling{\frac{N}{p^2}}$ números $1\le k\le N$ tales que $p^2\mid kM^2+x+2020$. Note que $p^2\le kM^2+x+2020\le M^2(N+2)$ de donde $p\le M\sqrt{N+2}$. Ahora, consideremos un resultado bien conocido:\footnote{Es conocido como $P(2)$, donde $P(s)$ es la función zeta prima (ver \url{https://en.wikipedia.org/wiki/Prime_zeta_function}).}
+	\[\sum_{p\text{ es primo}}\frac{1}{p^2}\approx 0.45224742<0.48\]
+	de donde
+	\begin{align*}
+		N-2\sum_{\substack{p\text{ es primo}\\p\le M\sqrt{N+2}}}\ceiling{\frac{N}{p^2}}
+		&\ge N-2N\sum_{\substack{p\text{ es primo}}}\frac{1}{p^2}-2M\sqrt{N+2}\\
+		&>0.04N-2M\sqrt{N+2}
+	\end{align*}
+	tiende al infinito cuando $N\to+\infty$, así que con esto terminamos.
+\end{proof}
