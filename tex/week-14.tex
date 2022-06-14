@@ -2,7 +2,17 @@
 
 \note[Álgebra]{Lunes\\2022-06-13}
 
+\begin{probHR}[ISL 2011/A5]
+	Demuestre que para cada $n\in\ZZ^+$, el conjunto $\{2,3,\dots,3n+1\}$ puede ser dividido en $n$ subconjuntos de tres elementos de tal manera que los tres números en cada terna sean las longitudes de los lados de un triángulo obtusángulo.
+	\forum[aops]{2737645}
+	\begin{hint}
+		Prove that for every positive integer $n$, the set $\{2,3,\dots,3n+1\}$ can be partitioned into $n$ triples in such a way that the numbers from each triple are the lengths of the sides of some obtuse triangle.
+	\end{hint}
+\end{probHR}
 
+\begin{proof}
+	Procederemos por inducción fuerte sobre $n$. Probaremos que $\{2,3,\dots,3n+1\}$ puede ser dividido en $n$ subconjuntos $A_2,A_3,\dots,A_{n+1}$ de tal manera que $A_i=\{i,a_i,b_i\}$ (siendo $i<a_i<b_i$ las longitudes de un triángulo obtusángulo) para todo $2\le i\le n+1$. Si $n=1$, claramente $A_2=\{2,3,4\}$ cumple. Ahora, supongamos que $n\ge 2$ y que todo $m<n$ cumple. Si $t=\floor{\frac n2}<n$ entonces $t$ cumple, así que $\{2,3,\dots,3t+1\}$ puede ser dividido en $A'_2,A'_3,\dots,A'_{t+1}$ tales que $A'_i=\{i,a'_i,b'_i\}$ para todo $2\le i\le t+1$. Sabemos que si $a<b<c$ son las longitudes de un triángulo obtusángulo, $a<b+x<c+x$ también lo son, así que sea $B_i=\{i,a'_i+n-t,b'_i+n-t\}$ para todo $2\le i\le t+1$ y $B_i=\{i,2n+2t-i+3,3n+t-i+3\}$ para todo $t+2\le i\le n+1$. Luego, es posible dividir $\{2,3,\dots,3n+1\}$ en $n$ subconjuntos $B_2,B_3,\dots,B_{n+1}$ cumpliendo la condición del problema.
+\end{proof}
 
 %\note[]{Martes\\2022-06-14}
 %\note[]{Miércoles\\2022-06-15}

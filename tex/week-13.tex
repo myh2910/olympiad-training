@@ -159,7 +159,7 @@
 
 \note{Miércoles\\2022-06-08}
 
-\begin{probHR}[ISL 2010/A7]
+\begin{probHR}[ISL 2010/A7\protect\footnote{IMO 2010/6}]
 	Sean $a_1,a_2,\dots,a_r$ números reales positivos. Para $n>r$, inductivamente definimos
 	\[a_n=\max_{1\le k\le n-1}(a_k+a_{n-k}).\]
 	Demuestre que existen enteros positivos $\ell\le r$ y $N$ tales que $a_n=a_{n-\ell}+a_\ell$ para todo $n\ge N$.
@@ -498,6 +498,10 @@
 	\end{hint}
 \end{probEG}
 
+\begin{proof}
+	Supongamos por el absurdo que para todo $i\ne j$ existe $k$ tal que $a_i+a_j\mid 3a_k$. Sin pérdida de generalidad, supongamos que $a_1<a_2<\dots<a_n$ y que $\mcd(a_1,a_2,\dots,a_n)=1$. Si $1\le i\le n-1$, existe un $k$ tal que $a_i+a_n=3a_k$ o $a_i+a_n=\frac32a_k$, es decir, $a_i\equiv -a_n\pmod 3$ para todo $1\le i\le n-1$ de donde $3\ne a_n$. Entonces, si $1\le i\le n-2$ existe un $k$ tal que $a_i+a_{n-1}\mid 3a_k$, de donde $a_i+a_{n-1}\mid a_k$. Luego, $a_{n-1}<a_k$ de donde $k=n$. Si $2a_i+2a_{n-1}\le a_n$, entonces $2a_{n-1}<a_n$. Sea $k$ tal que $a_{n-1}+a_n=3a_k$ o $a_{n-1}+a_n=\frac32a_k$. Luego, $3a_{n-1}<a_{n-1}+a_n\le 3a_k$ de donde $k=n$. Por ende, $a_{n-1}=2a_n$ o $2a_{n-1}=a_n$, lo cual es un absurdo. Es decir, $a_i=a_n-a_{n-1}$ para todo $1\le i\le n-2$, de donde $n=3$. Luego, $3a_1<a_2+a_3\mid 3a_k<2a_2+2a_3$ para algún $k>1$, de donde $a_2+a_3=3a_2$ o $a_2+a_3=3a_3$. Por ende, $a_3=2a_2$ o $a_2=2a_3$ lo cual es un absurdo.
+\end{proof}
+
 \begin{probEG}[ISL 2009/N2]
 	Un entero positivo $N$ es llamado \emph{balanceado} si $N=1$ o si $N$ puede representarse como el producto de una cantidad par de números primos, no necesariamente distintos. Dados los enteros positivos $a$ y $b$, considere el polinomio $P(x)=(x+a)(x+b)$.
 	\begin{enumerate}[(a)]
@@ -529,6 +533,10 @@
 		Let $a_1,a_2,\dots$ be a sequence of integers with infinitely many positive terms and infinitely many negative terms. Suppose that for every positive integer $n$, the numbers $a_1,a_2,\dots,a_n$ leave $n$ different remainders on division by $n$. Prove that every integer occurs exactly once in the sequence.
 	\end{hint}
 \end{probMG}
+
+\begin{proof}
+	Sea $N\in\ZZ^+$ suficientemente grande. Note que si $N\mid a_i-a_j$ para algunos $i\ne j$, por la condición tenemos $\max(i,j)>N$, es decir, ningún entero se repite en la secuencia y además $\max(i,j)>\abs{a_i-a_j}$ para todo $i\ne j$. Si existe un $a\in\ZZ$ que no aparece en la secuencia, por la condición existe un $1\le i\le N$ tal que $a_i\equiv a\pmod N$, de donde $a_i\ge a+N$ o $a_i\le a-N$. Además, $N\ge\max(i,j)>\abs{a_i-a_j}$ para todo $1\le j\ne i\le N$, de donde $N>a_i-a_j>-N$. Si $a_i\ge a+N>a$, entonces $a_j>a_i-N\ge a$ de donde $a_k>a$ para todo $1\le k\le N$. Análogamente, si $a_i\le a-N<a$, entonces $a_k<a$ para todo $1\le k\le N$, de donde $a_k>a$ para todo $k\in\ZZ^+$ o $a_k<a$ para todo $k\in\ZZ^+$, lo cual contradice la infinidad de términos negativos o positivos. Es decir, cada entero aparece exactamente una vez en la secuencia.
+\end{proof}
 
 \begin{probEG}[ISL 2008/N6\protect\footnote{IMO 2008/3}]
 	Demuestre que existen infinitos $n\in\ZZ^+$ para los cuales $n^2+1$ tiene un factor primo mayor que $2n+\sqrt{2n}$.
