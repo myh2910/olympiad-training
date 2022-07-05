@@ -14,7 +14,292 @@
 	Procederemos por inducción fuerte sobre $n$. Probaremos que $\{2,3,\dots,3n+1\}$ puede ser dividido en $n$ subconjuntos $A_2,A_3,\dots,A_{n+1}$ de tal manera que $A_i=\{i,a_i,b_i\}$ (siendo $i<a_i<b_i$ las longitudes de un triángulo obtusángulo) para todo $2\le i\le n+1$. Si $n=1$, claramente $A_2=\{2,3,4\}$ cumple. Ahora, supongamos que $n\ge 2$ y que todo $m<n$ cumple. Si $t=\floor{\frac n2}<n$ entonces $t$ cumple, así que $\{2,3,\dots,3t+1\}$ puede ser dividido en $A'_2,A'_3,\dots,A'_{t+1}$ tales que $A'_i=\{i,a'_i,b'_i\}$ para todo $2\le i\le t+1$. Sabemos que si $a<b<c$ son las longitudes de un triángulo obtusángulo, $a<b+x<c+x$ también lo son, así que sea $B_i=\{i,a'_i+n-t,b'_i+n-t\}$ para todo $2\le i\le t+1$ y $B_i=\{i,2n+2t-i+3,3n+t-i+3\}$ para todo $t+2\le i\le n+1$. Luego, es posible dividir $\{2,3,\dots,3n+1\}$ en $n$ subconjuntos $B_2,B_3,\dots,B_{n+1}$ cumpliendo la condición del problema.
 \end{proof}
 
-%\note[]{Martes\\2022-06-14}
-%\note[]{Miércoles\\2022-06-15}
-%\note[]{Jueves\\2022-06-16}
-%\note[]{Viernes\\2022-06-17}
+\note{Martes\\2022-06-14}
+
+\begin{probEG}[ISL 2011/A6]
+	sea $f:\RR\to\RR$ una función tal que
+	\[f(x+y)\le yf(x)+f(f(x))\]
+	para todo $x,y\in\RR$. Demuestre que $f(x)=0$ para todo $x\le 0$.
+	\forum[aops]{2363539}
+	\begin{hint}
+		Let $f:\RR\to\RR$ be a real-valued function defined on the set of real numbers that satisfies
+		\[f(x+y)\le yf(x)+f(f(x))\]
+		for all real numbers $x$ and $y$. Prove that $f(x)=0$ for all $x\le 0$.
+	\end{hint}
+\end{probEG}
+
+\begin{probHR}[ISL 2011/A7]
+	Sean $a,b,c\in\RR^+$ tales que $\min(a+b,b+c,c+a)\ge\sqrt2$ y $a^2+b^2+c^2=3$. Demuestre que
+	\[\frac{a}{(b+c-a)^2}+\frac{b}{(c+a-b)^2}+\frac{c}{(a+b-c)^2}\ge\frac{3}{(abc)^2}.\]
+	\forum[aops]{2737646}
+	\begin{hint}
+		\begin{otherlanguage*}{english}
+			Let $a$, $b$ and $c$ be positive real numbers satisfying $\min(a+b,b+c,c+a)>\sqrt2$ and $a^2+b^2+c^2=3$. Prove that
+			\[\frac{a}{(b+c-a)^2}+\frac{b}{(c+a-b)^2}+\frac{c}{(a+b-c)^2}\ge\frac{3}{(abc)^2}.\]
+		\end{otherlanguage*}
+	\end{hint}
+\end{probHR}
+
+\begin{probEG}
+	Sean $a,b,c\in\RR^+$ tales que $a+b+c=3$. Demuestre que
+	\[\sqrt{a}+\sqrt{b}+\sqrt{c}\ge ab+bc+ca.\]
+\end{probEG}
+
+\note[Teoría de Números]{}
+
+\begin{probEG}[ISL 2011/N1]
+	Para cada $d\in\ZZ^+$ sea $f(d)$ el menor entero positivo que tiene exactamente $d$ divisores positivos. Demuestre que $f(2^k)\mid f(2^{k+1})$ para todo $k\ge 0$.
+	\forum[aops]{2737648}
+	\begin{hint}
+		For any integer $d>0$, let $f(d)$ be the smallest possible integer that has exactly $d$ positive divisors (so for example we have $f(1)=1$, $f(5)=16$, and $f(6)=12$). Prove that for every integer $k\ge 0$ the number $f(2^k)$ divides $f(2^{k+1})$.
+	\end{hint}
+\end{probEG}
+
+\begin{probMG}[ISL 2011/N2]
+	Sea $P(x)=(x+d_1)(x+d_2)\cdots(x+d_9)$, donde $d_1,d_2,\dots,d_9$ son enteros distintos. Demuestre que existe $N\in\ZZ^+$ tal que $P(x)$ es múltiplo de algún primo mayor que $20$, para todo entero $x\ge N$.
+	\forum[aops]{2737650}
+	\begin{hint}
+		Consider a polynomial $P(x)=(x+d_1)(x+d_2)\cdots(x+d_9)$, where $d_1,d_2,\dots,d_9$ are nine distinct integers. Prove that there exists an integer $N$ such that for all integers $x\ge N$ the number $P(x)$ is divisible by a prime number greater than $20$.
+	\end{hint}
+\end{probMG}
+
+\note{Miércoles\\2022-06-15}
+
+\begin{probEB}[ISL 2011/N3]
+	Sea $n\ge 1$ un número entero impar. Determine todas las funciones $f:\ZZ\to\ZZ$ tales que para todo $x,y\in\ZZ$ la diferencia $f(x)-f(y)$ divide a $x^n-y^n$.
+	\forum[aops]{2737651}
+	\begin{hint}
+		Let $n\ge 1$ be an odd integer. Determine all functions $f$ from the set of integers to itself such that for all integers $x$ and $y$ the difference $f(x)-f(y)$ divides $x^n-y^n$.
+	\end{hint}
+\end{probEB}
+
+\begin{proof}
+	Sea $\mathcal P=\{p_1,p_2,\dots\}$ el conjunto de los primos. Sea $g(x)=\pm(f(x)-f(0))$ tal que $g(1)=1$ y $g(-1)=-1$. Luego, $g(p)\mid p^n$ para todo $p\in\cal P$ de donde $g(p)=\pm p^d$ donde $d\mid n$. Si $g(p)=-p^d$, entonces $g(p)-1\mid p^n-1$ de donde $p^d+1\mid p^n-1$ y $2\mid n$, lo cual es un absurdo, así que $g(p)=p^d$. Como los divisores de $n$ son finitos, existe un divisor $d$ de $n$ tal que $g(p)=p^d$ para infinitos $p\in\cal P$. Luego, $g(x)-p^d\mid x^n-p^n$ y $g(x)-p^d\mid x^n-g(x)^\frac{n}{d}$ para infinitos $p\in\cal P$, de donde $x^n-g(x)^\frac{n}{d}=0$ para todo $x\in\ZZ$. Por ende, $f(x)=\pm x^d+c$, para algún divisor positivo $d\mid n$ y $c\in\ZZ$.
+\end{proof}
+
+\begin{probMB}[ISL 2011/N4]
+	Para cada $k\in\ZZ^+$, sea $t(k)$ el mayor divisor impar de $k$. Determine todos los $a\in\ZZ^+$ para el cual existe $n\in\ZZ^+$ tal que todas las diferencias
+	\[t(n+a)-t(n),\ t(n+a+1)-t(n+1),\ \dots,\ t(n+2a-1)-t(n+a-1)\]
+	son divisibles por $4$.
+	\forum[aops]{2737653}
+	\begin{hint}
+		For each positive integer $k$, let $t(k)$ be the largest odd divisor of $k$. Determine all positive integers $a$ for which there exists a positive integer $n$ such that all the differences
+		\[t(n+a)-t(n),\ t(n+a+1)-t(n+1),\ \dots,\ t(n+2a-1)-t(n+a-1)\]
+		are divisible by $4$.
+	\end{hint}
+\end{probMB}
+
+\begin{proof}
+	Si $2\mid a$, sea $0\le r\le a-1$ un entero tal que $r\equiv\frac a2-n\pmod a$. Luego,
+	\[\frac{n+r}{a/2}=t(n+r)\equiv t(n+a+r)=\frac{n+a+r}{a/2}\pmod 4\]
+	de donde $4\mid\frac{a}{a/2}=2$, lo cual es un absurdo. Es decir, $2\nmid a$. Si $a=7$, sea $0\le r\le a-1=6$ un entero tal que $r\equiv 3-n\pmod 8$ o $r\equiv 6-n\pmod 8$. Luego, $t(n+r)\equiv t(n+a+r)\pmod 4$ de donde $r\equiv 2-n\pmod 8$ o $r\equiv 7-n\pmod 8$, lo cual es un absurdo. Si $a>8$, sea $0\le r\le a-1$ un entero tal que $r\equiv 2a-n\pmod 8$. Luego,
+	\[\frac{n+r}{2}=t(n+r)\equiv t(n+a+r)=n+a+r\pmod 4\]
+	de donde $r\equiv -2a-n\pmod 8$, lo cual es un absurdo. Por ende, $a\in\{1,3,5\}$ y $1,1,23$ son los valores de $n$ que cumplen en los respectivos casos.
+\end{proof}
+
+\begin{probMG}[ISL 2011/N5\protect\footnote{IMO 2011/5}]
+	Sea $f:\ZZ\to\ZZ^+$ una función tal que para cada $m,n\in\ZZ$, la diferencia $f(m)-f(n)$ es divisible por $f(m-n)$. Demuestre que para todo $m,n\in\ZZ$, con $f(m)\le f(n)$, el número $f(n)$ es divisible por $f(m)$.
+	\forum[aops]{2365041}
+	\begin{hint}
+		Let $f$ be a function from the set of integers to the set of positive integers. Suppose that, for any two integers $m$ and $n$, the difference $f(m)-f(n)$ is divisible by $f(m-n)$. Prove that, for all integers $m$ and $n$ with $f(m)\le f(n)$, the number $f(n)$ is divisible by $f(m)$.
+	\end{hint}
+\end{probMG}
+
+\begin{proof}
+	Si $n=0$ tenemos $f(m)\mid f(0)$, y si $(m,n)=(0,-m)$ entonces $f(m)\mid f(-m)$ y análogamente $f(-m)\mid f(m)$ de donde $f(-m)=f(m)$ para todo $m\in\ZZ$. Ahora, sean $a,b\in\ZZ$ tales que $f(a)\le f(b)$. Si $f(a)=f(b)$ ya está, así que $f(a)<f(b)$. De $(m,n)=(a,-b),(a+b,b)$ tenemos que $f(a+b)\mid f(a)-f(b)$ y $f(a)\mid f(a+b)-f(b)$ de donde $\abs{f(a+b)-f(b)}<f(a+b)+f(b)\le f(a)$. Por ende, $f(a+b)=f(b)$ de donde $f(b)\mid f(a)$ y con esto terminamos.
+\end{proof}
+
+\begin{probMG}[ISL 2011/N6]
+	Sean $P(x)$ y $Q(x)$ dos polinomios con coeficientes enteros tal que ningún polinomio no constante de coeficientes racionales divide simultáneamente a $P(x)$ y $Q(x)$. Suponga que para cada $n\in\ZZ^+$ los números $P(n)$ y $Q(n)$ son positivos, y $2^{Q(n)}-1$ divide a $3^{P(n)}-1$. Demuestre que $Q(x)$ es un polinomio constante.
+	\forum[aops]{2737654}
+	\begin{hint}
+		Let $P(x)$ and $Q(x)$ be two polynomials with integer coefficients such that no nonconstant polynomial with rational coefficients divides both $P(x)$ and $Q(x)$. Suppose that for every positive integer $n$ the integers $P(n)$ and $Q(n)$ are positive, and $2^{Q(n)}-1$ divides $3^{P(n)}-1$. Prove that $Q(x)$ is a constant polynomial.
+	\end{hint}
+\end{probMG}
+
+\begin{proof}
+	Es claro que existen $A,B\in\ZZ[x]$ y $c\in\ZZ\setminus\{0\}$ fijo tal que $P(x)A(x)+Q(x)B(x)=c$. Por Schur, existe un primo suficientemente grande $p>\abs{c}$ que divide a $Q(n)$ para algún $n\in\ZZ^+$. Si $o=\ord_{2^p-1}(3)$, entonces $p\mid Q(n+pk)$ de donde $o\mid P(n+pk)$ para todo $k\in\ZZ^+_0$. Sea $P_0(x)=P(x)=a_mx^m+\dots+a_0$ y $P_i(x)=P_{i-1}(x+p)-P_{i-1}(x)$ para todo $1\le i\le m$. Luego,
+	\[o\mid P_1(n+pk)=P_0(n+p(k+1))-P_0(n+pk)\]
+	y así sucesivamente hasta que $o\mid P_m(x)$ que es una función constante. Como el coeficiente principal de $P_i(x)$ es $p^i\cdot\frac{m!}{(m-i)!}\cdot a_m$ entonces $o\mid p^m\cdot m!\cdot a_m$. Como $p$ es suficientemente grande, $p\mid o\mid P(n)$ de donde $p\mid c$, lo cual es un absurdo.
+\end{proof}
+
+\begin{probMG}[IMO 2011/N7]
+	Sea $p$ un número primo impar. Para cada $a\in\ZZ$, definimos
+	\[S_a=\frac{a}{1}+\frac{a^2}{2}+\dots+\frac{a^{p-1}}{p-1}.\]
+	Sean $m,n\in\ZZ$ tales que
+	\[S_3+S_4-3S_2=\frac mn.\]
+	Demuestre que $p\mid m$.
+	\forum[aops]{2737656}
+	\begin{hint}
+		Let $p$ be an odd prime number. For every integer $a$, define the number
+		\[S_a=\frac{a}{1}+\frac{a^2}{2}+\dots+\frac{a^{p-1}}{p-1}.\]
+		Let $m$ and $n$ be integers such that
+		\[S_3+S_4-3S_2=\frac mn.\]
+		Prove that $p$ divides $m$.
+	\end{hint}
+\end{probMG}
+
+\begin{proof}
+	Note que
+	\begin{align*}
+		-\frac{a^k}{k}
+		&=\frac{(-1)^{k-1}(k-1)!}{k!}\cdot(-a)^k\\
+		&\equiv\frac{(p-1)(p-2)\cdots(p-k+1)}{k!}\cdot(-a)^k\\
+		&=\frac 1p\binom pk\cdot(-a)^k\pmod p
+	\end{align*}
+	de donde
+	\[S_a=\sum_{k=1}^{p-1}\frac{a^k}{k}\equiv-\frac1p\sum_{k=1}^{p-1}\binom pk\cdot(-a)^k=-\frac{a^p-(a-1)^p-1}{p}\pmod p\]
+	por lo que
+	\begin{align*}
+		S_3+S_4-3S_2
+		&\equiv-\frac{(3^p-2^p-1)+(4^p-3^p-1)-3(2^p-1^p-1)}{p}\\
+		&=-\frac{(2^p-2)^2}{p}\\
+		&\equiv 0\pmod p
+	\end{align*}
+	así que $p\mid m$.
+\end{proof}
+
+\note[Álgebra]{}
+
+\begin{probEG}[ISL 1998/A3]
+	Sean $x,y,z\in\RR^+$ tales que $xyz=1$. Demuestre que
+	\[\cycsum\frac{x^3}{(1+y)(1+z)}\ge\frac34.\]
+	\forum[aops]{124421}
+	\begin{hint}
+		Let $x$, $y$ and $z$ be positive real numbers such that $xyz=1$. Prove that
+		\[\frac{x^3}{(1+y)(1+z)}+\frac{y^3}{(1+z)(1+x)}+\frac{z^3}{(1+x)(1+y)}\ge\frac34.\]
+	\end{hint}
+\end{probEG}
+
+\begin{proof}
+	Pista: Cauchy-Schwartz y MA-MG.
+\end{proof}
+
+\note[Teoría de Números]{Jueves\\2022-06-16}
+
+\begin{probHG}[ISL 2011/N8]
+	Let $k$ be a positive integer and set $n=2^k+1$. Prove that $n$ is a prime number if and only if the following holds: there is a permutation $a_1,\dots,a_{n-1}$ of the numbers $1,2,\dots,n-1$ and a sequence of integers $g_1,g_2,\dots,g_{n-1}$ such that $n$ divides $g_i^{a_i}-a_{i+1}$ for every $i\in\{1,2,\dots,n-1\}$, where we set $a_n=a_1$.
+	\forum[aops]{2737657}
+\end{probHG}
+
+\begin{proof}
+	Supongamos que $n$ es compuesto, en efecto $n=ts$ donde $t,s>1$ son enteros. Si $t=s$, tenemos $2^k=(t+1)(t-1)$ de donde $k=3$ y $n=9$. Ahora, es claro que existe un $i$ tal que $a_{i+1}\in\{3,6\}$ y $a_i>1$, luego $9\mid g_i^{a_i}-a_{i+1}$ de donde $3\mid g_i$. Luego, $9\mid g_i^{a_i}$ de donde $9\mid a_{i+1}$, lo cual es un absurdo. Ahora, considerando a todos los $a_i\in\{2,4,\dots,n-1\}$ tenemos al menos $\frac{n-1}{2}$ residuos cuadráticos módulo $n$, es decir, $a^2\not\equiv b^2\pmod n$ para todo $1\le a\ne b\le\frac{n-1}{2}$. Pero note que $2^{k-1}\ge\frac{t+s}{2}>\frac{\abs{t-s}}{2}\ge 1$ y
+	\[\left(\frac{t+s}{2}\right)^2\equiv\left(\frac{t-s}{2}\right)^2\pmod n\]
+	lo cual es una contradicción. Ahora, supongamos que $n=p$ para algún primo $p$. Si $k=1$ o $k=2$, $(a_1,a_2)=(1,2)$ con $g_1=g_2=2$ y $(a_1,a_2,a_3,a_4)=(1,3,2,4)$ con $g_1=g_2=g_3=g_4=3$ cumplen. Si $k\ge 3$, es claro que $3\nmid 2^k+1$ de donde $2\mid k$. Sean $g_1,g_2,\dots,g_{p-1}=g$ la raíz primitiva módulo $p$ y sea $G$ un grafo dirigido, tal que $a_i\to j$ si y solo si $g_i^{a_i}\equiv j\pmod p$. Note que
+	\[\left(\frac2p\right)=(-1)^\frac{p^2-1}{8}=1\qquad\text{y}\qquad\left(\frac3p\right)=(-1)^{\frac{3-1}{2}\cdot\frac{p-1}{2}}\left(\frac p3\right)=-1\]
+	de donde $2^1\cdot 3,2^2\cdot 3,\dots,2^{k-2}\cdot 3$ no son residuos cuadráticos módulo $n$. Es decir, existen $a_{i_1},a_{i_2},\dots,a_{i_{k-2}}$ impares tales que $a_{i_j}\to 2^j\cdot 3$ para todo $1\le j\le k-2$. Además, $2^{k-1}\to 2^k\to 1$. Note que si $a_i=2^e\cdot m_1\to g^{2^e\cdot x_1}\pmod p$ y $a_j=2^e\cdot m_2\to g^{2^e\cdot x_2}\pmod p$ con $2\nmid m_1,m_2,x_1,x_2$ tales que $a_i$ y $a_j$ pertenecen a componentes distintos de $G$, podemos modificar el $g_i$ y $g_j$ de manera que $a_i=2^e\cdot m_1\to g^{2^e\cdot x_2}\pmod p$ y $a_j=2^e\cdot m_2\to g^{2^e\cdot x_1}\pmod p$. Es decir, al final tendremos que si $a_i=2^e\cdot m_1$ y $a_j=2^e\cdot m_2$ entonces $a_i$ y $a_j$ pertenecen a un mismo componente de $G$. Por lo tanto, $G$ es conexo y por ende podemos encontrar un ciclo Hamiltoniano, de donde $p\mid g_i^{a_i}-a_{i+1}$ para todo $1\le i\le n-1$.
+\end{proof}
+
+\begin{probEG}[ISL 2012/N2]
+	Determine todas las ternas $(x,y,z)$ de enteros positivos, con $x\le y\le z$, tales que
+	\[x^3(y^3+z^3)=2012(xyz+2).\]
+	\forum[aops]{3160603}
+	\begin{hint}
+		Find all triples $(x,y,z)$ of positive integers such that $x\le y\le z$ and
+		\[x^3(y^3+z^3)=2012(xyz+2).\]
+	\end{hint}
+\end{probEG}
+
+\begin{proof}
+	Note que $x\mid 2012\cdot 2=2^3\cdot 503$. Si $d\in\{4,503\}$ divide a $x$, entonces $d^3\mid 2012(xyz+2)$ de donde $d\mid 2$ lo cual es un absurdo. Es decir, $x\in\{1,2\}$.
+	\begin{itemize}
+		\ii Si $x=1$, tenemos $y^3+z^3=2012(yz+2)$. Como
+		\[y\equiv\left(y^3\right)^{335}\equiv\left(-z^3\right)^{335}\equiv-z\pmod{503}\]
+		entonces $503\mid y+z$, de donde $y^2-yz+z^2\mid 4(yz+2)$. Note que $y\equiv z\pmod 2$. Si $2\nmid y,z$, entonces $y^2-yz+z^2\mid yz+2$ de donde $(z-y)^2\le 2$. Si $z=y$, entonces $z^2\mid 2^2\cdot 503$ de donde $z\in\{1,2\}$, y en ambos casos tenemos un absurdo. Si $z=y+1$, entonces $y^2-yz+z^2=yz+1$ de donde $yz+1=y^2-yz+z^2\mid 1$, lo cual es un absurdo. Por ende, $2\mid y,z$ y sean $(y_1,z_1)=(y/2,z/2)$. Luego, $y_1^3+z_1^3=503(2y_1z_1+1)$ de donde $503\mid y_1+z_1$ y $y_1^2-y_1z_1+z_1^2\mid 2y_1z_1+1$. Si $y_1=z_1$ entonces $y_1^2\mid 503$ de donde $y_1=1$, pero en este caso tenemos un absurdo. Entonces, $2(y_1^2-y_1z_1+z_1^2)>2y_1z_1+1$ de donde $y_1^2-y_1z_1+z_1^2=2y_1z_1+1$ de donde $z_1=y_1+1$ y $y_1+z_1=503$. Es decir,
+		\[5\mid 5y_1z_1=(y_1+z_1)^2-(y_1^2-3y_1z_1+z_1^2)=503^2-1=502\cdot 504\]
+		lo cual es un absurdo.
+	\ii Si $x=2$, tenemos $y^3+z^3=503(yz+1)$. Luego, $503\mid y+z$ y $y^2-yz+z^2\mid yz+1$ de donde $(z-y)^2\le 1$. Si $z=y$, tenemos $z^2\mid 503$ de donde $2=x\le z=1$ lo cual es un absurdo. Es decir, $z=y+1$ y $y^2-yz+z^2=yz+1$ de donde $y+z=503$. Por ende, $(x,y,z)=(2,251,252)$ es la única terna que cumple.
+	\end{itemize}
+\end{proof}
+
+\begin{probEG}[ISL 2012/N3]
+	Determine todos los números enteros $m\ge 2$ tales que para cada $n$, con $\frac m3\le n\le\frac m2$, $n$ divide al coeficiente binomial $\binom{n}{m-2n}$.
+	\forum[aops]{3156840}
+	\begin{hint}
+		Determine all integers $m\ge 2$ such that every $n$ with $\frac m3\le n\le\frac m2$ divides the binomial coefficient $\binom{n}{m-2n}$.
+	\end{hint}
+\end{probEG}
+
+\begin{proof}
+	Si $m=2$ es trivial. Si $m>2$ y $2\mid m$, con $n=m/2>1$ tenemos $n\mid\binom{n}{m-2n}=1$, lo cual es un absurdo. Por ende, $2\nmid m$. Si $m$ es compuesto, $m=pk$ para algún primo $p$ y $k\ge p$. Con $n=\frac{m-p}{2}$ tenemos $n\mid\binom np$ de donde
+	\[p\mid p!\mid(n-1)(n-2)\cdots(n-p+1),\]
+	lo cual es un absurdo. Es decir, $m=p$ para algún primo $p>2$. Si $\frac m3\le n\le\frac m2$, sea $k=m-2n>0$. Luego, $\mcd(n,k)=\mcd(m,n)=1$ y como $\binom nk=\frac nk\binom{n-1}{k-1}$ es entero, entonces $k\mid\binom{n-1}{k-1}$ de donde $n\mid\binom nk$. Por ende, $m=p$ para algún primo $p$.
+\end{proof}
+
+\begin{probMG}[Thailand Online MO 2021/9]
+	Sean $a,b\in\ZZ^+$ tales que
+	\[\tau(\tau(an))=\tau(\tau(bn))\]
+	para todo $n\in\ZZ^+$. Demuestre que $a=b$.
+	\forum[aops]{21336290}
+	\begin{hint}
+		For each positive integer $k$, denote by $\tau(k)$ the number of all positive divisors of $k$, including $1$ and $k$. Let $a$ and $b$ be positive integers such that $\tau(\tau(an))=\tau(\tau(bn))$ for all positive integers $n$. Prove that $a=b$.
+	\end{hint}
+\end{probMG}
+
+\begin{proof}
+	Sea $p$ un primo y supongamos que $a=p^\alpha a_1$ y $b=p^\beta b_1$ tales que $p\nmid a_1,b_1$ con $\alpha>\beta$. Si $n=p^N$ para algún $N\in\ZZ^+_0$, entonces $\tau(an)=(\alpha+N+1)\tau(a_1)$ y $\tau(bn)=(\beta+N+1)\tau(b_1)$. Ahora, sea $N=\tau(b_1)M^2-\beta-1$ para algún $M\in\ZZ^+$ suficientemente grande. Luego, $\tau(bn)=\tau(b_1)^2M^2$ es un cuadrado perfecto, de donde $\tau(\tau(bn))$ es impar, así que $\tau(\tau(an))$ también es impar. Por ende, $\tau(an)=\tau(a_1)(\alpha-\beta)+\tau(a_1)\tau(b_1)M^2$ es un cuadrado perfecto. Es decir, $x+yM^2$ es un cuadrado perfecto para todo $M\in\ZZ^+$ suficientemente grande, donde $x,y\in\ZZ^+$ son fijos. Si $x\mid M$, tenemos que $x$ es un cuadrado perfecto. Ahora, supongamos que $\sqrt{x}\mid M$ y por ende supongamos que $x=1$ sin pérdida de generalidad. Si $M=q$ para algún primo $q$ suficientemente grande, entonces $yq^2=(z-1)(z+1)$ de donde $q^2\mid z\pm 1$ y $yq^2\ge(q^2-1)^2-1=q^4-2q^2$. Por ende, $y\ge q^2-2$ lo cual es un absurdo. Por lo tanto, $\alpha=\beta$ y de esta manera tenemos que $\nu_p(a)=\nu_p(b)$ para todo primo $p$, es decir, $a=b$.
+\end{proof}
+
+\begin{probEG}[ISL 2012/N4]
+	An integer $a$ is called \emph{friendly} if the equation $(m^2+n)(n^2+m)=a(m-n)^3$ has a solution over the positive integers.
+	\begin{enumerate}[(a)]
+		\ii Prove that there are at least $500$ friendly integers in the set $\{1,2,\dots,2012\}$.
+		\ii Decide whether $a=2$ is friendly.
+	\end{enumerate}
+	\forum[aops]{3160606}
+\end{probEG}
+
+\begin{proof}
+	Si $(m,n)=(2k+1,k)$ para algún $k\in\ZZ^+$ obtenemos $a=4k+1$, así que $5,9,13,\dots,2001$ son amigables. Ahora, supongamos que $a=2$ es amigable. Es claro que $m>n$. Si $p^e\parallel m-n$ entonces $p^{3e}\mid(m^2+n)(n^2+m)$ de donde $p^e$ divide a $m^2+n$ o $n^2+m$, es decir, $p^e\mid n^2+n$. Por ende, $m-n\mid n^2+n$, pero
+	\[(m-n)^2(n^2+m)<(m^2+n)(n^2+m)=2(m-n)^3\]
+	de donde $n^2+m<2(m-n)$. Por ende, $n^2+n<m-n$ lo cual es una contradicción. Es decir, $a=2$ no es amigable.
+\end{proof}
+
+\begin{probEG}[ISL 2012/N5]
+	For a nonnegative integer $n$ define $\operatorname{rad}(n)=1$ if $n=0$ or $n=1$, and $\operatorname{rad}(n)=p_1p_2\cdots p_k$ where $p_1<p_2<\cdots<p_k$ are all prime factors of $n$. Find all polynomials $f(x)$ with nonnegative integer coefficients such that $\operatorname{rad}(f(n))$ divides $\operatorname{rad}(f(n^{\operatorname{rad}(n)}))$ for every nonnegative integer $n$.
+	\forum[aops]{3160608}
+\end{probEG}
+
+\begin{proof}
+	Sea $f(x)=x^m\cdot g(x)$ donde $g\in\ZZ^+_0[x]$ tal que $g(0)>0$ y $m\in\ZZ^+_0$. Si $\deg g>0$, por Schur existe un primo $p$ suficientemente grande tal que $p\mid g(n)$ para algún $p\nmid n$. Sea $m\in\ZZ^+$ tal que $m\equiv n\pmod p$ y $m\equiv 0\pmod{p-1}$. Note que $p\mid g(m)\mid f(m)$ de donde $p\mid f(m^k)$ donde $k=\operatorname{rad}(m)$. Luego,
+	\[p\mid g(m^k)\implies p\mid g(m^{k^2})\implies\cdots\]
+	y así sucesivamente hasta que $p\mid g(m^{k^e})$ para algún $e\in\ZZ^+$ tal que $p-1\mid k^e$. Luego, $p\mid g(1)$ de donde $g(1)=0$, así que todos los coeficientes de $g$ son ceros, y de esta manera $g(x)\equiv 0$, lo cual es una contradicción. Por ende, $\deg g=0$ y $f(x)=cx^m$ para algunos $c,m\in\ZZ^+_0$ fijos.
+\end{proof}
+
+\note{Viernes\\2022-06-17}
+
+\begin{probHR}[ISL 2012/N6]
+	Let $x$ and $y$ be positive integers. If $x^{2^n}-1$ is divisible by $2^ny+1$ for every positive integer $n$, prove that $x=1$.
+	\forum[aops]{3156844}
+\end{probHR}
+
+\begin{proof}
+	Probaremos que hay infinitos primos $p\equiv 3\pmod 4$ que dividen a $2^ny+1$. Si no lo es, supongamos sin pérdida de generalidad que $y$ es impar y sea $2y+1=p_1^{e_1}\cdots p_t^{e_t}$ su factorización y sean $p_{t+1},\dots,p_{t+s}$ los demás primos congruentes a $3$ módulo $4$. Si $n=1+\phi(p_1^{e_1}\cdots p_t^{e_t}p_{t+1}\cdots p_{t+s})$, tenemos que
+	\[2^ny+1\equiv 2y+1=p_1^{e_1}\cdots p_t^{e_t}\pmod{p_1^{e_1}\cdots p_t^{e_t}p_{t+1}\cdots p_{t+s}}\]
+	de donde $2^ny+1=p_1^{e_1}\cdots p_t^{e_t}\cdot(4k+1)$ para algún $k\in\ZZ^+_0$, es decir,
+	\[1\equiv 2^ny+1\equiv p_1^{e_1}\cdots p_t^{e_t}=2y+1\equiv 3\pmod 4,\]
+	lo cual es un absurdo. Ahora, si $p\equiv 3\pmod 4$ es un primo suficientemente grande que divide a $2^ny+1$, entonces $p\mid x^{2^n}-1$. Si $o=\ord_{p}(x)$, entonces $o\mid\mcd(2^n,p-1)=2$ de donde $p\mid x^2-1$, es decir, $x=1$.
+\end{proof}
+
+\note[Simulacro]{Sábado\\2022-06-18}
+
+\begin{probEG}[Thailand MO 2020/10]
+	Determine all polynomials $P(x)$ with integer coefficients which satisfies $P(n)\mid n!+2$ for all positive integer $n$.
+	\forum[aops]{19622974}
+\end{probEG}
+
+\begin{probEG}[Thailand MO 2020/8]
+	For all positive real numbers $a,b,c$ with $a+b+c=3$, prove the inequality
+	\[\frac{a^6}{c^2+2b^3}+\frac{b^6}{a^2+2c^3}+\frac{c^6}{b^2+2a^3}\ge 1.\]
+	\forum[aops]{19622970}
+\end{probEG}
+
+\begin{probEG}[Thailand MO 2020/9]
+	Let $n,k$ be positive integers such that $n>k$. There is a square-shaped plot of land, which is divided into $n\times n$ grid so that each cell has the same size. The land needs to be plowed by $k$ tractors; each tractor will begin on the lower-left corner cell and keep moving to the cell sharing a common side until it reaches the upper-right corner cell. In addition, each tractor can only move in two directions: up and right. Determine the minimum possible number of unplowed cells.
+	\forum[aops]{19622972}
+\end{probEG}
+
+\begin{probMG}[ISL 2020/G6]
+	Let $ABC$ be a triangle with $AB<AC$, incenter $I$, and $A$ excenter $I_A$. The incircle meets $BC$ at $D$. Define $E=AD\cap BI_A$, $F=AD\cap CI_A$. Show that the circumcircle of $\triangle AID$ and $\triangle I_AEF$ are tangent to each other.
+	\forum[aops]{22698132}
+\end{probMG}

@@ -1,7 +1,359 @@
 \section{Semana 16 (06/27 -- 07/03)}
 
-%\note[]{Lunes\\2022-06-27}
-%\note[]{Martes\\2022-06-28}
-%\note[]{Miércoles\\2022-06-29}
-%\note[]{Jueves\\2022-06-30}
-%\note[]{Viernes\\2022-07-01}
+\note[Teoría de Números]{Lunes\\2022-06-27}
+
+\begin{probHR}[ISL 2020/N6]
+	For a positive integer $n$, let $d(n)$ be the number of positive divisors of $n$. Does there exist a constant $C$ such that
+	\[\frac{\phi(d(n))}{d(\phi(n))}\le C\]
+	for all $n\ge 1$?
+	\forum[aops]{22698064}
+\end{probHR}
+
+\begin{proof}
+	La respuesta es no. Sea $N\in\ZZ^+$ y sean primos $1<p_1<p_2<\cdots<p_k<N\le p_{k+1}<p_{k+2}<\cdots<p_{k+s}<2N$. Si $n=(p_1p_2\cdots p_k)^{q-1}p_{k+1}p_{k+2}\cdots p_{k+s}$ para algún primo $q$ suficientemente grande, entonces
+	\[\phi(d(n))=\phi(2^sq^k)=2^{s-1}q^{k-1}(q-1)\]
+	y
+	\[d(\phi(n))=d\left(\prod_{i=1}^kp_i^{q-2}\cdot\prod_{j=1}^{k+s}(p_j-1)\right)=\prod_{i=1}^k(q-1+c_i)\]
+	donde $c_1,c_2,\dots,c_k\in\ZZ^+_0$ son fijos. Entonces,
+	\[\frac{\phi(d(n))}{d(\phi(n))}=2^{s-1}\cdot\frac{q^{k-1}(q-1)}{\prod_{i=1}^k(q-1+c_i)}>2^{s-2}.\]
+	Si existe un $t\in\ZZ^+$ tal que $s\le t$ para todo $2^e\le p_{k+1}<p_{k+2}<\cdots<p_{k+s}<2^{e+1}$, entonces
+	\[\sum_{p\text{ es primo}}\frac1p\le\sum_{e=1}^\infty\frac{t}{2^e}=t\]
+	lo cual es un absurdo. Es decir, $\frac{\phi(d(n))}{d(\phi(n))}$ no es acotado superiormente.
+\end{proof}
+
+\note{Martes\\2022-06-28}
+
+\begin{probEG}
+	Para cada entero positivo $n$, definimos
+	\[f(n)=\tau(k_1)+\tau(k_2)+\dots+\tau(k_t)\]
+	donde $k_1<k_2<\cdots<k_t$ son todos los divisores positivos de $n$. Determine todos los enteros $n>1$ para los cuales $f(n)=n$.\\[4pt]
+	\emph{Nota.} $\tau(n)$ es el número de divisores positivos de $n$.
+\end{probEG}
+
+\begin{proof}
+	Sea $p_1^{e_1}\cdots p_r^{e_r}$ la descomposición de $n$. Luego,
+	\[f(n)=\sum_{\substack{0\le x_i\le e_i\\\forall\,1\le i\le r}}(x_1+1)\cdots(x_r+1)=\prod_{i=1}^r\sum_{j=0}^{e_i}(j+1)=\prod_{i=1}^r\frac{(e_i+1)(e_i+2)}{2}\]
+	de donde
+	\[\prod_{i=1}^rp_i^{e_i}=\prod_{i=1}^r\frac{(e_i+1)(e_i+2)}{2}.\]
+	Note que $p^e\ge\frac{(e+1)(e+2)}{2}$ para todo $p\ge 3$ y $e\ge 1$ con igualdad si y solo si $(p,e)=(3,1)$, y $2^e>\frac{(e+1)(e+2)}{2}$ para todo $e\ge 4$. Primero, supongamos que $p_1=2$, lo cual implica que $e_1\le 3$.
+	\begin{itemize}
+		\ii Si $e_1=1$, entonces $\frac{(e_1+1)(e_2+1)}{2}=3$ de donde $p_2=3$. Como $2\cdot 3^e>3\cdot\frac{(e+1)(e+2)}{2}$ para todo $e\ge 3$, tenemos que $e_2\le 2$, pero si $e_2=1$ entonces
+		\[3\cdot\frac{(e_2+1)(e_2+2)}{2}=3^2\nmid n\]
+		lo cual es un absurdo. Por ende, $e_2=2$ y tenemos $2\cdot 3^2=3\cdot\frac{(2+1)(2+2)}{2}$ de donde $n=18$.
+		\ii Si $e_1=2$, entonces $\frac{(e_1+1)(e_2+1)}{2}=6$ de donde $p_2=3$. Como $2^2\cdot 3^e>6\cdot\frac{(e+1)(e+2)}{2}$ para todo $e\ge 3$, tenemos que $e_2\le 2$, pero si $e_2=1$ entonces
+		\[6\cdot\frac{(e_2+1)(e_2+2)}{2}=2\cdot 3^2\nmid n\]
+		lo cual es un absurdo. Por ende, $e_2=2$ y tenemos $2^2\cdot 3^2=6\cdot\frac{(2+1)(2+2)}{2}$ de donde $n=36$.
+		\ii Si $e_1=3$, entonces $\frac{(e_1+1)(e_2+1)}{2}=10$ de donde $p_i=5$ para algún $2\le i$. Pero como
+		\[2^3\cdot 5^e>10\cdot\frac{(e+1)(e+2)}{2}\]
+		tenemos un absurdo.
+	\end{itemize}
+	Ahora, supongamos que $p_1\ge 3$. Luego, $(p_1,e_1)=(3,1)$ y $n=3$ para que se cumpla la igualdad. Finalmente, los valores de $n$ son $3$, $18$ y $36$.
+\end{proof}
+
+\begin{probHR}[ISL 2020/N7]
+	Let $\cal S$ be a set consisting of $n\ge 3$ positive integers, none of which is a sum of two other distinct members of $\cal S$. Prove that the elements of $\cal S$ may be ordered as $a_1,a_2,\dots,a_n$ so that $a_i$ does not divide $a_{i-1}+a_{i+1}$ for all $i=2,3,\dots,n-1$.
+	\forum[aops]{22698513}
+\end{probHR}
+
+\begin{proof}
+	Probaremos que los elementos de $\cal S$ pueden ser ordenados como $a_1,a_2,\dots,a_n$ tales que $a_i$ no divide a los números $a_{i-1}+a_{i+1}$ y $a_{i-1}-a_{i+1}$ para todo $2\le i\le n-1$. Si $n=3$, sean $a>b>c$ los elementos de $\cal S$. Si $a\mid b+c<2a$ entonces $a=b+c$, absurdo. Es claro que $a\nmid b-c<a$, por lo tanto $n=3$ cumple. Ahora, supongamos que $n\ge 4$ y que $n-1$ cumple. Sea $a$ el máximo elemento de $\cal S$ y considere al conjunto ${\cal T}={\cal S}\setminus\{a\}$ de $n-1$ elementos. Por hipótesis, los elementos de $\cal T$ pueden ser ordenados como $b_1,b_2,\dots,b_{n-1}$ de modo que cumplan las condiciones. Note que $a\nmid b_i+b_{i+1}$ para todo $1\le i\le n-2$. Si $b_1\mid a\pm b_2$, $b_2\mid a\pm b_3$, $b_{n-2}\mid a\pm b_{n-3}$, $b_{n-1}\mid a\pm b_{n-2}$, y $b_{i-1}\mid a\pm b_{i-2}$ o $b_i\mid a\pm b_{i+1}$ para todo $3\le i\le n-2$, entonces por casillas existe un índice $1\le j\le n-1$ tal que $b_j\mid a\pm b_{j-1}$ y $b_j\mid a\pm b_{j+1}$. Luego, $b_j\mid b_{j-1}\pm b_{j+1}$ lo cual es una contradicción, así que podemos insertar al número $a$ entre los $b_i$'s de manera que siga cumpliendo las condiciones. La demostración queda completa por inducción.
+\end{proof}
+
+\begin{probEG}[ISL 2019/N2]
+	Find all triples $(a,b,c)$ of positive integers such that $a^3+b^3+c^3=(abc)^2$.
+	\forum[aops]{17828751}
+\end{probEG}
+
+\begin{proof}
+	Sin pérdida de generalidad supongamos que $a\ge b\ge c$. Luego, $b^3+c^3=a^2(b^2c^2-a)>0$ de donde
+	\[2b^3\ge b^3+c^3=a\cdot a(b^2c^2-a)\ge b(b^2c^2-1)\]
+	y $1\ge b^2(c^2-1)$. Por ende, $c=1$ y $b^3+1=a^2(b^2-a)$. Si $a=b$, entonces $a\mid 1$ de donde $a=b=1$, lo cual no cumple. Luego,
+	\[b+1=b^3+1-b(b^2-1)\ge b^3+1-b\cdot a(b^2-a)=(a-b)a(b^2-a)\ge b+1\]
+	de donde $a=b+1$ y $b^2-a=1$, lo cual implica que $(a,b)=(3,2)$. Por lo tanto, las ternas $(a,b,c)$ que cumplen son todas las permutaciones de $(3,2,1)$.
+\end{proof}
+
+\note[Simulacro IMO Día 2]{Miércoles\\2022-06-29}
+
+\begin{probEG}[Peru Mock IMO 2022/2.1\protect\footnote{ISL 2021/C1}]
+	Sea $S$ un conjunto infinito formado por enteros positivos, tales que existen cuatro elementos distintos dos a dos $a,b,c,d\in S$ tales que $\mcd(a,b)\ne\mcd(c,d)$. Pruebe que existen tres elementos distintos dos a dos $x,y,z\in S$ tales que $\mcd(x,y)=\mcd(y,z)\ne\mcd(z,x)$.
+\end{probEG}
+
+\begin{proof}
+	Supongamos por lo contrario que si $\mcd(x,y)=\mcd(y,z)$ entonces $\mcd(x,y)=\mcd(y,z)=\mcd(z,x)$. Como $\mcd(x,k)\mid x$ para todo $k\in S$ y $x\in\{a,b,c,d\}$, existen $k_1,k_2\in S\setminus\{a,b,c,d\}$ tales que $\mcd(x,k_1)=\mcd(x,k_2)$ para todo $x\in\{a,b,c,d\}$. Luego,
+	\[\mcd(k_1,k_2)=\mcd(a,k_1)=\mcd(b,k_1)=\mcd(c,k_1)=\mcd(d,k_1)\]
+	de donde $\mcd(a,b)=\mcd(c,d)$, lo cual es un absurdo.
+\end{proof}
+
+\begin{probMB}[Peru Mock IMO 2022/2.2\protect\footnote{ISL 2021/N5; pensé que no me iba a salir y pasé a resolver la 3, que era mucho más difícil y al final no pude resolver ninguna de las dos. :'v}]
+	Pruebe que solo existen un número finito de cuaternas $(a,b,c,n)$ de enteros positivos tales que
+	\[n!=a^{n-1}+b^{n-1}+c^{n-1}.\]
+\end{probMB}
+
+\begin{proof}
+	Veamos que pasa cuando $n\le 4$.
+	\begin{itemize}
+		\ii Si $n=1$, tenemos $1=a^0+b^0+c^0=3$, absurdo.
+		\ii Si $n=2$, tenemos $2=a^1+b^1+c^1\ge 3$, absurdo.
+		\ii Si $n=3$, tenemos $6=a^2+b^2+c^2$ de donde $(a,b,c)$ es una permutación de $(1,1,2)$.
+		\ii Si $n=4$, tenemos $24=a^3+b^3+c^3$ de donde $(a,b,c)=(2,2,2)$.
+	\end{itemize}
+	Ahora, supongamos que existen $a,b,c,n\in\ZZ^+$ con $n\ge 5$ que satisfacen la ecuación dada. Si $n$ es impar, como $4\mid n!=a^{n-1}+b^{n-1}+c^{n-1}$ entonces $2\mid a,b,c$. Luego, $2^{n-1}\mid a^{n-1}+b^{n-1}+c^{n-1}=n!$ de donde
+	\[n-1\le\nu_2(n!)=\sum_{s=1}^\infty\floor{\frac{n}{2^s}}\le\sum_{s=1}^k\frac{n}{2^s}=n-\frac{n}{2^k}\]
+	donde $k=\floor{\log_2n}$. Luego, $n\le 2^k$ que es un absurdo, y por ende $n$ es par. Note que
+	\begin{align*}
+		n!=n\cdot(2\cdot 3\cdots(n-1))\le n\left(\frac{\frac{(n-1)n}{2}-1}{n-2}\right)^{n-2}=n\left(\frac{n+1}{2}\right)^{n-2}<2\left(\frac{n+1}{2}\right)^{n-1}.
+	\end{align*}
+	Luego,
+	\[2\left(\frac{b+c}{2}\right)^{n-1}\le b^{n-1}+c^{n-1}<n!<2\left(\frac{n+1}{2}\right)^{n-1}\]
+	de donde $b+c\le n$ y análogamente $c+a,a+b\le n$. Ahora, supongamos que $(b+c,c+a,a+b)=(2^x,2^y,2^z)$ para algunos $x,y,z\in\ZZ^+$. Sin pérdida de generalidad, supongamos que $x\le y\le z$.
+	\begin{itemize}
+		\ii Si $x\ge 3$, entonces $4\mid a,b,c$ de donde $4^{n-1}\mid a^{n-1}+b^{n-1}+c^{n-1}=n!$. Luego,
+		\[2n-2\le\nu_2(n!)=\sum_{s=1}^\infty\floor{\frac{n}{2^s}}<\sum_{s=1}^\infty\frac{n}{2^s}=n\]
+		de donde $n<2$, absurdo.
+		\ii Si $x\le 2$, como $2\mid n!=a^{n-1}+b^{n-1}+c^{n-1}$ y $2\mid c+a$ entonces $2\mid b$ y análogamente $2\mid c$ de donde $4\le b+c=2^x\le 4$. Entonces, $x=2$ y $b=c=2$ de donde
+		\[a\mid n!=a^{n-1}+b^{n-1}+c^{n-1}=a^{n-1}+2^n\]
+		lo cual implica que $a\mid 2^n$. Como $4\nmid a=2^y-2$, tenemos que $y=2$ y $a=2$. Por ende, $5\mid n!=3\cdot 2^{n-1}$, absurdo.
+	\end{itemize}
+	Por lo tanto, existe un primo impar $p$ que divide a alguno de $b+c,c+a,a+b$. Sin pérdida de generalidad, supongamos que $p\mid b+c\le n$. Luego, $p\mid b^{n-1}+c^{n-1}$ de donde $p\mid a$. Ahora, note que
+	\[\nu_p(n!)=\sum_{s=1}^\infty\floor{\frac{n}{p^s}}\le\sum_{s=1}^\infty\frac{n}{p^s}=\frac{n}{p-1}<n-1.\]
+	Si $p\mid b,c$ entonces $p^{n-1}\mid n!$, absurdo. Por ende, $p\nmid b,c$ y como $\nu_p(n!)<n-1$ tenemos que
+	\[\nu_p(n!)=\nu_p(b^{n-1}+c^{n-1})=\nu_p(b+c)+\nu_p(n-1)\]
+	de donde
+	\[\left.\left.p^{\nu_p(n!)-\nu_p(n-1)}\,\right\rvert\!\right\rvert\,b+c\le n.\]
+	Note que por inducción $kp\le p^{k-1}$ para todo $k\ge 3$ y $kp+1<p^{k-1}$ para todo $k\ge 4$.
+	\begin{itemize}
+		\ii Si $p\nmid n-1$, entonces
+		\[p^{\floor{\frac np}}\le p^{\nu_p(n!)}\le n<p\floor{\frac np}+p\]
+		de donde $\floor{\frac np}\le 1$. Luego, $p\mid b+c,a\le n<2p$ de donde $a=b+c=p$ y
+		\[p\mid n!=p^{n-1}+b^{n-1}+(p-b)^{n-1}\]
+		implica que $b,c\mid 2$. Entonces, $p=b+c\le 4$ de donde $p=3$ y $\{b,c\}=\{1,2\}$, además $2p>n>4$ de donde $n=5$. Luego,
+		\[120=5!=3^4+1^4+2^4=98\]
+		lo cual es un absurdo.
+		\ii Si $p\mid n-1$, entonces $0<\nu_p(b+c)=\nu_p(n!)-\nu_p(n-1)$ de donde $n\ge 3p+1$. Luego,
+		\[p^{\frac{n-1}{p}-1}\le p^{\nu_p(n!)-\nu_p(n-1)}\le n=p\left(\frac{n-1}{p}\right)+1\]
+		de donde $\frac{n-1}{p}\le 3$. Por ende, $n=3p+1$ y
+		\[p^2=p^{\frac{n-1}{p}-1}\le n=3p+1\]
+		de donde $p=3$. Luego, $3^2\mid b+c\le n=10$ de donde $b+c=9$. Además,
+		\[6^9=10077696>3628800=10!=a^9+b^9+c^9\]
+		de donde $a,b,c\le 5$. Como $3\mid a$ entonces $a=3$ y $\{b,c\}=\{4,5\}$. Luego,
+		\[0\equiv 10!=3^9+4^9+5^9\equiv 2\pmod 5\]
+		lo cual es un absurdo.
+	\end{itemize}
+	Finalmente, las únicas cuaternas $(a,b,c,n)$ de enteros positivos que satisfacen la ecuación son $(1,1,2,3)$, $(1,2,1,3)$, $(2,1,1,3)$ y $(2,2,2,4)$.
+\end{proof}
+
+\begin{probHR}[Peru Mock IMO 2022/2.3\protect\footnote{ISL 2021/G8}]
+	Sea $\omega$ la circunferencia circunscrita del triángulo $ABC$ y sea $\Omega_A$ la circunferencia ex-inscrita de dicho triángulo, que es tangente al segmento $BC$. Sean $X$ y $Y$ los puntos de intersección de $\omega$ y $\Omega_A$. Sean $P$ y $Q$ las proyecciones de $A$ sobre las rectas tangentes a $\Omega_A$ en los puntos $X$ y $Y$, respectivamente. La recta tangente en $P$ a la circunferencia circunscrita del triángulo $APX$ interseca a la recta tangente en $Q$ a la circunferencia circunscrita del triángulo $AQY$ en $R$. Pruebe que $AR$ es perpendicular a $BC$.
+\end{probHR}
+
+\note[Simulacro IMO Día 3]{Jueves\\2022-06-30}
+
+\begin{probEG}[Peru Mock IMO 2022/3.1\protect\footnote{ISL 2021/A2}]
+	Para cada entero $n\ge 1$ considere un tablero de $n\times n$ que tiene escrito el número $\floor{\frac{ij}{n+1}}$ en la intersección de la fila $i$ y columna $j$, para todo $i=1,\dots,n$ y $j=1,\dots,n$.
+
+	Determine todos los enteros $n\ge 1$ para los cuales la suma de los $n^2$ números del tablero es igual a $\frac{n^2(n-1)}{4}$.
+\end{probEG}
+
+\begin{proof}
+	Pista: demostrar que
+	\[2\sum_{j=1}^n\floor{\frac{ij}{n+1}}=\mcd(n+1,i)+n(i-1)-1\]
+	y con eso demostrar que
+	\[\sum_{i=1}^n\mcd(n+1,i)=n\]
+	de donde $n=p-1$ para algún primo $p$.
+\end{proof}
+
+\begin{probMB}[Peru Mock IMO 2022/3.2\protect\footnote{ISL 2021/G3; al principio entendí mal el problema y pensé que los lados de los cuadriláteros eran paralelos a los ejes, y me salió $n^4$ usando la misma idea. :'v}]
+	Sea $n$ un entero positivo fijo y sea $S$ un conjunto de puntos $(x,y)$ en el plano cartesiano tales que ambas coordenadas $x$ y $y$ son enteros no negativos menores que $2n$ (por lo tanto, $\abs{S}=4n^2$). Sea $\cal F$ un conjunto que consiste de $n^2$ cuadriláteros tales que todos sus vértices pertenecen a $S$ y cada punto de $S$ es vértice de exactamente uno de los cuadriláteros de $\cal F$. Determine el mayor valor posible de la suma de las áreas de los $n^2$ cuadriláteros de $\cal F$.
+\end{probMB}
+
+\begin{proof}
+	Sea ${\cal F}=\{C_i:1\le i\le n^2\}$. Sean $(x_j,y_j)$ los vértices de $C_i$, para todo $4i-3\le j\le 4i$, y sea
+	\[A_i=\half\abs{\sum_{j=4i-3}^{4i}(x_jy_{j+1}-x_{j+1}y_j)}\]
+	el área de $C_i$. Luego, en cada una de $(x_1,x_2,\dots,x_{4n^2})$ y $(y_1,y_2,\dots,y_{4n^2})$, cada número $0,1,\dots,2n-1$ aparece exactamente $2n$ veces. Entonces, por la desigualdad del reordenamiento, 
+	\begin{align*}
+		\sum_{i=1}^{n^2}A_i
+		&=\half\sum_{i=1}^{n^2}\abs{\sum_{j=4i-3}^{4i}(x_jy_{j+1}-x_{j+1}y_j)}\\
+		&\le\half\left(2n\cdot\sum_{i=0}^{2n-1}i^2-2n\cdot\sum_{i=0}^{2n-1}i(2n-1-i)\right)\\
+		&=\frac{n^2(4n^2-1)}{3}
+	\end{align*}
+	donde la igualdad se puede obtener considerando ${\cal F}=\{C_{ij}:0\le i,j<n\}$ tal que los vértices de $C_{ij}$ son iguales a
+	\[(i,j),\,(j,2n-1-i),\,(2n-1-i,2n-1-j),\,(2n-1-j,i)\]
+	para todo $0\le i,j<n$.
+\end{proof}
+
+\begin{probMB}[Peru Mock IMO 2022/3.3\protect\footnote{ISL 2021 C4}]
+	El reino de Anisotropía consiste de $n$ ciudades. Para cualesquiera dos ciudades existe exactamente una vía de un solo sentido que las une. Decimos que un \emph{camino de X a Y} es una secuencia de vías tales que podemos ir de $X$ a $Y$ siguiendo esa secuencia de vías sin pasar dos veces por una misma ciudad. Una colección de caminos es llamada \emph{diversa} si ninguna vía pertenece a dos o más caminos de la colección.
+
+	Sean $A$ y $B$ dos ciudades distintas en Anisotropía. Sea $N_{AB}$ el máximo número de caminos que puede haber en una colección diversa de caminos de $A$ a $B$. Similarmente, sea $N_{BA}$ el máximo número de caminos que puede haber en una colección diversa de caminos de $B$ a $A$. Pruebe que la igualdad $N_{AB}=N_{BA}$ ocurre si y solo si el número de vías que salen de $A$ es igual al número de vías que salen de $B$.
+\end{probMB}
+
+\begin{proof}
+	Sea $G$ un grafo dirigido de $n$ vértices tal que $X\to Y$ si y solo si existe una vía de la ciudad $X$ a la ciudad $Y$. Considere a los conjuntos $V(X)=\{P\in G:X\to P\}$, $C(A,B)=\{P\in G:A\to P,B\to P\}$ y $C'(A,B)=\{P\in G:P\to A,P\to B\}$. Sea $M(A,B)$ el conjunto de todos los vértices $P\ne A$ para los cuales existe un camino $c$ tal que $c=A\to P\to B$ o $c=A\to B$ ($P=B$ en este caso, si fuera posible), y para ese $P$ sea $f(P)=c$. Luego, $V(A)=M(A,B)\cup C(A,B)$. Sea $L_{AB}$ el máximo número de caminos que puede haber en una colección diversa de caminos $c_i=A\to X_i\to\dots\to Y_i\to B$ que satisfacen $X_i\in C(A,B)$ y $Y_i\in C'(A,B)$, y sea $L(A,B)$ una colección que cumple lo anterior. Entonces, los $X_i$'s y $Y_i$'s no se repiten, además $L_{BA}$ es mayor o igual que el número de caminos de la colección diversa de $c_i'=B\to X_i\to\dots\to Y_i\to A$, de donde $L_{BA}\ge L_{AB}$. Análogamente, $L_{AB}\ge L_{BA}$ de donde $L_{AB}=L_{BA}$. Ahora, consideremos una colección diversa de $N_{AB}$ caminos $c_i=A\to P_i\to\dots\to B$ (note que si $c_i=A\to B$ entonces $P_i=B$). Es claro que los $P_i$'s son distintos, además satisfacen que $P_i=B$, $P_i\to B$ o $B\to P_i$ de donde $P_i\in M(A,B)$ o $P_i\in C(A,B)$. Ahora, supongamos que el número de $P_i$'s que pertenecen a $M(A,B)$ tales que $c_i=f(P_i)$ es máximo, y para cada $P_i\in C(A,B)$ sea $Q_i$ tal que $c_i=A\to P_i\to\dots\to Q_i\to B$. Supongamos que existe un $i$ tal que $P_i\in C(A,B)$ pero $Q_i\not\in C'(A,B)$. Luego,
+	\[c_i=A\to P_i\to v_1\to\dots\to v_{t-1}\to Q_i\to B\]
+	es tal que $A\to Q_i$. Si la vía $A\to Q_i$ no está usada, podemos hacer que $c_i=f(Q_i)$. Si la vía $A\to Q_i$ está usada en algún camino
+	\[c_j=A\to Q_i\to w_1\to\dots\to w_s\to B,\]
+	y podemos modificar los caminos para que sean $c_i=f(Q_i)$ y
+	\[c_j=A\to P_i\to v_1\to\dots\to v_{t-1}\to Q_i\to w_1\to\dots\to w_s\to B.\]
+	Como las vías no se repiten, tenemos una contradicción a la maximalidad, de donde $Q_i\in C'(A,B)$ para todo $P_i\in C(A,B)$. Por ende, $N_{AB}\le\abs{M(A,B)}+L_{AB}$, y la igualdad se consigue considerando a la colección de caminos $f(P)$ para todo $P\in M(A,B)$ y los $L_{AB}$ caminos de $L(A,B)$. Luego,
+	\[N_{AB}-\abs{V(A)}=L_{AB}-\abs{C(A,B)}=L_{BA}-\abs{C(B,A)}=N_{BA}-\abs{V(B)}\]
+	de donde $N_{AB}=N_{BA}$ si y solo si $\abs{V(A)}=\abs{V(B)}$, y con esto es suficiente.
+\end{proof}
+
+\note[Entrenamien-to IMO]{}
+
+\begin{problem}
+	Sean $n\ge 1$ un entero y $a_1,a_2,\dots,a_n$ enteros positivos. Sea $f:\ZZ\to\RR$ una función tal que $f(x)=1$, para cada entero $x<0$, y
+	\[f(x)=1-f(x-a_1)f(x-a_2)\cdots f(x-a_n)\]
+	para cada entero $x\ge 0$. Probar que existen enteros positivos $s$ y $t$ tales que $f(x+t)=f(x)$, para todo $x>s$.
+\end{problem}
+
+\begin{problem}
+	Sea $p$ un número primo y sea $m$ un entero positivo. Probar que existe un entero positivo $n$ tal que existan $m$ ceros consecutivos en la representación decimal de $p^n$.
+\end{problem}
+
+\begin{problem}
+	Considere la secuencia $\{a_n\}$ tal que $a_0=4$, $a_1=22$ y $a_n=6a_{n-1}-a_{n-2}$, para $n\ge 2$. Probar que existen secuencias $\{x_n\}$ y $\{y_n\}$ de enteros positivos tal que
+	\[a_n=\frac{y_n^2+7}{x_n-y_n}\]
+	para todo $n\ge 0$.
+\end{problem}
+
+\begin{problem}
+	Los enteros positivos están dispuestos en fila en algún orden, y cada uno aparece exactamente una vez. ¿Existe siempre un bloque de al menos dos números adyacentes en algún lugar de esta disposición de modo que la suma de los números en el bloque sea un número primo?
+\end{problem}
+
+\begin{problem}
+	Sea $m$ un entero positivo y $n=2^m+1$. Sean $f_1,f_2,\dots,f_n:[0,1]\to[0,1]$ funciones crecientes. Supongamos que para $i=1,2,\dots,n$ se tiene que:
+	\begin{enumerate}[(i)]
+		\ii $f_i(0)=0$;
+		\ii $\abs{f_i(x)-f_i(y)}\le\abs{x-y}$, para todo $x,y\in[0,1]$.
+	\end{enumerate}
+	Probar que existen enteros $1\le i<j\le n$ tal que
+	\[\abs{f_i(x)-f_j(x)}\le\frac1m\]
+	para todo $x\in[0,1]$.
+\end{problem}
+
+\begin{problem}
+	Sea $p$ un número primo y sea $M$ un polígono convexo. Supongamos que hay exactamente $p$ formas de embaldosar $M$ con triángulos equiláteros de lado $1$ y cuadrados de lado $1$. Demuestre que alguno de los lados de $M$ tiene longitud $p-1$.
+\end{problem}
+
+\begin{problem}
+	Sean $P(x)$ y $Q(x)$ polinomios reales, no constantes y del mismo grado. Suponga que para cada $x\in\RR$ tal que $Q(x)\in\ZZ$, entonces $P(x)\in\ZZ$. Demuestre que existen enteros $a$ y $b$ tales que $P(x)=aQ(x)+b$.
+\end{problem}
+
+\note{Viernes\\2022-07-01}
+
+\begin{probEG}[Emerson Soriano]
+	Un número entero $n>1$, cuyos divisores positivos son $1=d_1<d_2<\cdots<d_k=n$, es llamado \emph{subdivisible} si todos los números
+	\[d_2-d_1,\,d_3-d_2,\,\dots,\,d_k-d_{k-1}\]
+	son divisores de $n$.
+	\begin{enumerate}[(a)]
+		\ii Encontrar un entero positivo subdivisible que tenga al menos cuatro factores primos.
+		\ii Demuestre que existen infinitos enteros positivos que no son subdivisibles y tienen exactamente $2022$ divisores positivos que son subdivisibles.
+	\end{enumerate}
+\end{probEG}
+
+\begin{proof}
+	\begin{enumerate}[(a)]
+		\ii Note que si $p-1$ es subdivisible para algún primo $p$, entonces $p(p-1)$ también lo es. De esta manera podemos ver que el número $2\cdot 3\cdot 7\cdot 43$ es subdivisible con cuatro factores primos.
+		\ii Considere al número $n=2^{2022}\cdot p$, donde $p>2^{2022}+1$ es un primo cualquiera. Si $2^e\cdot p$ es subdivisible para algún $0\le e\le 2022$, entonces $p-2^e\mid 2^e\cdot p$ de donde $1<p-2^e\mid 1$, absurdo. Por lo tanto, los únicos divisores subdivisibles de $n$ son $2^1,2^2,\dots,2^{2022}$ que son claramente $2022$.
+	\end{enumerate}
+\end{proof}
+
+\note[Álgebra]{}
+
+\begin{probEG}[ISL 2018/A5]
+	Determine all functions $f:(0,\infty)\to\RR$ satisfying
+	\[\left(x+\frac1x\right)f(y)=f(xy)+f\left(\frac yx\right)\]
+	for all $x,y>0$.
+	\forum[aops]{12752798}
+\end{probEG}
+
+\begin{probHR}[ISL 2018/A6]
+	Let $m,n\ge 2$ be integers. Let $f(x_1,\dots,x_n)$ be a polynomial with real coefficients such that
+	\[f(x_1,\dots,x_n)=\floor{\frac{x_1+\dots+x_n}{m}}\text{ for every }x_1,\dots,x_n\in\{0,1,\dots,m-1\}.\]
+	Prove that the total degree of $f$ is at least $n$.
+	\forum[aops]{12752880}
+\end{probHR}
+
+\note[Entrenamien-to IMO]{Sábado\\2022-07-02}
+
+\begin{problem}[JBMO Shortlist 2014/A9]
+	Sea $n$ un entero positivo y $x_1,x_2,\dots,x_n$; $y_1,y_2,\dots,y_n$ números reales positivos, tales que
+	\[x_1+x_2+\dots+x_n=y_1+y_2+\dots+y_n=1.\]
+	Demuestre que
+	\[\abs{x_1-y_1}+\dots+\abs{x_n-y_n}\le 2-\min_{1\le i\le n}{\frac{x_i}{y_i}}-\min_{1\le i\le n}{\frac{y_i}{x_i}}.\]
+	\forum[aops]{12226720}
+	\begin{hint}
+		\begin{otherlanguage*}{english}
+			Let $n$ be a positive integer, and let $x_1,\dots,x_n,y_1,\dots,y_n$ be positive real numbers such that $x_1+\dots+x_n=y_1+\dots+y_n=1$. Show that
+			\[\abs{x_1-y_1}+\dots+\abs{x_n-y_n}\le 2-\min_{1\le i\le n}{\frac{x_i}{y_i}}-\min_{1\le i\le n}{\frac{y_i}{x_i}}.\]
+		\end{otherlanguage*}
+	\end{hint}
+\end{problem}
+
+\begin{problem}[Turkey TST 2014/3.3]
+	En la esquina superior izquierda y en la esquina inferior izquierda de un tablero de ajedrez de tamaño $2014\times 2014$ hay varios gusanos. Aquellos en la esquina superior izquierda solamente pueden moverse hacia abajo o hacia la derecha. Aquellos en la esquina inferior izquierda solamente pueden moverse hacia arriba o hacia la derecha.
+
+	Determine el mínimo número de gusanos necesarios para que sea posible que después de un número finito de pasos cada casilla haya sido visitada al menos una vez.
+	\forum[aops]{3426175}
+	\begin{hint}
+		At the bottom-left corner of a $2014\times 2014$ chessboard, there are some green worms and at the top-left corner of the same chessboard, there are some brown worms. Green worms can move only to right and up, and brown worms can move only to right and down. After a while, the worms make some moves and all of the unit squares of the chessboard become occupied at least once throughout this process. Find the minimum total number of the worms.
+	\end{hint}
+\end{problem}
+
+\begin{problem}[ISL 2003/N8]
+	Sea $p$ un número primo y sea $A$ un conjunto de enteros positivos mayores que $1$, que satisfacen las condiciones:
+	\begin{enumerate}[(i)]
+		\ii el conjunto de divisores primos de los elementos de $A$ consiste de $p-1$ elementos;
+		\ii para un subconjunto no vacío de $A$, el producto de sus elementos no es una potencia $p$-ésima.
+	\end{enumerate}
+	¿Cuál es el mayor número posible de elementos en $A$?
+	\forum[aops]{119994}
+	\begin{hint}
+		Let $p$ be a prime number and let $A$ be a set of positive integers that satisfies the following conditions:
+		\begin{enumerate}[(i)]
+			\ii the set of prime divisors of the elements in $A$ consists of $p-1$ elements;
+			\ii for any nonempty subset of $A$, the product of its elements is not a perfect $p$-th power.
+		\end{enumerate}
+		What is the largest possible number of elements in $A$?
+	\end{hint}
+\end{problem}
+
+\begin{problem}[Bulgaria National Olympiad 2020/2]
+	Sean $b_1,b_2,\dots,b_n$ números reales con suma $2$ y $a_0,a_1,\dots,a_n$ números satisfaciendo: $a_0=a_n=0$ y $\abs{a_i-a_{i-1}}\le b_i$, $i=1,2,\dots,n$. Demuestre que
+	\[\sum_{i=1}^n(a_i+a_{i-1})b_i\le 2.\]
+	\forum[aops]{16127593}
+	\begin{hint}
+		Let $b_1,\dots,b_n$ be nonnegative integers with sum $2$ and $a_0,a_1,\dots,a_n$ be real numbers such that $a_0=a_n=0$ and $\abs{a_i-a_{i-1}}\le b_i$ for each $i=1,\dots,n$. Prove that
+		\[\sum_{i=1}^n(a_i+a_{i-1})b_i\le 2.\]
+	\end{hint}
+\end{problem}
+
+\begin{problem}[Tournament of Towns, Spring 2022, Senior A-5]
+	¿Cuál es el mayor número posible de raíces en el intérvalo $(0,1)$ para un polinomio de grado $2022$ y coeficientes enteros de modo que el coeficiente principal sea $1$?
+	\forum[aops]{25217698}
+	\begin{hint}
+		What is the maximal possible number of roots on the interval $(0,1)$ for a polynomial of degree $2022$ with integer coefficients and with the leading coefficient equal to $1$?
+	\end{hint}
+\end{problem}
+
+\begin{problem}[Nordic 2021/3]
+	Sea $n$ un entero positivo. Alicia y Bob juegan el siguiente juego:
+	\begin{itemize}
+		\ii Primero, Alicia escoge $n+1$ subconjuntos de tamaño $2^{n-1}$
+		\[A_1,A_2,\dots,A_{n+1}\subset\{1,2,3,\dots,2^n\}.\]
+		\ii Después de eso, Bob escoge $n+1$ enteros arbitrarios $a_1,\dots,a_{n+1}$.
+		\ii Finalmente, Alicia escoge un entero $t$.
+	\end{itemize}
+	Bob gana si existe un entero $1\le i\le n+1$ y $s\in A_i$ tal que
+	\[s+a_i\equiv t\pmod{2^n}.\]
+	Caso contrario, Alicia gana. Encuentre todos los valores de $n$ para los que Alicia posee una estrategia ganadora.
+	\forum[aops]{21955425}
+	\begin{hint}
+		\begin{otherlanguage*}{english}
+			Let $n$ be a positive integer. Alice and Bob play the following game. First, Alice picks $n+1$ subsets $A_1,\dots,A_{n+1}$ of $\{1,\dots,2^n\}$ each of size $2^{n-1}$. Second, Bob picks $n+1$ arbitrary integers $a_1,\dots,a_{n+1}$. Finally, Alice picks an integer $t$. Bob wins if there exists an integer $1\le i\le n+1$ and $s\in A_i$ such that $s+a_i\equiv t\pmod{2^n}$. Otherwise, Alice wins.
+
+			Find all values of $n$ where Alice has a winning strategy.
+		\end{otherlanguage*}
+	\end{hint}
+\end{problem}

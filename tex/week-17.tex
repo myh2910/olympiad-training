@@ -1,6 +1,103 @@
 \section{Semana 17 (07/04 -- 07/10)}
 
-%\note[]{Lunes\\2022-07-04}
+\note[Ecuaciones Funcionales \cite{ref:pco}]{Lunes\\2022-07-04}
+
+\begin{probEG}[Azerbaijan]
+	Find all functions $f:\NN\to\ZZ$ such that
+	\[f(x+\abs{f(y)})=x+f(y)\]
+	for all $x,y\in\NN$.
+	\forum[aops]{2470438}
+\end{probEG}
+
+\begin{proof}
+	Si existe un $a\in\NN$ tal que $f(a)<0$, con $(x,y)=(-f(a),a)$ tenemos $f(-2f(a))=0$. Si existe un $a\in\NN$ tal que $f(a)=0$, con $y=a$ tenemos $f(x)=x$ para todo $x\in\NN$. Ahora, supongamos que $f(x)>0$ para todo $x\in\NN$. Si $\displaystyle c=\inf_{x\in\NN}f(x)$, es claro que $f(x)=x$ para todo $x>c$. Además, $f(x)\ge c$ para todo $x\le c$. Es fácil verificar que esta función cumple.
+\end{proof}
+
+\begin{probEG}[Belarus TST 2010/2.4]
+	Find all pairs of functions $f,g:\QQ\to\QQ$ satisfying the following equality
+	\[f(x+g(y))=g(x)+2y+f(y)\]
+	for all $x,y\in\QQ$.
+	\forum[aops]{14519514}
+\end{probEG}
+
+\begin{proof}
+	Con $(x,y)=(-g(0),0)$ tenemos $g(-g(0))=0$. Luego, con $y=-g(0)$ tenemos que $f(x)-g(x)$ es una constante. Por ende,
+	\[g(x+g(y))=g(x)+2y+g(y).\]
+	Con $y=-g(0)$ tenemos $g(0)=0$. Luego, con $x=0$ tenemos $g(g(y))=2y+g(y)$. Comparando $(x,y)=(u+v,v/2)$ y $(x,y)=(u,g(v/2))$ tenemos
+	\begin{align*}
+		g(u+v)+v+g(v/2)
+		&=g(u+v+g(v/2))\\
+		&=g(u+g(g(v/2)))\\
+		&=g(u)+2g(v/2)+g(g(v/2))\\
+		&=g(u)+v+3g(v/2)
+	\end{align*}
+	de donde $g(u+v)=g(u)+2g(v/2)$. Si $u=0$, tenemos $g(v)=2g(v/2)$ de donde $g(u+v)=g(u)+g(v)$ para todo $u,v\in\QQ$. Es decir, $g$ satisface la ecuación funcional de Cauchy, por lo que $g(x)=ax$ para algún $a\in\QQ$ fijo. Luego, $a^2y=g(g(y))=2y+g(y)=2y+ay$ de donde $a\in\{-1,2\}$. Por lo tanto, $(f(x),g(x))=(ax+b,ax)$ donde $a\in\{-1,2\}$ y $b\in\QQ$ son fijos.
+\end{proof}
+
+\begin{probEG}
+	Find all non-constant functions $f:\ZZ\to\NN_0$ satisfying all of the following conditions:
+	\begin{enumerate}[(i)]
+		\ii $f(x-y)+f(y-z)+f(z-x)=3(f(x)+f(y)+f(z))-f(x+y+z)$ for all $x,y,z\in\ZZ$
+		\ii $\sum_{k=1}^{15}f(k)\le 1995$
+	\end{enumerate}
+	\forum[aops]{2468108}
+\end{probEG}
+
+\begin{proof}
+	Con $(x,y,z)=(0,0,0)$ tenemos que $f(0)=0$. Con $(x,y,z)=(a,a,-a)$ tenemos $f(2a)+f(-2a)=5f(a)+3f(-a)$ y análogamente $f(2a)+f(-2a)=5f(a)+3f(-a)$. Luego, $f(a)=f(-a)$ para todo $a\in\ZZ$, y en particular con $a=1$ tenemos $f(2)=4f(1)$. Ahora, sea $b$ un entero. Con $(x,y,z)=(b-1,b-1,b-1)$ tenemos $f(3b-3)=9f(b-1)$. Con $(x,y,z)=(b,b-1,b-2)$ tenemos
+	\begin{align*}
+		6f(1)
+		&=f(1)+f(1)+f(2)\\
+		&=3(f(b)+f(b-1)+f(b-2))-f(3b-3)\\
+		&=3f(b)-6f(b-1)+3f(b-2)
+	\end{align*}
+	de donde $f(b)=2f(b-1)-f(b-2)+2f(1)$. Por inducción, $f(b)=b^2f(1)$ para todo $b\in\ZZ^+$. Es decir, $f(x)=cx^2$ para todo $x\in\ZZ$, donde $c\in\ZZ^+_0$ es una constante. Como $f$ no es constante, $c\ge 1$. Además,
+	\[1240c=c\sum_{k=1}^{15}k^2=\sum_{k=1}^{15}f(k)\le 1995\]
+	de donde $c=1$. Por lo tanto, $f(x)=x^2$ para todo $x\in\ZZ$.
+\end{proof}
+
+\begin{probMG}[Japan MO Finals 2006/3]
+	Find all functions $f:\RR\to\RR$ such that
+	\[f(x)^2+2yf(x)+f(y)=f(y+f(x))\]
+	for all $x,y\in\RR$.
+	\forum[aops]{444449}
+\end{probMG}
+
+\begin{proof}
+	Es claro que $f\equiv 0$ es una solución. Ahora, supongamos que existe un $t\in\RR$ tal que $f(t)\ne 0$.
+	Sea $g(x)=f(x)-x^2$ para todo $x\in\RR$. Luego, $g(y)=g(y+f(x))$ para todo $x,y\in\RR$. Note que si $g(a)=g(b)$, entonces $g(a^2-b^2)=g(f(a)-f(b))=g(f(a))=g(0)$. Por ende,
+	\[g(2yf(t)+f(t)^2)=g((y+f(t))^2-y^2)=g(0)\]
+	para todo $y\in\RR$ de donde $g$ es constante. Es decir, $f(x)=x^2+c$ para algún $c\in\RR$.
+\end{proof}
+
+\begin{probEG}
+	Demuestre que una función $f:\RR\to\RR$ es aditiva si y solo si
+	\[f(x+y+xy)=f(x)+f(y)+f(xy)\]
+	para todo $x,y\in\RR$.
+	\forum[aops]{1897092}
+\end{probEG}
+
+\begin{proof}
+	Es claro que si $f$ es aditiva entonces $f(x+y+xy)=f(x)+f(y)+f(xy)$. Ahora, supongamos que $f(x+y+xy)=f(x)+f(y)+f(xy)$ para todo $x,y\in\RR$. Si $x=y=0$ entonces $f(0)=0$, y con $y=-x$ tenemos $f(-x)=-f(x)$. Con $(x,y)=(a,b)$ y $(x,y)=(-a,-b)$ tenemos que
+	\[f(ab+a+b)+f(ab-a-b)=2f(ab)\]
+	para todo $a,b\in\RR$. Es decir, $f(t)+f(s)=2f\left(\frac{t+s}{2}\right)$ para todo $t,s\in\RR$ tales que $(t-s)^2\ge 8(t+s)$. De esto se puede obtener que
+	\[f(x)+f(y)=2f\left(\frac{x+y}{2}\right)\]
+	para todo $x,y\in\RR$, que es la ecuación funcional de Jensen. Como $f(0)=0$, esta satisface la ecuación funcional de Cauchy. Por lo tanto, $f(x+y)=f(x)+f(y)$ para todo $x,y\in\RR$.
+\end{proof}
+
+\begin{probEG}[ISL 2002/A1]
+	Find all functions $f:\RR\to\RR$ such that
+	\[f(f(x)+y)=2x+f(f(y)-x)\]
+	for all $x,y\in\RR$.
+	\forum[aops]{118698}
+\end{probEG}
+
+\begin{proof}
+	Con $(x,y)=(-a/2,-f(-a/2))$ podemos notar que para todo $a\in\RR$ existe un $b\in\RR$ tal que $f(b)=a+f(0)$. Es decir, $f$ es suryectiva. Si $f(u)=f(v)$ para algunos $u,v\in\RR$, existe un $w\in\RR$ tal que $f(w)=u+v$. Luego,
+	\[2u=f(f(u)+w)-f(f(w)-u)=f(f(v)+w)-f(f(w)-v)=2v\]
+	de donde $u=v$. Es decir, $f$ es inyectiva. Con $x=0$ tenemos que $f(f(0)+y)=f(f(y))$ para todo $y\in\RR$ de donde $f(y)=y+f(0)$. Por lo tanto, $f(x)=x+c$ para todo $x\in\RR$, siendo $c\in\RR$ una constante.
+\end{proof}
+
 %\note[]{Martes\\2022-07-05}
 %\note[]{Miércoles\\2022-07-06}
 %\note[]{Jueves\\2022-07-07}
