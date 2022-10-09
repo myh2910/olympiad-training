@@ -63,7 +63,7 @@
 
 \note[IMO TST Día 1]{Jueves\\2022-05-26}
 
-\begin{probEG}[Peru IMO TST 2022/1]
+\begin{probEG}[Peru IMO TST 2022/1.1]
 	Encuentre todos los enteros positivos $n$ tales que para cualquier entero positivo $k$ con $1\le k\le\sqrt{n}$ se cumple que el número $\floor{n}{k}-k$ es impar.
 \end{probEG}
 
@@ -71,7 +71,7 @@
 	Respuesta: $n=2,6,14,30$.
 \end{proof}
 
-\begin{probEG}[Peru IMO TST 2022/2]
+\begin{probEG}[Peru IMO TST 2022/1.2]
 	Determine todas las funciones $f:\RR\to\RR$ tales que
 	\[f(xy+f(x))+f(y)=xf(y)+f(x+y)\]
 	para todo par de números reales $x,y$.
@@ -81,7 +81,7 @@
 	Respuesta: $f(x)\equiv 2-x,x,0$.
 \end{proof}
 
-\begin{probEG}[Peru IMO TST 2022/3]
+\begin{probEG}[Peru IMO TST 2022/1.3]
 	Considere un $n$-ágono (un polígono de $n$ lados) con $n\ge 3$. Se asignan números enteros no negativos distintos dos a dos a cada lado y diagonal del $n$-ágono de modo que los números asignados a los lados de cualquier triángulo con vértices en los vértices del $n$-ágono forman una progresión aritmética. Determine el máximo valor de $n$ para el cual esto es posible.
 \end{probEG}
 
@@ -89,7 +89,7 @@
 	Respuesta: $n=4$.
 \end{proof}
 
-\begin{probMB}[Peru IMO TST 2022/4]
+\begin{probMB}[Peru IMO TST 2022/1.4]
 	Sea $\Omega$ el circuncírculo del triángulo $ABC$, con $\angle BAC>90\dg$ y $AB>AC$. Las rectas tangentes a $\Omega$ en los puntos $B$ y $C$ se intersectan en $D$. La recta tangente a $\Omega$ en el punto $A$ interseca a la recta $BC$ en $E$. La recta paralela a $AE$ que pasa por $D$ interseca a la recta $BC$ en $F$. La circunferencia $\Gamma$ con diámetro $EF$ interseca a la recta $AB$ en los puntos $P$ y $Q$, y a la recta $AC$ en los puntos $X$ e $Y$. Pruebe que uno de los ángulos $\angle AEB$, $\angle PEQ$, $\angle XEY$ es igual a la suma de los otros dos.
 \end{probMB}
 
@@ -161,7 +161,7 @@
 
 \note[IMO TST Día 2]{Domingo\\2022-05-29}
 
-\begin{probEG}[Peru IMO TST 2022/5]
+\begin{probEG}[Peru IMO TST 2022/2.1]
 	Sea $N$ un entero positivo. Determine todos los enteros positivos $n$ que satisfacen la siguiente condición: para cualquier lista $d_1,d_2,\dots,d_k$ de divisotres de $n$ (no necesariamente distintos) tal que
 	\[\frac{1}{d_1}+\frac{1}{d_2}+\dots+\frac{1}{d_k}>N,\]
 	algunas de las fracciones $\frac{1}{d_1},\frac{1}{d_2},\dots,\frac{1}{d_k}$ suman exactamente $N$.
@@ -171,7 +171,7 @@
 	Respuesta: $n=p^e$ para todo número primo $p$ y $e\in\ZZ^+_0$.
 \end{proof}
 
-\begin{probHB}[Peru IMO TST 2022/6]
+\begin{probHB}[Peru IMO TST 2022/2.2\protect\footnote{ISL 2021/A5}]
 	Sea $n\ge 2$ un entero y sean $a_1,a_2,\dots,a_n$ números reales positivos cuya suma es $1$. Pruebe que
 	\[\sum_{k=1}^n\frac{a_k}{1-a_k}(a_1+a_2+\dots+a_{k-1})^2<\frac13.\]
 \end{probHB}
@@ -196,7 +196,7 @@
 	\[\sum_{k=1}^n\frac{a_k}{1-a_k}(a_1+a_2+\dots+a_{k-1})^2<\sum_{k=1}^n\frac{S_k^3-S_{k-1}^3}{3}=\frac{S_n^3-S_0^3}{3}=\frac13.\]
 \end{proof}
 
-\begin{probMB}[Peru IMO TST 2022/7]
+\begin{probHR}[Peru IMO TST 2022/2.3\protect\footnote{ISL 2021/C7}]
 	Sea $m>1$ un entero. Considere un tablero de tamaño $3m\times 3m$. Una rana se ubica en la casilla de la esquina inferior izquierda $S$ del tablero y quiere llegar mediante saltos a la casilla de la esquina superior derecha $F$ del tablero. La rana solo puede saltar a la casilla vecina derecha o a la casilla vecina de arriba de la casilla en la que se encuentra.
 
 	Algunas casillas están pegajosas y la rana queda atrapada si llega a cualquiera de ellas. El conjunto $X$ de casillas pegajosas se denomina \emph{barricada} si la rana no puede llegar a $F$ partiendo de $S$. Una barricada es \emph{minimal} si no contiene una barricada más pequeña.
@@ -213,7 +213,7 @@
 		         &         &         &         &\clubsuit& \\
 		S        &         &\clubsuit&         &         &
 	\end{tblr}\]
-\end{probMB}
+\end{probHR}
 
 \begin{proof}
 	Digamos que $X$ es el conjunto de todas las casillas marcadas en el siguiente tablero de $3m\times 3m$.
@@ -228,5 +228,5 @@
 		         &         &\clubsuit&         &         &\clubsuit&      &         &         &\clubsuit\\
 		S        &         &         &         &         &         &      &         &         &
 	\end{tblr}\]
-	Es fácil ver que $X$ es una barricada minimal con $\abs{X}=3m^2-2m>3m^2-3m$. Ahora, para probar que una barricada minimal $X$ contiene a lo más $3m^2$ casillas, asignaremos dos casillas vecinas a cada casilla pegajosa, y de esta manera $3\abs{X}\le 3m\times 3m$ de donde $\abs{X}\le 3m^2$.
+	Es fácil ver que $X$ es una barricada minimal con $\abs{X}=3m^2-2m>3m^2-3m$. Ahora, para probar que una barricada minimal $X$ contiene a lo más $3m^2$ casillas, asignaremos dos casillas vecinas distintas a cada casilla pegajosa, y de esta manera $3\abs{X}\le 3m\times 3m$ de donde $\abs{X}\le 3m^2$ (me falta probar que se puede lograr eso :v).
 \end{proof}

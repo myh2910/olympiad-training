@@ -98,7 +98,49 @@
 	de donde $u=v$. Es decir, $f$ es inyectiva. Con $x=0$ tenemos que $f(f(0)+y)=f(f(y))$ para todo $y\in\RR$ de donde $f(y)=y+f(0)$. Por lo tanto, $f(x)=x+c$ para todo $x\in\RR$, siendo $c\in\RR$ una constante.
 \end{proof}
 
-%\note[]{Martes\\2022-07-05}
-%\note[]{Miércoles\\2022-07-06}
-%\note[]{Jueves\\2022-07-07}
-%\note[]{Viernes\\2022-07-08}
+\note{Martes\\2022-07-05}
+
+\begin{probEG}
+	Find all functions $f:\RR\to\RR$ such that
+	\[f(x^2+f(y))=y+f(x)^2\]
+	for all $x,y\in\RR$.
+\end{probEG}
+
+\begin{probEG}
+	Find all $a\in\RR$ for which there exists a non-constant function $f:(0,1]\to\RR$ such that
+	\[a+f(x+y-xy)+f(x)f(y)\le f(x)+f(y)\]
+	for all $x,y\in(0,1]$.
+\end{probEG}
+
+\begin{probEG}
+	Find all functions $f:\RR\to\RR$ satisfying
+	\[f(f(x)+y)=f(x^2-y)+4f(x)y\]
+	for all $x,y\in\RR$.
+\end{probEG}
+
+\begin{probEG}[ELMO 2021/1]
+	Find all functions $f:\NN\to\NN$ such that
+	\[f^{f^{f(x)}(y)}(z)=x+y+z+1\]
+	for all $x,y,z\in\NN$.
+	\forum[aops]{16724045}
+\end{probEG}
+
+\begin{probEG}[ELMO Shortlist 2018/A1]
+	Let $f:\RR\to\RR$ be a bijective function. Does there always exist an infinite number of functions $g:\RR\to\RR$ such that $f(g(x))=g(f(x))$ for all $x\in\RR$?
+	\forum[aops]{10581480}
+\end{probEG}
+
+\begin{probMG}[ELMO Shortlist 2019/A4]
+	Find all nondecreasing functions $f:\RR\to\RR$ such that for all real numbers $x,y$,
+	\[f(f(x))+f(y)=f(x+f(y))+1.\]
+	\forum[aops]{12623572}
+\end{probMG}
+
+\begin{probM}[ELMO Shortlist 2017/A2]
+	Find all functions $f:\RR\to\RR$ such that for all real numbers $a$, $b$, and $c$:
+	\begin{enumerate}[(i)]
+		\ii If $a+b+c\ge 0$ then $f(a^3)+f(b^3)+f(c^3)\ge 3f(abc).$
+		\ii If $a+b+c\le 0$ then $f(a^3)+f(b^3)+f(c^3)\le 3f(abc).$
+	\end{enumerate}
+	\forum[aops]{8509522}
+\end{probM}
