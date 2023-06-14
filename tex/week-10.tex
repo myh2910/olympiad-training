@@ -3,259 +3,433 @@
 \note[Álgebra]{Lunes\\2022-05-16}
 
 \begin{probEG}[ISL 2002/A2]
-	Let $a_1,a_2,\dots$ be an infinite sequence of real numbers, for which there exists a real number $c$ with $0\le a_i\le c$ for all $i$, such that
-	\[\abs{a_i-a_j}\ge\frac{1}{i+j}\quad\text{for all }i,j\text{ with }i\ne j.\]
-	Prove that $c\ge 1$.
-	\forum[aops]{118699}
+  Let $a_1,a_2,\dots$ be an infinite sequence of real numbers, for which there
+  exists a real number $c$ with $0\le a_i\le c$ for all $i$, such that
+  \[\abs{a_i-a_j}\ge\frac{1}{i+j}\quad\text{for all }i,j\text{ with }i\ne j.\]
+  Prove that $c\ge 1$.
+  \forum[aops]{118699}
 \end{probEG}
 
 \begin{probMR}[ISL 2002/A3]
-	Let $P$ be a cubic polynomial given by $P(x)=ax^3+bx^2+cx+d$, where $a,b,c,d$ are integers and $a\ne 0$. Suppose that $xP(x)=yP(y)$ for infinitely many pairs $x,y$ of integers with $x\ne y$. Prove that the equation $P(x)=0$ has an integer root.
-	\forum[aops]{118702}
+  Let $P$ be a cubic polynomial given by $P(x)=ax^3+bx^2+cx+d$, where $a,b,c,d$
+  are integers and $a\ne 0$. Suppose that $xP(x)=yP(y)$ for infinitely many
+  pairs $x,y$ of integers with $x\ne y$. Prove that the equation $P(x)=0$ has an
+  integer root.
+  \forum[aops]{118702}
 \end{probMR}
 
 \begin{probMB}[ISL 2002/A4]
-	Find all functions $f$ from the reals to the reals such that
-	\[\left(f(x)+f(z)\right)\left(f(y)+f(t)\right)=f(xy-zt)+f(xt+yz)\]
-	for all real $x,y,z,t$.
-	\forum[aops]{118703}
+  Find all functions $f$ from the reals to the reals such that
+  \[\left(f(x)+f(z)\right)\left(f(y)+f(t)\right)=f(xy-zt)+f(xt+yz)\]
+  for all real $x,y,z,t$.
+  \forum[aops]{118703}
 \end{probMB}
 
 \note[Combinatoria]{Martes\\2022-05-17}
 
 \begin{probEG}[ISL 2002/C1]
-	Let $n$ be a positive integer. Each point $(x,y)$ in the plane, where $x$ and $y$ are non-negative integers with $x+y<n$, is coloured red or blue, subject to the following condition: if a point $(x,y)$ is red, then so are all points $(x',y')$ with $x'\le x$ and $y'\le y$. Let $A$ be the number of ways to choose $n$ blue points with distinct $x$-coordinates, and let $B$ be the number of ways to choose $n$ blue points with distinct $y$-coordinates. Prove that $A=B$.
-	\forum[aops]{118710}
+  Let $n$ be a positive integer. Each point $(x,y)$ in the plane, where $x$ and
+  $y$ are non-negative integers with $x+y<n$, is coloured red or blue, subject
+  to the following condition: if a point $(x,y)$ is red, then so are all points
+  $(x',y')$ with $x'\le x$ and $y'\le y$. Let $A$ be the number of ways to
+  choose $n$ blue points with distinct $x$-coordinates, and let $B$ be the
+  number of ways to choose $n$ blue points with distinct $y$-coordinates. Prove
+  that $A=B$.
+  \forum[aops]{118710}
 \end{probEG}
 
 \begin{probEG}[ISL 2002/C2]
-	For $n$ an odd positive integer, the unit squares of an $n\times n$ chessboard are coloured alternately black and white, with the four corners coloured black. A \emph{tromino} is an $L$-shape formed by three connected unit squares. For which values of $n$ is it possible to cover all the black squares with non-overlapping trominos? When it is possible, what is the minimum number of trominos needed?
-	\forum[aops]{118712}
+  For $n$ an odd positive integer, the unit squares of an $n\times n$ chessboard
+  are coloured alternately black and white, with the four corners coloured
+  black. A \emph{tromino} is an $L$-shape formed by three connected unit
+  squares. For which values of $n$ is it possible to cover all the black squares
+  with non-overlapping trominos? When it is possible, what is the minimum number
+  of trominos needed?
+  \forum[aops]{118712}
 \end{probEG}
 
 \begin{proof}
-	Respuesta: $n\ge 7$ y el mínimo es $\left(\frac{n+1}{2}\right)^2$.
+  Respuesta: $n\ge 7$ y el mínimo es $\left(\frac{n+1}{2}\right)^2$.
 \end{proof}
 
 \begin{probMR}[ISL 2002/C3]
-	Let $n$ be a positive integer. A sequence of $n$ positive integers (not necessarily distinct) is called \emph{full} if it satisfies the following condition: for each positive integer $k\ge 2$, if the number $k$ appears in the sequence then so does the number $k-1$, and moreover the first occurrence of $k-1$ comes before the last occurrence of $k$. For each $n$, how many full sequences are there?
-	\forum[aops]{118714}
+  Let $n$ be a positive integer. A sequence of $n$ positive integers (not
+  necessarily distinct) is called \emph{full} if it satisfies the following
+  condition: for each positive integer $k\ge 2$, if the number $k$ appears in
+  the sequence then so does the number $k-1$, and moreover the first occurrence
+  of $k-1$ comes before the last occurrence of $k$. For each $n$, how many full
+  sequences are there?
+  \forum[aops]{118714}
 \end{probMR}
 
 \begin{proof}
-	Respuesta: $n!$, considerando una biyección.
+  Respuesta: $n!$, considerando una biyección.
 \end{proof}
 
 \note[Teoría de Números]{}
 
-\begin{probEG}[Russia 2022]
-	Demuestre que existe un entero positivo $b$ que tiene la siguiente propiedad: para todo entero $n>b$, la suma de los dígitos del número $n!$ es mayor o igual que $10^{100}$.
+\begin{probEG}[Russia 2022\protect\footnote{Kvant/M2693}]
+  Demuestre que existe un entero positivo $b$ que tiene la siguiente propiedad:
+  para todo entero $n>b$, la suma de los dígitos del número $n!$ es mayor o
+  igual que $10^{100}$.
+  \forum[aops]{27238158}
+  \begin{hint}
+    Prove that there exists a natural number $b$ such that for any natural $n>b$
+    the sum of the digits of $n!$ is not less than $10^{100}$.
+  \end{hint}
 \end{probEG}
 
 \begin{proof}
-	Note que si $n>b$, entonces $b\mid n!$. Además, $s(x-y)\ge s(x)-s(y)$ para todo $x,y\in\ZZ^+$. Sea $b=\underbrace{99\cdots 9}_{N\text{ veces}}$ donde $N\in\ZZ^+$ es suficientemente grande, y sea $M\cdot 10^k\cdot b$ un múltiplo de $b$ donde $10\nmid M$. Luego,
-	\begin{align*}
-		s(M\cdot 10^k\cdot b)
-		&=s(M\cdot(10^N-1))\\
-		&=s\left(\ol{(M-1)\underbrace{99\cdots 9}_{N\text{ veces}}}-(M-1)\right)\\
-		&\ge s(M-1)+9N-s(M-1)\\
-		&=9N
-	\end{align*}
-	de donde $s(n!)\ge 9N>10^{100}$ para todo $n>b$.
+  Note que si $n>b$, entonces $b\mid n!$. Además, $s(x-y)\ge s(x)-s(y)$ para
+  todo $x,y\in\ZZ^+$. Sea $b=\underbrace{99\cdots 9}_{N\text{ veces}}$ donde
+  $N\in\ZZ^+$ es suficientemente grande, y sea $M\cdot 10^k\cdot b$ un múltiplo
+  de $b$ donde $10\nmid M$. Luego,
+  \begin{align*}
+    s(M\cdot 10^k\cdot b)
+    &= s(M\cdot(10^N-1)) \\
+    &= s\left(\ol{(M-1)\underbrace{99\cdots 9}_{N\text{ veces}}}-(M-1)\right) \\
+    &\ge s(M-1)+9N-s(M-1) \\
+    &= 9N
+  \end{align*}
+  de donde $s(n!)\ge 9N>10^{100}$ para todo $n>b$.
 \end{proof}
 
 \note[Geometría]{Miércoles\\2022-05-18}
 
 \begin{probEG}[ISL 2001/G5]
-	Let $ABC$ be an acute triangle. Let $DAC$, $EAB$, and $FBC$ be isosceles triangles exterior to $ABC$, with $DA=DC$, $EA=EB$, and $FB=FC$, such that
-	\[\angle ADC=2\angle BAC,\quad\angle BEA=2\angle ABC,\quad\angle CFB=2\angle ACB.\]
-	Let $D'$ be the intersection of lines $DB$ and $EF$, let $E'$ be the intersection of $EC$ and $DF$, and let $F'$ be the intersection of $FA$ and $DE$. Find, with proof, the value of the sum
-	\[\frac{DB}{DD'}+\frac{EC}{EE'}+\frac{FA}{FF'}.\]
-	\forum[aops]{119201}
+  Let $ABC$ be an acute triangle. Let $DAC$, $EAB$, and $FBC$ be isosceles
+  triangles exterior to $ABC$, with $DA=DC$, $EA=EB$, and $FB=FC$, such that
+  \[
+    \angle ADC=2\angle BAC,\quad
+    \angle BEA=2\angle ABC,\quad
+    \angle CFB=2\angle ACB.
+  \]
+  Let $D'$ be the intersection of lines $DB$ and $EF$, let $E'$ be the
+  intersection of $EC$ and $DF$, and let $F'$ be the intersection of $FA$ and
+  $DE$. Find, with proof, the value of the sum
+  \[\frac{DB}{DD'}+\frac{EC}{EE'}+\frac{FA}{FF'}.\]
+  \forum[aops]{119201}
 \end{probEG}
 
 \begin{proof}
-	Si $P$ es un punto interior de $ABC$ tal que
-	\[\angle CPA=\pi-\angle A,\quad\angle APB=\pi-\angle B,\quad\angle BPC=\pi-\angle C\]
-	entonces $P$ es la intersección de circunferencias $\odot(D,DA),\odot(E,EB),\odot(F,FC)$ de donde
-	\[\triangle PDE\equiv\triangle ADE,\quad\triangle PEF\equiv\triangle BEF,\quad\triangle PFD\equiv\triangle CFD.\]
-	Luego,
-	\[\cycsum\frac{DB}{DD'}=\cycsum\frac{\abs{DEBF}}{\abs{DEF}}=3+\frac{\abs{ADE}+\abs{BEF}+\abs{CFD}}{\abs{PDE}+\abs{PEF}+\abs{PFD}}=4.\]
+  Si $P$ es un punto interior de $ABC$ tal que
+  \[
+    \angle CPA=\pi-\angle A,\quad
+    \angle APB=\pi-\angle B,\quad
+    \angle BPC=\pi-\angle C
+  \]
+  entonces $P$ es la intersección de circunferencias
+  $\odot(D,DA),\odot(E,EB),\odot(F,FC)$ de donde
+  \[
+    \triangle PDE\equiv\triangle ADE,\quad
+    \triangle PEF\equiv\triangle BEF,\quad
+    \triangle PFD\equiv\triangle CFD.
+  \]
+  Luego,
+  \[
+    \cycsum\frac{DB}{DD'}
+    =\cycsum\frac{\abs{DEBF}}{\abs{DEF}}
+    =3+\frac{\abs{ADE}+\abs{BEF}+\abs{CFD}}{\abs{PDE}+\abs{PEF}+\abs{PFD}}
+    =4.
+  \]
 \end{proof}
 
 \begin{probEG}[ISL 2001/G6]
-	Let $ABC$ be a triangle and $P$ an exterior point in the plane of the triangle. Suppose $AP,BP,CP$ meet the sides $BC,CA,AB$ (or extensions thereof) in $D,E,F$, respectively. Suppose further that the areas of triangles $PBD,PCE,PAF$ are all equal. Prove that each of these areas is equal to the area of triangle $ABC$ itself.
-	\forum[aops]{119203}
+  Let $ABC$ be a triangle and $P$ an exterior point in the plane of the
+  triangle. Suppose $AP,BP,CP$ meet the sides $BC,CA,AB$ (or extensions thereof)
+  in $D,E,F$, respectively. Suppose further that the areas of triangles
+  $PBD,PCE,PAF$ are all equal. Prove that each of these areas is equal to the
+  area of triangle $ABC$ itself.
+  \forum[aops]{119203}
 \end{probEG}
 
 \begin{proof}
-	Sin pérdida de generalidad, supongamos que $P$ pertenece al lado opuesto de $A$ con respecto a $BC$. Si $C$ está entre $B$ y $D$, entonces $\triangle PBD$ contiene al $\triangle PCE$. Si $B$ está entre $C$ y $D$, entonces $\triangle PAF$ contiene al $\triangle PBD$. Por ende, $D$ está en el lado $BC$. Si $A$ está entre $E$ y $C$, entonces $\triangle PCE$ contiene al $\triangle PBD$. Si $B$ está entre $F$ y $A$, entonces $\triangle PAF$ contiene al $\triangle PBD$. Es decir, los segmentos dirigidos $\frac{PA}{PD},\frac{PB}{PE},\frac{PC}{PF}$ tienen signos $+,-,+$, respectivamente. Note que
-	\[\frac{\abs{PBD}}{\abs{ABC}}=\frac{BD}{BC}\cdot\frac{PD}{AD}\quad\text{y}\quad\frac{BD}{BC}\cdot\frac{FC}{FP}\cdot\frac{AP}{AD}=1\]
-	considerando áreas y segmentos con signos. Es decir,
-	\[\left(\frac{PC}{PF}-1\right)\cdot\frac{PA}{PD}=\frac{\abs{ABC}}{\abs{PBD}}=k\]
-	donde $k\in\RR^-$ es una constante. Con un poco de cálculo obtenemos
-	\[(x(x-1)-k)(k+1)=0\]
-	donde $x=\frac{PA}{PD}\ge 1$. Por lo tanto, $k=-1$.
+  Sin pérdida de generalidad, supongamos que $P$ pertenece al lado opuesto de
+  $A$ con respecto a $BC$. Si $C$ está entre $B$ y $D$, entonces $\triangle PBD$
+  contiene al $\triangle PCE$. Si $B$ está entre $C$ y $D$, entonces
+  $\triangle PAF$ contiene al $\triangle PBD$. Por ende, $D$ está en el lado
+  $BC$. Si $A$ está entre $E$ y $C$, entonces $\triangle PCE$ contiene al
+  $\triangle PBD$. Si $B$ está entre $F$ y $A$, entonces $\triangle PAF$
+  contiene al $\triangle PBD$. Es decir, los segmentos dirigidos
+  $\frac{PA}{PD},\frac{PB}{PE},\frac{PC}{PF}$ tienen signos $+,-,+$,
+  respectivamente. Note que
+  \[
+    \frac{\abs{PBD}}{\abs{ABC}}=\frac{BD}{BC}\cdot\frac{PD}{AD}\quad\text{y}\quad
+    \frac{BD}{BC}\cdot\frac{FC}{FP}\cdot\frac{AP}{AD}=1
+  \]
+  considerando áreas y segmentos con signos. Es decir,
+  \[
+    \left(\frac{PC}{PF}-1\right)\cdot\frac{PA}{PD}
+    =\frac{\abs{ABC}}{\abs{PBD}}
+    =k
+  \]
+  donde $k\in\RR^-$ es una constante. Con un poco de cálculo obtenemos
+  \[(x(x-1)-k)(k+1)=0\]
+  donde $x=\frac{PA}{PD}\ge 1$. Por lo tanto, $k=-1$.
 \end{proof}
 
 \begin{probEG}[ISL 2001/G7]
-	Let $O$ be an interior point of acute triangle $ABC$. Let $A_1$ lie on $BC$ with $OA_1$ perpendicular to $BC$. Define $B_1$ on $CA$ and $C_1$ on $AB$ similarly. Prove that $O$ is the circumcenter of $ABC$ if and only if the perimeter of $A_1B_1C_1$ is not less than any one of the perimeters of $AB_1C_1$, $BC_1A_1$, and $CA_1B_1$.
-	\forum[aops]{119204}
+  Let $O$ be an interior point of acute triangle $ABC$. Let $A_1$ lie on $BC$
+  with $OA_1$ perpendicular to $BC$. Define $B_1$ on $CA$ and $C_1$ on $AB$
+  similarly. Prove that $O$ is the circumcenter of $ABC$ if and only if the
+  perimeter of $A_1B_1C_1$ is not less than any one of the perimeters of
+  $AB_1C_1$, $BC_1A_1$, and $CA_1B_1$.
+  \forum[aops]{119204}
 \end{probEG}
 
 \begin{proof}
-	Digamos que $O'\ne O$ es un punto interior de $\triangle ABC$, siendo $O$ el circuncentro de $ABC$. Si $O'$ pertenece en el interior del $\triangle BOC$, tenemos que
-	\[\angle BC_1A_1=\angle BO'A_1=\frac{\pi}{2}-\angle A_1BO'\ge\frac{\pi}{2}-\angle CBO=\angle A\]
-	y análogamente $\angle CB_1A_1\ge\angle A$, de donde $A_1B_1+A_1C_1\le AB_1+AC_1$. Es decir, $p(A_1B_1C_1)<p(AB_1C_1)$.
+  Digamos que $O'\ne O$ es un punto interior de $\triangle ABC$, siendo $O$ el
+  circuncentro de $ABC$. Si $O'$ pertenece en el interior del $\triangle BOC$,
+  tenemos que
+  \[
+    \angle BC_1A_1
+    =\angle BO'A_1
+    =\frac{\pi}{2}-\angle A_1BO'
+    \ge\frac{\pi}{2}-\angle CBO
+    =\angle A
+  \]
+  y análogamente $\angle CB_1A_1\ge\angle A$, de donde
+  $A_1B_1+A_1C_1\le AB_1+AC_1$. Es decir, $p(A_1B_1C_1)<p(AB_1C_1)$.
 \end{proof}
 
 \begin{probEG}[ISL 2001/G8]
-	Let $ABC$ be a triangle with $\angle BAC=60\dg$. Let $AP$ bisect $\angle BAC$ and let $BQ$ bisect $\angle ABC$, with $P$ on $BC$ and $Q$ on $AC$. If $AB+BP=AQ+QB$, what are the angles of the triangle?
-	\forum[aops]{119207}
+  Let $ABC$ be a triangle with $\angle BAC=60\dg$. Let $AP$ bisect $\angle BAC$
+  and let $BQ$ bisect $\angle ABC$, with $P$ on $BC$ and $Q$ on $AC$. If
+  $AB+BP=AQ+QB$, what are the angles of the triangle?
+  \forum[aops]{119207}
 \end{probEG}
 
 \begin{proof}
-	Sea $R$ un punto en la recta $AB$ tal que $BR=BP$ y $B$ está entre $R$ y $A$. Si $S$ es un punto del rayo $AC$ tal que $AR=AS$, entonces
-	\[QS=AS-AQ=AR-AQ=AB+BR-AQ=AB+BP-AQ=QB\]
-	y
-	\[\angle QSP=\angle ASP=\angle ARP=\half\angle ABP=\angle QBP.\]
-	Como $BPSQ$ no es un paralelogramo, $QP$ es bisectriz de $\angle BQC$. Es decir,
-	\[\frac{BQ}{QC}=\frac{BP}{PC}=\frac{BA}{AC}=\frac{c}{b}\]
-	de donde $BQ=\frac{ca}{c+a}$. Además, como $\angle A=60\dg$, tenemos que
-	\[\left(\frac{ca}{c+a}\right)^2=BQ^2=AB^2+AQ^2-AB\cdot AQ=c^2+\left(\frac{bc}{c+a}\right)^2-\frac{bc^2}{c+a}\]
-	y
-	\[a^2=BC^2=AB^2+AC^2-AB\cdot AC=b^2+c^2-bc.\]
-	Simplificando nos queda que $a=b-2c$, y de esto no es difícil ver que los ángulos $\angle A,\angle B,\angle C$ son $60\dg,105\dg,15\dg$.
+  Sea $R$ un punto en la recta $AB$ tal que $BR=BP$ y $B$ está entre $R$ y $A$.
+  Si $S$ es un punto del rayo $AC$ tal que $AR=AS$, entonces
+  \[QS=AS-AQ=AR-AQ=AB+BR-AQ=AB+BP-AQ=QB\]
+  y
+  \[\angle QSP=\angle ASP=\angle ARP=\half\angle ABP=\angle QBP.\]
+  Como $BPSQ$ no es un paralelogramo, $QP$ es bisectriz de $\angle BQC$. Es
+  decir,
+  \[\frac{BQ}{QC}=\frac{BP}{PC}=\frac{BA}{AC}=\frac{c}{b}\]
+  de donde $BQ=\frac{ca}{c+a}$. Además, como $\angle A=60\dg$, tenemos que
+  \[
+    \left(\frac{ca}{c+a}\right)^2
+    =BQ^2
+    =AB^2+AQ^2-AB\cdot AQ
+    =c^2+\left(\frac{bc}{c+a}\right)^2-\frac{bc^2}{c+a}
+  \]
+  y
+  \[a^2=BC^2=AB^2+AC^2-AB\cdot AC=b^2+c^2-bc.\]
+  Simplificando nos queda que $a=b-2c$, y de esto no es difícil ver que los
+  ángulos $\angle A,\angle B,\angle C$ son $60\dg,105\dg,15\dg$.
 \end{proof}
 
 \note[Punto\\Humpty (HM) \cite{ref:humpty}]{Jueves\\2022-05-19}
 
 \begin{probEG}
-	In $\triangle ABC$ with orthocenter $H$, the circle with diameter $\ol{AH}$ and $\odot(BHC)$ intersect again on the $A$-median at a point $X_A$.
+  In $\triangle ABC$ with orthocenter $H$, the circle with diameter $\ol{AH}$
+  and $\odot(BHC)$ intersect again on the $A$-median at a point $X_A$.
 \end{probEG}
 
 \begin{proof}
-	Si $A'$ es la reflexión de $A$ con respecto a $BC$, entonces $HA'$ es el diámetro de $\odot(BHC)$ de donde $X_A$ pertenece a $AA'$, que claramente es la $A$-mediana.
+  Si $A'$ es la reflexión de $A$ con respecto a $BC$, entonces $HA'$ es el
+  diámetro de $\odot(BHC)$ de donde $X_A$ pertenece a $AA'$, que claramente es
+  la $A$-mediana.
 \end{proof}
 
 \begin{probEG}[ELMO Shortlist 2013/G3]
-	In $\triangle ABC$, a point $D$ lies on line $BC$. The circumcircle of $ABD$ meets $AC$ at $F$ (other than $A$), and the circumcircle of $ADC$ meets $AB$ at $E$ (other than $A$). Prove that as $D$ varies, the circumcircle of $AEF$ always passes through a fixed point other than $A$, and that this point lies on the median from $A$ to $BC$.
-	\forum[aops]{3151962}
+  In $\triangle ABC$, a point $D$ lies on line $BC$. The circumcircle of $ABD$
+  meets $AC$ at $F$ (other than $A$), and the circumcircle of $ADC$ meets $AB$
+  at $E$ (other than $A$). Prove that as $D$ varies, the circumcircle of $AEF$
+  always passes through a fixed point other than $A$, and that this point lies
+  on the median from $A$ to $BC$.
+  \forum[aops]{3151962}
 \end{probEG}
 
 \begin{proof}
-	Si $P=BF\cap EC$ y $A'$ la reflexión de $A$ con respecto a $BC$, entonces $P$ pertenece a $\odot(AEF)$ y $\odot(BHC)$. Como $AA'$ pasa por $X_A$, $\angle AX_AP=\angle A'CP=\angle AEP$ de donde $X_A\in\odot(AEF)$.
+  Si $P=BF\cap EC$ y $A'$ la reflexión de $A$ con respecto a $BC$, entonces $P$
+  pertenece a $\odot(AEF)$ y $\odot(BHC)$. Como $AA'$ pasa por $X_A$,
+  $\angle AX_AP=\angle A'CP=\angle AEP$ de donde $X_A\in\odot(AEF)$.
 \end{proof}
 
 \begin{probEG}[ELMO 2014/5]
-	Let $ABC$ be a triangle with circumcenter $O$ and orthocenter $H$. Let $\omega_1$ and $\omega_2$ denote the circumcircles of triangles $BOC$ and $BHC$, respectively. Suppose the circle with diameter $\ol{AO}$ intersects $\omega_1$ again at $M$, and line $AM$ intersects $\omega_1$ again at $X$. Similarly, suppose the circle with diameter $\ol{AH}$ intersects $\omega_2$ again at $N$, and line $AN$ intersects $\omega_2$ again at $Y$. Prove that lines $MN$ and $XY$ are parallel.
-	\forum[aops]{3534946}
+  Let $ABC$ be a triangle with circumcenter $O$ and orthocenter $H$. Let
+  $\omega_1$ and $\omega_2$ denote the circumcircles of triangles $BOC$ and
+  $BHC$, respectively. Suppose the circle with diameter $\ol{AO}$ intersects
+  $\omega_1$ again at $M$, and line $AM$ intersects $\omega_1$ again at $X$.
+  Similarly, suppose the circle with diameter $\ol{AH}$ intersects $\omega_2$
+  again at $N$, and line $AN$ intersects $\omega_2$ again at $Y$. Prove that
+  lines $MN$ and $XY$ are parallel.
+  \forum[aops]{3534946}
 \end{probEG}
 
 \begin{proof}
-	Pista: con angulitos tenemos que $M$ es el punto medio de la cuerda $A$-simediana, $N$ es el $A$-punto Humpty, $X$ es la intersección de las tangentes a $\odot(ABC)$ por $B$ y $C$, $Y$ es la reflexión de $A$ con respecto a $BC$.
+  Pista: con angulitos tenemos que $M$ es el punto medio de la cuerda
+  $A$-simediana, $N$ es el $A$-punto Humpty, $X$ es la intersección de las
+  tangentes a $\odot(ABC)$ por $B$ y $C$, $Y$ es la reflexión de $A$ con
+  respecto a $BC$.
 \end{proof}
 
 \begin{probEG}[USA TST 2005/6]
-	Let $ABC$ be an acute scalene triangle with $O$ as its circumcenter. Point $P$ lies inside triangle $ABC$ with $\angle PAB=\angle PBC$ and $\angle PAC=\angle PCB$. Point $Q$ lies on line $BC$ with $QA=QP$. Prove that $\angle AQP=2\angle OQB$.
-	\forum[aops]{734440}
+  Let $ABC$ be an acute scalene triangle with $O$ as its circumcenter. Point $P$
+  lies inside triangle $ABC$ with $\angle PAB=\angle PBC$ and
+  $\angle PAC=\angle PCB$. Point $Q$ lies on line $BC$ with $QA=QP$. Prove that
+  $\angle AQP=2\angle OQB$.
+  \forum[aops]{734440}
 \end{probEG}
 
 \begin{probEG}[Brazil National Olympiad 2015/6]
-	Let $\triangle ABC$ be a scalene triangle and $X$, $Y$ and $Z$ be points on the lines $BC$, $AC$ and $AB$, respectively, such that $\dang AXB=\dang BYC=\dang CZA$. The circumcircles of $BXZ$ and $CXY$ intersect at $P$. Prove that $P$ is on the circumference which diameter has ends in the orthocenter $H$ and in the barycenter $G$ of $\triangle ABC$.
-	\forum[aops]{5469201}
+  Let $\triangle ABC$ be a scalene triangle and $X$, $Y$ and $Z$ be points on
+  the lines $BC$, $AC$ and $AB$, respectively, such that
+  $\dang AXB=\dang BYC=\dang CZA$. The circumcircles of $BXZ$ and $CXY$
+  intersect at $P$. Prove that $P$ is on the circumference which diameter has
+  ends in the orthocenter $H$ and in the barycenter $G$ of $\triangle ABC$.
+  \forum[aops]{5469201}
 \end{probEG}
 
 \begin{proof}
-	Se prueba que $P$ es el centro de roto-homotecia que manda $\triangle ABC\mapsto\triangle A_1B_1C_1$ donde $A_1=BY\cap CZ$ y análogamente para $B_1$ y $C_1$. Con esto se prueba que $\dang BAP=\dang CBP$ y $\dang CAP=\dang BCP$, de donde $P$ es el $A$-punto Humpty, entonces $\angle HPA=\angle HPG=90\dg$.
+  Se prueba que $P$ es el centro de roto-homotecia que manda
+  $\triangle ABC\mapsto\triangle A_1B_1C_1$ donde $A_1=BY\cap CZ$ y análogamente
+  para $B_1$ y $C_1$. Con esto se prueba que $\dang BAP=\dang CBP$ y
+  $\dang CAP=\dang BCP$, de donde $P$ es el $A$-punto Humpty, entonces
+  $\angle HPA=\angle HPG=90\dg$.
 \end{proof}
 
 \begin{probEG}[Sharygin Geometry Olympiad 2015 Final Round/10.3]
-	Let $A_1$, $B_1$ and $C_1$ be the midpoints of sides $BC$, $CA$ and $AB$ of triangle $ABC$, respectively. Points $B_2$ and $C_2$ are the midpoints of segments $BA_1$ and $CA_1$ respectively. Point $B_3$ is symmetric to $C_1$ with respect to $B$, and $C_3$ is symmetric to $B_1$ with respect to $C$.
-Prove that one of common points of circles $BB_2B_3$ and $CC_2C_3$ lies on the circumcircle of triangle $ABC$.
-	\forum[aops]{10667375}
+  Let $A_1$, $B_1$ and $C_1$ be the midpoints of sides $BC$, $CA$ and $AB$ of
+  triangle $ABC$, respectively. Points $B_2$ and $C_2$ are the midpoints of
+  segments $BA_1$ and $CA_1$ respectively. Point $B_3$ is symmetric to $C_1$
+  with respect to $B$, and $C_3$ is symmetric to $B_1$ with respect to $C$.
+  Prove that one of common points of circles $BB_2B_3$ and $CC_2C_3$ lies on the
+  circumcircle of triangle $ABC$.
+  \forum[aops]{10667375}
 \end{probEG}
 
 \begin{proof}
-	Considere al centro de roto-homotecia que manda $AB\mapsto B_1B_2$ y otra que manda $AC\mapsto C_1C_2$, y sea $P$ ese punto. Luego,
-	\[\angle BB_3B_2=\angle(AB,B_1B_2)=\angle BPB_2\]
-	de donde $P\in\odot(BB_2B_3)$ y análogamente $P\in\odot(CC_2C_3)$. Además,
-	\[\angle PBB_2+\angle PCC_2=\angle PAB_1+\angle PAC_1=\angle A\]
-	de donde $P\in\odot(ABC)$.
+  Considere al centro de roto-homotecia que manda $AB\mapsto B_1B_2$ y otra que
+  manda $AC\mapsto C_1C_2$, y sea $P$ ese punto. Luego,
+  \[\angle BB_3B_2=\angle(AB,B_1B_2)=\angle BPB_2\]
+  de donde $P\in\odot(BB_2B_3)$ y análogamente $P\in\odot(CC_2C_3)$. Además,
+  \[\angle PBB_2+\angle PCC_2=\angle PAB_1+\angle PAC_1=\angle A\]
+  de donde $P\in\odot(ABC)$.
 \end{proof}
 
 \note{Viernes\\2022-05-20}
 
 \begin{problem}[ISL 2014/G6]
-	Let $ABC$ be a fixed acute-angled triangle. Consider some points $E$ and $F$ lying on the sides $AC$ and $AB$, respectively, and let $M$ be the midpoint of $EF$. Let the perpendicular bisector of $EF$ intersect the line $BC$ at $K$, and let the perpendicular bisector of $MK$ intersect the lines $AC$ and $AB$ at $S$ and $T$, respectively. We call the pair $(E,F)$ \emph{interesting}, if the quadrilateral $KSAT$ is cyclic. Suppose that the pair $(E_1,F_1)$ and $(E_2,F_2)$ are interesting. Prove that
-	\[\frac{E_1E_2}{AB}=\frac{F_1F_2}{AC}.\]
+  Let $ABC$ be a fixed acute-angled triangle. Consider some points $E$ and $F$
+  lying on the sides $AC$ and $AB$, respectively, and let $M$ be the midpoint of
+  $EF$. Let the perpendicular bisector of $EF$ intersect the line $BC$ at $K$,
+  and let the perpendicular bisector of $MK$ intersect the lines $AC$ and $AB$
+  at $S$ and $T$, respectively. We call the pair $(E,F)$ \emph{interesting}, if
+  the quadrilateral $KSAT$ is cyclic. Suppose that the pair $(E_1,F_1)$ and
+  $(E_2,F_2)$ are interesting. Prove that
+  \[\frac{E_1E_2}{AB}=\frac{F_1F_2}{AC}.\]
 \end{problem}
 
 \begin{proof}
-	Como $M$ pertenece a la mediana del $\triangle AST$ y su reflexión con respecto a $BC$ pertenece a $\odot(AST)$, entonces $AK$ es la simediana del $\triangle AST$. Como $K$ pertenece a la mediatriz del segmento $EF$, tenemos que $KE$ y $KF$ son tangentes a $\odot(AEF)$. Luego,
-	\begin{align*}
-		\frac{AE}{AB}
-		&=\frac{AE}{EF}\cdot\frac{EF}{KE}\cdot\frac{KE}{CK}\cdot\frac{CK}{BC}\cdot\frac{BC}{AB}\\
-		&=\frac{\sin{\alpha}}{\sin{\angle A}}\cdot\frac{\sin{2\angle A}}{\sin{\angle A}}\cdot\frac{\sin{\angle C}}{\sin{\alpha}}\cdot\frac{CK}{BC}\cdot\frac{\sin{\angle A}}{\sin{\angle C}}\\
-		&=2\cos{\angle A}\cdot\frac{CK}{BC}
-	\end{align*}
-	donde $\alpha=\angle AFE=\angle CEK$, y análogamente $\frac{AF}{AC}=2\cos{\angle A}\cdot\frac{BK}{BC}$. Por ende,
-	\[\frac{AE}{AB}+\frac{AF}{AC}=2\cos{\angle A}\]
-	es una constante. Con esto es suficiente.
+  Como $M$ pertenece a la mediana del $\triangle AST$ y su reflexión con
+  respecto a $BC$ pertenece a $\odot(AST)$, entonces $AK$ es la simediana del
+  $\triangle AST$. Como $K$ pertenece a la mediatriz del segmento $EF$, tenemos
+  que $KE$ y $KF$ son tangentes a $\odot(AEF)$. Luego,
+  \begin{align*}
+    \frac{AE}{AB}
+    &= \frac{AE}{EF}\cdot\frac{EF}{KE}\cdot\frac{KE}{CK}\cdot\frac{CK}{BC}\cdot\frac{BC}{AB} \\
+    &= \frac{\sin{\alpha}}{\sin{\angle A}}\cdot\frac{\sin{2\angle A}}{\sin{\angle A}}\cdot\frac{\sin{\angle C}}{\sin{\alpha}}\cdot\frac{CK}{BC}\cdot\frac{\sin{\angle A}}{\sin{\angle C}} \\
+    &= 2\cos{\angle A}\cdot\frac{CK}{BC}
+  \end{align*}
+  donde $\alpha=\angle AFE=\angle CEK$, y análogamente
+  $\frac{AF}{AC}=2\cos{\angle A}\cdot\frac{BK}{BC}$. Por ende,
+  \[\frac{AE}{AB}+\frac{AF}{AC}=2\cos{\angle A}\]
+  es una constante. Con esto es suficiente.
 \end{proof}
 
 \begin{probEG}[USA TSTST 2015/2]
-	Let $ABC$ be a scalene triangle. Let $K_a$, $L_a$ and $M_a$ be the respective intersections with $BC$ of the internal angle bisector, external angle bisector, and the median from $A$. The circumcircle of $AK_aL_a$ intersects $AM_a$ a second time at point $X_a$ different from $A$. Define $X_b$ and $X_c$ analogously. Prove that the circumcenter of $X_aX_bX_c$ lies on the Euler line of $ABC$.
-	\forum[aops]{5017915}
+  Let $ABC$ be a scalene triangle. Let $K_a$, $L_a$ and $M_a$ be the respective
+  intersections with $BC$ of the internal angle bisector, external angle
+  bisector, and the median from $A$. The circumcircle of $AK_aL_a$ intersects
+  $AM_a$ a second time at point $X_a$ different from $A$. Define $X_b$ and $X_c$
+  analogously. Prove that the circumcenter of $X_aX_bX_c$ lies on the Euler line
+  of $ABC$.
+  \forum[aops]{5017915}
 \end{probEG}
 
 \begin{proof}
-	Como $X_a$ es un punto de la $A$-mediana que pertenece a la $A$-circunferencia de Apolonio, entonces $X_a$ es el $A$-punto Humpty del $\triangle ABC$. Por ende, $\angle HX_aG=90\dg$ y el circuncentro del $\triangle X_aX_bX_c$ es el punto medio del segmento $HG$.
+  Como $X_a$ es un punto de la $A$-mediana que pertenece a la $A$-circunferencia
+  de Apolonio, entonces $X_a$ es el $A$-punto Humpty del $\triangle ABC$. Por
+  ende, $\angle HX_aG=90\dg$ y el circuncentro del $\triangle X_aX_bX_c$ es el
+  punto medio del segmento $HG$.
 \end{proof}
 
 \begin{probEG}[WOOT 2013 Practice Olympiad 3/5]
-	A semicircle has center $O$ and diameter $AB$. Let $M$ be a point on $AB$ extended past $B$. A line through $M$ intersects the semicircle at $C$ and $D$, so that $D$ is closer to $M$ than $C$. The circumcircles of triangles $AOC$ and $DOB$ intersect at $O$ and $K$. Show that $\angle MKO=90\dg$.
+  A semicircle has center $O$ and diameter $AB$. Let $M$ be a point on $AB$
+  extended past $B$. A line through $M$ intersects the semicircle at $C$ and
+  $D$, so that $D$ is closer to $M$ than $C$. The circumcircles of triangles
+  $AOC$ and $DOB$ intersect at $O$ and $K$. Show that $\angle MKO=90\dg$.
 \end{probEG}
 
 \begin{probEG}[IMO 2010/4, modified]
-	In $\triangle ABC$ with orthocenter $H$, suppose $P$ is the projection of $H$ onto the $C$-median; let the second intersections of $AP,BP,CP$ with $\odot(ABC)$ be $K,L,M$ respectively. Show that $MK=ML$.
+  In $\triangle ABC$ with orthocenter $H$, suppose $P$ is the projection of $H$
+  onto the $C$-median; let the second intersections of $AP,BP,CP$ with
+  $\odot(ABC)$ be $K,L,M$ respectively. Show that $MK=ML$.
 \end{probEG}
 
 \begin{probEG}[EGMO 2016/4]
-	Two circles $\omega_1$ and $\omega_2$, of equal radius intersect at different points $X_1$ and $X_2$. Consider a circle $\omega$ externally tangent to $\omega_1$ at $T_1$ and internally tangent to $\omega_2$ at point $T_2$. Prove that lines $X_1T_1$ and $X_2T_2$ intersect at a point lying on $\omega$.
+  Two circles $\omega_1$ and $\omega_2$, of equal radius intersect at different
+  points $X_1$ and $X_2$. Consider a circle $\omega$ externally tangent to
+  $\omega_1$ at $T_1$ and internally tangent to $\omega_2$ at point $T_2$. Prove
+  that lines $X_1T_1$ and $X_2T_2$ intersect at a point lying on $\omega$.
 \end{probEG}
 
 \begin{probEG}[USA TST 2008/7]
-	Let $ABC$ be a triangle with $G$ as its centroid. Let $P$ be a variable point on segment $BC$. Points $Q$ and $R$ lie on sides $AC$ and $AB$ respectively, such that $PQ\parallel AB$ and $PR\parallel AC$. Prove that, as $P$ varies along segment $BC$, the circumcircle of triangle $AQR$ passes through a fixed point $X$ such that $\angle BAG=\angle CAX$.
-	\forum[aops]{1247506}
+  Let $ABC$ be a triangle with $G$ as its centroid. Let $P$ be a variable point
+  on segment $BC$. Points $Q$ and $R$ lie on sides $AC$ and $AB$ respectively,
+  such that $PQ\parallel AB$ and $PR\parallel AC$. Prove that, as $P$ varies
+  along segment $BC$, the circumcircle of triangle $AQR$ passes through a fixed
+  point $X$ such that $\angle BAG=\angle CAX$.
+  \forum[aops]{1247506}
 \end{probEG}
 
 \begin{probEG}[Mathematical Reflections/O371]
-	Let $ABC$ be a triangle with $AB<AC$. Let $D,E$ be the feet of altitudes from $B,C$ to sides $AC,AB$ respectively. Let $M,N,P$ be the midpoints of the segments $BC,MD,ME$ respectively. Let $NP$ intersect $BC$ again at a point $S$ and let the line through $A$ parallel to $BC$ intersect $DE$ again at point $T$. Prove that $ST$ is tangent to the circumcircle of triangle $ADE$.
+  Let $ABC$ be a triangle with $AB<AC$. Let $D,E$ be the feet of altitudes from
+  $B,C$ to sides $AC,AB$ respectively. Let $M,N,P$ be the midpoints of the
+  segments $BC,MD,ME$ respectively. Let $NP$ intersect $BC$ again at a point $S$
+  and let the line through $A$ parallel to $BC$ intersect $DE$ again at point
+  $T$. Prove that $ST$ is tangent to the circumcircle of triangle $ADE$.
 \end{probEG}
 
 \begin{problem}[ELMO Shortlist 2012/G7]
-	Let $\triangle ABC$ be an acute triangle with circumcenter $O$ such that $AB<AC$, let $Q$ be the intersection of the external bisector of $\angle A$ with $BC$, and let $P$ be a point in the interior of $\triangle ABC$ such that $\triangle BPA$ is similar to $\triangle APC$. Show that $\angle QPA+\angle OQB=90\dg$.
-	\forum[aops]{2728473}
+  Let $\triangle ABC$ be an acute triangle with circumcenter $O$ such that
+  $AB<AC$, let $Q$ be the intersection of the external bisector of $\angle A$
+  with $BC$, and let $P$ be a point in the interior of $\triangle ABC$ such that
+  $\triangle BPA$ is similar to $\triangle APC$. Show that
+  $\angle QPA+\angle OQB=90\dg$.
+  \forum[aops]{2728473}
 \end{problem}
 
 \begin{problem}[Iranian Geometry Olympiad 2014/S4]
-	The tangent to the circumcircle of an acute triangle $ABC$ (with $AB<AC$) at $A$ meets $BC$ at $P$. Let $X$ be a point on line $OP$ such that $\angle AXP=90\dg$. Points $E$ and $F$ lie on sides $AB$ and $AC$, respectively, and are on the same side of line $OP$ such that $\dang EXP=\dang ACX$ and $\dang FXO=\dang ABX $. Let $EF$ meet the circumcircle of triangle $ABC$ at points $K,L$. Prove that the line $OP$ is tangent to the circumcircle of triangle $KLX$.
-	\forum[aops]{3758542}
+  The tangent to the circumcircle of an acute triangle $ABC$ (with $AB<AC$) at
+  $A$ meets $BC$ at $P$. Let $X$ be a point on line $OP$ such that
+  $\angle AXP=90\dg$. Points $E$ and $F$ lie on sides $AB$ and $AC$,
+  respectively, and are on the same side of line $OP$ such that
+  $\dang EXP=\dang ACX$ and $\dang FXO=\dang ABX $. Let $EF$ meet the
+  circumcircle of triangle $ABC$ at points $K,L$. Prove that the line $OP$ is
+  tangent to the circumcircle of triangle $KLX$.
+  \forum[aops]{3758542}
 \end{problem}
 
 \note[Teoría de Números]{}
 
 \begin{probEG}[ISL 2001/N4]
-	Let $p\ge 5$ be a prime number. Prove that there exists an integer $a$ with $1\le a\le p-2$ such that neither $a^{p-1}-1$ nor $(a+1)^{p-1}-1$ is divisible by $p^2$.
+  Let $p\ge 5$ be a prime number. Prove that there exists an integer $a$ with
+  $1\le a\le p-2$ such that neither $a^{p-1}-1$ nor $(a+1)^{p-1}-1$ is divisible
+  by $p^2$.
 \end{probEG}
 
 \begin{probMG}[ISL 2001/N5]
-	Let $a>b>c>d$ be positive integers and suppose that
-	\[ac+bd=(b+d+a-c)(b+d-a+c).\]
-	Prove that $ab+cd$ is not prime.
+  Let $a>b>c>d$ be positive integers and suppose that
+  \[ac+bd=(b+d+a-c)(b+d-a+c).\]
+  Prove that $ab+cd$ is not prime.
 \end{probMG}
 
 \begin{probHR}[ISL 2001/N6]
-	Is it possible to find $100$ positive integers not exceeding $25000$, such that all pairwise sums of them are different?
+  Is it possible to find $100$ positive integers not exceeding $25000$, such
+  that all pairwise sums of them are different?
 \end{probHR}

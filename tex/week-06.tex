@@ -3,222 +3,300 @@
 \note[Álgebra]{Lunes\\2022-04-18}
 
 \begin{probEG}
-	Sean $a,b,c,d,e,f$ números reales no negativos que suman $6$. Determine el máximo valor de
-	\[abc+bcd+cde+def+efa+fab.\]
+  Sean $a,b,c,d,e,f$ números reales no negativos que suman $6$. Determine el
+  máximo valor de
+  \[abc+bcd+cde+def+efa+fab.\]
 \end{probEG}
 
 \begin{proof}
-	La respuesta es $8$ (un ejemplo es $(a,b,c,d,e,f)=(2,2,2,0,0,0)$). Es claro que la expresión dada es igual a $a(bc+ef+fb)+d(bc+ce+ef)$. Analizando por casos, tenemos que $0\in\{a,d\}\cap\{b,e\}\cap\{c,f\}$. Es decir, la expresión dada es igual a $0$ o sin pérdida de generalidad $a,b,c\ne 0$ y $d,e,f=0$. Luego, la expresión dada es igual a $abc\le\left(\frac{a+b+c}{3}\right)^3=8$.
+  La respuesta es $8$ (un ejemplo es $(a,b,c,d,e,f)=(2,2,2,0,0,0)$). Es claro
+  que la expresión dada es igual a $a(bc+ef+fb)+d(bc+ce+ef)$. Analizando por
+  casos, tenemos que $0\in\{a,d\}\cap\{b,e\}\cap\{c,f\}$. Es decir, la expresión
+  dada es igual a $0$ o sin pérdida de generalidad $a,b,c\ne 0$ y $d,e,f=0$.
+  Luego, la expresión dada es igual a $abc\le\left(\frac{a+b+c}{3}\right)^3=8$.
 \end{proof}
 
 \begin{probMR}
-	Una secuencia $(a_n)$ de números reales no negativos satisface
-	\[\abs{a_m-a_n}\ge\frac{1}{m+n},\quad\forall\,m\ne n.\]
-	Demuestre que si $a_n<c$ para todo $n\in\ZZ^+$, entonces $c\ge 1$.
+  Una secuencia $(a_n)$ de números reales no negativos satisface
+  \[\abs{a_m-a_n}\ge\frac{1}{m+n},\quad\forall\,m\ne n.\]
+  Demuestre que si $a_n<c$ para todo $n\in\ZZ^+$, entonces $c\ge 1$.
 \end{probMR}
 
 \begin{proof}
-	Note que si $i_1,i_2,\dots,i_n$ es una permutación de $1,2,\dots,n$ tal que $a_{i_1}\ge a_{i_2}\ge\dots\ge a_{i_n}$, entonces
-	\begin{align*}
-		c&\ge a_{i_1}-a_{i_n}
-		=\sum_{j=1}^{n-1}(a_{i_j}-a_{i_{j+1}})\\
-		&\ge\sum_{j=1}^{n-1}\frac{1}{i_j+i_{j+1}}
-		\ge\frac{(n-1)^2}{2(i_1+i_2+\dots+i_n)-i_1-i_n}\\
-		&>\frac{(n-1)^2}{n(n+1)}
-	\end{align*}
-	para todo $n>1$ de donde $c\ge 1$.
+  Note que si $i_1,i_2,\dots,i_n$ es una permutación de $1,2,\dots,n$ tal que
+  $a_{i_1}\ge a_{i_2}\ge\dots\ge a_{i_n}$, entonces
+  \begin{align*}
+    c
+    &\ge a_{i_1}-a_{i_n}
+    = \sum_{j=1}^{n-1}(a_{i_j}-a_{i_{j+1}}) \\
+    &\ge \sum_{j=1}^{n-1}\frac{1}{i_j+i_{j+1}}
+    \ge \frac{(n-1)^2}{2(i_1+i_2+\dots+i_n)-i_1-i_n} \\
+    &> \frac{(n-1)^2}{n(n+1)}
+  \end{align*}
+  para todo $n>1$ de donde $c\ge 1$.
 \end{proof}
 
 \note{Martes\\2022-04-19}
 
 \begin{problem}[Iran TST 2019 Test 1/5]
-	Find all functions $f:\RR\to\RR$ such that for all $x,y\in\RR$:
-	\[f\left(f(x)^2-y^2\right)^2+f(2xy)^2=f\left(x^2+y^2\right)^2.\]
-	\forum[aops]{12147602}
+  Find all functions $f:\RR\to\RR$ such that for all $x,y\in\RR$:
+  \[f\left(f(x)^2-y^2\right)^2+f(2xy)^2=f\left(x^2+y^2\right)^2.\]
+  \forum[aops]{12147602}
 \end{problem}
 
 \note[Combinatoria]{}
 
 \begin{theorem}[Hall's Marriage Theorem]
-	Let $G$ be a finite bipartite graph with bipartite sets $X$ and $Y$. Then, there is an $X$-perfect matching if and only if
-	\[\abs{W}\le\abs{N_G(W)}\]
-	for every subset $W$ of $X$.
+  Let $G$ be a finite bipartite graph with bipartite sets $X$ and $Y$. Then,
+  there is an $X$-perfect matching if and only if
+  \[\abs{W}\le\abs{N_G(W)}\]
+  for every subset $W$ of $X$.
 \end{theorem}
 
 \begin{probEG}
-	Tenemos dos superficies congruentes compuestas por $2022$ regiones de área $1$. Demostrar que si superponemos las dos superficies, es posible pinchar las $4044$ regiones en solo $2022$ pinchazos.
+  Tenemos dos superficies congruentes compuestas por $2022$ regiones de área
+  $1$. Demostrar que si superponemos las dos superficies, es posible pinchar las
+  $4044$ regiones en solo $2022$ pinchazos.
 \end{probEG}
 
 \begin{probEG}
-	En cada fila y columna de un tablero de $n\times n$ hay $k$ fichas. Demuestre que es posible elegir $n$ fichas que están en filas diferentes y columnas diferentes.
+  En cada fila y columna de un tablero de $n\times n$ hay $k$ fichas. Demuestre
+  que es posible elegir $n$ fichas que están en filas diferentes y columnas
+  diferentes.
 \end{probEG}
 
 \begin{probEG}
-	En un tablero de $4\times 13$ se colocan $52$ cartas de naipe (una en cada casilla). Demuestre que existen $13$ cartas de números distintos que están en columnas distintas.
+  En un tablero de $4\times 13$ se colocan $52$ cartas de naipe (una en cada
+  casilla). Demuestre que existen $13$ cartas de números distintos que están en
+  columnas distintas.
 \end{probEG}
 
 \begin{probEB}
-	En cada casilla de un tablero de $n\times n$ está escrito un $0$ o un $1$ de tal manera que entre cualesquiera $n$ casillas que no están en la misma fila ni en la misma columna, al menos una de ellas tiene escrito el número $1$. Demuestre que existen $i$ filas y $j$ columnas de tal manera que $i+j\ge n+1$ y en las $ij$ casillas de sus intersecciones esté escrito el número $1$.
+  En cada casilla de un tablero de $n\times n$ está escrito un $0$ o un $1$ de
+  tal manera que entre cualesquiera $n$ casillas que no están en la misma fila
+  ni en la misma columna, al menos una de ellas tiene escrito el número $1$.
+  Demuestre que existen $i$ filas y $j$ columnas de tal manera que $i+j\ge n+1$
+  y en las $ij$ casillas de sus intersecciones esté escrito el número $1$.
 \end{probEB}
 
 \begin{probEG}
-	Sea $\cal X$ un conjunto finito y sean
-	\[\bigcup_{i=1}^n X_i={\cal X}\quad\bigcup_{j=1}^n Y_j={\cal X}\]
-	dos descomposiciones disjuntas de $\cal X$, de tal manera que los $2n$ subconjuntos $X_i$ y $Y_j$ tengan el mismo número de elementos. Demuestre que podemos elegir $n$ elementos $z_1,z_2,\dots,z_n$ de $\cal X$ de tal manera que estos $n$ elementos estén en diferentes conjuntos en cada descomposición.
+  Sea $\cal X$ un conjunto finito y sean
+  \[\bigcup_{i=1}^n X_i={\cal X}\quad\bigcup_{j=1}^n Y_j={\cal X}\]
+  dos descomposiciones disjuntas de $\cal X$, de tal manera que los $2n$
+  subconjuntos $X_i$ y $Y_j$ tengan el mismo número de elementos. Demuestre que
+  podemos elegir $n$ elementos $z_1,z_2,\dots,z_n$ de $\cal X$ de tal manera que
+  estos $n$ elementos estén en diferentes conjuntos en cada descomposición.
 \end{probEG}
 
 \begin{probEG}
-	En cada casilla de un tablero de $n\times n$ se ha escrito un número entero no negativo de tal manera que la suma de los $n$ números en cada fila y en cada columna es $1$. Demuestre que es posible elegir $n$ números de diferentes filas y diferentes columnas que son positivos.
+  En cada casilla de un tablero de $n\times n$ se ha escrito un número entero no
+  negativo de tal manera que la suma de los $n$ números en cada fila y en cada
+  columna es $1$. Demuestre que es posible elegir $n$ números de diferentes
+  filas y diferentes columnas que son positivos.
 \end{probEG}
 
 \begin{probEB}
-	Para cada conjunto finito $\cal S$ de números enteros positivos, sea $\cal S^\ast$ el conjunto que se obtiene al sumar $2$ a cada elemento de $\cal S$. ¿Para cuántos conjuntos $\cal S$ se cumple que la unión de $\cal S$ con $\cal S^\ast$ es el conjunto de todos los enteros positivos del $1$ al $2022$?
+  Para cada conjunto finito $\cal S$ de números enteros positivos, sea
+  $\cal S^\ast$ el conjunto que se obtiene al sumar $2$ a cada elemento de
+  $\cal S$. ¿Para cuántos conjuntos $\cal S$ se cumple que la unión de $\cal S$
+  con $\cal S^\ast$ es el conjunto de todos los enteros positivos del $1$ al
+  $2022$?
 \end{probEB}
 
 \begin{proof}
-	La respuesta es $f_{1010}^2$. Pista: recurrencias.
+  La respuesta es $f_{1010}^2$. Pista: recurrencias.
 \end{proof}
 
 \note[Geometría]{Miércoles\\2022-04-20}
 
 \begin{probEG}[IberoAmerican 1999/6]
-	Sean $A$ y $B$ puntos del plano y $C$ un punto de la mediatriz del segmento $AB$. Se construye una secuencia de puntos $(C_i)$ de la siguiente manera: $C_1=C$ y para $n\ge 1$, si $C_n$ no pertenece al segmento $AB$, entonces $C_{n+1}$ es el circuncentro del triángulo $ABC_n$. Determine todos los puntos $C$ para los cuales la secuencia $(C_n)$ está definida para todo entero positivo $n$ y es eventualmente periódica.
+  Sean $A$ y $B$ puntos del plano y $C$ un punto de la mediatriz del segmento
+  $AB$. Se construye una secuencia de puntos $(C_i)$ de la siguiente manera:
+  $C_1=C$ y para $n\ge 1$, si $C_n$ no pertenece al segmento $AB$, entonces
+  $C_{n+1}$ es el circuncentro del triángulo $ABC_n$. Determine todos los puntos
+  $C$ para los cuales la secuencia $(C_n)$ está definida para todo entero
+  positivo $n$ y es eventualmente periódica.
 \end{probEG}
 
 \begin{probEG}[IberoAmerican 2002/3]
-	Un punto $P$, en el interior de un triángulo equilátero $ABC$, es tal que $\angle APC=120\dg$. Sea $M$ el punto de intersección de las rectas $CP$ y $AB$, y sea $N$ el punto de intersección de las rectas $AP$ y $BC$. Determine el lugar geométrico del circuncentro del triángulo $MBN$ al variar $P$.
+  Un punto $P$, en el interior de un triángulo equilátero $ABC$, es tal que
+  $\angle APC=120\dg$. Sea $M$ el punto de intersección de las rectas $CP$ y
+  $AB$, y sea $N$ el punto de intersección de las rectas $AP$ y $BC$. Determine
+  el lugar geométrico del circuncentro del triángulo $MBN$ al variar $P$.
 \end{probEG}
 
 \begin{proof}
-	Respuesta: El segmento que une los puntos medios de los arcos $\widehat{AB}$ y $\widehat{BC}$ de $\odot(ABC)$.
+  Respuesta: El segmento que une los puntos medios de los arcos $\widehat{AB}$ y
+  $\widehat{BC}$ de $\odot(ABC)$.
 \end{proof}
 
 \begin{probMB}
-	Sea $X$ un punto variable sobre el arco $AC$, del circuncírculo del triángulo $ABC$, que no contiene al punto $B$. El punto $Y$ está sobre la prolongación de $BA$ por $A$ y es tal que $AY=AX$, donde $A$ está entre $B$ y $Y$. El punto $Z$ está en la prolongación de $BC$ por $C$ y es tal que $CZ=CX$, donde $C$ está entre $B$ y $Z$. Determine el lugar geométrico de todos los puntos medios del segmento $YZ$ al variar $X$.
+  Sea $X$ un punto variable sobre el arco $AC$, del circuncírculo del triángulo
+  $ABC$, que no contiene al punto $B$. El punto $Y$ está sobre la prolongación
+  de $BA$ por $A$ y es tal que $AY=AX$, donde $A$ está entre $B$ y $Y$. El punto
+  $Z$ está en la prolongación de $BC$ por $C$ y es tal que $CZ=CX$, donde $C$
+  está entre $B$ y $Z$. Determine el lugar geométrico de todos los puntos medios
+  del segmento $YZ$ al variar $X$.
 \end{probMB}
 
 \begin{proof}
-	Si $M$ y $P$ son puntos medios de $AC$ y $YZ$ respectivamente, note que
-	\begin{align*}
-		4\cdot\abs{MP}^2
-		&=\norm{2\cdot\ray{MP}}^2=\norm{\ray{AY}+\ray{CZ}}^2\\
-		&=\abs{AY}^2+\abs{CZ}^2+2\cdot\abs{AY}\cdot\abs{CZ}\cdot\cos{\angle ABC}\\
-		&=\abs{XA}^2+\abs{XC}^2-2\cdot\abs{XA}\cdot\abs{XC}\cdot\cos{\angle AXC}\\
-		&=\abs{AC}^2
-	\end{align*}
-	de donde $P$ pertenece a la semicircunferencia de diámetro $AC$.
+  Si $M$ y $P$ son puntos medios de $AC$ y $YZ$ respectivamente, note que
+  \begin{align*}
+    4\cdot\abs{MP}^2
+    &= \norm{2\cdot\ray{MP}}^2=\norm{\ray{AY}+\ray{CZ}}^2 \\
+    &= \abs{AY}^2+\abs{CZ}^2+2\cdot\abs{AY}\cdot\abs{CZ}\cdot\cos{\angle ABC} \\
+    &= \abs{XA}^2+\abs{XC}^2-2\cdot\abs{XA}\cdot\abs{XC}\cdot\cos{\angle AXC} \\
+    &= \abs{AC}^2
+  \end{align*}
+  de donde $P$ pertenece a la semicircunferencia de diámetro $AC$.
 \end{proof}
 
 \note{Viernes\\2022-04-22}
 
 \begin{probEG}
-	Let $ABCD$ be a trapezoid with parallel sides $AB>CD$. Points $K$ and $L$ lie on the line segments $AB$ and $CD$, respectively, so that $AK/KB=DL/LC$. Suppose that there are points $P$ and $Q$ on the line segment $KL$ satisfying
-	\[\angle APB=\angle BCD\quad\text{and}\quad\angle CQD=\angle ABC.\]
-	Prove that the points $P$, $Q$, $B$ and $C$ are concyclic.
+  Let $ABCD$ be a trapezoid with parallel sides $AB>CD$. Points $K$ and $L$ lie
+  on the line segments $AB$ and $CD$, respectively, so that $AK/KB=DL/LC$.
+  Suppose that there are points $P$ and $Q$ on the line segment $KL$ satisfying
+  \[\angle APB=\angle BCD\quad\text{and}\quad\angle CQD=\angle ABC.\]
+  Prove that the points $P$, $Q$, $B$ and $C$ are concyclic.
 \end{probEG}
 
 \begin{proof}
-	Pista: semejanza y angulitos.
+  Pista: semejanza y angulitos.
 \end{proof}
 
 \note[Teoría de Números]{}
 
 \begin{probEG}
-	Para cada entero positivo $n$, denotemos por $P(n)$ al mayor divisor primo del número $n^2+n+1$. Demuestre que
-	\[P(n)>2n+\sqrt{2n}\]
-	para infinitos enteros positivos $n$.
+  Para cada entero positivo $n$, denotemos por $P(n)$ al mayor divisor primo del
+  número $n^2+n+1$. Demuestre que
+  \[P(n)>2n+\sqrt{2n}\]
+  para infinitos enteros positivos $n$.
 \end{probEG}
 
 \begin{proof}
-	Pista: demuestra primero que $P(n)>2n$ y luego que $2n<P(n)\le 2n+\sqrt{2n}$ no cumple.
+  Pista: demuestra primero que $P(n)>2n$ y luego que $2n<P(n)\le 2n+\sqrt{2n}$
+  no cumple.
 \end{proof}
 
 \begin{probEG}
-	Demuestre que existe un $c\in\RR^+$ tal que para cualesquiera $a,b,n\in\ZZ^+$, con $n>1$ y $a!b!\mid n!$, se cumple la desigualdad
-	\[a+n<n+c\cdot\ln(n).\]
+  Demuestre que existe un $c\in\RR^+$ tal que para cualesquiera $a,b,n\in\ZZ^+$,
+  con $n>1$ y $a!b!\mid n!$, se cumple la desigualdad
+  \[a+n<n+c\cdot\ln(n).\]
 \end{probEG}
 
 \begin{proof}
-	Pista: sale con la identidad
-	\[\nu_p(n)=\sum_{i=1}^\infty\floor{\frac{n}{p^i}}=\frac{n-s_p(n)}{p-1}\]
-	con $p=3$ (también con $p=2$).
+  Pista: sale con la identidad
+  \[\nu_p(n)=\sum_{i=1}^\infty\floor{\frac{n}{p^i}}=\frac{n-s_p(n)}{p-1}\]
+  con $p=3$ (también con $p=2$).
 \end{proof}
 
 \begin{probEG}
-	Demuestre que para todo $n\in\ZZ^+$,
-	\[n!\mid\prod_{k=0}^{n-1}(2^n-2^k).\]
+  Demuestre que para todo $n\in\ZZ^+$,
+  \[n!\mid\prod_{k=0}^{n-1}(2^n-2^k).\]
 \end{probEG}
 
 \begin{proof}
-	Pista: para todo primo $p=2$ y $2\nmid p$, demuestra que el $\nu_p$ del lado izquierdo es menor o igual que el del lado derecho.
+  Pista: para todo primo $p=2$ y $2\nmid p$, demuestra que el $\nu_p$ del lado
+  izquierdo es menor o igual que el del lado derecho.
 \end{proof}
 
 \begin{probEG}
-	Demuestre que la ecuación
-	\[\frac{1}{10^n}=\frac{1}{n_1!}+\frac{1}{n_2!}+\dots+\frac{1}{n_k!}\]
-	no tiene soluciones enteras, con $1\le n_1<n_2<\dots<n_k$.
+  Demuestre que la ecuación
+  \[\frac{1}{10^n}=\frac{1}{n_1!}+\frac{1}{n_2!}+\dots+\frac{1}{n_k!}\]
+  no tiene soluciones enteras, con $1\le n_1<n_2<\dots<n_k$.
 \end{probEG}
 
 \begin{proof}
-	Pista: demuestra que si la ecuación es verdadera, se cumple que $n=\nu_5(n_k!)$.
+  Pista: demuestra que si la ecuación es verdadera, se cumple que
+  $n=\nu_5(n_k!)$.
 \end{proof}
 
 \begin{probEG}
-	Sea $n>1$ un número entero. Demuestre que
-	\[n\nmid 2^{n-1}+1.\]
+  Sea $n>1$ un número entero. Demuestre que
+  \[n\nmid 2^{n-1}+1.\]
 \end{probEG}
 
 \begin{proof}
-	Pista: demuestra que $2^{\nu_2(n-1)+1}\mid\ord_p(2)\mid p-1$ para todo $p\mid n$.
+  Pista: demuestra que $2^{\nu_2(n-1)+1}\mid\ord_p(2)\mid p-1$ para todo
+  $p\mid n$.
 \end{proof}
 
 \begin{probMG}
-	Sean $a_1,a_2,\dots,a_n\in\ZZ$. Demuestre que
-	\[\prod_{1\le i<j\le n}\frac{a_i-a_j}{i-j}\in\ZZ.\]
+  Sean $a_1,a_2,\dots,a_n\in\ZZ$. Demuestre que
+  \[\prod_{1\le i<j\le n}\frac{a_i-a_j}{i-j}\in\ZZ.\]
 \end{probMG}
 
 \begin{probMR}
-	Sea $n>1$ un número entero, y sean $1<a_1<a_2<\dots<a_k<n$ enteros positivos tales que $\mcm(a_i,a_j)>n$ para todo $i\ne j$. Demuestre que
-	\[\frac{1}{a_1}+\frac{1}{a_2}+\dots+\frac{1}{a_k}<\frac32.\]
+  Sea $n>1$ un número entero, y sean $1<a_1<a_2<\dots<a_k<n$ enteros positivos
+  tales que $\mcm(a_i,a_j)>n$ para todo $i\ne j$. Demuestre que
+  \[\frac{1}{a_1}+\frac{1}{a_2}+\dots+\frac{1}{a_k}<\frac32.\]
 \end{probMR}
 
 \begin{proof}
-	Pista: considere la cantidad de números divisibles por algún $a_i$ menores o iguales que $n$.
+  Pista: considere la cantidad de números divisibles por algún $a_i$ menores o
+  iguales que $n$.
 \end{proof}
 
 \note[Simulacro]{Sábado\\2022-04-23}
 
 \begin{probEG}
-	Miguel tiene una lista de varios subconjuntos de $10$ elementos de $\{1,2,\dots,100\}$. Él le dice a Cecilia: si eliges cualquier subconjunto de $10$ elementos de $\{1,2,\dots,100\}$, será disjunto con al menos un subconjunto de mi lista.
+  Miguel tiene una lista de varios subconjuntos de $10$ elementos de
+  $\{1,2,\dots,100\}$. Él le dice a Cecilia: si eliges cualquier subconjunto de
+  $10$ elementos de $\{1,2,\dots,100\}$, será disjunto con al menos un
+  subconjunto de mi lista.
 
-	¿Cuál es la mínima cantidad de subconjuntos que puede tener la lista de Miguel, si lo que le dice a Cecilia es cierto?
+  ¿Cuál es la mínima cantidad de subconjuntos que puede tener la lista de
+  Miguel, si lo que le dice a Cecilia es cierto?
 \end{probEG}
 
 \begin{proof}
-	La respuesta es $13$ y se puede conseguir con subconjuntos
-	\[A_1\cup A_2,A_2\cup A_3,A_3\cup A_1,\]
-	\[A_4\cup A_5,A_5\cup A_6,A_6\cup A_4,\]
-	\[A_7\cup A_8,A_9\cup A_{10},\dots,A_{19}\cup A_{20}\]
-	donde $A_1,A_2,\dots,A_{20}\subset\{1,2,\dots,100\}$ son subconjuntos disjuntos de tamaño $5$. Ahora, si la lista de Miguel tuviera $12$ o menos subconjuntos, podemos añadir algún subconjunto que ya está en la lista, así que supongamos que Miguel tiene $12$ subconjuntos. Como hay $12\times 10=120$ números en la lista, existe un número $x$ que pertenece a al menos $2$ subconjuntos de la lista. Además de esos dos subconjuntos, tenemos $10$ subconjuntos de la lista. Si $x$ pertenece a alguno de esos $10$ subconjuntos, de cada uno de los otros $9$ subconjuntos podemos elegir $9$ números (no necesariamente distintos). De lo contrario, existe un número $y$ que pertenece a al menos $2$ de esos $10$ subconjuntos, y de cada uno de los otros $8$ subconjuntos podemos elegir $8$ números. Es decir, existe un subconjunto $B\subset\{1,2,\dots,100\}$ de tamaño $10$ tal que $B$ no es disjunto con ningún subconjunto de la lista, lo cual es una contradicción.
+  La respuesta es $13$ y se puede conseguir con subconjuntos
+  \[A_1\cup A_2,A_2\cup A_3,A_3\cup A_1,\]
+  \[A_4\cup A_5,A_5\cup A_6,A_6\cup A_4,\]
+  \[A_7\cup A_8,A_9\cup A_{10},\dots,A_{19}\cup A_{20}\]
+  donde $A_1,A_2,\dots,A_{20}\subset\{1,2,\dots,100\}$ son subconjuntos
+  disjuntos de tamaño $5$. Ahora, si la lista de Miguel tuviera $12$ o menos
+  subconjuntos, podemos añadir algún subconjunto que ya está en la lista, así
+  que supongamos que Miguel tiene $12$ subconjuntos. Como hay $12\times 10=120$
+  números en la lista, existe un número $x$ que pertenece a al menos $2$
+  subconjuntos de la lista. Además de esos dos subconjuntos, tenemos $10$
+  subconjuntos de la lista. Si $x$ pertenece a alguno de esos $10$ subconjuntos,
+  de cada uno de los otros $9$ subconjuntos podemos elegir $9$ números (no
+  necesariamente distintos). De lo contrario, existe un número $y$ que pertenece
+  a al menos $2$ de esos $10$ subconjuntos, y de cada uno de los otros $8$
+  subconjuntos podemos elegir $8$ números. Es decir, existe un subconjunto
+  $B\subset\{1,2,\dots,100\}$ de tamaño $10$ tal que $B$ no es disjunto con
+  ningún subconjunto de la lista, lo cual es una contradicción.
 \end{proof}
 
 \begin{probEG}
-	Sean $\Omega_1$, $\Omega_2$, $\Omega_3$ y $\Omega_4$ circunferencias distintas tales que $\Omega_1$ y $\Omega_3$ son tangentes externas en el punto $P$, y $\Omega_2$ y $\Omega_4$ son tangentes externas en el mismo punto $P$. Suponga que $\Omega_1$ y $\Omega_2$, $\Omega_2$ y $\Omega_3$, $\Omega_3$ y $\Omega_4$, $\Omega_4$ y $\Omega_1$ se intersectan en los puntos $A,B,C,D$, respectivamente, y que esos cuatro puntos son distintos de $P$. Demuestre que
-	\[\frac{AB\cdot BC}{AD\cdot DC}=\frac{PB^2}{PD^2}.\]
+  Sean $\Omega_1$, $\Omega_2$, $\Omega_3$ y $\Omega_4$ circunferencias distintas
+  tales que $\Omega_1$ y $\Omega_3$ son tangentes externas en el punto $P$, y
+  $\Omega_2$ y $\Omega_4$ son tangentes externas en el mismo punto $P$. Suponga
+  que $\Omega_1$ y $\Omega_2$, $\Omega_2$ y $\Omega_3$, $\Omega_3$ y $\Omega_4$,
+  $\Omega_4$ y $\Omega_1$ se intersectan en los puntos $A,B,C,D$,
+  respectivamente, y que esos cuatro puntos son distintos de $P$. Demuestre que
+  \[\frac{AB\cdot BC}{AD\cdot DC}=\frac{PB^2}{PD^2}.\]
 \end{probEG}
 
 \begin{proof}
-	Pista: inversión centrada en $P$ de radio $1$.
+  Pista: inversión centrada en $P$ de radio $1$.
 \end{proof}
 
 \begin{probMR}
-	La secuencia $a_0,a_1,a_2,\dots$ está definida de la siguiente manera:
-	\[a_0=2\quad\text{y}\quad a_{k+1}=2a_k^2-1,\text{ para }k\ge 0.\]
-	Demuestre que si un primo impar $p$ divide a $a_n$, entonces $2^{n+3}$ divide a $p^2-1$.
+  La secuencia $a_0,a_1,a_2,\dots$ está definida de la siguiente manera:
+  \[a_0=2\quad\text{y}\quad a_{k+1}=2a_k^2-1,\text{ para }k\ge 0.\]
+  Demuestre que si un primo impar $p$ divide a $a_n$, entonces $2^{n+3}$ divide
+  a $p^2-1$.
 \end{probMR}
 
 \begin{proof}
-	Se puede probar que
-	\[a_n=\half\left((2+\sqrt{3})^{2^n}+(2-\sqrt{3})^{2^n}\right)=\sum_{i=0}^{2^{n-1}}\binom{2^n}{2k}2^{2k}3^{2^{n-1}-k}\]
-	para todo $n\ge 0$.
+  Se puede probar que
+  \[
+    a_n
+    =\half\left((2+\sqrt{3})^{2^n}+(2-\sqrt{3})^{2^n}\right)
+    =\sum_{i=0}^{2^{n-1}}\binom{2^n}{2k}2^{2k}3^{2^{n-1}-k}
+  \]
+  para todo $n\ge 0$.
 \end{proof}

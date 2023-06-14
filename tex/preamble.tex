@@ -2,7 +2,13 @@
 \usepackage[english,spanish,es-nosectiondot,es-lcroman]{babel}
 \addto\captionsspanish{\renewcommand{\proofname}{Solución}}
 \usepackage{tabularray}
-\SetTblrInner{hlines,vlines,rows={16pt,rowsep=0pt},columns={16pt,colsep=0pt},cells={c,m}}
+\SetTblrInner{%
+  hlines,%
+  vlines,%
+  rows={16pt,rowsep=0pt},%
+  columns={16pt,colsep=0pt},%
+  cells={c,m}%
+}
 \reversemarginpar
 
 \DeclareMathOperator{\mcd}{mcd}
@@ -13,21 +19,21 @@
 \newcommand{\notecolor}{green!35}
 \newcommand{\notestyle}{\fontfamily{qpl}\selectfont}
 \newcommand{\note}[2][]{%
-	\ifthenelse{\equal{#1}{}}%
-		{\todo[color=\notecolor]{\notestyle#2}}%
-		{\ifthenelse{\equal{#2}{}}%
-			{\todo[color=\notecolor]{\notestyle\bfseries\color{blue}#1}}%
-			{\todo[color=\notecolor]{\notestyle#2\\[-6pt]\rule{\textwidth}{0.3pt}\\\bfseries\color{blue}#1}}%
-		}%
+  \ifthenelse{\equal{#1}{}}%
+    {\todo[color=\notecolor]{\notestyle#2}}%
+    {\ifthenelse{\equal{#2}{}}%
+      {\todo[color=\notecolor]{\notestyle\bfseries\color{blue}#1}}%
+      {\todo[color=\notecolor]{\notestyle#2\\[-6pt]\rule{\textwidth}{0.3pt}\\\bfseries\color{blue}#1}}%
+    }%
 }
 \newcommand{\forum}[2][]{%
-	\par\vspace{1pt}\hspace{\fill}%
-	\ifthenelse{\equal{#1}{aops}}%
-		{\href{https://artofproblemsolving.com/community/p#2}{\ttfamily[aops:#2]}}%
-		{\ifthenelse{\equal{#1}{oma}}%
-			{\href{https://omaforos.com.ar/viewtopic.php?t=#2}{\ttfamily[omaforos:#2]}}%
-			{\url{#2}}%
-		}%
+  \par\vspace{1pt}\hspace{\fill}%
+  \ifthenelse{\equal{#1}{aops}}%
+    {\href{https://artofproblemsolving.com/community/p#2}{\ttfamily[aops:#2]}}%
+    {\ifthenelse{\equal{#1}{oma}}%
+      {\href{https://omaforos.com.ar/viewtopic.php?t=#2}{\ttfamily[omaforos:#2]}}%
+      {\url{#2}}%
+    }%
 }
 
 \usepackage{bold-extra}
@@ -58,15 +64,15 @@
 %%fakesection Bibliography
 \usepackage[backend=biber,style=alphabetic]{biblatex}
 \usepackage{csquotes}
-\DeclareLabelalphaTemplate{
-	\labelelement{
-		\field[final]{shorthand}
-		\field{label}
-		\field[strwidth=2,strside=left]{labelname}
-	}
-	\labelelement{
-		\field[strwidth=2,strside=right]{year}
-	}
+\DeclareLabelalphaTemplate{%
+  \labelelement{%
+    \field[final]{shorthand}%
+    \field{label}%
+    \field[strwidth=2,strside=left]{labelname}%
+  }
+  \labelelement{%
+    \field[strwidth=2,strside=right]{year}%
+  }
 }
 \DeclareFieldFormat{labelalpha}{\textbf{\scriptsize #1}}
 \addbibresource{references.bib}

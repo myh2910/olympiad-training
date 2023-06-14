@@ -3,387 +3,629 @@
 \note{Lunes\\2022-03-21}
 
 \begin{problem}[ISL 2007/N5]
-	Determine todas las funciones suryectivas $f:\NN\to\NN$ tales que para cada $m,n\in\NN$ y para cada número primo $p$, el número $f(m+n)$ es divisible por $p$ si y solo si $f(m)+f(n)$ es divisible por $p$.
-	\begin{hint}
-		Find all surjective functions $f:\NN\to\NN$ such that for every $m,n\in\NN$ and every prime $p$, the number $f(m+n)$ is divisible by $p$ if and only if $f(m)+f(n)$ is divisible by $p$.
-	\end{hint}
+  Determine todas las funciones suryectivas $f:\NN\to\NN$ tales que para cada
+  $m,n\in\NN$ y para cada número primo $p$, el número $f(m+n)$ es divisible por
+  $p$ si y solo si $f(m)+f(n)$ es divisible por $p$.
+  \begin{hint}
+    Find all surjective functions $f:\NN\to\NN$ such that for every $m,n\in\NN$
+    and every prime $p$, the number $f(m+n)$ is divisible by $p$ if and only if
+    $f(m)+f(n)$ is divisible by $p$.
+  \end{hint}
 \end{problem}
 
 \begin{problem}[ISL 2007/N6]
-	Sea $k$ un entero positivo. Demuestre que el número $(4k^2-1)^2$ tiene un divisor positivo de la forma $8kn-1$ si y solo si $k$ es par.
-	\begin{hint}
-		Let $k$ be a positive integer. Prove that the number $(4\cdot k^2-1)^2$ has a positive divisor of the form $8kn-1$ if and only if $k$ is even.
-	\end{hint}
+  Sea $k$ un entero positivo. Demuestre que el número $(4k^2-1)^2$ tiene un
+  divisor positivo de la forma $8kn-1$ si y solo si $k$ es par.
+  \begin{hint}
+    Let $k$ be a positive integer. Prove that the number $(4\cdot k^2-1)^2$ has
+    a positive divisor of the form $8kn-1$ if and only if $k$ is even.
+  \end{hint}
 \end{problem}
 
 \begin{probER}[Petrozavodsk Winter 2021, UPC Contest/B]
-	Determine todos los $n\in\ZZ^+$ para los cuales existe una permutación $a_0,a_1,\dots,a_{n-1}$ de los números $0,1,\dots,n-1$ de tal manera que la secuencia $b_0,b_1,\dots,b_{n-1}$ dada por $b_i=\abs{a_i-i}$ también es una permutación de los números $0,1,\dots,n-1$.
-	\begin{hint}
-		We say that a permutation $a_0,\dots,a_{n-1}$ of $0,\dots,n-1$ is \emph{beautiful} if the sequence $b_0,\dots,b_{n-1}$ given by $b_i=\abs{a_i-i}$ is also a permutation of $0,\dots,n-1$.
+  Determine todos los $n\in\ZZ^+$ para los cuales existe una permutación
+  $a_0,a_1,\dots,a_{n-1}$ de los números $0,1,\dots,n-1$ de tal manera que la
+  secuencia $b_0,b_1,\dots,b_{n-1}$ dada por $b_i=\abs{a_i-i}$ también es una
+  permutación de los números $0,1,\dots,n-1$.
+  \begin{hint}
+    We say that a permutation $a_0,\dots,a_{n-1}$ of $0,\dots,n-1$ is
+    \emph{beautiful} if the sequence $b_0,\dots,b_{n-1}$ given by
+    $b_i=\abs{a_i-i}$ is also a permutation of $0,\dots,n-1$.
 
-		Determine for which $n$ there exists a beautiful permutation of $0,\dots,n-1$.
-	\end{hint}
-	\forum[aops]{21584017}
+    Determine for which $n$ there exists a beautiful permutation of $0,\dots,n-1$.
+  \end{hint}
+  \forum[aops]{21584017}
 \end{probER}
 
 \begin{proof}
-	Note que
-	\[\frac{n(n-1)}{2}=\sum_{i=0}^{n-1}\abs{a_i-i}\equiv\sum_{i=0}^{n-1}a_i-\sum_{i=0}^{n-1}i=0\pmod 2\]
-	de donde $n=4k$ o $n=4k+1$. Ahora, si $n=4k+c$ donde $c\in\{0,1\}$ sea $a_k=k$. Considerando el resto de los números, sea $(C)$ un ciclo que alterna entre el mayor y el menor de los números que sobran. Por ejemplo, si $n=4\times 2=8$, $(C)=(7\;0\;6\;1\;5\;3\;4)$. Note que el conjunto de las diferencias consecutivas de $(C)$ es $1,2,\dots,n-1$ con ningún número repetido. Entonces, podemos definir $a=(k)(C)$ y esta satisface lo requerido.
+  Note que
+  \[
+    \frac{n(n-1)}{2}
+    =\sum_{i=0}^{n-1}\abs{a_i-i}
+    \equiv\sum_{i=0}^{n-1}a_i-\sum_{i=0}^{n-1}i
+    =0\pmod 2
+  \]
+  de donde $n=4k$ o $n=4k+1$. Ahora, si $n=4k+c$ donde $c\in\{0,1\}$ sea
+  $a_k=k$. Considerando el resto de los números, sea $(C)$ un ciclo que alterna
+  entre el mayor y el menor de los números que sobran. Por ejemplo, si
+  $n=4\times 2=8$, $(C)=(7\;0\;6\;1\;5\;3\;4)$. Note que el conjunto de las
+  diferencias consecutivas de $(C)$ es $1,2,\dots,n-1$ con ningún número
+  repetido. Entonces, podemos definir $a=(k)(C)$ y esta satisface lo requerido.
 \end{proof}
 
 \note{Martes\\2022-03-22}
 
 \begin{problem}[ISL 2007/N4]
-	Para todo entero $k\ge 2$, demuestre que
-	\[2^{3k}\,\left\lvert\!\left\lvert\,\binom{2^{k+1}}{2^k}-\binom{2^k}{2^{k-1}}.\right.\right.\]
-	\begin{hint}
-		For every integer $k\ge 2$, prove that $2^{3k}$ divides the number
-		\[\binom{2^{k+1}}{2^k}-\binom{2^k}{2^{k-1}}\]
-		but $2^{3k+1}$ does not.
-	\end{hint}
+  Para todo entero $k\ge 2$, demuestre que
+  \[2^{3k}\,\left\lvert\!\left\lvert\,\binom{2^{k+1}}{2^k}-\binom{2^k}{2^{k-1}}.\right.\right.\]
+  \begin{hint}
+    For every integer $k\ge 2$, prove that $2^{3k}$ divides the number
+    \[\binom{2^{k+1}}{2^k}-\binom{2^k}{2^{k-1}}\]
+    but $2^{3k+1}$ does not.
+  \end{hint}
 \end{problem}
 
 \begin{problem}[ISL 2008/A6]
-	Sea $f:\RR\to\NN$ una función que satisface
-	\[f\left(x+\frac{1}{f(y)}\right)=f\left(y+\frac{1}{f(x)}\right)\]
-	para todo $x,y\in\RR$. Demuestre que $f$ no es sobreyectiva.
-	\begin{hint}
-		Let $f:\RR\to\NN$ be a function which satisfies
-		\[f\left(x+\frac{1}{f(y)}\right)=f\left(y+\frac{1}{f(x)}\right)\]
-		for all $x,y\in\RR$. Prove that there is a positive integer which is not a value of $f$.
-	\end{hint}
+  Sea $f:\RR\to\NN$ una función que satisface
+  \[f\left(x+\frac{1}{f(y)}\right)=f\left(y+\frac{1}{f(x)}\right)\]
+  para todo $x,y\in\RR$. Demuestre que $f$ no es sobreyectiva.
+  \begin{hint}
+    Let $f:\RR\to\NN$ be a function which satisfies
+    \[f\left(x+\frac{1}{f(y)}\right)=f\left(y+\frac{1}{f(x)}\right)\]
+    for all $x,y\in\RR$. Prove that there is a positive integer which is not a
+    value of $f$.
+  \end{hint}
 \end{problem}
 
 \begin{probEG}[RMM Shortlist 2018/N1]
-	Determine todos los polinomios $f(x)\in\ZZ[x]$ tales que $f(p)\mid 2^p-2$ para todo primo impar $p$.
-	\begin{hint}
-		Determine all polynomials $f$ with integer coefficients such that $f(p)$ is a divisor of $2^p-2$ for every odd prime $p$.
-	\end{hint}
-	\forum[aops]{11822580}
+  Determine todos los polinomios $f(x)\in\ZZ[x]$ tales que $f(p)\mid 2^p-2$ para
+  todo primo impar $p$.
+  \begin{hint}
+    Determine all polynomials $f$ with integer coefficients such that $f(p)$ is
+    a divisor of $2^p-2$ for every odd prime $p$.
+  \end{hint}
+  \forum[aops]{11822580}
 \end{probEG}
 
 \begin{proof}
-	Sea $f(x)=x^n\cdot g(x)$ donde $g(0)\ne 0$.
-	\begin{itemize}
-		\ii Si $g(x)=c$ es una función constante, tenemos que $3^n\cdot c\mid 2^3-2=6$. Si $n=0$, tenemos que $c\mid 6$. Si $n=1$, tenemos que $c\mid 2$. Por lo tanto, $f(x)=\pm 1,\pm 2,\pm 3,\pm 6,\pm x,\pm 2x$.
-		\ii Si $g$ no es constante, por Schur existe un primo $q>3$ suficientemente grande tal que $q\nmid g(0)$ y $q\mid g(m)$ para algún $m\in\ZZ^+$. Como $m\mid g(m)-g(0)$, es claro que $q\nmid m$. Como $q(q-1)$ y $m(q-1)+q$ son coprimos, por Dirichlet existe un primo impar $p$ de la forma $q(q-1)k-(m(q-1)+q)\equiv m\pmod q$. Es decir, $q\mid g(p)\mid 2^p-2$ donde $\mcd(p-1,q-1)=\mcd(q-1,2)=2$. Por ende, $q\mid\mcd(2^{p-1}-1,2^{q-1}-1)=2^2-1=3$, lo cual es un absurdo.
-	\end{itemize}
+  Sea $f(x)=x^n\cdot g(x)$ donde $g(0)\ne 0$.
+  \begin{itemize}
+    \ii Si $g(x)=c$ es una función constante, tenemos que
+    $3^n\cdot c\mid 2^3-2=6$. Si $n=0$, tenemos que $c\mid 6$. Si $n=1$, tenemos
+    que $c\mid 2$. Por lo tanto, $f(x)=\pm 1,\pm 2,\pm 3,\pm 6,\pm x,\pm 2x$.
+    \ii Si $g$ no es constante, por Schur existe un primo $q>3$ suficientemente
+    grande tal que $q\nmid g(0)$ y $q\mid g(m)$ para algún $m\in\ZZ^+$. Como
+    $m\mid g(m)-g(0)$, es claro que $q\nmid m$. Como $q(q-1)$ y $m(q-1)+q$ son
+    coprimos, por Dirichlet existe un primo impar $p$ de la forma
+    $q(q-1)k-(m(q-1)+q)\equiv m\pmod q$. Es decir, $q\mid g(p)\mid 2^p-2$ donde
+    $\mcd(p-1,q-1)=\mcd(q-1,2)=2$. Por ende,
+    $q\mid\mcd(2^{p-1}-1,2^{q-1}-1)=2^2-1=3$, lo cual es un absurdo.
+  \end{itemize}
 \end{proof}
 
 \note{Miércoles\\2022-03-23}
 
 \begin{probEG}[All-Russian Olympiad 1998/9.8]
-	Dos enteros positivos $a$ y $b$ son escritos en una pizarra. En un \emph{movimiento}, se borra el menor de los números en la pizarra y en su lugar se escribe el número $\frac{ab}{\abs{a-b}}$. Demuestre que en algún momento, los dos números en la pizarra serán iguales.
-	\begin{hint}
-		Two distinct positive integers $a,b$ are written on the board. The smaller of them is erased and replaced with the number $\frac{ab}{\abs{a-b}}$. This process is repeated as long as the two numbers are not equal. Prove that eventually the two numbers on the board will be equal.
-	\end{hint}
-	\forum[aops]{2621673}
+  Dos enteros positivos $a$ y $b$ son escritos en una pizarra. En un
+  \emph{movimiento}, se borra el menor de los números en la pizarra y en su
+  lugar se escribe el número $\frac{ab}{\abs{a-b}}$. Demuestre que en algún
+  momento, los dos números en la pizarra serán iguales.
+  \begin{hint}
+    Two distinct positive integers $a,b$ are written on the board. The smaller
+    of them is erased and replaced with the number $\frac{ab}{\abs{a-b}}$. This
+    process is repeated as long as the two numbers are not equal. Prove that
+    eventually the two numbers on the board will be equal.
+  \end{hint}
+  \forum[aops]{2621673}
 \end{probEG}
 
 \begin{proof}
-	Digamos que $a>b$. Si $a=bq+r$ donde $0\le r<b$, tenemos que
-	\[(a,b)\to\left(a,\frac{ab}{a-b}\right)\to\dots\to\left(a,\frac{ab}{a-bq}\right)=\left(\frac{a}{r}\cdot r,\frac{a}{r}\cdot b\right)\]
-	y así podemos continuar con la pareja $(b,r)$ hasta obtener la pareja $(d,d)$ (multiplicado por algún número racional) siendo $d=\mcd(a,b)$.
+  Digamos que $a>b$. Si $a=bq+r$ donde $0\le r<b$, tenemos que
+  \[
+    (a,b)\to\left(a,\frac{ab}{a-b}\right)\to\dots\to\left(a,\frac{ab}{a-bq}\right)
+    =\left(\frac{a}{r}\cdot r,\frac{a}{r}\cdot b\right)
+  \]
+  y así podemos continuar con la pareja $(b,r)$ hasta obtener la pareja $(d,d)$
+  (multiplicado por algún número racional) siendo $d=\mcd(a,b)$.
 \end{proof}
 
 \begin{probEG}
-	En una fila, que tiene la forma de un tablero infinito (en ambas direcciones), hay varios caramelos. Un \emph{movimiento} consiste en elegir una casilla que contenga al menos cuatro caramelos, luego, se extrae cuatro caramelos de esa casilla y se coloca $2$ caramelos en la casilla anterior y $2$ caramelos en la casilla posterior. ¿Es posible que después de un número finito de movimientos se pueda regresar a la configuración inicial?
+  En una fila, que tiene la forma de un tablero infinito (en ambas direcciones),
+  hay varios caramelos. Un \emph{movimiento} consiste en elegir una casilla que
+  contenga al menos cuatro caramelos, luego, se extrae cuatro caramelos de esa
+  casilla y se coloca $2$ caramelos en la casilla anterior y $2$ caramelos en la
+  casilla posterior. ¿Es posible que después de un número finito de movimientos
+  se pueda regresar a la configuración inicial?
 \end{probEG}
 
 \begin{proof}
-	La respuesta es no. Sea $X$ la casilla que está más a la izquierda tal que el número de caramelos en ella es mayor que el número inicial. En cada operación, $X$ no se mueve o se mueve más a la izquierda. Por lo tanto, siempre existe una casilla con el número de caramelos mayor que el inicial.
+  La respuesta es no. Sea $X$ la casilla que está más a la izquierda tal que el
+  número de caramelos en ella es mayor que el número inicial. En cada operación,
+  $X$ no se mueve o se mueve más a la izquierda. Por lo tanto, siempre existe
+  una casilla con el número de caramelos mayor que el inicial.
 \end{proof}
 
 \begin{probEG}
-	Inicialmente hay $2022$ osos de peluche repartidos aleatoriamente en $127$ cajas. Un \emph{movimiento} consiste en elegir una caja que no contenga a todos los osos de peluche, retirar un oso de peluche, y colocarlo en otra caja cuyo número de peluches sea mayor o igual que el de la caja elegida. Demuestre que eventualmente todos los osos de peluches estarán en una misma caja.
+  Inicialmente hay $2022$ osos de peluche repartidos aleatoriamente en $127$
+  cajas. Un \emph{movimiento} consiste en elegir una caja que no contenga a
+  todos los osos de peluche, retirar un oso de peluche, y colocarlo en otra caja
+  cuyo número de peluches sea mayor o igual que el de la caja elegida. Demuestre
+  que eventualmente todos los osos de peluches estarán en una misma caja.
 \end{probEG}
 
 \begin{proof}
-	Sea $C$ el conjunto de los números de osos de peluche (mayores que $0$) en cada caja y sea $P$ el producto de todos los elementos de $C$. En cada movimiento, elegimos dos cajas con números de osos $a\le b$ y tendremos $(a,b)\to(a-1,b+1)$. Como $(a-1)(b+1)<ab$, el producto $P$ o el cardinal $\abs{C}$ disminuye, por lo que al final siempre tendremos una sola caja conteniendo todos los osos de peluche.
+  Sea $C$ el conjunto de los números de osos de peluche (mayores que $0$) en
+  cada caja y sea $P$ el producto de todos los elementos de $C$. En cada
+  movimiento, elegimos dos cajas con números de osos $a\le b$ y tendremos
+  $(a,b)\to(a-1,b+1)$. Como $(a-1)(b+1)<ab$, el producto $P$ o el cardinal
+  $\abs{C}$ disminuye, por lo que al final siempre tendremos una sola caja
+  conteniendo todos los osos de peluche.
 \end{proof}
 
 \begin{probMR}[ISL 2005/C5]
-	Se dispone de $n$ fichas en una fila, cada una de las cuales tiene un lado blanco y un lado negro, donde inicialmente están con el lado blanco hacia arriba. Un \emph{movimiento} consiste en elegir una ficha con el lado blanco (que no sea de ningún extremo), quitarlo de la ficha y voltear sus dos fichas vecinas. Demuestre que es posible conseguir una configuración con exactamente dos fichas si y solo si $n-1$ no es divisible por $3$.
-	\begin{hint}
-		There are $n$ markers, each with one side white and the other side black. In the beginning, these $n$ markers are aligned in a row so that their white sides are all up. In each step, if possible, we choose a marker whose white side is up (but not one of the outermost markers), remove it, and reverse the closest marker to the left of it and also reverse the closest marker to the right of it. Prove that, by a finite sequence of such steps, one can achieve a state with only two markers remaining if and only if $n-1$ is not divisible by $3$.
-	\end{hint}
+  Se dispone de $n$ fichas en una fila, cada una de las cuales tiene un lado
+  blanco y un lado negro, donde inicialmente están con el lado blanco hacia
+  arriba. Un \emph{movimiento} consiste en elegir una ficha con el lado blanco
+  (que no sea de ningún extremo), quitarlo de la ficha y voltear sus dos fichas
+  vecinas. Demuestre que es posible conseguir una configuración con exactamente
+  dos fichas si y solo si $n-1$ no es divisible por $3$.
+  \begin{hint}
+    There are $n$ markers, each with one side white and the other side black. In
+    the beginning, these $n$ markers are aligned in a row so that their white
+    sides are all up. In each step, if possible, we choose a marker whose white
+    side is up (but not one of the outermost markers), remove it, and reverse
+    the closest marker to the left of it and also reverse the closest marker to
+    the right of it. Prove that, by a finite sequence of such steps, one can
+    achieve a state with only two markers remaining if and only if $n-1$ is not
+    divisible by $3$.
+  \end{hint}
 \end{probMR}
 
 \begin{probER}
-	En $n-1$ casillas de un tablero de $n\times n$ se ha escrito el número $1$ y en las casillas restantes se ha escrito el número cero. Un \emph{movimiento} consiste en elegir una casilla, restarle $1$ al número escrito en ella y sumarle $1$ a todos los números que están en casillas de su misma fila y a todos los números que están en casillas de su misma columna. ¿Es posible, luego de algunos movimientos, obtener un tablero cuyos números son todos iguales?
+  En $n-1$ casillas de un tablero de $n\times n$ se ha escrito el número $1$ y
+  en las casillas restantes se ha escrito el número cero. Un \emph{movimiento}
+  consiste en elegir una casilla, restarle $1$ al número escrito en ella y
+  sumarle $1$ a todos los números que están en casillas de su misma fila y a
+  todos los números que están en casillas de su misma columna. ¿Es posible,
+  luego de algunos movimientos, obtener un tablero cuyos números son todos
+  iguales?
 \end{probER}
 
 \note{Jueves\\2022-03-24}
 
 \begin{probMG}[IberoAmerican 1995/5]
-	La circunferencia inscrita en el triángulo $ABC$ es tangente a $BC$, $CA$ y $AB$ en $D$, $E$ y $F$ respectivamente. Suponga que dicha circunferencia corta de nuevo a $AD$ en su punto medio $X$, es decir, $AX=XD$. Las rectas $XB$ y $XC$ cortan de nuevo a la circunferencia inscrita en $Y$ y en $Z$, respectivamente. Demuestre que $EY=FZ$.
-	\begin{hint}
-		The incircle of a triangle $ABC$ touches the sides $BC$, $CA$, $AB$ at the points $D$, $E$, $F$ respectively. Let the line $AD$ intersect this incircle of triangle $ABC$ at a point $X$ (apart from $D$). Assume that this point $X$ is the midpoint of the segment $AD$, this means, $AX=XD$. Let the line $BX$ meet the incircle of triangle $ABC$ at a point $Y$ (apart from $X$), and let the line $CX$ meet the incircle of triangle $ABC$ at a point $Z$ (apart from $X$). Show that $EY=FZ$.
-	\end{hint}
-	\forum[aops]{15699}
+  La circunferencia inscrita en el triángulo $ABC$ es tangente a $BC$, $CA$ y
+  $AB$ en $D$, $E$ y $F$ respectivamente. Suponga que dicha circunferencia corta
+  de nuevo a $AD$ en su punto medio $X$, es decir, $AX=XD$. Las rectas $XB$ y
+  $XC$ cortan de nuevo a la circunferencia inscrita en $Y$ y en $Z$,
+  respectivamente. Demuestre que $EY=FZ$.
+  \begin{hint}
+    The incircle of a triangle $ABC$ touches the sides $BC$, $CA$, $AB$ at the
+    points $D$, $E$, $F$ respectively. Let the line $AD$ intersect this incircle
+    of triangle $ABC$ at a point $X$ (apart from $D$). Assume that this point
+    $X$ is the midpoint of the segment $AD$, this means, $AX=XD$. Let the line
+    $BX$ meet the incircle of triangle $ABC$ at a point $Y$ (apart from $X$),
+    and let the line $CX$ meet the incircle of triangle $ABC$ at a point $Z$
+    (apart from $X$). Show that $EY=FZ$.
+  \end{hint}
+  \forum[aops]{15699}
 \end{probMG}
 
 \begin{proof}
-	Sea $P$ el punto medio de $FD$. Como $XY$ es simediana de $\triangle XFD$, tenemos que
-	\[\angle BFY=\angle FXY=\angle PXD=\angle FAD\]
-	de donde $FY\parallel AD$ y análogamente $EZ\parallel AD$. Por lo tanto, $FY\parallel EZ$ de donde $EY=FZ$.
+  Sea $P$ el punto medio de $FD$. Como $XY$ es simediana de $\triangle XFD$,
+  tenemos que
+  \[\angle BFY=\angle FXY=\angle PXD=\angle FAD\]
+  de donde $FY\parallel AD$ y análogamente $EZ\parallel AD$. Por lo tanto,
+  $FY\parallel EZ$ de donde $EY=FZ$.
 \end{proof}
 
-\note[EGMO TST Día 1]{Viernes\\2022-03-25}
+% \note[EGMO TST Día 1]{Viernes\\2022-03-25}
+%
+% \begin{probEB}[Peru EGMO TST 2022/1]
+%   En cada casilla de un tablero $4\times 4$ se escribe un número entero positivo
+%   de modo que el número escrito en cada casilla es igual a la cantidad de
+%   números distintos entre sí escritos en sus casillas vecinas. ¿Cuántos números
+%   distintos como máximo pueden haber en el tablero? \\[4pt]
+%   \emph{Nota.} Casillas vecinas son las que comparten un lado en común o un
+%   vértice en común.
+% \end{probEB}
+%
+% \begin{proof}
+%   Supongamos que hay $n$ números distintos en el tablero, donde $M$ es el máximo
+%   de ellos. Luego, $M=n$ y $1,2,\dots,n$ son los números que están en el
+%   tablero. Si $n\ge 3$, existe un $1$ que es vecino de $n$. Considerando la
+%   posición del $1$, es fácil ver que $1$ está en una esquina del tablero. Es
+%   decir, tenemos lo siguiente.
+%   \[
+%     \begin{tblr}{}
+%       1 & n & & \\
+%       n & n & & \\
+%         &   & & \\
+%         &   & &
+%     \end{tblr}
+%   \]
+%   Es fácil ver que $n\in\{3,4\}$, pero analizando por casos tenemos un absurdo.
+%   Por ende, la máxima cantidad de números distintos en el tablero es $2$. Como
+%   ejemplo considere el siguiente tablero.
+%   \[
+%     \begin{tblr}{}
+%       1 & 2 & 2 & 1 \\
+%       2 & 2 & 2 & 2 \\
+%       2 & 2 & 2 & 2 \\
+%       1 & 2 & 2 & 1
+%     \end{tblr}
+%   \]
+% \end{proof}
+%
+% \begin{probEG}[Peru EGMO TST 2022/2]
+%   Encuentre todos los enteros positivos $a$, $b$ y $c$ tales que
+%   \[a^{b!}+b^{a!}=c^{c!}.\]
+% \end{probEG}
+%
+% \begin{proof}
+%   Si $a=1$ o $b=1$, tenemos que
+%   $(a,b,c)=\left(1,c^{c!}-1,c\right),\left(c^{c!}-1,1,c\right)$ para algún valor
+%   de $c>1$. Ahora, si $a,b\ge 2$ tenemos que $c\ge 2$. Note que si $a=b$,
+%   tenemos que $2a^{a!}=c^{c!}$ lo cual es un absurdo pues $a!$ y $c!$ son
+%   exponentes pares. Sin pérdida de generalidad, supongamos que $a>b\ge 2$.
+%   Luego, $c\ge 3$. Si $b\ge 3$, los exponentes $b!$, $a!$ y $c!$ son múltiplos
+%   de $3$, lo cual es un absurdo por el último teorema de Fermat. Por ende,
+%   $b=2$. Si $a=3$, tenemos que $73=c^{c!}$ lo cual es un absurdo. Por ende,
+%   $a\ge 4$. Si $c=3$, $1024=2^{10}<2^{a!}<c^{c!}=729$, lo cual es un absurdo.
+%   Por ende, $c\ge 4$. Luego, los exponentes $a!$ y $c!$ son múltiplos de $4$, de
+%   donde tenemos una ecuación de la forma $x^2=y^4-z^4$, lo cual es un absurdo.
+% \end{proof}
+%
+% \begin{probEG}[Peru EGMO TST 2022/3]
+%   Los puntos $A_2,B_2,C_2$ son los puntos medios de las alturas $AA_1,BB_1,CC_1$
+%   del triángulo acutángulo $ABC$. Demuestre que la suma de los ángulos
+%   $\angle B_2A_1C_2$, $\angle C_2B_1A_2$ y $\angle A_2C_1B_2$ es $180\dg$.
+% \end{probEG}
+%
+% \begin{proof}
+%   Sea $H$ el ortocentro del triángulo $ABC$. Si $M$ es el punto medio del lado
+%   $BC$, tenemos que $\angle HB_2M=\angle HC_2M=\angle HA_1M=90\dg$, de donde
+%   $\angle B_2A_1C_2=\angle B_2HC_2$ y análogamente
+%   $\angle C_2B_1A_2=\angle C_2HA_2$ y $\angle A_2C_1B_2=\angle A_2HB_2$. Aquí se
+%   termina la prueba.
+% \end{proof}
+%
+% \begin{probMB}[Peru EGMO TST 2022/4]
+%   Encuentre todos los enteros positivos $m$, $n$ y $a$ tales que
+%   \[\abs{(a^n+1)^n-a^m}\le a^2.\]
+% \end{probMB}
+%
+% \begin{proof}
+%   Supongamos que $n=1$. Como $a=1$ cumple, supongamos que $a>1$. Si $m=1$, es
+%   trivial. Si $m=2$, $0<a^2-a-1<a^2$. Si $m\ge 3$,
+%   \[a^m-a-1\ge a^3-a-1=(a-1)^2(a+1)-2+a^2>a^2.\]
+%   Ahora, supongamos que $n>1$. Note que si $a=1$ tenemos $2^n-1>1$, de donde
+%   $a>1$. Si $m\le n^2$, tenemos que
+%   \[(a^n+1)^n-a^m\ge \left(a^{n^2}-a^m\right)+a^n+1>a^2\]
+%   de donde $m\ge n^2+1$. Si $n=2$, tenemos que
+%   \[a^{n^2+1}-(a^n+1)^n=(a-1)(a^4-3a-3)-4+a^2>a^2.\]
+%   Si $n\ge 3$, note que
+%   \begin{align*}
+%     a^{n^2+1}-(a^n+1)^n
+%     &\ge a^{n^2+1}-\left(a^{n^2}+\sum_{i=0}^{n-1}\binom{n}{i}a^{n(n-1)}\right) \\
+%     &= a^{n^2+1}-a^{n^2}-(2^n-1)a^{n(n-1)} \\
+%     &= a^{n(n-1)}\left(a^n(a-1)-2^n+1\right) \\
+%     &> a^2
+%   \end{align*}
+%   de donde $a^m-(a^n+1)^n\ge a^{n^2+1}-(a^n+1)^n>a^2$. Finalmente, concluimos
+%   que las ternas $(m,n,a)=(m,1,1),(1,1,a),(2,1,a)$ cumplen, donde $m\ge 1$ y
+%   $a>1$ son enteros positivos.
+% \end{proof}
+%
+% \note[Miscelánea]{}
 
-\begin{probEB}[Peru EGMO TST 2022/1]
-	En cada casilla de un tablero $4\times 4$ se escribe un número entero positivo de modo que el número escrito en cada casilla es igual a la cantidad de números distintos entre sí escritos en sus casillas vecinas. ¿Cuántos números distintos como máximo pueden haber en el tablero?\\[4pt]
-	\emph{Nota.} Casillas vecinas son las que comparten un lado en común o un vértice en común.
-\end{probEB}
-
-\begin{proof}
-	Supongamos que hay $n$ números distintos en el tablero, donde $M$ es el máximo de ellos. Luego, $M=n$ y $1,2,\dots,n$ son los números que están en el tablero. Si $n\ge 3$, existe un $1$ que es vecino de $n$. Considerando la posición del $1$, es fácil ver que $1$ está en una esquina del tablero. Es decir, tenemos lo siguiente.
-	\[\begin{tblr}{}
-		1&n& & \\
-		n&n& & \\
-		 & & & \\
-		 & & &
-	\end{tblr}\]
-	Es fácil ver que $n\in\{3,4\}$, pero analizando por casos tenemos un absurdo. Por ende, la máxima cantidad de números distintos en el tablero es $2$. Como ejemplo considere el siguiente tablero.
-	\[\begin{tblr}{}
-		1&2&2&1\\
-		2&2&2&2\\
-		2&2&2&2\\
-		1&2&2&1
-	\end{tblr}\]
-\end{proof}
-
-\begin{probEG}[Peru EGMO TST 2022/2]
-	Encuentre todos los enteros positivos $a$, $b$ y $c$ tales que
-	\[a^{b!}+b^{a!}=c^{c!}.\]
-\end{probEG}
-
-\begin{proof}
-	Si $a=1$ o $b=1$, tenemos que $(a,b,c)=\left(1,c^{c!}-1,c\right),\left(c^{c!}-1,1,c\right)$ para algún valor de $c>1$. Ahora, si $a,b\ge 2$ tenemos que $c\ge 2$. Note que si $a=b$, tenemos que $2a^{a!}=c^{c!}$ lo cual es un absurdo pues $a!$ y $c!$ son exponentes pares. Sin pérdida de generalidad, supongamos que $a>b\ge 2$. Luego, $c\ge 3$. Si $b\ge 3$, los exponentes $b!$, $a!$ y $c!$ son múltiplos de $3$, lo cual es un absurdo por el último teorema de Fermat. Por ende, $b=2$. Si $a=3$, tenemos que $73=c^{c!}$ lo cual es un absurdo. Por ende, $a\ge 4$. Si $c=3$, $1024=2^{10}<2^{a!}<c^{c!}=729$, lo cual es un absurdo. Por ende, $c\ge 4$. Luego, los exponentes $a!$ y $c!$ son múltiplos de $4$, de donde tenemos una ecuación de la forma $x^2=y^4-z^4$, lo cual es un absurdo.
-\end{proof}
-
-\begin{probEG}[Peru EGMO TST 2022/3]
-	Los puntos $A_2,B_2,C_2$ son los puntos medios de las alturas $AA_1,BB_1,CC_1$ del triángulo acutángulo $ABC$. Demuestre que la suma de los ángulos $\angle B_2A_1C_2$, $\angle C_2B_1A_2$ y $\angle A_2C_1B_2$ es $180\dg$.
-\end{probEG}
-
-\begin{proof}
-	Sea $H$ el ortocentro del triángulo $ABC$. Si $M$ es el punto medio del lado $BC$, tenemos que $\angle HB_2M=\angle HC_2M=\angle HA_1M=90\dg$, de donde $\angle B_2A_1C_2=\angle B_2HC_2$ y análogamente $\angle C_2B_1A_2=\angle C_2HA_2$ y $\angle A_2C_1B_2=\angle A_2HB_2$. Aquí se termina la prueba.
-\end{proof}
-
-\begin{probMB}[Peru EGMO TST 2022/4]
-	Encuentre todos los enteros positivos $m$, $n$ y $a$ tales que
-	\[\abs{(a^n+1)^n-a^m}\le a^2.\]
-\end{probMB}
-
-\begin{proof}
-	Supongamos que $n=1$. Como $a=1$ cumple, supongamos que $a>1$. Si $m=1$, es trivial. Si $m=2$, $0<a^2-a-1<a^2$. Si $m\ge 3$,
-	\[a^m-a-1\ge a^3-a-1=(a-1)^2(a+1)-2+a^2>a^2.\]
-	Ahora, supongamos que $n>1$. Note que si $a=1$ tenemos $2^n-1>1$, de donde $a>1$. Si $m\le n^2$, tenemos que
-	\[(a^n+1)^n-a^m\ge \left(a^{n^2}-a^m\right)+a^n+1>a^2\]
-	de donde $m\ge n^2+1$. Si $n=2$, tenemos que
-	\[a^{n^2+1}-(a^n+1)^n=(a-1)(a^4-3a-3)-4+a^2>a^2.\]
-	Si $n\ge 3$, note que
-	\begin{align*}
-		a^{n^2+1}-(a^n+1)^n
-		&\ge a^{n^2+1}-\left(a^{n^2}+\sum_{i=0}^{n-1}\binom{n}{i}a^{n(n-1)}\right)\\
-		&=a^{n^2+1}-a^{n^2}-(2^n-1)a^{n(n-1)}\\
-		&=a^{n(n-1)}\left(a^n(a-1)-2^n+1\right)\\
-		&>a^2
-	\end{align*}
-	de donde $a^m-(a^n+1)^n\ge a^{n^2+1}-(a^n+1)^n>a^2$. Finalmente, concluimos que las ternas $(m,n,a)=(m,1,1),(1,1,a),(2,1,a)$ cumplen, donde $m\ge 1$ y $a>1$ son enteros positivos.
-\end{proof}
-
-\note[Miscelánea]{}
+\note{Viernes\\2022-03-25}
 
 \begin{probEG}[JBMO Shortlist 2016/C4]
-	A splitting of a planar polygon is a finite set of triangles whose interiors are pairwise disjoint, and whose union is the polygon in question. Given an integer $n\ge 3$, determine the largest integer $m$ such that no planar $n$-gon splits into less than $m$ triangles.
-	\forum[aops]{9180563}
+  A splitting of a planar polygon is a finite set of triangles whose interiors
+  are pairwise disjoint, and whose union is the polygon in question. Given an
+  integer $n\ge 3$, determine the largest integer $m$ such that no planar
+  $n$-gon splits into less than $m$ triangles.
+  \forum[aops]{9180563}
 \end{probEG}
 
 \begin{proof}
-	La respuesta es $m=\ceiling{n/3}$. La figura \ref{fig:splitting_hexagon} muestra un ejemplo con $n=6$.
+  La respuesta es $m=\ceiling{n/3}$. La figura \ref{fig:splitting_hexagon}
+  muestra un ejemplo con $n=6$.
 
-	\begin{figure}[ht!]
-		\centering
-		\begin{asy}
-			size(4cm);
-			pair A = dir(-30);
-			pair B = dir(90);
-			pair C = dir(210);
-			pair D = (2 * C + A) / 3;
-			pair E = dir(-90);
-			pair F = (C + 2 * A) / 3;
+  \begin{figure}[ht!]
+    \centering
+    \begin{asy}
+      size(4cm);
+      pair A = dir(-30);
+      pair B = dir(90);
+      pair C = dir(210);
+      pair D = (2 * C + A) / 3;
+      pair E = dir(-90);
+      pair F = (C + 2 * A) / 3;
 
-			filldraw(A--B--C--cycle, paleblue, blue);
-			filldraw(D--E--F--cycle, pink, red);
+      filldraw(A--B--C--cycle, paleblue, blue);
+      filldraw(D--E--F--cycle, pink, red);
 
-			dot(A);
-			dot(B);
-			dot(C);
-			dot(D);
-			dot(E);
-			dot(F);
-		\end{asy}
-		\caption{Hexágono cóncavo cuvierto por $2$ triángulos.}
-		\label{fig:splitting_hexagon}
-	\end{figure}
+      dot(A);
+      dot(B);
+      dot(C);
+      dot(D);
+      dot(E);
+      dot(F);
+    \end{asy}
+    \caption{Hexágono cóncavo cuvierto por $2$ triángulos.}
+    \label{fig:splitting_hexagon}
+  \end{figure}
 
-	En este caso, el mínimo número requerido de triángulos es claramente $2$. Generalmente, es posible construir un $n$-ágono compuesto por $\ceiling{n/3}$ triángulos. Ahora, si $t$ es el número de triángulos, tenemos que probar que $n\le 3t$. Pero claramente, cada vértice del polígono corresponde a al menos un vértice de un triángulo, y cada triángulo tiene $3$ vértices. Con esto se termina la prueba.
+  En este caso, el mínimo número requerido de triángulos es claramente $2$.
+  Generalmente, es posible construir un $n$-ágono compuesto por $\ceiling{n/3}$
+  triángulos. Ahora, si $t$ es el número de triángulos, tenemos que probar que
+  $n\le 3t$. Pero claramente, cada vértice del polígono corresponde a al menos
+  un vértice de un triángulo, y cada triángulo tiene $3$ vértices. Con esto se
+  termina la prueba.
 \end{proof}
 
 \begin{probEB}[JBMO Shortlist 2016/N4]
-	Find all triples of integers $(a,b,c)$ such that the number
-	\[N=\frac{(a-b)(b-c)(c-a)}{2}+2\]
-	is a power of $2016$.
-	\forum[aops]{6565545}
+  Find all triples of integers $(a,b,c)$ such that the number
+  \[N=\frac{(a-b)(b-c)(c-a)}{2}+2\]
+  is a power of $2016$.
+  \forum[aops]{6565545}
 \end{probEB}
 
 \begin{proof}
-	Sea $N=2016^n$ donde $n\in\ZZ^+_0$. Si $n=0$, $(a-b)(b-c)(c-a)=-2$ de donde $(a,b,c)=(k+2,k+1,k),(k+1,k,k+2),(k,k+2,k+1)$ para algún $k\in\ZZ$. Si $n\ge 1$, nos va a quedar una ecuación como
-	\[(x+y)xy=2(2016^n-2)\equiv -4\pmod 9\]
-	donde $x\equiv y\pmod 3$. Analizando por casos sale un absurdo.
+  Sea $N=2016^n$ donde $n\in\ZZ^+_0$. Si $n=0$, $(a-b)(b-c)(c-a)=-2$ de donde
+  $(a,b,c)=(k+2,k+1,k),(k+1,k,k+2),(k,k+2,k+1)$ para algún $k\in\ZZ$. Si
+  $n\ge 1$, nos va a quedar una ecuación como
+  \[(x+y)xy=2(2016^n-2)\equiv -4\pmod 9\]
+  donde $x\equiv y\pmod 3$. Analizando por casos sale un absurdo.
 \end{proof}
 
 \begin{probMB}[IberoAmerican 2021/3]
-	Sea $a_1,a_2,a_3,\dots$ una sucesión de enteros positivos y sea $b_1,b_2,b_3,\dots$ la sucesión de números reales dada por
-	\[b_n=\frac{a_1a_2\cdots a_n}{a_1+a_2+\dots+a_n},\quad\text{para }n\ge 1.\]
-	Demuestre que si entre cada millón de términos consecutivos de la sucesión $b_1,b_2,b_3,\dots$ existe al menos uno que es entero, entonces existe algún $k$ tal que $b_k>2021^{2021}$.
-	\forum[aops]{23437726}
+  Sea $a_1,a_2,a_3,\dots$ una sucesión de enteros positivos y sea
+  $b_1,b_2,b_3,\dots$ la sucesión de números reales dada por
+  \[b_n=\frac{a_1a_2\cdots a_n}{a_1+a_2+\dots+a_n},\quad\text{para }n\ge 1.\]
+  Demuestre que si entre cada millón de términos consecutivos de la sucesión
+  $b_1,b_2,b_3,\dots$ existe al menos uno que es entero, entonces existe algún
+  $k$ tal que $b_k>2021^{2021}$.
+  \forum[aops]{23437726}
 \end{probMB}
 
 \begin{proof}
-	Supongamos que existe un entero $M$ tal que $b_i\le M$ para todo $i\ge 1$. Sea $i_0>10^6\cdot M$ un índice tal que $b_{i_0}$ es entero. Luego, existe un índice $i_1>i_0$ tal que $i_1\le i_0+10^6$ y $b_{i_1}$ es entero. Sea $t$ el número de índices $i_0<i\le i_1$ tales que $a_i>1$. Si $t=0$, claramente $b_{i_0}>b_{i_1}$ de donde
-	\[\frac{a_1a_2\cdots a_{i_0}(i_1-i_0)}{(a_1+a_2+\dots+a_{i_0})(a_1+a_2+\dots+a_{i_1})}=b_{i_0}-b_{i_1}\ge 1\]
-	y
-	\[b_{i_0}=\frac{a_1a_2\cdots a_{i_0}}{a_1+a_2+\dots+a_{i_0}}\ge\frac{a_1+a_2+\dots+a_{i_1}}{i_1-i_0}\ge\frac{i_1}{10^6}>M\]
-	lo cual es una contradicción. Por ende, $t\ge 1=\frac{10^6}{10^6}>\frac{i_1-i_0}{i_0-1}$ de donde $2^t-1\ge t>\frac{2t+(i_1-i_0-t)}{i_0}$. Sea $P=a_{i_0+1}a_{i_0+2}\cdots a_{i_1}\ge 2^t$. Luego,
-	\begin{align*}
-		1
-		&>\frac{1}{2^t}+\frac{1}{i_0}\left(\frac{t}{2^{t-1}}+\frac{i_1-i_0-t}{2^t}\right)\\
-		&\ge\frac{1}{P}+\frac{1}{a_1+a_2+\dots+a_{i_0}}\left(\frac{a_{i_0+1}+a_{i_0+2}+\dots+a_{i_1}}{P}\right)\\
-		&=\frac{b_{i_0}}{b_{i_1}}
-	\end{align*}
-	de donde $b_{i_1}>b_{i_0}$. Por lo tanto, existe una secuencia estrictamente creciente de índices $\{i_j\}_{j\ge 0}$ tal que $\{b_{i_j}\}_{j\ge 0}$ es una secuencia estrictamente creciente de enteros. Luego, existe un $b_i$ tal que $b_i>M$, lo cual es una contradicción. Es decir, la secuencia $\{b_i\}_{i\ge 1}$ no es acotada superiormente. Aquí se termina la prueba.
+  Supongamos que existe un entero $M$ tal que $b_i\le M$ para todo $i\ge 1$. Sea
+  $i_0>10^6\cdot M$ un índice tal que $b_{i_0}$ es entero. Luego, existe un
+  índice $i_1>i_0$ tal que $i_1\le i_0+10^6$ y $b_{i_1}$ es entero. Sea $t$ el
+  número de índices $i_0<i\le i_1$ tales que $a_i>1$. Si $t=0$, claramente
+  $b_{i_0}>b_{i_1}$ de donde
+  \[
+    \frac{a_1a_2\cdots a_{i_0}(i_1-i_0)}{(a_1+a_2+\dots+a_{i_0})(a_1+a_2+\dots+a_{i_1})}
+    =b_{i_0}-b_{i_1}
+    \ge 1
+  \]
+  y
+  \[
+    b_{i_0}
+    =\frac{a_1a_2\cdots a_{i_0}}{a_1+a_2+\dots+a_{i_0}}
+    \ge\frac{a_1+a_2+\dots+a_{i_1}}{i_1-i_0}
+    \ge\frac{i_1}{10^6}
+    >M
+  \]
+  lo cual es una contradicción. Por ende,
+  $t\ge 1=\frac{10^6}{10^6}>\frac{i_1-i_0}{i_0-1}$ de donde
+  $2^t-1\ge t>\frac{2t+(i_1-i_0-t)}{i_0}$. Sea
+  $P=a_{i_0+1}a_{i_0+2}\cdots a_{i_1}\ge 2^t$. Luego,
+  \begin{align*}
+    1
+    &> \frac{1}{2^t}+\frac{1}{i_0}\left(\frac{t}{2^{t-1}}+\frac{i_1-i_0-t}{2^t}\right) \\
+    &\ge \frac{1}{P}+\frac{1}{a_1+a_2+\dots+a_{i_0}}\left(\frac{a_{i_0+1}+a_{i_0+2}+\dots+a_{i_1}}{P}\right) \\
+    &= \frac{b_{i_0}}{b_{i_1}}
+  \end{align*}
+  de donde $b_{i_1}>b_{i_0}$. Por lo tanto, existe una secuencia estrictamente
+  creciente de índices $\{i_j\}_{j\ge 0}$ tal que $\{b_{i_j}\}_{j\ge 0}$ es una
+  secuencia estrictamente creciente de enteros. Luego, existe un $b_i$ tal que
+  $b_i>M$, lo cual es una contradicción. Es decir, la secuencia
+  $\{b_i\}_{i\ge 1}$ no es acotada superiormente. Aquí se termina la prueba.
 \end{proof}
 
 \begin{probEB}[IberoAmerican 2021/5]
-	Para un conjunto finito $C$ de enteros, se define $S(C)$ como la suma de los elementos de $C$. Encuentre dos conjuntos no vacíos $A$ y $B$ cuya intersección es vacía, cuya unión es el conjunto $\{1,2,\dots,2021\}$ y tales que el producto $S(A)S(B)$ es un cuadrado perfecto.
-	\forum[aops]{23437791}
+  Para un conjunto finito $C$ de enteros, se define $S(C)$ como la suma de los
+  elementos de $C$. Encuentre dos conjuntos no vacíos $A$ y $B$ cuya
+  intersección es vacía, cuya unión es el conjunto $\{1,2,\dots,2021\}$ y tales
+  que el producto $S(A)S(B)$ es un cuadrado perfecto.
+  \forum[aops]{23437791}
 \end{probEB}
 
 \begin{proof}
-	Considere a los números $(a,b)=(6063\cdot 9^2,6063\cdot 16^2)$. Note que $a+b=6063\cdot 337=\frac{2021\cdot 2022}{2}$ y $ab=(6063\cdot 9\cdot 16)^2$. Es claro que existen subconjuntos no vacíos y disjuntos $A$ y $B$ de $\{1,2,\dots,2021\}$ tales que $|A|=a$ y $|B|=b$. Aquí se termina la prueba.
+  Considere a los números $(a,b)=(6063\cdot 9^2,6063\cdot 16^2)$. Note que
+  $a+b=6063\cdot 337=\frac{2021\cdot 2022}{2}$ y $ab=(6063\cdot 9\cdot 16)^2$.
+  Es claro que existen subconjuntos no vacíos y disjuntos $A$ y $B$ de
+  $\{1,2,\dots,2021\}$ tales que $|A|=a$ y $|B|=b$. Aquí se termina la prueba.
 \end{proof}
 
 \begin{problem}[IberoAmerican 2021/6]
-	Considere un polígono regular de $n$ lados, $n\ge 4$, y sea $V$ un subconjunto de $r$ vértices del polígono. Demuestre que si $r(r-3)\ge n$, entonces existen al menos dos triángulos congruentes cuyos vértices pertenecen a $V$.
-	\forum[aops]{23437854}
+  Considere un polígono regular de $n$ lados, $n\ge 4$, y sea $V$ un subconjunto
+  de $r$ vértices del polígono. Demuestre que si $r(r-3)\ge n$, entonces existen
+  al menos dos triángulos congruentes cuyos vértices pertenecen a $V$.
+  \forum[aops]{23437854}
 \end{problem}
 
 \begin{problem}[RMM 2021/1]
-	Sean $T_1$, $T_2$, $T_3$ y $T_4$ puntos colineales, distintos por parejas, tales que $T_2$ se encuentra entre $T_1$ y $T_3$; $T_3$ se encuentra entre $T_2$ y $T_4$. Sea $\omega_1$ un círculo que pasa por $T_1$ y $T_4$; sea $\omega_2$ el círculo que pasa por $T_2$ y es tangente interiormente a $\omega_1$ en $T_1$; sea $\omega_3$ el círculo que pasa por $T_3$ y es tangente exteriormente a $\omega_2$ en $T_2$; sea $\omega_4$ el círculo que pasa por $T_4$ y es tangente exteriormente a $\omega_3$ en $T_3$. Una recta corta a $\omega_1$ en $P$ y $W$, a $\omega_2$ en $Q$ y $R$, a $\omega_3$ en $S$ y $T$, a $\omega_4$ en $U$ y $V$, siendo el orden de estos puntos $P,Q,R,S,T,U,V,W$. Demuestra que $PQ+TU=RS+VW$.
-	\begin{hint}
-		Let $T_1,T_2,T_3,T_4$ be pairwise distinct collinear points such that $T_2$ lies between $T_1$ and $T_3$, and $T_3$ lies between $T_2$ and $T_4$. Let $\omega_1$ be a circle through $T_1$ and $T_4$; let $\omega_2$ be the circle through $T_2$ and internally tangent to $\omega_1$ at $T_1$; let $\omega_3$ be the circle through $T_3$ and externally tangent to $\omega_2$ at $T_2$; and let $\omega_4$ be the circle through $T_4$ and externally tangent to $\omega_3$ at $T_3$. A line crosses $\omega_1$ at $P$ and $W$, $\omega_2$ at $Q$ and $R$, $\omega_3$ at $S$ and $T$, and $\omega_4$ at $U$ and $V$, the order of these points along the line being $P,Q,R,S,T,U,V,W$. Prove that $PQ+TU=RS+VW$.
-	\end{hint}
-	\forum[aops]{23374851}
+  Sean $T_1$, $T_2$, $T_3$ y $T_4$ puntos colineales, distintos por parejas,
+  tales que $T_2$ se encuentra entre $T_1$ y $T_3$; $T_3$ se encuentra entre
+  $T_2$ y $T_4$. Sea $\omega_1$ un círculo que pasa por $T_1$ y $T_4$; sea
+  $\omega_2$ el círculo que pasa por $T_2$ y es tangente interiormente a
+  $\omega_1$ en $T_1$; sea $\omega_3$ el círculo que pasa por $T_3$ y es
+  tangente exteriormente a $\omega_2$ en $T_2$; sea $\omega_4$ el círculo que
+  pasa por $T_4$ y es tangente exteriormente a $\omega_3$ en $T_3$. Una recta
+  corta a $\omega_1$ en $P$ y $W$, a $\omega_2$ en $Q$ y $R$, a $\omega_3$ en
+  $S$ y $T$, a $\omega_4$ en $U$ y $V$, siendo el orden de estos puntos
+  $P,Q,R,S,T,U,V,W$. Demuestra que $PQ+TU=RS+VW$.
+  \begin{hint}
+    Let $T_1,T_2,T_3,T_4$ be pairwise distinct collinear points such that $T_2$
+    lies between $T_1$ and $T_3$, and $T_3$ lies between $T_2$ and $T_4$. Let
+    $\omega_1$ be a circle through $T_1$ and $T_4$; let $\omega_2$ be the circle
+    through $T_2$ and internally tangent to $\omega_1$ at $T_1$; let $\omega_3$
+    be the circle through $T_3$ and externally tangent to $\omega_2$ at $T_2$;
+    and let $\omega_4$ be the circle through $T_4$ and externally tangent to
+    $\omega_3$ at $T_3$. A line crosses $\omega_1$ at $P$ and $W$, $\omega_2$ at
+    $Q$ and $R$, $\omega_3$ at $S$ and $T$, and $\omega_4$ at $U$ and $V$, the
+    order of these points along the line being $P,Q,R,S,T,U,V,W$. Prove that
+    $PQ+TU=RS+VW$.
+  \end{hint}
+  \forum[aops]{23374851}
 \end{problem}
 
 \begin{probEG}[Balkan MO 2016/3]
-	Find all monic polynomials $f$ with integer coefficients satisfying the following condition: there exists a positive integer $N$ such that $p$ divides $2(f(p)!)+1$ for every prime $p>N$ for which $f(p)$ is a positive integer.
-	\forum[aops]{6316984}
+  Find all monic polynomials $f$ with integer coefficients satisfying the
+  following condition: there exists a positive integer $N$ such that $p$ divides
+  $2(f(p)!)+1$ for every prime $p>N$ for which $f(p)$ is a positive integer.
+  \forum[aops]{6316984}
 \end{probEG}
 
 \begin{proof}
-	Es claro que $f(p)<p$ para todo primo $p>N$. Es decir, $\deg f=1$. En efecto, sea $f(x)=x-c$ donde $c\in\ZZ^+$. Si $c\le 2$, claramente $2(p-1)!+1\equiv -1\pmod p$ y $2(p-2)!+1\equiv 3\pmod p$ para $p>3$ lo cual es un absurdo. Si $c>3$, note que
-	\[2(p-3)!+1\equiv 0\equiv 2(p-c)!+1\pmod p\]
-	de donde $(p-c+1)(p-c+2)\cdots(p-3)\equiv 1\pmod p$. Luego, $3\cdot 4\cdots(c-1)\equiv(-1)^{c-3}\pmod p$ para todo $p>3$ de donde
-	\[3\le 3\cdot 4\cdots(c-1)=(-1)^{c-3}\le 1\]
-	lo cual es un absurdo. Por lo tanto, $c=3$ y $f(x)=x-3$.
+  Es claro que $f(p)<p$ para todo primo $p>N$. Es decir, $\deg f=1$. En efecto,
+  sea $f(x)=x-c$ donde $c\in\ZZ^+$. Si $c\le 2$, claramente
+  $2(p-1)!+1\equiv -1\pmod p$ y $2(p-2)!+1\equiv 3\pmod p$ para $p>3$ lo cual es
+  un absurdo. Si $c>3$, note que
+  \[2(p-3)!+1\equiv 0\equiv 2(p-c)!+1\pmod p\]
+  de donde $(p-c+1)(p-c+2)\cdots(p-3)\equiv 1\pmod p$. Luego,
+  $3\cdot 4\cdots(c-1)\equiv(-1)^{c-3}\pmod p$ para todo $p>3$ de donde
+  \[3\le 3\cdot 4\cdots(c-1)=(-1)^{c-3}\le 1\]
+  lo cual es un absurdo. Por lo tanto, $c=3$ y $f(x)=x-3$.
 \end{proof}
 
 \note[Simulacro]{Sábado\\2022-03-26}
 
 \begin{probEG}[RMM 2016/1]
-	Sea $ABC$ un triángulo y sea $D$ un punto en el segmento $BC$, $D\ne B$ y $D\ne C$. La circunferencia $ABD$ intersecta nuevamente al segmento $AC$ en el punto interior $E$. La circunferencia $ACD$ intersecta nuevamente al segmento $AB$ en el punto interior $F$. Sea $A'$ el simétrico de $A$ con respecto a la recta $BC$. Las rectas $A'C$ y $DE$ se intersectan en $P$, y las rectas $A'B$ y $DF$ se intersectan en $Q$. Pruebe que las rectas $AD$, $BP$ y $CQ$ son concurrentes (o todas paralelas).
-	\begin{hint}
-		Let $ABC$ be a triangle and let $D$ be a point on the segment $BC$, $D\ne B$ and $D\ne C$. The circle $ABD$ meets the segment $AC$ again at an interior point $E$. The circle $ACD$ meets the segment $AB$ again at an interior point $F$. Let $A'$ be the reflection of $A$ in the line $BC$. The lines $A'C$ and $DE$ meet at $P$, and the lines $A'B$ and $DF$ meet at $Q$. Prove that the lines $AD$, $BP$ and $CQ$ are concurrent (or all parallel).
-	\end{hint}
+  Sea $ABC$ un triángulo y sea $D$ un punto en el segmento $BC$, $D\ne B$ y
+  $D\ne C$. La circunferencia $ABD$ intersecta nuevamente al segmento $AC$ en el
+  punto interior $E$. La circunferencia $ACD$ intersecta nuevamente al segmento
+  $AB$ en el punto interior $F$. Sea $A'$ el simétrico de $A$ con respecto a la
+  recta $BC$. Las rectas $A'C$ y $DE$ se intersectan en $P$, y las rectas $A'B$
+  y $DF$ se intersectan en $Q$. Pruebe que las rectas $AD$, $BP$ y $CQ$ son
+  concurrentes (o todas paralelas).
+  \begin{hint}
+    Let $ABC$ be a triangle and let $D$ be a point on the segment $BC$, $D\ne B$
+    and $D\ne C$. The circle $ABD$ meets the segment $AC$ again at an interior
+    point $E$. The circle $ACD$ meets the segment $AB$ again at an interior
+    point $F$. Let $A'$ be the reflection of $A$ in the line $BC$. The lines
+    $A'C$ and $DE$ meet at $P$, and the lines $A'B$ and $DF$ meet at $Q$. Prove
+    that the lines $AD$, $BP$ and $CQ$ are concurrent (or all parallel).
+  \end{hint}
 \end{probEG}
 
 \begin{proof}
-	Sean $E'$ y $F'$ los simétricos de $E$ y $F$ con respecto a la recta $BC$. Note que
-	\[\angle BDF'=\angle FDB=\angle FAC\equiv\angle BAE=\angle CDE\]
-	de donde $F'\in DE$. Análogamente, $E'\in DF$. Como $F'A'CD$ es cíclico, $PA'\cdot PC=PF'\cdot PD$ de donde $BP$ es el eje radical de $\odot(A'BC)$ y $\odot(F'DB)$. Análogamente, $CQ$ es el eje radical de $\odot(A'BC)$ y $\odot(E'DC)$. Como $\triangle DBF'\cong\triangle DE'C$, el punto $R=BE'\cap CF'$ es la intersección de las circunferencias $\odot(F'DB)$ y $\odot(E'DC)$. Luego,
-	\[\angle F'DR=\angle F'BR\equiv\angle A'BE'=\angle EBA=\angle EDA\]
-	de donde $R\in AD$. Es decir, $AD$ es el eje radical de $\odot(F'DB)$ y $\odot(E'DC)$. Por lo tanto, $AD$, $BP$ y $CQ$ concurren en el centro radical de las circunferencias $\odot(A'BC)$, $\odot(F'DB)$ y $\odot(E'DC)$.
+  Sean $E'$ y $F'$ los simétricos de $E$ y $F$ con respecto a la recta $BC$.
+  Note que
+  \[\angle BDF'=\angle FDB=\angle FAC\equiv\angle BAE=\angle CDE\]
+  de donde $F'\in DE$. Análogamente, $E'\in DF$. Como $F'A'CD$ es cíclico,
+  $PA'\cdot PC=PF'\cdot PD$ de donde $BP$ es el eje radical de $\odot(A'BC)$ y
+  $\odot(F'DB)$. Análogamente, $CQ$ es el eje radical de $\odot(A'BC)$ y
+  $\odot(E'DC)$. Como $\triangle DBF'\cong\triangle DE'C$, el punto
+  $R=BE'\cap CF'$ es la intersección de las circunferencias $\odot(F'DB)$ y
+  $\odot(E'DC)$. Luego,
+  \[\angle F'DR=\angle F'BR\equiv\angle A'BE'=\angle EBA=\angle EDA\]
+  de donde $R\in AD$. Es decir, $AD$ es el eje radical de $\odot(F'DB)$ y
+  $\odot(E'DC)$. Por lo tanto, $AD$, $BP$ y $CQ$ concurren en el centro radical
+  de las circunferencias $\odot(A'BC)$, $\odot(F'DB)$ y $\odot(E'DC)$.
 \end{proof}
 
 \begin{probHR}[RMM 2016/2]
-	Dados los enteros positivos $m$ y $n\ge m$, determine el mayor número de fichas de dominó que pueden ser colocadas en un tablero cuadriculado rectangular de $m$ filas y $2n$ columnas, tales que:
-	\begin{enumerate}[(i)]
-		\ii cada ficha cubre exactamente dos casillas adyacentes del tablero;
-		\ii no hay dos fichas que se sobrepongan;
-		\ii no hay dos fichas que formen un cuadrado de $2\times 2$; y
-		\ii la fila inferior del tablero está completamente cubierta por $n$ fichas.
-	\end{enumerate}
-	\begin{hint}
-		Given positive integers $m$ and $n\ge m$, determine the largest number of dominoes ($1\times 2$ or $2\times 1$ rectangles) that can be placed on a rectangular board with $m$ rows and $2n$ columns consisting of cells ($1\times 1$ squares) so that:
-		\begin{enumerate}[(i)]
-			\ii each domino covers exactly two adjacent cells of the board;
-			\ii no two dominoes overlap;
-			\ii no two form a $2\times 2$ square; and
-			\ii the bottom row of the board is completely covered by $n$ dominoes.
-		\end{enumerate}
-	\end{hint}
+  Dados los enteros positivos $m$ y $n\ge m$, determine el mayor número de
+  fichas de dominó que pueden ser colocadas en un tablero cuadriculado
+  rectangular de $m$ filas y $2n$ columnas, tales que:
+  \begin{enumerate}[(i)]
+    \ii cada ficha cubre exactamente dos casillas adyacentes del tablero;
+    \ii no hay dos fichas que se sobrepongan;
+    \ii no hay dos fichas que formen un cuadrado de $2\times 2$; y
+    \ii la fila inferior del tablero está completamente cubierta por $n$ fichas.
+  \end{enumerate}
+  \begin{hint}
+    Given positive integers $m$ and $n\ge m$, determine the largest number of
+    dominoes ($1\times 2$ or $2\times 1$ rectangles) that can be placed on a
+    rectangular board with $m$ rows and $2n$ columns consisting of cells
+    ($1\times 1$ squares) so that:
+    \begin{enumerate}[(i)]
+      \ii each domino covers exactly two adjacent cells of the board;
+      \ii no two dominoes overlap;
+      \ii no two form a $2\times 2$ square; and
+      \ii the bottom row of the board is completely covered by $n$ dominoes.
+    \end{enumerate}
+  \end{hint}
 \end{probHR}
 
 \begin{proof}
-	Sean $C_i$ el conjunto de los dominós verticales en la columna $i$, $H_i$ el conjunto de los dominós horizontales tales que sus dos casillas están en las columnas $i$ y $i+1$, y $X_i$ el conjunto de los dominós en $V_i$ que están en la fila $1$. Ahora, considere el subtablero de $2n\times 2$ formado por las columnas $i$ y $i+1$. Note que los dominós en $V_i$ separan al subtablero en varios subtableros de $2\times t_1,2\times t_2,\dots,2\times t_k$ donde
-	\[\sum_{j=1}^k t_j=2n-\abs{V_i}.\]
-	Es claro que un dominó que pertenece en $H_i$ o $H_{i+1}$ está en algún subtablero de $2\times t_j$. Por la tercera condición, en cada subtablero de $2\times t_j$ hay a lo sumo $t_j-1$ dominós horizontales. Por lo tanto,
-	\[\abs{H_i}+\abs{H_{i+1}}\le\sum_{j=1}^k(t_j-1)=2n-\abs{V_i}-k\]
-	de donde $\abs{H_i}+\abs{H_{i+1}}+2\abs{V_i}\le 2n-1+\abs{V_i}+1-k$. Luego,
-	\begin{align*}
-		2\sum_{i=1}^m\abs{H_i}+2\sum_{i=1}^m\abs{V_i}
-		&\le\abs{H_1}+\abs{H_m}+(2n-1)(m-1)\\
-		&=(\abs{H_1}-n)+(\abs{H_m}-n)+2mn-m+1\\
-		&\le 2mn-m+1
-	\end{align*}
-	de donde $mn-\floor{\frac{m}{2}}$ es el mayor número de fichas de dominó en el tablero.
+  Sean $C_i$ el conjunto de los dominós verticales en la columna $i$, $H_i$ el
+  conjunto de los dominós horizontales tales que sus dos casillas están en las
+  columnas $i$ y $i+1$, y $X_i$ el conjunto de los dominós en $V_i$ que están en
+  la fila $1$. Ahora, considere el subtablero de $2n\times 2$ formado por las
+  columnas $i$ y $i+1$. Note que los dominós en $V_i$ separan al subtablero en
+  varios subtableros de $2\times t_1,2\times t_2,\dots,2\times t_k$ donde
+  \[\sum_{j=1}^k t_j=2n-\abs{V_i}.\]
+  Es claro que un dominó que pertenece en $H_i$ o $H_{i+1}$ está en algún
+  subtablero de $2\times t_j$. Por la tercera condición, en cada subtablero de
+  $2\times t_j$ hay a lo sumo $t_j-1$ dominós horizontales. Por lo tanto,
+  \[\abs{H_i}+\abs{H_{i+1}}\le\sum_{j=1}^k(t_j-1)=2n-\abs{V_i}-k\]
+  de donde $\abs{H_i}+\abs{H_{i+1}}+2\abs{V_i}\le 2n-1+\abs{V_i}+1-k$. Luego,
+  \begin{align*}
+    2\sum_{i=1}^m\abs{H_i}+2\sum_{i=1}^m\abs{V_i}
+    &\le \abs{H_1}+\abs{H_m}+(2n-1)(m-1) \\
+    &= (\abs{H_1}-n)+(\abs{H_m}-n)+2mn-m+1 \\
+    &\le 2mn-m+1
+  \end{align*}
+  de donde $mn-\floor{\frac{m}{2}}$ es el mayor número de fichas de dominó en el
+  tablero.
 \end{proof}
 
 \begin{problem}[RMM 2016/3]
-	Una \emph{sucesión cúbica} es una sucesión de números enteros dada por $a_n=n^3+bn^2+cn+d$, donde $b$, $c$ y $d$ son constantes enteras y $n$ recorre todos los enteros, incluyendo a los enteros negativos.
-	\begin{enumerate}[(a)]
-		\ii \label{enumi:cubic_sequence} Pruebe que existe una sucesión cúbica tal que los únicos términos de la sucesión que son cuadrados de enteros son $a_{2015}$ y $a_{2016}$.
-		\ii Determine los posibles valores de $a_{2015}\cdot a_{2016}$ para una sucesión cúbica que satisface la condición de la parte \ref{enumi:cubic_sequence}.
-	\end{enumerate}
-	\begin{hint}
-		A \emph{cubic sequence} is a sequence of integers given by $a_n=n^3+bn^2+cn+d$, where $b$, $c$ and $d$ are integer constants and $n$ ranges over all integers, including negative integers.
-		\begin{enumerate}[(a)]
-			\ii Show that there exists a cubic sequence such that the only terms of the sequence which are squares of integers are $a_{2015}$ and $a_{2016}$.
-			\ii Determine the possible values of $a_{2015}\cdot a_{2016}$ for a cubic sequence satisfying the condition in part (a).
-		\end{enumerate}
-	\end{hint}
+  Una \emph{sucesión cúbica} es una sucesión de números enteros dada por
+  $a_n=n^3+bn^2+cn+d$, donde $b$, $c$ y $d$ son constantes enteras y $n$ recorre
+  todos los enteros, incluyendo a los enteros negativos.
+  \begin{enumerate}[(a)]
+    \ii\label{enumi:cubic_sequence} Pruebe que existe una sucesión cúbica tal
+    que los únicos términos de la sucesión que son cuadrados de enteros son
+    $a_{2015}$ y $a_{2016}$.
+    \ii Determine los posibles valores de $a_{2015}\cdot a_{2016}$ para una
+    sucesión cúbica que satisface la condición de la parte
+    \ref{enumi:cubic_sequence}.
+  \end{enumerate}
+  \begin{hint}
+    A \emph{cubic sequence} is a sequence of integers given by
+    $a_n=n^3+bn^2+cn+d$, where $b$, $c$ and $d$ are integer constants and $n$
+    ranges over all integers, including negative integers.
+    \begin{enumerate}[(a)]
+      \ii Show that there exists a cubic sequence such that the only terms of
+      the sequence which are squares of integers are $a_{2015}$ and $a_{2016}$.
+      \ii Determine the possible values of $a_{2015}\cdot a_{2016}$ for a cubic
+      sequence satisfying the condition in part (a).
+    \end{enumerate}
+  \end{hint}
 \end{problem}
 
 \note{Domingo\\2022-03-27}
 
 \begin{probMG}
-	Sea $M$ un conjunto finito de enteros positivos. Demuestre que es posible agregarle elementos (puede ser ninguno) de tal manera que en el nuevo conjunto, la suma de todos sus elementos es igual al mínimo común múltiplo de todos sus elementos.
+  Sea $M$ un conjunto finito de enteros positivos. Demuestre que es posible
+  agregarle elementos (puede ser ninguno) de tal manera que en el nuevo
+  conjunto, la suma de todos sus elementos es igual al mínimo común múltiplo de
+  todos sus elementos.
 \end{probMG}
 
 \begin{proof}
-	Si $\abs{M}=1$, es trivial. Ahora, supongamos que $\abs{M}>1$. Si para algún entero $n>1$ existen enteros positivos distintos $x_1,x_2,\dots,x_k$ tales que
-	\[\mcm(n-1,x_1,x_2,\dots,x_k)=1+x_1+x_2+\dots+x_k\]
-	tenemos que
-	\[\mcm(n,n-1,nx_1,nx_2,\dots,nx_k)=1+(n-1)+nx_1+nx_2+\dots+nx_k\]
-	y
-	\[\mcm(n,n^2-1,y_1,y_2,\dots,y_k)=(n+1)+(n^2-1)+y_1+y_2+\dots+y_k\]
-	donde $y_i=n(n+1)x_i$ para todo $1\le i\le k$. Sea $n>1$ el mínimo común múltiplo de los elementos de $M$. Como $\mcm(1,2,3)=1+2+3$, por inducción existen enteros positivos distintos $x_1,x_2,\dots,x_k$ mayores que $n$ tales que
-	\[\mcm(n,x_1,x_2,\dots,x_k)=n+1+x_1+x_2+\dots+x_k.\]
-	Si $S$ es la suma de los elementos de $M$, tenemos que
-	\[\mcm(n,Sn,Sx_1,Sx_2,\dots,Sx_k)=S+Sn+Sx_1+Sx_2+\dots+Sx_k.\]
-	Es decir, agregando los números $Sn,Sx_1,Sx_2,\dots,Sx_k$ al conjunto $M$ podemos lograr lo deseado.
+  Si $\abs{M}=1$, es trivial. Ahora, supongamos que $\abs{M}>1$. Si para algún
+  entero $n>1$ existen enteros positivos distintos $x_1,x_2,\dots,x_k$ tales que
+  \[\mcm(n-1,x_1,x_2,\dots,x_k)=1+x_1+x_2+\dots+x_k\]
+  tenemos que
+  \[\mcm(n,n-1,nx_1,nx_2,\dots,nx_k)=1+(n-1)+nx_1+nx_2+\dots+nx_k\]
+  y
+  \[\mcm(n,n^2-1,y_1,y_2,\dots,y_k)=(n+1)+(n^2-1)+y_1+y_2+\dots+y_k\]
+  donde $y_i=n(n+1)x_i$ para todo $1\le i\le k$. Sea $n>1$ el mínimo común
+  múltiplo de los elementos de $M$. Como $\mcm(1,2,3)=1+2+3$, por inducción
+  existen enteros positivos distintos $x_1,x_2,\dots,x_k$ mayores que $n$ tales
+  que
+  \[\mcm(n,x_1,x_2,\dots,x_k)=n+1+x_1+x_2+\dots+x_k.\]
+  Si $S$ es la suma de los elementos de $M$, tenemos que
+  \[\mcm(n,Sn,Sx_1,Sx_2,\dots,Sx_k)=S+Sn+Sx_1+Sx_2+\dots+Sx_k.\]
+  Es decir, agregando los números $Sn,Sx_1,Sx_2,\dots,Sx_k$ al conjunto $M$
+  podemos lograr lo deseado.
 \end{proof}

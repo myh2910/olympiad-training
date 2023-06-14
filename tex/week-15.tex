@@ -3,394 +3,638 @@
 \note{Lunes\\2022-06-20}
 
 \begin{probEG}
-	Sean $a,b,c$ las longitudes de los lados de un triángulo, y $h_a,h_b,h_c$ las longitudes de las alturas de dicho triángulo relativas a los lados $a,b,c$, respectivamente. Si $t\ge\half$ es un número real, demuestre que existe un triángulo de lados $t\cdot a+h_a,t\cdot b+h_b,t\cdot c+h_c$.
+  Sean $a,b,c$ las longitudes de los lados de un triángulo, y $h_a,h_b,h_c$ las
+  longitudes de las alturas de dicho triángulo relativas a los lados $a,b,c$,
+  respectivamente. Si $t\ge\half$ es un número real, demuestre que existe un
+  triángulo de lados $t\cdot a+h_a,t\cdot b+h_b,t\cdot c+h_c$.
 \end{probEG}
 
 \begin{proof}
-	Note que $h_a=\frac{2S}{a}=\frac{bc}{2R}$ donde $S$ y $R$ son el área y el circunradio del triángulo de lados $a,b,c$. Luego,
-	\[R(b+c-a)\ge\left(\frac{b+c}{4}\right)(b+c-a)>bc-ca-ab\]
-	de donde
-	\[t(b+c-a)>\frac{bc-ca-ab}{2R}=h_a-h_b-h_c\]
-	lo cual implica que
-	\[t\cdot b+h_b+t\cdot c+h_c>t\cdot a+h_a\]
-	y con esto es suficiente.
+  Note que $h_a=\frac{2S}{a}=\frac{bc}{2R}$ donde $S$ y $R$ son el área y el
+  circunradio del triángulo de lados $a,b,c$. Luego,
+  \[R(b+c-a)\ge\left(\frac{b+c}{4}\right)(b+c-a)>bc-ca-ab\]
+  de donde
+  \[t(b+c-a)>\frac{bc-ca-ab}{2R}=h_a-h_b-h_c\]
+  lo cual implica que
+  \[t\cdot b+h_b+t\cdot c+h_c>t\cdot a+h_a\]
+  y con esto es suficiente.
 \end{proof}
 
 \note[Combinatoria]{}
 
 \begin{probEG}[ISL 2011/C2]
-	Suponga que $1000$ estudiantes están sentados alrededor de una circunferencia. Pruebe que existe un entero $k$, con $100\le k\le 300$, para el cual existe un grupo de $2k$ estudiantes consecutivos tal que la primera mitad del grupo contiene el mismo número de mujeres que la segunda mitad.
-	\begin{hint}
-		Suppose that $1000$ students are standing in a circle. Prove that there exists an integer $k$ with $100\le k\le 300$ such that in this circle there exists a contiguous group of $2k$ students, for which the first half contains the same number of girls as the second half.
-	\end{hint}
+  Suponga que $1000$ estudiantes están sentados alrededor de una circunferencia.
+  Pruebe que existe un entero $k$, con $100\le k\le 300$, para el cual existe un
+  grupo de $2k$ estudiantes consecutivos tal que la primera mitad del grupo
+  contiene el mismo número de mujeres que la segunda mitad.
+  \begin{hint}
+    Suppose that $1000$ students are standing in a circle. Prove that there
+    exists an integer $k$ with $100\le k\le 300$ such that in this circle there
+    exists a contiguous group of $2k$ students, for which the first half
+    contains the same number of girls as the second half.
+  \end{hint}
 \end{probEG}
 
 \begin{proof}
-	Para cada grupo $G$ de $2k$ estudiantes consecutivos (con $100\le k\le 300$), denotemos como $d(G)$ al número de mujeres en la primera mitad menos el de la segunda mitad. Si $d(G)=0$ para algún grupo $G$, ya está. De lo contrario, supongamos que $d(G)\ne 0$ para todo grupo $G$. Ahora, sean $G_1,G_2,\dots,G_{1000}$ todos los grupos de $600$ estudiantes consecutivos que están en ese orden en la circunferencia. Si $d(G_i)=0$ para algún índice $i$, ya está. De lo contrario, existe un índice $i$ tal que $d(G_i)>0>d(G_{i+1})$. Si $G_i=X\,(A)\,Y\,(B)$ y $G_{i+1}=(A)\,Y\,(B)\,Z$ tal que $G_i=\abs{X}+\abs{A}-\abs{Y}-\abs{B}$ y $G_{i+1}=\abs{A}+\abs{Y}-\abs{B}-\abs{Z}$, tenemos que $(\abs{X},\abs{Y},\abs{Z})=(1,0,1)$ y $\abs{A}=\abs{B}$. Digamos que $A=(A_1A_2\cdots A_{300})$ y $B=(B_1B_2\cdots B_{300})$. Si $\abs{A_1}=0$, tenemos que $d(A_2A_3\cdots A_{300}YB_1B_2\cdots B_{300})=0$, una contradicción. Es decir, $\abs{A_1}=1$ y análogamente $\abs{B_{300}}=1$. Podemos seguir sucesivamente hasta que $\abs{A_{200}}=1$ y $\abs{B_{101}}=1$. Es decir, $\abs{A_1}=\abs{A_2}=\dots=\abs{A_{200}}=1$ de donde $d(A_1A_2\cdots A_{200})=0$, una contradicción.
+  Para cada grupo $G$ de $2k$ estudiantes consecutivos (con $100\le k\le 300$),
+  denotemos como $d(G)$ al número de mujeres en la primera mitad menos el de la
+  segunda mitad. Si $d(G)=0$ para algún grupo $G$, ya está. De lo contrario,
+  supongamos que $d(G)\ne 0$ para todo grupo $G$. Ahora, sean
+  $G_1,G_2,\dots,G_{1000}$ todos los grupos de $600$ estudiantes consecutivos
+  que están en ese orden en la circunferencia. Si $d(G_i)=0$ para algún índice
+  $i$, ya está. De lo contrario, existe un índice $i$ tal que
+  $d(G_i)>0>d(G_{i+1})$. Si $G_i=X\,(A)\,Y\,(B)$ y $G_{i+1}=(A)\,Y\,(B)\,Z$ tal
+  que $G_i=\abs X+\abs A-\abs Y-\abs B$ y $G_{i+1}=\abs A+\abs Y-\abs B-\abs Z$,
+  tenemos que $(\abs X,\abs Y,\abs Z)=(1,0,1)$ y $\abs A=\abs B$. Digamos que
+  $A=(A_1A_2\cdots A_{300})$ y $B=(B_1B_2\cdots B_{300})$. Si $\abs{A_1}=0$,
+  tenemos que $d(A_2A_3\cdots A_{300}YB_1B_2\cdots B_{300})=0$, una
+  contradicción. Es decir, $\abs{A_1}=1$ y análogamente $\abs{B_{300}}=1$.
+  Podemos seguir sucesivamente hasta que $\abs{A_{200}}=1$ y $\abs{B_{101}}=1$.
+  Es decir, $\abs{A_1}=\abs{A_2}=\dots=\abs{A_{200}}=1$ de donde
+  $d(A_1A_2\cdots A_{200})=0$, una contradicción.
 \end{proof}
 
-\begin{probMG}[ISL 2011/C3\protect\footnote{IMO 2011/2; como referencia un video de 3Blue1Brown: \url{https://www.youtube.com/watch?v=M64HUIJFTZM}.}]
-	Sea $\cal S$ un conjunto finito de dos o más puntos del plano. En $\cal S$ no hay tres puntos colineales. Un \emph{remolino} es un proceso que empieza con una recta $\ell$ que pasa por un único punto $P$ de $\cal S$. Se rota $\ell$ en el sentido de las manecillas del reloj con centro en $P$ hasta que la recta encuentre por primera vez otro punto de $\cal S$ al cual llamaremos $Q$. Con $Q$ como nuevo centro se sigue rotando la recta en el sentido de las manecillas del reloj hasta que la recta encuentre otro punto de $\cal S$. Este proceso continúa indefinidamente.
+\begin{probMG}[%
+    ISL 2011/C3\protect\footnote{%
+      IMO 2011/2; como referencia un video de 3Blue1Brown:
+      \url{https://www.youtube.com/watch?v=M64HUIJFTZM}.%
+    }%
+  ]
+  Sea $\cal S$ un conjunto finito de dos o más puntos del plano. En $\cal S$ no
+  hay tres puntos colineales. Un \emph{remolino} es un proceso que empieza con
+  una recta $\ell$ que pasa por un único punto $P$ de $\cal S$. Se rota $\ell$
+  en el sentido de las manecillas del reloj con centro en $P$ hasta que la recta
+  encuentre por primera vez otro punto de $\cal S$ al cual llamaremos $Q$. Con
+  $Q$ como nuevo centro se sigue rotando la recta en el sentido de las
+  manecillas del reloj hasta que la recta encuentre otro punto de $\cal S$. Este
+  proceso continúa indefinidamente.
 
-	Demostrar que se puede elegir un punto $P$ de $\cal S$ y una recta $\ell$ que pasa por $P$ tales que el remolino que resulta usa cada punto de $\cal S$ como centro de rotación un número infinito de veces.
-	\begin{hint}
-		Let $\cal S$ be a finite set of at least two points in the plane. Assume that no three points of $\cal S$ are collinear. A \emph{windmill} is a process that starts with a line $\ell$ going through a single point $P\in\cal S$. The line rotates clockwise about the \emph{pivot} $P$ until the first time that the line meets some other point belonging to $\cal S$. This point, $Q$, takes over as the new pivot, and the line now rotates clockwise about $Q$, until it next meets a point of $\cal S$. This process continues indefinitely.
+  Demostrar que se puede elegir un punto $P$ de $\cal S$ y una recta $\ell$ que
+  pasa por $P$ tales que el remolino que resulta usa cada punto de $\cal S$ como
+  centro de rotación un número infinito de veces.
+  \begin{hint}
+    Let $\cal S$ be a finite set of at least two points in the plane. Assume
+    that no three points of $\cal S$ are collinear. A \emph{windmill} is a
+    process that starts with a line $\ell$ going through a single point
+    $P\in\cal S$. The line rotates clockwise about the \emph{pivot} $P$ until
+    the first time that the line meets some other point belonging to $\cal S$.
+    This point, $Q$, takes over as the new pivot, and the line now rotates
+    clockwise about $Q$, until it next meets a point of $\cal S$. This process
+    continues indefinitely.
 
-		Show that we can choose a point $P$ in $\cal S$ and a line $\ell$ going through $P$ such that the resulting windmill uses each point of $\cal S$ as a pivot infinitely many times.
-	\end{hint}
+    Show that we can choose a point $P$ in $\cal S$ and a line $\ell$ going
+    through $P$ such that the resulting windmill uses each point of $\cal S$ as
+    a pivot infinitely many times.
+  \end{hint}
 \end{probMG}
 
 \begin{probEG}[ISL 2011/C4]
-	Determine the greatest positive integer $k$ that satisfies the following property: The set of positive integers can be partitioned into $k$ subsets $A_1,A_2,\dots,A_k$ such that for all integers $n\ge 15$ and all $i\in\{1,2,\dots,k\}$ there exist two distinct elements of $A_i$ whose sum is $n$.
+  Determine the greatest positive integer $k$ that satisfies the following
+  property: The set of positive integers can be partitioned into $k$ subsets
+  $A_1,A_2,\dots,A_k$ such that for all integers $n\ge 15$ and all
+  $i\in\{1,2,\dots,k\}$ there exist two distinct elements of $A_i$ whose sum is
+  $n$.
 \end{probEG}
 
 \begin{proof}
-	La respuesta es $3$, y como ejemplo considere a los conjuntos
-	\begin{align*}
-		A_1&=\{1,2,3\}\cup\{12,15,18,\dots\}\\
-		A_2&=\{4,5,6\}\cup\{10,13,16,\dots\}\\
-		A_3&=\{7,8,9\}\cup\{11,14,17,\dots\}.
-	\end{align*}
-	Si $k\ge 4$, sea $B_i=\{x\in A_i:x<24\}$ para todo $1\le i\le k$. Si $\abs{B_j}\le 5$ para algún índice $j$, entonces
-	\[\{x+y:x<y,\,(x,y)\in B_j\times B_j\}=\{15,16,\dots,24\}\]
-	de donde $\abs{B_j}=5$. Si $S$ es la suma de elementos de $B_j$, tenemos que $4S=15+16+\dots+24=5\cdot 39$ lo cual es un absurdo. Por ende, $\abs{B_i}\ge 6$ de donde
-	\[24>\abs{\bigcup_{i=1}^kB_i}\ge 6k\ge 24\]
-	lo cual es un absurdo.
+  La respuesta es $3$, y como ejemplo considere a los conjuntos
+  \begin{align*}
+    A_1 &= \{1,2,3\}\cup\{12,15,18,\dots\} \\
+    A_2 &= \{4,5,6\}\cup\{10,13,16,\dots\} \\
+    A_3 &= \{7,8,9\}\cup\{11,14,17,\dots\}.
+  \end{align*}
+  Si $k\ge 4$, sea $B_i=\{x\in A_i:x<24\}$ para todo $1\le i\le k$. Si
+  $\abs{B_j}\le 5$ para algún índice $j$, entonces
+  \[\{x+y:x<y,\,(x,y)\in B_j\times B_j\}=\{15,16,\dots,24\}\]
+  de donde $\abs{B_j}=5$. Si $S$ es la suma de elementos de $B_j$, tenemos que
+  $4S=15+16+\dots+24=5\cdot 39$ lo cual es un absurdo. Por ende,
+  $\abs{B_i}\ge 6$ de donde
+  \[24>\abs{\bigcup_{i=1}^kB_i}\ge 6k\ge 24\]
+  lo cual es un absurdo.
 \end{proof}
 
 \begin{probHR}[ISL 2011/C5]
-	Let $m$ be a positive integer and consider a checkerboard consisting of $m$ by $m$ unit squares. At the center of some of these unit squares there is an ant. At time $0$, each ant starts moving with speed $1$ parallel to some edge of the checkerboard. When two ants moving in the opposite directions meet, they both turn $90\dg$ clockwise and continue moving with speed $1$. When more than $2$ ants meet, or when two ants moving in perpendicular directions meet, the ants continue moving in the same direction as before they met. When an ant reaches one of the edges of the checkerboard, it falls off and will not re-appear.
+  Let $m$ be a positive integer and consider a checkerboard consisting of $m$ by
+  $m$ unit squares. At the center of some of these unit squares there is an ant.
+  At time $0$, each ant starts moving with speed $1$ parallel to some edge of
+  the checkerboard. When two ants moving in the opposite directions meet, they
+  both turn $90\dg$ clockwise and continue moving with speed $1$. When more than
+  $2$ ants meet, or when two ants moving in perpendicular directions meet, the
+  ants continue moving in the same direction as before they met. When an ant
+  reaches one of the edges of the checkerboard, it falls off and will not
+  re-appear.
 
-	Considering all possible starting positions, determine the latest possible moment at which the last ant falls off the checkerboard or prove that such a moment does not necessarily exist.
+  Considering all possible starting positions, determine the latest possible
+  moment at which the last ant falls off the checkerboard or prove that such a
+  moment does not necessarily exist.
 \end{probHR}
 
 \note{Martes\\2022-06-21}
 
 \begin{probEG}[ISL 2011/C6]
-	Let $n$ be a positive integer and let $W=\dots x_{-1}x_0x_1$ $x_2\dots$ be an infinite periodic word consisting of the letters $a$ and $b$. Suppose that the minimal period $N$ of $W$ is greater than $2^n$.
+  Let $n$ be a positive integer and let $W=\dots x_{-1}x_0x_1$ $x_2\dots$ be an
+  infinite periodic word consisting of the letters $a$ and $b$. Suppose that the
+  minimal period $N$ of $W$ is greater than $2^n$.
 
-	A finite nonempty word $U$ is said to \emph{appear} in $W$ if there exist indices $k\le\ell$ such that $U=x_kx_{k+1}\dots x_\ell$. A finite word $U$ is called \emph{ubiquitous} if the four words $Ua$, $Ub$, $aU$, and $bU$ all appear in $W$. Prove that there are at least $n$ ubiquitous finite nonempty words.
+  A finite nonempty word $U$ is said to \emph{appear} in $W$ if there exist
+  indices $k\le\ell$ such that $U=x_kx_{k+1}\dots x_\ell$. A finite word $U$ is
+  called \emph{ubiquitous} if the four words $Ua$, $Ub$, $aU$, and $bU$ all
+  appear in $W$. Prove that there are at least $n$ ubiquitous finite nonempty
+  words.
 \end{probEG}
 
 \begin{proof}
-	Pista: inducción (?).
+  Pista: inducción (?).
 \end{proof}
 
 \begin{probH}[ISL 2011/C7]
-	On a square table of $2011$ by $2011$ cells we place a finite number of napkins that each cover a square of $52$ by $52$ cells. In each cell we write the number of napkins covering it, and we record the maximal number $k$ of cells that all contain the same nonzero number. Considering all possible napkin configurations, what is the largest value of $k$?
+  On a square table of $2011$ by $2011$ cells we place a finite number of
+  napkins that each cover a square of $52$ by $52$ cells. In each cell we write
+  the number of napkins covering it, and we record the maximal number $k$ of
+  cells that all contain the same nonzero number. Considering all possible
+  napkin configurations, what is the largest value of $k$?
 \end{probH}
 
 \note[Geometría]{Miércoles\\2022-06-22}
 
 \begin{probEG}[ISL 2020/G1]
-	Let $ABC$ be an isosceles triangle with $BC=CA$, and let $D$ be a point inside side $AB$ such that $AD<DB$. Let $P$ and $Q$ be two points inside sides $BC$ and $CA$, respectively, such that $\angle DPB=\angle DQA=90\dg$. Let the perpendicular bisector of $PQ$ meet line segment $CQ$ at $E$, and let the circumcircles of triangles $ABC$ and $CPQ$ meet again at point $F$, different from $C$.
+  Let $ABC$ be an isosceles triangle with $BC=CA$, and let $D$ be a point inside
+  side $AB$ such that $AD<DB$. Let $P$ and $Q$ be two points inside sides $BC$
+  and $CA$, respectively, such that $\angle DPB=\angle DQA=90\dg$. Let the
+  perpendicular bisector of $PQ$ meet line segment $CQ$ at $E$, and let the
+  circumcircles of triangles $ABC$ and $CPQ$ meet again at point $F$, different
+  from $C$.
 
-	Suppose that $P,E,F$ are collinear. Prove that $\angle ACB=90\dg$.
-	\forum[aops]{22698577}
+  Suppose that $P,E,F$ are collinear. Prove that $\angle ACB=90\dg$.
+  \forum[aops]{22698577}
 \end{probEG}
 
 \begin{probEG}[ISL 2020/G2\protect\footnote{IMO 2020/1}]
-	Considere el cuadrilátero convexo $ABCD$. El punto $P$ está en el interior de $ABCD$. Asuma las siguientes igualdades de razones:
-	\[\angle PAD:\angle PBA:\angle DPA=1:2:3=\angle CBP:\angle BAP:\angle BPC.\]
-	Demuestre que las siguientes tres rectas concurren en un punto: la bisectriz interna del ángulo $\angle ADP$, la bisectriz interna del ángulo $\angle PCB$ y la mediatriz del segmento $AB$.
-	\forum[aops]{17821635}
-	\begin{hint}
-		Consider the convex quadrilateral $ABCD$. The point $P$ is in the interior of $ABCD$. The following ratio equalities hold:
-		\[\angle PAD:\angle PBA:\angle DPA=1:2:3=\angle CBP:\angle BAP:\angle BPC.\]
-		Prove that the following three lines meet in a point: the internal bisectors of angles $\angle ADP$ and $\angle PCB$ and the perpendicular bisector of segment $AB$.
-	\end{hint}
+  Considere el cuadrilátero convexo $ABCD$. El punto $P$ está en el interior de
+  $ABCD$. Asuma las siguientes igualdades de razones:
+  \[\angle PAD:\angle PBA:\angle DPA=1:2:3=\angle CBP:\angle BAP:\angle BPC.\]
+  Demuestre que las siguientes tres rectas concurren en un punto: la bisectriz
+  interna del ángulo $\angle ADP$, la bisectriz interna del ángulo $\angle PCB$
+  y la mediatriz del segmento $AB$.
+  \forum[aops]{17821635}
+  \begin{hint}
+    Consider the convex quadrilateral $ABCD$. The point $P$ is in the interior
+    of $ABCD$. The following ratio equalities hold:
+    \[\angle PAD:\angle PBA:\angle DPA=1:2:3=\angle CBP:\angle BAP:\angle BPC.\]
+    Prove that the following three lines meet in a point: the internal bisectors
+    of angles $\angle ADP$ and $\angle PCB$ and the perpendicular bisector of
+    segment $AB$.
+  \end{hint}
 \end{probEG}
 
 \begin{probEG}[ISL 2020/G3]
-	Let $ABCD$ be a convex quadrilateral with $\angle ABC>90\dg$, $CDA>90\dg$, and $\angle DAB=\angle BCD$. Denote by $E$ and $F$ the reflections of $A$ in lines $BC$ and $CD$, respectively. Suppose that the segments $AE$ and $AF$ meet the line $BD$ at $K$ and $L$, respectively. Prove that the circumcircles of triangles $BEK$ and $DFL$ are tangent to each other.
-	\forum[aops]{22698213}
+  Let $ABCD$ be a convex quadrilateral with $\angle ABC>90\dg$, $CDA>90\dg$, and
+  $\angle DAB=\angle BCD$. Denote by $E$ and $F$ the reflections of $A$ in lines
+  $BC$ and $CD$, respectively. Suppose that the segments $AE$ and $AF$ meet the
+  line $BD$ at $K$ and $L$, respectively. Prove that the circumcircles of
+  triangles $BEK$ and $DFL$ are tangent to each other.
+  \forum[aops]{22698213}
 \end{probEG}
 
 \begin{probMG}[ISL 2020/G4]
-	In the plane, there are $n\ge 6$ pairwise disjoint disks $D_1,D_2,\dots,D_n$ with radii $R_1\ge R_2\ge\dots\ge R_n$. For every $i=1,2,\dots,n$, a point $P_i$ is chosen in disk $D_i$. Let $O$ be an arbitrary point in the plane. Prove that
-	\[OP_1+OP_2+\dots+OP_n\ge R_6+R_7+\dots+R_n.\]
-	(A disk is assumed to contain its boundary.)
-	\forum[aops]{22698346}
+  In the plane, there are $n\ge 6$ pairwise disjoint disks $D_1,D_2,\dots,D_n$
+  with radii $R_1\ge R_2\ge\dots\ge R_n$. For every $i=1,2,\dots,n$, a point
+  $P_i$ is chosen in disk $D_i$. Let $O$ be an arbitrary point in the plane.
+  Prove that
+  \[OP_1+OP_2+\dots+OP_n\ge R_6+R_7+\dots+R_n.\]
+  (A disk is assumed to contain its boundary.)
+  \forum[aops]{22698346}
 \end{probMG}
 
 \begin{probMG}[ISL 2020/G5]
-	Let $ABCD$ be a cyclic quadrilateral with no two sides parallel. Let $K$, $L$, $M$, and $N$ be points lying on sides $AB$, $BC$, $CD$, and $DA$, respectively, such that $KLMN$ is a rhombus with $KL\parallel AC$ and $LM\parallel BD$. Let $\omega_1$, $\omega_2$, $\omega_3$, and $ \omega_4$ be the incircles of triangles $ANK$, $BKL$, $CLM$, and $DMN$, respectively. Prove that the internal common tangents to $\omega_1$ and $\omega_3$ and the internal common tangents to $\omega_2$ and $\omega_4$ are concurrent.
-	\forum[aops]{22698285}
+  Let $ABCD$ be a cyclic quadrilateral with no two sides parallel. Let $K$, $L$,
+  $M$, and $N$ be points lying on sides $AB$, $BC$, $CD$, and $DA$,
+  respectively, such that $KLMN$ is a rhombus with $KL\parallel AC$ and
+  $LM\parallel BD$. Let $\omega_1$, $\omega_2$, $\omega_3$, and $ \omega_4$ be
+  the incircles of triangles $ANK$, $BKL$, $CLM$, and $DMN$, respectively. Prove
+  that the internal common tangents to $\omega_1$ and $\omega_3$ and the
+  internal common tangents to $\omega_2$ and $\omega_4$ are concurrent.
+  \forum[aops]{22698285}
 \end{probMG}
 
 \begin{probMG}[ISL 2020/G6]
-	Let $I$ and $I_A$ be the incenter and the $A$-excenter of an acute-angled triangle $ABC$ with $AB<AC$. Let the incircle meet $BC$ at $D$. The line $AD$ meets $BI_A$ and $CI_A$ at $E$ and $F$, respectively. Prove that the circumcircles of triangles $AID$ and $I_AEF$ are tangent to each other.
-	\forum[aops]{22698132}
+  Let $I$ and $I_A$ be the incenter and the $A$-excenter of an acute-angled
+  triangle $ABC$ with $AB<AC$. Let the incircle meet $BC$ at $D$. The line $AD$
+  meets $BI_A$ and $CI_A$ at $E$ and $F$, respectively. Prove that the
+  circumcircles of triangles $AID$ and $I_AEF$ are tangent to each other.
+  \forum[aops]{22698132}
 \end{probMG}
 
 \begin{probMG}[ISL 2020/G7]
-	Let $P$ be a point on the circumcircle of an acute-angled triangle $ABC$. Let $D$, $E$, and $F$ be the reflections of $P$ in the midlines of triangle $ABC$ parallel to $BC$, $CA$, and $AB$, respectively. Denote by $\omega_A$, $\omega_B$, and $\omega_C$ the circumcircles of triangles $ADP$, $BEP$, and $CFP$, respectively. Denote by $\omega$ the circumcircle of the triangle formed by the perpendicular bisectors of segments $AD$, $BE$ and $CF$.
+  Let $P$ be a point on the circumcircle of an acute-angled triangle $ABC$. Let
+  $D$, $E$, and $F$ be the reflections of $P$ in the midlines of triangle $ABC$
+  parallel to $BC$, $CA$, and $AB$, respectively. Denote by $\omega_A$,
+  $\omega_B$, and $\omega_C$ the circumcircles of triangles $ADP$, $BEP$, and
+  $CFP$, respectively. Denote by $\omega$ the circumcircle of the triangle
+  formed by the perpendicular bisectors of segments $AD$, $BE$ and $CF$.
 
-	Show that $\omega_A$, $\omega_B$, $\omega_C$, and $\omega$ have a common point.
-	\forum[aops]{22698237}
+  Show that $\omega_A$, $\omega_B$, $\omega_C$, and $\omega$ have a common
+  point.
+  \forum[aops]{22698237}
 \end{probMG}
 
 \begin{probHG}[ISL 2020/G8]
-	Let $\Gamma$ and $I$ be the circumcircle and the incenter of an acute-angled triangle $ABC$. Two circles $\omega_B$ and $\omega_C$ passing through $B$ and $C$, respectively, are tangent at $I$. Let $\omega_B$ meet the shorter arc $AB$ of $\Gamma$ and segment $AB$ again at $P$ and $M$, respectively. Similarly, let $\omega_C$ meet the shorter arc $AC$ of $\Gamma$ and segment $AC$ again at $Q$ and $N$, respectively. The rays $PM$ and $QN$ meet at $X$, and the tangents to $\omega_B$ and $\omega_C$ at $B$ and $C$, respectively, meet at $Y$.
+  Let $\Gamma$ and $I$ be the circumcircle and the incenter of an acute-angled
+  triangle $ABC$. Two circles $\omega_B$ and $\omega_C$ passing through $B$ and
+  $C$, respectively, are tangent at $I$. Let $\omega_B$ meet the shorter arc
+  $AB$ of $\Gamma$ and segment $AB$ again at $P$ and $M$, respectively.
+  Similarly, let $\omega_C$ meet the shorter arc $AC$ of $\Gamma$ and segment
+  $AC$ again at $Q$ and $N$, respectively. The rays $PM$ and $QN$ meet at $X$,
+  and the tangents to $\omega_B$ and $\omega_C$ at $B$ and $C$, respectively,
+  meet at $Y$.
 
-	Prove that the points $A$, $X$, and $Y$ are collinear.
-	\forum[aops]{22698191}
+  Prove that the points $A$, $X$, and $Y$ are collinear.
+  \forum[aops]{22698191}
 \end{probHG}
 
 \begin{probHB}[ISL 2020/G9\protect\footnote{IMO 2020/6}]
-	Pruebe que existe una constante positiva $c$ para la que se satisface la siguiente afirmación:
+  Pruebe que existe una constante positiva $c$ para la que se satisface la
+  siguiente afirmación:
 
-	Sea $n>1$ un entero y sea $\cal S$ un conjunto de $n$ puntos del plano tal que la distancia entre cualesquiera dos puntos diferentes de $\cal S$ es al menos $1$. Entonces existe una recta $\ell$ separando $\cal S$ tal que la distancia de cualquier punto de $\cal S$ a $\ell$ es al menos $cn^{-1/3}$.
+  Sea $n>1$ un entero y sea $\cal S$ un conjunto de $n$ puntos del plano tal que
+  la distancia entre cualesquiera dos puntos diferentes de $\cal S$ es al menos
+  $1$. Entonces existe una recta $\ell$ separando $\cal S$ tal que la distancia
+  de cualquier punto de $\cal S$ a $\ell$ es al menos $cn^{-1/3}$.
 
-	(Una recta $\ell$ \emph{separa} un conjunto de puntos $\cal S$ si $\ell$ corta a alguno de los segmentos que une dos puntos de $\cal S$.)\\[4pt]
-	\emph{Nota.} Los resultados más débiles que se obtienen al sustituir $cn^{-1/3}$ por $cn^{-\alpha}$ se podrán valorar dependiendo del valor de la constante $\alpha>1/3$.
-	\forum[aops]{17821732}
-	\begin{hint}
-		Prove that there exists a positive constant $c$ such that the following statement is true:
+  (Una recta $\ell$ \emph{separa} un conjunto de puntos $\cal S$ si $\ell$ corta
+  a alguno de los segmentos que une dos puntos de $\cal S$.) \\[4pt]
+  \emph{Nota.} Los resultados más débiles que se obtienen al sustituir
+  $cn^{-1/3}$ por $cn^{-\alpha}$ se podrán valorar dependiendo del valor de la
+  constante $\alpha>1/3$.
+  \forum[aops]{17821732}
+  \begin{hint}
+    Prove that there exists a positive constant $c$ such that the following
+    statement is true:
 
-		Consider an integer $n>1$, and a set $\cal S$ of $n$ points in the plane such that the distance between any two different points in $\cal S$ is at least $1$. It follows that there is a line $\ell$ separating $\cal S$ such that the distance from any point of $\cal S$ to $\ell$ is at least $cn^{-1/3}$.
+    Consider an integer $n>1$, and a set $\cal S$ of $n$ points in the plane
+    such that the distance between any two different points in $\cal S$ is at
+    least $1$. It follows that there is a line $\ell$ separating $\cal S$ such
+    that the distance from any point of $\cal S$ to $\ell$ is at least
+    $cn^{-1/3}$.
 
-		(A line $\ell$ \emph{separates} a set of points $\cal S$ if some segment joining two points in $\cal S$ crosses $\ell$.)\\[4pt]
-		\emph{Note.} Weaker results with $cn^{-1/3}$ replaced by $cn^{-\alpha}$ may be awarded points depending on the value of the constant $\alpha>1/3$.
-	\end{hint}
+    (A line $\ell$ \emph{separates} a set of points $\cal S$ if some segment
+    joining two points in $\cal S$ crosses $\ell$.) \\[4pt]
+    \emph{Note.} Weaker results with $cn^{-1/3}$ replaced by $cn^{-\alpha}$ may
+    be awarded points depending on the value of the constant $\alpha>1/3$.
+  \end{hint}
 \end{probHB}
 
 \note[Teoría de Números]{}
 
 \begin{probEG}[Russia 2001]
-	Does there exist a positive integer such that the product of its proper divisors ends with exactly $2001$ zeroes?
+  Does there exist a positive integer such that the product of its proper
+  divisors ends with exactly $2001$ zeroes?
 \end{probEG}
 
 \note[Geometría]{Jueves\\2022-06-23}
 
 \begin{probEG}[ISL 2019/G1]
-	Let $ABC$ be a triangle. Circle $\Gamma$ passes through $A$, meets segments $AB$ and $AC$ again at points $D$ and $E$ respectively, and intersects segment $BC$ at $F$ and $G$ such that $F$ lies between $B$ and $G$. The tangent to circle $BDF$ at $F$ and the tangent to circle $CEG$ at $G$ meet at point $T$. Suppose that points $A$ and $T$ are distinct. Prove that line $AT$ is parallel to $BC$.
-	\forum[aops]{17828603}
+  Let $ABC$ be a triangle. Circle $\Gamma$ passes through $A$, meets segments
+  $AB$ and $AC$ again at points $D$ and $E$ respectively, and intersects segment
+  $BC$ at $F$ and $G$ such that $F$ lies between $B$ and $G$. The tangent to
+  circle $BDF$ at $F$ and the tangent to circle $CEG$ at $G$ meet at point $T$.
+  Suppose that points $A$ and $T$ are distinct. Prove that line $AT$ is parallel
+  to $BC$.
+  \forum[aops]{17828603}
 \end{probEG}
 
 \begin{probEG}[ISL 2019/G2]
-	Let $ABC$ be an acute-angled triangle and let $D$, $E$, and $F$ be the feet of altitudes from $A$, $B$, and $C$ to sides $BC$, $CA$, and $AB$, respectively. Denote by $\omega_B$ and $\omega_C$ the incircles of triangles $BDF$ and $CDE$, and let these circles be tangent to segments $DF$ and $DE$ at $M$ and $N$, respectively. Let line $MN$ meet circles $\omega_B$ and $\omega_C$ again at $P\ne M$ and $Q\ne N$, respectively. Prove that $MP=NQ$.
-	\forum[aops]{17828685}
+  Let $ABC$ be an acute-angled triangle and let $D$, $E$, and $F$ be the feet of
+  altitudes from $A$, $B$, and $C$ to sides $BC$, $CA$, and $AB$, respectively.
+  Denote by $\omega_B$ and $\omega_C$ the incircles of triangles $BDF$ and
+  $CDE$, and let these circles be tangent to segments $DF$ and $DE$ at $M$ and
+  $N$, respectively. Let line $MN$ meet circles $\omega_B$ and $\omega_C$ again
+  at $P\ne M$ and $Q\ne N$, respectively. Prove that $MP=NQ$.
+  \forum[aops]{17828685}
 \end{probEG}
 
 \begin{probMG}[ISL 2019/G3\protect\footnote{IMO 2019/2}]
-	En el triángulo $ABC$, el punto $A_1$ está en el lado $BC$ y el punto $B_1$ está en el lado $AC$. Sean $P$ y $Q$ puntos en los segmentos $AA_1$ y $BB_1$, respectivamente, tales que $PQ$ es paralelo a $AB$. Sea $P_1$ un punto en la recta $PB_1$ distinto de $B_1$, con $B_1$ entre $P$ y $P_1$, y $\angle PP_1C=\angle BAC$. Análogamente, sea $Q_1$ un punto en la recta $QA_1$ distinto de $A_1$, con $A_1$ entre $Q$ y $Q_1$, y $\angle CQ_1Q=\angle CBA$.
+  En el triángulo $ABC$, el punto $A_1$ está en el lado $BC$ y el punto $B_1$
+  está en el lado $AC$. Sean $P$ y $Q$ puntos en los segmentos $AA_1$ y $BB_1$,
+  respectivamente, tales que $PQ$ es paralelo a $AB$. Sea $P_1$ un punto en la
+  recta $PB_1$ distinto de $B_1$, con $B_1$ entre $P$ y $P_1$, y
+  $\angle PP_1C=\angle BAC$. Análogamente, sea $Q_1$ un punto en la recta $QA_1$
+  distinto de $A_1$, con $A_1$ entre $Q$ y $Q_1$, y $\angle CQ_1Q=\angle CBA$.
 
-	Demostrar que los puntos $P$, $Q$, $P_1$, y $Q_1$ son concíclicos.
-	\forum[aops]{12744870}
-	\begin{hint}
-		In triangle $ABC$, point $A_1$ lies on side $BC$ and point $B_1$ lies on side $AC$. Let $P$ and $Q$ be points on segments $AA_1$ and $BB_1$, respectively, such that $PQ$ is parallel to $AB$. Let $P_1$ be a point on line $PB_1$, such that $B_1$ lies strictly between $P$ and $P_1$, and $\angle PP_1C=\angle BAC$. Similarly, let $Q_1$ be the point on line $QA_1$, such that $A_1$ lies strictly between $Q$ and $Q_1$, and $\angle CQ_1Q=\angle CBA$.
+  Demostrar que los puntos $P$, $Q$, $P_1$, y $Q_1$ son concíclicos.
+  \forum[aops]{12744870}
+  \begin{hint}
+    In triangle $ABC$, point $A_1$ lies on side $BC$ and point $B_1$ lies on
+    side $AC$. Let $P$ and $Q$ be points on segments $AA_1$ and $BB_1$,
+    respectively, such that $PQ$ is parallel to $AB$. Let $P_1$ be a point on
+    line $PB_1$, such that $B_1$ lies strictly between $P$ and $P_1$, and
+    $\angle PP_1C=\angle BAC$. Similarly, let $Q_1$ be the point on line $QA_1$,
+    such that $A_1$ lies strictly between $Q$ and $Q_1$, and
+    $\angle CQ_1Q=\angle CBA$.
 
-		Prove that points $P$, $Q$, $P_1$, and $Q_1$ are concyclic.
-	\end{hint}
+    Prove that points $P$, $Q$, $P_1$, and $Q_1$ are concyclic.
+  \end{hint}
 \end{probMG}
 
 \begin{probHG}[ISL 2019/G4]
-	Let $P$ be a point inside triangle $ABC$. Let $AP$ meet $BC$ at $A_1$, let $BP$ meet $CA$ at $B_1$, and let $CP$ meet $AB$ at $C_1$. Let $A_2$ be the point such that $A_1$ is the midpoint of $PA_2$, let $B_2$ be the point such that $B_1$ is the midpoint of $PB_2$, and let $C_2$ be the point such that $C_1$ is the midpoint of $PC_2$. Prove that points $A_2$, $B_2$, and $C_2$ cannot all lie strictly inside the circumcircle of triangle $ABC$.
-	\forum[aops]{17828733}
+  Let $P$ be a point inside triangle $ABC$. Let $AP$ meet $BC$ at $A_1$, let
+  $BP$ meet $CA$ at $B_1$, and let $CP$ meet $AB$ at $C_1$. Let $A_2$ be the
+  point such that $A_1$ is the midpoint of $PA_2$, let $B_2$ be the point such
+  that $B_1$ is the midpoint of $PB_2$, and let $C_2$ be the point such that
+  $C_1$ is the midpoint of $PC_2$. Prove that points $A_2$, $B_2$, and $C_2$
+  cannot all lie strictly inside the circumcircle of triangle $ABC$.
+  \forum[aops]{17828733}
 \end{probHG}
 
 \begin{probMG}[ISL 2019/G5]
-	Let $ABCDE$ be a convex pentagon with $CD=DE$ and $\angle EDC\ne 2\cdot\angle ADB$. Suppose that a point $P$ is located in the interior of the pentagon such that $AP=AE$ and $BP=BC$. Prove that $P$ lies on the diagonal $CE$ if and only if $\operatorname{area}(BCD)+\operatorname{area}(ADE)=\operatorname{area}(ABD)+\operatorname{area}(ABP)$.
-	\forum[aops]{17828826}
+  Let $ABCDE$ be a convex pentagon with $CD=DE$ and
+  $\angle EDC\ne 2\cdot\angle ADB$. Suppose that a point $P$ is located in the
+  interior of the pentagon such that $AP=AE$ and $BP=BC$. Prove that $P$ lies on
+  the diagonal $CE$ if and only if
+  $
+    \operatorname{area}(BCD)+\operatorname{area}(ADE)
+    =\operatorname{area}(ABD)+\operatorname{area}(ABP)
+  $.
+  \forum[aops]{17828826}
 \end{probMG}
 
 \note[Simulacro IMO Día 1]{}
 
 \begin{probEG}[Peru Mock IMO 2022/1.1\protect\footnote{ISL 2021/N1}]
-	Determine todos los números enteros $n\ge 1$ para los cuales existe una pareja $(a,b)$ de enteros positivos tal que ningún cubo de un número primo es divisor de $a^2+b+3$ y
-	\[\frac{ab+3b+8}{a^2+b+3}=n.\]
+  Determine todos los números enteros $n\ge 1$ para los cuales existe una pareja
+  $(a,b)$ de enteros positivos tal que ningún cubo de un número primo es divisor
+  de $a^2+b+3$ y
+  \[\frac{ab+3b+8}{a^2+b+3}=n.\]
 \end{probEG}
 
 \begin{probEG}[Peru Mock IMO 2022/1.2\protect\footnote{ISL 2021/A3}]
-	Sea $n$ un entero positivo. Halle el menor valor posible de
-	\[\floor{\frac{a_1}{1}}+\floor{\frac{a_2}{2}}+\dots+\floor{\frac{a_n}{n}}\]
-	sobre todas las permutaciones $(a_1,a_2,\dots,a_n)$ de $(1,2,\dots,n)$.
+  Sea $n$ un entero positivo. Halle el menor valor posible de
+  \[\floor{\frac{a_1}{1}}+\floor{\frac{a_2}{2}}+\dots+\floor{\frac{a_n}{n}}\]
+  sobre todas las permutaciones $(a_1,a_2,\dots,a_n)$ de $(1,2,\dots,n)$.
 \end{probEG}
 
 \begin{probH}[Peru Mock IMO 2022/1.3\protect\footnote{ISL 2021/C5}]
-	Sean $n$ y $k$ números enteros tales que $n>k\ge 1$. Hay $2n+1$ estudiantes alrededor de una circunferencia. Cada estudiante $S$ tiene $2k$ \emph{vecinos}: los $k$ estudiantes más cerca a $S$ por la derecha y los $k$ estudiantes más cerca a $S$ por la izquierda.
+  Sean $n$ y $k$ números enteros tales que $n>k\ge 1$. Hay $2n+1$ estudiantes
+  alrededor de una circunferencia. Cada estudiante $S$ tiene $2k$
+  \emph{vecinos}: los $k$ estudiantes más cerca a $S$ por la derecha y los $k$
+  estudiantes más cerca a $S$ por la izquierda.
 
-	Suponga que $n+1$ estudiantes son mujeres y $n$ son hombres. Pruebe que existe una mujer que tiene al menos $k$ mujeres entre sus vecinos.
+  Suponga que $n+1$ estudiantes son mujeres y $n$ son hombres. Pruebe que existe
+  una mujer que tiene al menos $k$ mujeres entre sus vecinos.
 \end{probH}
 
 \note[Teoría de Números]{Viernes\\2022-06-24}
 
 \begin{probEG}[ISL 2020/N1]
-	Given a positive integer $k$, show that there exists a prime $p$ such that one can choose distinct integers $a_1,a_2,\dots,a_{k+3}\in\{1,2,\dots,p-1\}$ such that $p$ divides $a_ia_{i+1}a_{i+2}a_{i+3}-i$ for all $i=1,2,\dots,k$.
-	\forum[aops]{22698342}
+  Given a positive integer $k$, show that there exists a prime $p$ such that one
+  can choose distinct integers $a_1,a_2,\dots,a_{k+3}\in\{1,2,\dots,p-1\}$ such
+  that $p$ divides $a_ia_{i+1}a_{i+2}a_{i+3}-i$ for all $i=1,2,\dots,k$.
+  \forum[aops]{22698342}
 \end{probEG}
 
 \begin{probMG}[ISL 2020/N2]
-	For each prime $p$, there is a kingdom of $p$-Landia consisting of $p$ islands numbered $1,2,\dots,p$. Two distinct islands numbered $n$ and $m$ are connected by a bridge if and only if $p$ divides $(n^2-m+1)(m^2-n+1)$. The bridges may pass over each other, but cannot cross. Prove that for infinitely many $p$ there are two islands in $p$-Landia not connected by a chain of bridges.
-	\forum[aops]{22698104}
+  For each prime $p$, there is a kingdom of $p$-Landia consisting of $p$ islands
+  numbered $1,2,\dots,p$. Two distinct islands numbered $n$ and $m$ are
+  connected by a bridge if and only if $p$ divides $(n^2-m+1)(m^2-n+1)$. The
+  bridges may pass over each other, but cannot cross. Prove that for infinitely
+  many $p$ there are two islands in $p$-Landia not connected by a chain of
+  bridges.
+  \forum[aops]{22698104}
 \end{probMG}
 
 \begin{probMG}[ISL 2020/N3\protect\footnote{IMO 2020/5}]
-	Se tiene una baraja de $n>1$ cartas, con un entero positivo escrito en cada carta. La baraja tiene la propiedad de que la media aritmética de los números escritos en cada par de cartas es también la media geométrica de los números escritos en alguna colección de una o más cartas.
+  Se tiene una baraja de $n>1$ cartas, con un entero positivo escrito en cada
+  carta. La baraja tiene la propiedad de que la media aritmética de los números
+  escritos en cada par de cartas es también la media geométrica de los números
+  escritos en alguna colección de una o más cartas.
 
-	¿Para qué valores de $n$ se tiene que los números escritos en las cartas son todos iguales?
-	\forum[aops]{17821528}
-	\begin{hint}
-		A deck of $n>1$ cards is given. A positive integer is written on each card. The deck has the property that the arithmetic mean of the numbers on each pair of cards is also the geometric mean of the numbers on some collection of one or more cards.
+  ¿Para qué valores de $n$ se tiene que los números escritos en las cartas son
+  todos iguales?
+  \forum[aops]{17821528}
+  \begin{hint}
+    A deck of $n>1$ cards is given. A positive integer is written on each card.
+    The deck has the property that the arithmetic mean of the numbers on each
+    pair of cards is also the geometric mean of the numbers on some collection
+    of one or more cards.
 
-		For which $n$ does it follow that the numbers on the cards are all equal?
-	\end{hint}
+    For which $n$ does it follow that the numbers on the cards are all equal?
+  \end{hint}
 \end{probMG}
 
 \begin{proof}
-	Sin pérdida de generalidad, supongamos que $a_1\le a_2\le\dots\le a_n$ son los números de las barajas tales que $\mcd(a_1,a_2,\dots,a_n)=1$. Supongamos que existe un primo $p$ que divide a $a_n$. Si $a_{n-1}=a_n$, entonces $p\mid a_{n-1}$; de lo contrario
-	\[\frac{a_{n-1}+a_n}{2}=\sqrt[k]{a_{i_1}a_{i_2}\cdots a_{i_k}}>a_{n-1}\]
-	de donde $a_{i_j}\ge a_n$ para algún $1\le j\le k$. Es decir, $p\mid a_{n-1}+a_n$ de donde $p\mid a_{n-1}$. De la misma manera, podemos ver que $p\mid a_i$ para todo $1\le i\le n$, lo cual es una contradicción. Por lo tanto, $a_1=a_2=\dots=a_n$ para todo $n>1$.
+  Sin pérdida de generalidad, supongamos que $a_1\le a_2\le\dots\le a_n$ son los
+  números de las barajas tales que $\mcd(a_1,a_2,\dots,a_n)=1$. Supongamos que
+  existe un primo $p$ que divide a $a_n$. Si $a_{n-1}=a_n$, entonces
+  $p\mid a_{n-1}$; de lo contrario
+  \[\frac{a_{n-1}+a_n}{2}=\sqrt[k]{a_{i_1}a_{i_2}\cdots a_{i_k}}>a_{n-1}\]
+  de donde $a_{i_j}\ge a_n$ para algún $1\le j\le k$. Es decir,
+  $p\mid a_{n-1}+a_n$ de donde $p\mid a_{n-1}$. De la misma manera, podemos ver
+  que $p\mid a_i$ para todo $1\le i\le n$, lo cual es una contradicción. Por lo
+  tanto, $a_1=a_2=\dots=a_n$ para todo $n>1$.
 \end{proof}
 
 \begin{probMG}[ISL 2020/N4]
-	For any odd prime $p$ and any integer $n$, let $d_p(n)\in\{0,1,\dots,p-1\}$ denote the remainder when $n$ is divided by $p$. We say that $(a_0,a_1,a_2,\dots)$ is a \emph{p-sequence}, if $a_0$ is a positive integer coprime to $p$, and $a_{n+1}=a_n+d_p(a_n)$ for $n\ge 0$.
-	\begin{enumerate}[(a)]
-		\ii \label{enumi:infty_primes_1} Do there exist infinitely many primes $p$ for which there exist $p$-sequences $(a_0,a_1,a_2,$ $\dots)$ and $(b_0,b_1,b_2,\dots)$ such that $a_n>b_n$ for infinitely many $n$, and $b_n>a_n$ for infinitely many $n$?
-		\ii \label{enumi:infty_primes_2} Do there exist infinitely many primes $p$ for which there exist $p$-sequences $(a_0,a_1,a_2,$ $\dots)$ and $(b_0,b_1,b_2,\dots)$ such that $a_0<b_0$, but $a_n>b_n$ for all $n\ge 1$?
-	\end{enumerate}
-	\forum[aops]{22698019}
+  For any odd prime $p$ and any integer $n$, let $d_p(n)\in\{0,1,\dots,p-1\}$
+  denote the remainder when $n$ is divided by $p$. We say that
+  $(a_0,a_1,a_2,\dots)$ is a \emph{p-sequence}, if $a_0$ is a positive integer
+  coprime to $p$, and $a_{n+1}=a_n+d_p(a_n)$ for $n\ge 0$.
+  \begin{enumerate}[(a)]
+    \ii \label{enumi:infty_primes_1} Do there exist infinitely many primes $p$
+    for which there exist $p$-sequences $(a_0,a_1,a_2,$ $\dots)$ and
+    $(b_0,b_1,b_2,\dots)$ such that $a_n>b_n$ for infinitely many $n$, and
+    $b_n>a_n$ for infinitely many $n$?
+    \ii \label{enumi:infty_primes_2} Do there exist infinitely many primes $p$
+    for which there exist $p$-sequences $(a_0,a_1,a_2,$ $\dots)$ and
+    $(b_0,b_1,b_2,\dots)$ such that $a_0<b_0$, but $a_n>b_n$ for all $n\ge 1$?
+  \end{enumerate}
+  \forum[aops]{22698019}
 \end{probMG}
 
 \begin{proof}
-	La respuesta es sí para ambos casos. Sea
-	\[s_p(n)=d_p(n)+d_p(2n)+\dots+d_p(2^{o-1}n)\]
-	para todo $n\in\ZZ$, donde $o=\ord_{p}(2)$. Como $a_{n+1}\equiv 2a_n\pmod p$ para todo $n\ge 0$, entonces $a_{n+o}\equiv 2^oa_n\equiv a_n\pmod p$. Es decir, $s_p(a_n)=s_p(a_0)$ para todo $n\ge 0$. Luego,
-	\[a_{n+o}=a_n+\sum_{i=0}^{o-1}(a_{n+i+1}-a_{n+i})=a_n+s_p(a_0).\]
-	\begin{itemize}
-		\ii Para la parte \ref{enumi:infty_primes_1}, considere a un primo $p\ge 11$ y $r=\floor{\frac{p-1}{4}}$ con $4r<p<6r$, y sea $(a_0,b_0)=(4r,p+r)$. Luego, $(a_1,b_1)=(8r,p+2r)$ de donde $a_0<b_0$ y $a_1>b_1$. Además, $s_p(a_0)=s_p(b_0)$ de donde $a_{ok}<b_{ok}$ y $a_{ok+1}>b_{ok+1}$ para todo $k\in\ZZ^+_0$.
-		\ii Para la parte \ref{enumi:infty_primes_2}, sea $q$ un primo suficientemente grande y $p$ un factor primo de $2^q-1$. Luego, $o=\ord_p(2)\mid q$ de donde $o=q$ es impar. Si $s_p(n)$ es una constante $t$ para todo $1\le n\le p-1$, entonces
-		\[(p-1)t=\sum_{n=1}^{p-1}s_p(n)=\sum_{i=0}^{o-1}\sum_{n=1}^{p-1}d_p(2^in)=o\cdot\frac{(p-1)p}{2}\]
-		de donde $op$ es par, lo cual es un absurdo. Es decir, existen $1\le r_a\ne r_b\le p-1$ tales que $s_p(r_a)>s_p(r_b)$. Sea $(a_0,b_0)=(r_a,p+r_b)$, luego $a_0<b_0$ y
-		\[a_{ok+i}-b_{ok+i}=k(s_p(r_a)-s_p(r_b))+(a_i-b_i)>0\]
-		para todo $k\in\ZZ^+$ suficientemente grande y $0\le i\le o-1$. Es decir, existe un $j$ tal que $a_j<b_j$ y $a_n>b_n$ para todo $n>j$. Entonces, podemos cambiar la pareja $(a_0,b_0)$ por $(a_j,b_j)$ para que se cumpla lo requerido.
-	\end{itemize}
+  La respuesta es sí para ambos casos. Sea
+  \[s_p(n)=d_p(n)+d_p(2n)+\dots+d_p(2^{o-1}n)\]
+  para todo $n\in\ZZ$, donde $o=\ord_{p}(2)$. Como $a_{n+1}\equiv 2a_n\pmod p$
+  para todo $n\ge 0$, entonces $a_{n+o}\equiv 2^oa_n\equiv a_n\pmod p$. Es
+  decir, $s_p(a_n)=s_p(a_0)$ para todo $n\ge 0$. Luego,
+  \[a_{n+o}=a_n+\sum_{i=0}^{o-1}(a_{n+i+1}-a_{n+i})=a_n+s_p(a_0).\]
+  \begin{itemize}
+    \ii Para la parte \ref{enumi:infty_primes_1}, considere a un primo $p\ge 11$
+    y $r=\floor{\frac{p-1}{4}}$ con $4r<p<6r$, y sea $(a_0,b_0)=(4r,p+r)$.
+    Luego, $(a_1,b_1)=(8r,p+2r)$ de donde $a_0<b_0$ y $a_1>b_1$. Además,
+    $s_p(a_0)=s_p(b_0)$ de donde $a_{ok}<b_{ok}$ y $a_{ok+1}>b_{ok+1}$ para todo
+    $k\in\ZZ^+_0$.
+    \ii Para la parte \ref{enumi:infty_primes_2}, sea $q$ un primo
+    suficientemente grande y $p$ un factor primo de $2^q-1$. Luego,
+    $o=\ord_p(2)\mid q$ de donde $o=q$ es impar. Si $s_p(n)$ es una constante
+    $t$ para todo $1\le n\le p-1$, entonces
+    \[
+      (p-1)t
+      =\sum_{n=1}^{p-1}s_p(n)
+      =\sum_{i=0}^{o-1}\sum_{n=1}^{p-1}d_p(2^in)
+      =o\cdot\frac{(p-1)p}{2}
+    \]
+    de donde $op$ es par, lo cual es un absurdo. Es decir, existen
+    $1\le r_a\ne r_b\le p-1$ tales que $s_p(r_a)>s_p(r_b)$. Sea
+    $(a_0,b_0)=(r_a,p+r_b)$, luego $a_0<b_0$ y
+    \[a_{ok+i}-b_{ok+i}=k(s_p(r_a)-s_p(r_b))+(a_i-b_i)>0\]
+    para todo $k\in\ZZ^+$ suficientemente grande y $0\le i\le o-1$. Es decir,
+    existe un $j$ tal que $a_j<b_j$ y $a_n>b_n$ para todo $n>j$. Entonces,
+    podemos cambiar la pareja $(a_0,b_0)$ por $(a_j,b_j)$ para que se cumpla lo
+    requerido.
+  \end{itemize}
 \end{proof}
 
-
-
 \begin{probMG}[China TST 2022/3.1]
-	Given two circles $\omega_1$ and $\omega_2$ where $\omega_2$ is inside $\omega_1$, show that there exists a point $P$ such that for any line $\ell$ not passing through $P$, if $\ell$ intersects circle $\omega_1$ at $A,B$ and $\ell$ intersects circle $\omega_2$ at $C,D$, where $A,C,D,B$ lie on $\ell$ in this order, then $\angle APC=\angle BPD$.
-	\forum[aops]{25099111}
+  Given two circles $\omega_1$ and $\omega_2$ where $\omega_2$ is inside
+  $\omega_1$, show that there exists a point $P$ such that for any line $\ell$
+  not passing through $P$, if $\ell$ intersects circle $\omega_1$ at $A,B$ and
+  $\ell$ intersects circle $\omega_2$ at $C,D$, where $A,C,D,B$ lie on $\ell$ in
+  this order, then $\angle APC=\angle BPD$.
+  \forum[aops]{25099111}
 \end{probMG}
 
 \begin{proof}
-	Sea $O$ la intersección de la recta $O_1O_2$ con el eje radical de $\omega_1$ y $\omega_2$. Luego, sea $R^2=\operatorname{Pot}_{w_1}(O)=\operatorname{Pot}_{w_2}(O)$. Sean $P$ y $Q$ los puntos de intersección de la circunferencia $w=(O,R)$ con la recta $O_1O_2$. Como $w$ es ortogonal a $\omega_1$ y $\omega_2$, la inversión con centro en $P$ manda a $\omega_1$ y $\omega_2$ a dos circunferencias con centro en $Q^*$. Luego, los puntos de intersección $A^*,B^*,C^*,D^*$ de $\omega_1^*$ y $\omega_2^*$ con la circunferencia $\ell^*$ cumplen que $A^*,C^*$ y $B^*,D^*$ son simétricos con respecto a la mediatriz de $A^*D^*$, es decir, $A^*B^*\parallel C^*D^*$. Como $P,A^*,B^*,C^*,D^*$ son concíclicos,
-	\[\angle APC=\angle A^*PC^*=\angle B^*PD^*=\angle BPD.\]
+  Sea $O$ la intersección de la recta $O_1O_2$ con el eje radical de $\omega_1$
+  y $\omega_2$. Luego, sea
+  $R^2=\operatorname{Pot}_{w_1}(O)=\operatorname{Pot}_{w_2}(O)$. Sean $P$ y $Q$
+  los puntos de intersección de la circunferencia $w=(O,R)$ con la recta
+  $O_1O_2$. Como $w$ es ortogonal a $\omega_1$ y $\omega_2$, la inversión con
+  centro en $P$ manda a $\omega_1$ y $\omega_2$ a dos circunferencias con centro
+  en $Q^*$. Luego, los puntos de intersección $A^*,B^*,C^*,D^*$ de $\omega_1^*$
+  y $\omega_2^*$ con la circunferencia $\ell^*$ cumplen que $A^*,C^*$ y
+  $B^*,D^*$ son simétricos con respecto a la mediatriz de $A^*D^*$, es decir,
+  $A^*B^*\parallel C^*D^*$. Como $P,A^*,B^*,C^*,D^*$ son concíclicos,
+  \[\angle APC=\angle A^*PC^*=\angle B^*PD^*=\angle BPD.\]
 \end{proof}
 
 \begin{probM}[China TST 2022/3.2]
-	Two positive real numbers $\alpha,\beta$ satisfy that for any positive integers $k_1,k_2$, it holds that $\floor{k_1\alpha}\ne\floor{k_2\beta}$. Prove that there exist positive integers $m_1,m_2$ such that $\frac{m_1}{\alpha}+\frac{m_2}{\beta}=1$.
-	\forum[aops]{25099157}
+  Two positive real numbers $\alpha,\beta$ satisfy that for any positive
+  integers $k_1,k_2$, it holds that $\floor{k_1\alpha}\ne\floor{k_2\beta}$.
+  Prove that there exist positive integers $m_1,m_2$ such that
+  $\frac{m_1}{\alpha}+\frac{m_2}{\beta}=1$.
+  \forum[aops]{25099157}
 \end{probM}
 
 \begin{probH}[China TST 2022/3.3]
-	Given a positive integer $n\ge 2$, find all $n$-tuples of positive integers $(a_1,a_2,\dots,a_n)$, such that $1<a_1\le a_2\le a_3\le\cdots\le a_n$, $a_1$ is odd, and
-	\begin{enumerate}[(1)]
-		\ii $M=\frac{1}{2^n}(a_1-1)a_2a_3\cdots a_n$ is a positive integer;
-		\ii one can pick $n$-tuples of integers $(k_{i,1},k_{i,2},\dots,k_{i,n})$ for $i=1,2,\dots,M$ such that for any $1\le i_1<i_2\le M$, there exists $j\in\{1,2,\dots,n\}$ such that $k_{i_1,j}-k_{i_2,j}\not\equiv 0,\pm 1\pmod{a_j}$.
-	\end{enumerate}
-	\forum[aops]{25099220}
+  Given a positive integer $n\ge 2$, find all $n$-tuples of positive integers
+  $(a_1,a_2,\dots,a_n)$, such that $1<a_1\le a_2\le a_3\le\cdots\le a_n$, $a_1$
+  is odd, and
+  \begin{enumerate}[(1)]
+    \ii $M=\frac{1}{2^n}(a_1-1)a_2a_3\cdots a_n$ is a positive integer;
+    \ii one can pick $n$-tuples of integers $(k_{i,1},k_{i,2},\dots,k_{i,n})$
+    for $i=1,2,\dots,M$ such that for any $1\le i_1<i_2\le M$, there exists
+    $j\in\{1,2,\dots,n\}$ such that
+    $k_{i_1,j}-k_{i_2,j}\not\equiv 0,\pm 1\pmod{a_j}$.
+  \end{enumerate}
+  \forum[aops]{25099220}
 \end{probH}
 
 \note[Entrenamien-to IMO]{Domingo\\2022-06-26}
 
 \begin{definition}[Continuidad]
-	Una función $f:D\to\RR$ es \emph{continua en} $x_0\in D$ si para todo $\eps>0$ existe un $\delta>0$ tal que
-	\[\abs{x-x_0}<\delta\implies\abs{f(x)-f(x_0)}<\eps.\]
-	En otras palabras, $\lim\limits_{x\to x_0}f(x)=f(x_0)$. Decimos que $f$ es \emph{continua} si $f$ es continua en $x$ para todo $x\in D$.
+  Una función $f:D\to\RR$ es \emph{continua en} $x_0\in D$ si para todo $\eps>0$
+  existe un $\delta>0$ tal que
+  \[\abs{x-x_0}<\delta\implies\abs{f(x)-f(x_0)}<\eps.\]
+  En otras palabras, $\lim\limits_{x\to x_0}f(x)=f(x_0)$. Decimos que $f$ es
+  \emph{continua} si $f$ es continua en $x$ para todo $x\in D$.
 \end{definition}
 
 \begin{proposition}
-	Una función $f:D\to\RR$ es continua en $x_0\in D$ si y solo si
-	\[\lim_{n\to\infty}x_n=x_0\implies\lim_{n\to\infty}f(x_n)=f(x_0).\]
+  Una función $f:D\to\RR$ es continua en $x_0\in D$ si y solo si
+  \[\lim_{n\to\infty}x_n=x_0\implies\lim_{n\to\infty}f(x_n)=f(x_0).\]
 \end{proposition}
 
 \begin{theorem}[Ecuación funcional de Cauchy]
-	Sea $f:\RR\to\RR$ una función que satisface $f(x+y)=f(x)+f(y)$ para todo $x,y\in\RR$. Luego $f(qx)=qf(x)$ para todo $q\in\QQ$. Además, $f$ es lineal si cumple alguna de las siguientes condiciones:
-	\begin{itemize}
-		\ii $f$ es continua en algún intérvalo.
-		\ii $f$ es monótona.
-		\ii $f$ es acotada en algún intérvalo no trivial.
-		\ii Existe algún $(a,b)$ y $\eps>0$ tal que $(x-a)^2+(f(x)-b)^2>\eps$ para todo $x$ (en otras palabras, la gráfica de $f$ omite algún disco $D\subseteq R^2$).
-	\end{itemize}
+  Sea $f:\RR\to\RR$ una función que satisface $f(x+y)=f(x)+f(y)$ para todo
+  $x,y\in\RR$. Luego $f(qx)=qf(x)$ para todo $q\in\QQ$. Además, $f$ es lineal si
+  cumple alguna de las siguientes condiciones:
+  \begin{itemize}
+    \ii $f$ es continua en algún intérvalo.
+    \ii $f$ es monótona.
+    \ii $f$ es acotada en algún intérvalo no trivial.
+    \ii Existe algún $(a,b)$ y $\eps>0$ tal que $(x-a)^2+(f(x)-b)^2>\eps$ para
+    todo $x$ (en otras palabras, la gráfica de $f$ omite algún disco
+    $D\subseteq R^2$).
+  \end{itemize}
 \end{theorem}
 
 \begin{problem}[IMO 1983/1]
-	Encuentra todas las funciones $f:\RR^+\to\RR^+$ que cumplen
-	\begin{enumerate}[(i)]
-		\ii $f(xf(y))=yf(x)$ para todo $x,y$ reales positivos;
-		\ii $\lim\limits_{x\to\infty}f(x)=0$.
-	\end{enumerate}
-	\forum[aops]{366613}
-	\begin{hint}
-		Find all functions $f$ defined on the set of positive real numbers which take positive real values and satisfy the conditions:
-		\begin{enumerate}[(i)]
-			\ii $f(xf(y))=yf(x)$ for all positive $x,y$;
-			\ii $f(x)\to 0$ as $x\to\infty$.
-		\end{enumerate}
-	\end{hint}
+  Encuentra todas las funciones $f:\RR^+\to\RR^+$ que cumplen
+  \begin{enumerate}[(i)]
+    \ii $f(xf(y))=yf(x)$ para todo $x,y$ reales positivos;
+    \ii $\lim\limits_{x\to\infty}f(x)=0$.
+  \end{enumerate}
+  \forum[aops]{366613}
+  \begin{hint}
+    Find all functions $f$ defined on the set of positive real numbers which
+    take positive real values and satisfy the conditions:
+    \begin{enumerate}[(i)]
+      \ii $f(xf(y))=yf(x)$ for all positive $x,y$;
+      \ii $f(x)\to 0$ as $x\to\infty$.
+    \end{enumerate}
+  \end{hint}
 \end{problem}
 
 \begin{problem}
-	Encuentra todas las funciones $f:\RR^+\to\RR^+$ que cumplen
-	\begin{enumerate}[(i)]
-		\ii $f(xf(y))=yf(x)$ para todo $x,y$ reales positivos;
-		\ii $f$ está acotada superiormente en un intérvalo.
-	\end{enumerate}
+  Encuentra todas las funciones $f:\RR^+\to\RR^+$ que cumplen
+  \begin{enumerate}[(i)]
+    \ii $f(xf(y))=yf(x)$ para todo $x,y$ reales positivos;
+    \ii $f$ está acotada superiormente en un intérvalo.
+  \end{enumerate}
 \end{problem}
 
 \begin{problem}
-	Encuentra todas las funciones $f:\RR\to\RR$ tales que
-	\begin{enumerate}[(i)]
-		\ii $f(x+y)=f(x)+f(y)$ para todo $x,y$ reales;
-		\ii $f(p(x))=p(f(x))$ para algún polinomio $p$ de grado mayor o igual a $2$.
-	\end{enumerate}
+  Encuentra todas las funciones $f:\RR\to\RR$ tales que
+  \begin{enumerate}[(i)]
+    \ii $f(x+y)=f(x)+f(y)$ para todo $x,y$ reales;
+    \ii $f(p(x))=p(f(x))$ para algún polinomio $p$ de grado mayor o igual a $2$.
+  \end{enumerate}
 \end{problem}
 
 \begin{problem}[APMO 2002/5]
-	Encuentra todas las funciones $f:\RR\to\RR$ tales que
-	\begin{enumerate}[(i)]
-		\ii $f(x^4+y)=x^3f(x)+f(f(y))$ para todo $x,y$ reales;
-		\ii existe una cantidad finita de números reales $s$ tales que $f(s)=0$.
-	\end{enumerate}
-	\forum[aops]{474887}
-	\begin{hint}
-		Find all functions $f$ from $\RR$ to $\RR$ satisfying:
-		\begin{enumerate}[(i)]
-			\ii there are only finitely many $s$ in $\RR$ such that $f(s)=0$, and
-			\ii $f(x^4+y)=x^3f(x)+f(f(y))$ for all $x,y$ in $\RR$.
-		\end{enumerate}
-	\end{hint}
+  Encuentra todas las funciones $f:\RR\to\RR$ tales que
+  \begin{enumerate}[(i)]
+    \ii $f(x^4+y)=x^3f(x)+f(f(y))$ para todo $x,y$ reales;
+    \ii existe una cantidad finita de números reales $s$ tales que $f(s)=0$.
+  \end{enumerate}
+  \forum[aops]{474887}
+  \begin{hint}
+    Find all functions $f$ from $\RR$ to $\RR$ satisfying:
+    \begin{enumerate}[(i)]
+      \ii there are only finitely many $s$ in $\RR$ such that $f(s)=0$, and
+      \ii $f(x^4+y)=x^3f(x)+f(f(y))$ for all $x,y$ in $\RR$.
+    \end{enumerate}
+  \end{hint}
 \end{problem}
 
 \begin{problem}
-	Sea $T$ el conjunto de números reales mayores que $1$ y $n$ un entero positivo dado. Encuentra todas las funciones $f:T\to\RR$ tales que
-	\[f(x^{n+1}+y^{n+1})=x^nf(x)+y^nf(y),\]
-	para todo $x,y$ en $T$.
+  Sea $T$ el conjunto de números reales mayores que $1$ y $n$ un entero positivo
+  dado. Encuentra todas las funciones $f:T\to\RR$ tales que
+  \[f(x^{n+1}+y^{n+1})=x^nf(x)+y^nf(y),\]
+  para todo $x,y$ en $T$.
 \end{problem}
 
 \begin{problem}
-	Encuentra todas las funciones $f:\RR\to\RR$ que cumplen
-	\begin{enumerate}[(i)]
-		\ii $f(x+y)=f(x)+f(y)$ para todo $x,y$ reales;
-		\ii $f(xy)=f(x)f(y)$ para todo $x,y$ reales.
-	\end{enumerate}
+  Encuentra todas las funciones $f:\RR\to\RR$ que cumplen
+  \begin{enumerate}[(i)]
+    \ii $f(x+y)=f(x)+f(y)$ para todo $x,y$ reales;
+    \ii $f(xy)=f(x)f(y)$ para todo $x,y$ reales.
+  \end{enumerate}
 \end{problem}
 
 \begin{problem}[All-Russian Olympiad 1993/11.3]
-	Encuentra todas las funciones $f:\RR^+\to\RR^+$ tales que
-	\[f(x^y)=f(x)^{f(y)}\]
-	para todo $x,y$ reales positivos.
-	\forum[aops]{2356852}
-	\begin{hint}
-		Find all functions $f(x)$ with the domain of all positive real numbers, such that for any positive numbers $x$ and $y$, we have $f(x^y)=f(x)^{f(y)}$.
-	\end{hint}
+  Encuentra todas las funciones $f:\RR^+\to\RR^+$ tales que
+  \[f(x^y)=f(x)^{f(y)}\]
+  para todo $x,y$ reales positivos.
+  \forum[aops]{2356852}
+  \begin{hint}
+    Find all functions $f(x)$ with the domain of all positive real numbers, such
+    that for any positive numbers $x$ and $y$, we have $f(x^y)=f(x)^{f(y)}$.
+  \end{hint}
 \end{problem}
 
 \begin{problem}
-	Encuentra todas las funciones $f:\RR\to\RR^+_0$ tales que
-	\[f(x^2+y^2)=f(x^2-y^2)+f(2xy)\]
-	para todo $x,y$ reales.
+  Encuentra todas las funciones $f:\RR\to\RR^+_0$ tales que
+  \[f(x^2+y^2)=f(x^2-y^2)+f(2xy)\]
+  para todo $x,y$ reales.
 \end{problem}

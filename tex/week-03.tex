@@ -1,210 +1,310 @@
 \section{Semana 3 (03/28 -- 04/03)}
 
-\note[EGMO TST Día 2]{Lunes\\2022-03-28}
-
-\begin{probEG}[Peru EGMO TST 2022/5]
-	Sean $x_0,x_1,x_2,\dots,x_n$ números reales distintos entre sí tales que
-	\[x_{k-1}x_k\le x_k\le x_kx_{k+1},\quad\text{para todo }k=1,2,\dots,n-1.\]
-	Determine el mayor valor posible de $n$.
-\end{probEG}
-
-\begin{proof}
-	El mayor valor de $n$ es $6$ y un ejemplo que cumple es
-	\[(x_0,x_1,\dots,x_6)=(5/2,-1/2,0,1/2,1,3/2,2).\]
-	Si $n\ge 7$, supongamos que $x_i>0$ para algún $1\le i\le 3$. Considerando índices $i\le k\le i+3$ tenemos que $x_{i+1}\ge 1$, $x_{i+2}\ge 1$, $x_{i+1}\le 1$ y $x_{i+2}\le 1$ de donde $x_{i+1}=x_{i+2}=1$, lo cual es un absurdo. Por ende, $x_1,x_2,x_3\le 0$. Si $x_i<0$ para algún $2\le i\le 3$, como $x_{i-1}x_i\le x_i$ tenemos que $x_{i-1}\ge 1>0$, lo cual es una contradicción. Luego, $x_2=x_3=0$ lo cual es un absurdo.
-\end{proof}
-
-\begin{probEG}[Peru EGMO TST 2022/6]
-	Para cada entero positivo $n$, sea $S(n)$ la suma de todos los dígitos de $n$. Pruebe que para todo entero positivo $n\ge 2022$ se cumple que $\floor{\frac{n}{S(n)}}\ne\floor{\frac{n+1}{S(n+1)}}$.
-\end{probEG}
-
-\begin{proof}
-	Supongamos que $\floor{\frac{n}{S(n)}}=\floor{\frac{n+1}{S(n+1)}}=k\in\ZZ^+_0$. Si $1\le a\le 9$ y $\alpha\ge 3$ son enteros tales que $a\cdot 10^\alpha\le n<(a+1)\cdot 10^\alpha$, tenemos
-	\begin{align*}
-		n
-		&\ge a\cdot 10^\alpha>a\cdot 100\alpha^2>a\cdot(81\alpha^2+27\alpha+10)\\
-		&\ge (a+9\alpha)(a+9\alpha+1)\\
-		&\ge S(n)\cdot(S(n)+1)
-	\end{align*}
-	de donde $k>\frac{n}{S(n)}-1>S(n)$. Luego,
-	\[S(n)-S(n+1)<\frac{k\cdot (S(n)+1)}{k+1}-\frac{n+1}{k+1}\le\frac{k-1}{k+1}<1\]
-	de donde $S(n+1)=S(n)+1$. Por ende,
-	\[0<k\cdot(S(n)+1)-(k+1)\cdot S(n)<(n+1)-n=1\]
-	lo cual es un absurdo.
-\end{proof}
-
-\begin{probEG}[Peru EGMO TST 2022/7]
-	Sea $n\ge 3$ un número entero. Se tienen $n$ colores distintos $C_1,C_2,\dots,C_n$ y una cantidad ilimitada de fichas de cada uno de dichos colores. Decimos que un entero $m\ge n+1$ es \emph{n-colorido} si es posible colocar $m$ fichas alrededor de un círculo de modo que en cualquier grupo de $n+1$ fichas consecutivas haya al menos una ficha de cada uno de los colores $C_1,C_2,\dots,C_n$. Pruebe que solo existe una cantidad finita de enteros $m$ que no son $n$-coloridos y encuentre el mayor de ellos.
-\end{probEG}
-
-\begin{proof}
-	Si $m=n(n-1)-1$ es un $n$-colorido, existe un color $C_i$ que se repite a lo sumo $n-2$ veces. Si consideramos una ficha de color $C_i$, podemos dividir las fichas restantes en $n-2$ sectores de $n+1$ fichas consecutivos. Entonces, existe un sector que no contiene al color $C_i$, lo cual es un absurdo. Ahora, sea $m=nq+r$ un entero positivo donde $q$ y $0\le r<n$ son enteros. Si $m\ge n(n-1)$, probaremos que $m$ es $n$-colorido. Primero, vamos a dividir el círculo en $q$ sectores, donde en cada sector colocaremos $n$ fichas de colores $C_1,C_2,\dots,C_n$ en ese orden. Como $q\ge n-1\ge r$, es posible elegir $r$ pares de sectores adyacentes $(S_i,S_{i+1})$ e insertar una ficha de cualquier color entre $S_i$ y $S_{i+1}$. Es fácil ver que esto cumple, así que $m$ es un $n$-colorido. Finalmente, $n^2-n-1$ es el mayor entero que no es $n$-colorido.
-\end{proof}
+% \note[EGMO TST Día 2]{Lunes\\2022-03-28}
+%
+% \begin{probEG}[Peru EGMO TST 2022/5]
+%   Sean $x_0,x_1,x_2,\dots,x_n$ números reales distintos entre sí tales que
+%   \[x_{k-1}x_k\le x_k\le x_kx_{k+1},\quad\text{para todo }k=1,2,\dots,n-1.\]
+%   Determine el mayor valor posible de $n$.
+% \end{probEG}
+%
+% \begin{proof}
+%   El mayor valor de $n$ es $6$ y un ejemplo que cumple es
+%   \[(x_0,x_1,\dots,x_6)=(5/2,-1/2,0,1/2,1,3/2,2).\]
+%   Si $n\ge 7$, supongamos que $x_i>0$ para algún $1\le i\le 3$. Considerando
+%   índices $i\le k\le i+3$ tenemos que $x_{i+1}\ge 1$, $x_{i+2}\ge 1$,
+%   $x_{i+1}\le 1$ y $x_{i+2}\le 1$ de donde $x_{i+1}=x_{i+2}=1$, lo cual es un
+%   absurdo. Por ende, $x_1,x_2,x_3\le 0$. Si $x_i<0$ para algún $2\le i\le 3$,
+%   como $x_{i-1}x_i\le x_i$ tenemos que $x_{i-1}\ge 1>0$, lo cual es una
+%   contradicción. Luego, $x_2=x_3=0$ lo cual es un absurdo.
+% \end{proof}
+%
+% \begin{probEG}[Peru EGMO TST 2022/6]
+%   Para cada entero positivo $n$, sea $S(n)$ la suma de todos los dígitos de $n$.
+%   Pruebe que para todo entero positivo $n\ge 2022$ se cumple que
+%   $\floor{\frac{n}{S(n)}}\ne\floor{\frac{n+1}{S(n+1)}}$.
+% \end{probEG}
+%
+% \begin{proof}
+%   Supongamos que
+%   $\floor{\frac{n}{S(n)}}=\floor{\frac{n+1}{S(n+1)}}=k\in\ZZ^+_0$. Si
+%   $1\le a\le 9$ y $\alpha\ge 3$ son enteros tales que
+%   $a\cdot 10^\alpha\le n<(a+1)\cdot 10^\alpha$, tenemos
+%   \begin{align*}
+%     n
+%     &\ge a\cdot 10^\alpha>a\cdot 100\alpha^2>a\cdot(81\alpha^2+27\alpha+10) \\
+%     &\ge (a+9\alpha)(a+9\alpha+1) \\
+%     &\ge S(n)\cdot(S(n)+1)
+%   \end{align*}
+%   de donde $k>\frac{n}{S(n)}-1>S(n)$. Luego,
+%   \[
+%     S(n)-S(n+1)
+%     <\frac{k\cdot (S(n)+1)}{k+1}-\frac{n+1}{k+1}
+%     \le\frac{k-1}{k+1}
+%     <1
+%   \]
+%   de donde $S(n+1)=S(n)+1$. Por ende,
+%   \[0<k\cdot(S(n)+1)-(k+1)\cdot S(n)<(n+1)-n=1\]
+%   lo cual es un absurdo.
+% \end{proof}
+%
+% \begin{probEG}[Peru EGMO TST 2022/7]
+%   Sea $n\ge 3$ un número entero. Se tienen $n$ colores distintos
+%   $C_1,C_2,\dots,C_n$ y una cantidad ilimitada de fichas de cada uno de dichos
+%   colores. Decimos que un entero $m\ge n+1$ es \emph{n-colorido} si es posible
+%   colocar $m$ fichas alrededor de un círculo de modo que en cualquier grupo de
+%   $n+1$ fichas consecutivas haya al menos una ficha de cada uno de los colores
+%   $C_1,C_2,\dots,C_n$. Pruebe que solo existe una cantidad finita de enteros $m$
+%   que no son $n$-coloridos y encuentre el mayor de ellos.
+% \end{probEG}
+%
+% \begin{proof}
+%   Si $m=n(n-1)-1$ es un $n$-colorido, existe un color $C_i$ que se repite a lo
+%   sumo $n-2$ veces. Si consideramos una ficha de color $C_i$, podemos dividir
+%   las fichas restantes en $n-2$ sectores de $n+1$ fichas consecutivos. Entonces,
+%   existe un sector que no contiene al color $C_i$, lo cual es un absurdo. Ahora,
+%   sea $m=nq+r$ un entero positivo donde $q$ y $0\le r<n$ son enteros. Si
+%   $m\ge n(n-1)$, probaremos que $m$ es $n$-colorido. Primero, vamos a dividir el
+%   círculo en $q$ sectores, donde en cada sector colocaremos $n$ fichas de
+%   colores $C_1,C_2,\dots,C_n$ en ese orden. Como $q\ge n-1\ge r$, es posible
+%   elegir $r$ pares de sectores adyacentes $(S_i,S_{i+1})$ e insertar una ficha
+%   de cualquier color entre $S_i$ y $S_{i+1}$. Es fácil ver que esto cumple, así
+%   que $m$ es un $n$-colorido. Finalmente, $n^2-n-1$ es el mayor entero que no es
+%   $n$-colorido.
+% \end{proof}
 
 \note{Martes\\2022-03-29}
 
 \begin{probEG}[Kyiv City MO 2022 Round 2/11.3]
-	Hallar el mayor $k\in\ZZ^+$ para el cual existe una permutación $a_1,a_2,\dots,a_{2022}$ de los números $1,2,\dots,2022$ tal que para al menos $k$ índices $1\le i\le 2022$, el siguiente número
-	\[\frac{a_1+a_2+\dots+a_i}{1+2+\dots+i}\]
-	es un entero mayor que $1$.
-	\begin{hint}
-		Find the largest $k$ for which there exists a permutation $(a_1,a_2,\dots,a_{2022})$ of integers from $1$ to $2022$ such that for at least $k$ distinct $i$ with $1\le i\le 2022$ the number
-		\[\frac{a_1+a_2+\dots+a_i}{1+2+\dots+i}\]
-		is an integer larger than $1$.
-	\end{hint}
-	\forum[aops]{24269928}
+  Hallar el mayor $k\in\ZZ^+$ para el cual existe una permutación
+  $a_1,a_2,\dots,a_{2022}$ de los números $1,2,\dots,2022$ tal que para al menos
+  $k$ índices $1\le i\le 2022$, el siguiente número
+  \[\frac{a_1+a_2+\dots+a_i}{1+2+\dots+i}\]
+  es un entero mayor que $1$.
+  \begin{hint}
+    Find the largest $k$ for which there exists a permutation
+    $(a_1,a_2,\dots,a_{2022})$ of integers from $1$ to $2022$ such that for at
+    least $k$ distinct $i$ with $1\le i\le 2022$ the number
+    \[\frac{a_1+a_2+\dots+a_i}{1+2+\dots+i}\]
+    is an integer larger than $1$.
+  \end{hint}
+  \forum[aops]{24269928}
 \end{probEG}
 
 \begin{proof}
-	El mayor valor de $k$ es $1011$ y un ejemplo es
-	\[a_i=\begin{cases}
-		2i&\text{si }i\le 1011,\\
-		2i-2023&\text{si }i>1011.
-	\end{cases}\]
-	Ahora, supongamos que $k\ge 1012$. Sea
-	\[A_i=\frac{a_1+a_2+\dots+a_i}{1+2+\dots+i}\]
-	para todo índice $i$. Luego, existen dos índices $i>j\ge 1011$ tales que $A_i,A_j>1$ son enteros. Si $A_i\ge 3$, tenemos que
-	\begin{align*}
-		2023i-\frac{i(i+1)}{2}
-		&=2022+2021+\dots+(2023-i)\\
-		&\ge a_1+a_2+\dots+a_i\\
-		&\ge 3(1+2+\dots+i)\\
-		&=\frac{3i(i+1)}{2}
-	\end{align*}
-	de donde $i\le 1010$, lo cual es un absurdo. Por ende, $A_i=2$ y análogamente $A_j=2$. Luego,
-	\begin{align*}
-		a_{j+1}+a_{j+2}+\dots+a_i
-		&=(a_1+a_2+\dots+a_i)-(a_1+a_2+\dots+a_j)\\
-		&=2(1+2+\dots+i)-2(1+2+\dots+j)\\
-		&=2((j+1)+(j+2)+\dots+i)\\
-		&>\underbrace{2022+2022+\dots+2022}_{i-j\text{ veces}}
-	\end{align*}
-	lo cual es un absurdo.
+  El mayor valor de $k$ es $1011$ y un ejemplo es
+  \[
+    a_i=\begin{cases}
+      2i      & \text{si }i\le 1011, \\
+      2i-2023 & \text{si }i>1011.
+    \end{cases}
+  \]
+  Ahora, supongamos que $k\ge 1012$. Sea
+  \[A_i=\frac{a_1+a_2+\dots+a_i}{1+2+\dots+i}\]
+  para todo índice $i$. Luego, existen dos índices $i>j\ge 1011$ tales que
+  $A_i,A_j>1$ son enteros. Si $A_i\ge 3$, tenemos que
+  \begin{align*}
+    2023i-\frac{i(i+1)}{2}
+    &= 2022+2021+\dots+(2023-i) \\
+    &\ge a_1+a_2+\dots+a_i \\
+    &\ge 3(1+2+\dots+i) \\
+    &= \frac{3i(i+1)}{2}
+  \end{align*}
+  de donde $i\le 1010$, lo cual es un absurdo. Por ende, $A_i=2$ y análogamente
+  $A_j=2$. Luego,
+  \begin{align*}
+    a_{j+1}+a_{j+2}+\dots+a_i
+    &= (a_1+a_2+\dots+a_i)-(a_1+a_2+\dots+a_j) \\
+    &= 2(1+2+\dots+i)-2(1+2+\dots+j) \\
+    &= 2((j+1)+(j+2)+\dots+i) \\
+    &> \underbrace{2022+2022+\dots+2022}_{i-j\text{ veces}}
+  \end{align*}
+  lo cual es un absurdo.
 \end{proof}
 
 \note{Miércoles\\2022-03-30}
 
 \begin{probMB}[MEMO 2021 T-2]
-	Dado un entero positivo $n$, decimos que un polinomio $P(x)\in\RR[x]$ es \emph{n-bonito} si la ecuación $P(\floor{x})=\floor{P(x)}$ tiene exactamente $n$ soluciones. Demuestre que para todo $n\in\ZZ^+$
-	\begin{enumerate}[(a)]
-		\ii existe algún polinomio $n$-bonito;
-		\ii todo polinomio $n$-bonito tiene grado mayor o igual que $\frac{2n+1}{3}$.
-	\end{enumerate}
-	\begin{hint}
-		Given a positive integer $n$, we say that a polynomial $P$ with real coefficients is \emph{n-pretty} if the equation $P(\floor{x})=\floor{P(x)}$ has exactly $n$ real solutions. Show that for each positive integer $n$
-		\begin{enumerate}[(a)]
-			\ii there exists an $n$-pretty polynomial;
-			\ii any $n$-pretty polynomial has a degree of at least $\frac{2n+1}{3}$.
-		\end{enumerate}
-	\end{hint}
-	\forum[aops]{23091282}
+  Dado un entero positivo $n$, decimos que un polinomio $P(x)\in\RR[x]$ es
+  \emph{n-bonito} si la ecuación $P(\floor{x})=\floor{P(x)}$ tiene exactamente
+  $n$ soluciones. Demuestre que para todo $n\in\ZZ^+$
+  \begin{enumerate}[(a)]
+    \ii existe algún polinomio $n$-bonito;
+    \ii todo polinomio $n$-bonito tiene grado mayor o igual que
+    $\frac{2n+1}{3}$.
+  \end{enumerate}
+  \begin{hint}
+    Given a positive integer $n$, we say that a polynomial $P$ with real
+    coefficients is \emph{n-pretty} if the equation $P(\floor{x})=\floor{P(x)}$
+    has exactly $n$ real solutions. Show that for each positive integer $n$
+    \begin{enumerate}[(a)]
+      \ii there exists an $n$-pretty polynomial;
+      \ii any $n$-pretty polynomial has a degree of at least $\frac{2n+1}{3}$.
+    \end{enumerate}
+  \end{hint}
+  \forum[aops]{23091282}
 \end{probMB}
 
 \begin{proof}
-	Sea $A$ el conjunto de las soluciones reales a la ecuación $P(\floor x)=\floor{P(x)}$. Note que si $x\in A$ entonces $\floor x\in A$. Luego,
-	\[A=I\cup\bigcup_{i\in I}S_i\]
-	donde $I=\{x\in\ZZ:P(x)\in\ZZ\}$ y $S_i=\{x\in(i,i+1):P(x)\in[P(i),P(i)+1)\}$. Por ende,
-	\[n=\abs A=\abs I+\sum_{i\in I}\abs{S_i}.\]
-	Si $\abs I>\deg P$, es posible construir un polinomio $Q\in\QQ[x]$ tal que $\deg Q\le\deg P$ y $P(x)-Q(x)$ tiene más de $\deg P$ raíces reales. Luego, $P(x)\equiv Q(x)$ de donde existen infinitos $x\in\ZZ$ tales que $P(x)\in\ZZ$, lo cual es un absurdo ya que $\abs I\le n$. Es decir, $\abs I\le\deg P$. Sea $\delta\in(i,i+1)$ para algún $i\in I$. Si $P(\delta)>P(i)$, para todo $\epsilon\in(P(i),P(\delta))$ existe algún $x\in(i,\delta)$ tal que $P(x)=\epsilon$. Luego, existen infinitos $x\in(i,i+1)$ tales que $P(x)\in(P(i),P(i)+1)$, lo cual es un absurdo ya que $\abs{S_i}\le n$. Por ende, $P(x)\le P(i)$ para todo $x\in(i,i+1)$ y $P(x)=P(i)$ para todo $x\in S_i$. Es decir, en el intérvalo $(i,i+1)$ existen $2\abs{S_i}$ ceros reales de la derivada de $P$. Luego,
-	\[n=\abs I+\sum_{i\in I}\abs{S_i}<\deg P+\frac12\deg P=\frac32\deg P\]
-	de donde $\deg P\ge\frac{2n+1}{3}$. Un ejemplo de un polinomio $n$-bonito es
-	\[P(x)=-\pi(x-1)^2(x-2)^2\cdots(x-n)^2\]
-	donde $I=\{1,2,\dots,n\}$ y $S_i=\varnothing$ para todo $i\in I$.
+  Sea $A$ el conjunto de las soluciones reales a la ecuación
+  $P(\floor x)=\floor{P(x)}$. Note que si $x\in A$ entonces $\floor x\in A$.
+  Luego,
+  \[A=I\cup\bigcup_{i\in I}S_i\]
+  donde $I=\{x\in\ZZ:P(x)\in\ZZ\}$ y $S_i=\{x\in(i,i+1):P(x)\in[P(i),P(i)+1)\}$.
+  Por ende,
+  \[n=\abs A=\abs I+\sum_{i\in I}\abs{S_i}.\]
+  Si $\abs I>\deg P$, es posible construir un polinomio $Q\in\QQ[x]$ tal que
+  $\deg Q\le\deg P$ y $P(x)-Q(x)$ tiene más de $\deg P$ raíces reales. Luego,
+  $P(x)\equiv Q(x)$ de donde existen infinitos $x\in\ZZ$ tales que $P(x)\in\ZZ$,
+  lo cual es un absurdo ya que $\abs I\le n$. Es decir, $\abs I\le\deg P$. Sea
+  $\delta\in(i,i+1)$ para algún $i\in I$. Si $P(\delta)>P(i)$, para todo
+  $\epsilon\in(P(i),P(\delta))$ existe algún $x\in(i,\delta)$ tal que
+  $P(x)=\epsilon$. Luego, existen infinitos $x\in(i,i+1)$ tales que
+  $P(x)\in(P(i),P(i)+1)$, lo cual es un absurdo ya que $\abs{S_i}\le n$. Por
+  ende, $P(x)\le P(i)$ para todo $x\in(i,i+1)$ y $P(x)=P(i)$ para todo
+  $x\in S_i$. Es decir, en el intérvalo $(i,i+1)$ existen $2\abs{S_i}$ ceros
+  reales de la derivada de $P$. Luego,
+  \[n=\abs I+\sum_{i\in I}\abs{S_i}<\deg P+\frac12\deg P=\frac32\deg P\]
+  de donde $\deg P\ge\frac{2n+1}{3}$. Un ejemplo de un polinomio $n$-bonito es
+  \[P(x)=-\pi(x-1)^2(x-2)^2\cdots(x-n)^2\]
+  donde $I=\{1,2,\dots,n\}$ y $S_i=\varnothing$ para todo $i\in I$.
 \end{proof}
 
 \begin{probMG}[MEMO 2020 I-4]
-	Determine todos los enteros positivos $n$ para los cuales existen enteros positivos $x_1,x_2,\dots,x_n$ tales que
-	\[\frac{1}{x_1^2}+\frac{2}{x_2^2}+\frac{4}{x_3^2}+\dots+\frac{2^{n-1}}{x_n^2}=1.\]
-	\begin{hint}
-		Find all positive integers $n$ for which there exist positive integers $x_1,x_2,\dots,x_n$ such that
-		\[\frac{1}{x_1^2}+\frac{2}{x_2^2}+\frac{4}{x_3^2}+\dots+\frac{2^{n-1}}{x_n^2}=1.\]
-	\end{hint}
-	\forum[aops]{17377469}
+  Determine todos los enteros positivos $n$ para los cuales existen enteros
+  positivos $x_1,x_2,\dots,x_n$ tales que
+  \[
+    \frac{1}{x_1^2}+\frac{2}{x_2^2}+\frac{4}{x_3^2}+\dots+\frac{2^{n-1}}{x_n^2}
+    =1.
+  \]
+  \begin{hint}
+    Find all positive integers $n$ for which there exist positive integers
+    $x_1,x_2,\dots,x_n$ such that
+    \[
+      \frac{1}{x_1^2}+\frac{2}{x_2^2}+\frac{4}{x_3^2}+\dots+\frac{2^{n-1}}{x_n^2}
+      =1.
+    \]
+  \end{hint}
+  \forum[aops]{17377469}
 \end{probMG}
 
 \begin{proof}
-	Probaremos que $\ZZ^+\setminus\{2\}$ es el conjunto de valores de $n$.
-	\begin{itemize}
-		\ii Si $n=1$, es suficiente con $x_1=1$.
-		\ii Si $n=2$, es claro que $x_1,x_2\ge 2$. Luego, $1=\frac{1}{x_1^2}+\frac{2}{x_2^2}\le\frac34$ lo cual es un absurdo.
-		\ii Si $n\ge 3$ es impar, sean $x_n=2^{n-1}$ y $x_i=2^\frac{n-1}{2}$ para todo $1\le i\le n-1$. Luego,
-		\[\sum_{i=1}^n\frac{2^{i-1}}{x_i^2}=\sum_{i=1}^{n-1}\frac{2^{i-1}}{2^{n-1}}+\frac{2^{n-1}}{(2^{n-1})^2}=\frac{2^{n-1}-1}{2^{n-1}}+\frac{1}{2^{n-1}}=1.\]
-		\ii Si $n\ge 4$ es par, sean $(x_1,x_{n-1},x_n)=\left(3\cdot 2^\frac{n-2}{2},2^{n-2},3\cdot 2^{n-3}\right)$ y $x_i=2^\frac{n-2}{2}$ para todo $2\le i\le n-2$. Luego,
-		\begin{align*}
-			\sum_{i=1}^n\frac{2^{i-1}}{x_i^2}
-			&=\frac{1}{9\cdot 2^{n-2}}+\sum_{i=2}^{n-2}\frac{2^{i-1}}{2^{n-2}}+\frac{2^{n-2}}{(2^{n-2})^2}+\frac{2^{n-1}}{9\cdot(2^{n-3})^2}\\
-			&=\frac{1}{2^{n-2}}+\frac{2^{n-2}-2}{2^{n-2}}+\frac{1}{2^{n-2}}\\
-			&=1.
-		\end{align*}
-	\end{itemize}
+  Probaremos que $\ZZ^+\setminus\{2\}$ es el conjunto de valores de $n$.
+  \begin{itemize}
+    \ii Si $n=1$, es suficiente con $x_1=1$.
+    \ii Si $n=2$, es claro que $x_1,x_2\ge 2$. Luego,
+    $1=\frac{1}{x_1^2}+\frac{2}{x_2^2}\le\frac34$ lo cual es un absurdo.
+    \ii Si $n\ge 3$ es impar, sean $x_n=2^{n-1}$ y $x_i=2^\frac{n-1}{2}$ para
+    todo $1\le i\le n-1$. Luego,
+    \[
+      \sum_{i=1}^n\frac{2^{i-1}}{x_i^2}
+      =\sum_{i=1}^{n-1}\frac{2^{i-1}}{2^{n-1}}+\frac{2^{n-1}}{(2^{n-1})^2}
+      =\frac{2^{n-1}-1}{2^{n-1}}+\frac{1}{2^{n-1}}
+      =1.
+    \]
+    \ii Si $n\ge 4$ es par, sean
+    $
+      (x_1,x_{n-1},x_n)
+      =\left(3\cdot 2^\frac{n-2}{2},2^{n-2},3\cdot 2^{n-3}\right)
+    $ y $x_i=2^\frac{n-2}{2}$ para todo $2\le i\le n-2$. Luego,
+    \begin{align*}
+      \sum_{i=1}^n\frac{2^{i-1}}{x_i^2}
+      &= \frac{1}{9\cdot 2^{n-2}}+\sum_{i=2}^{n-2}\frac{2^{i-1}}{2^{n-2}}+\frac{2^{n-2}}{(2^{n-2})^2}+\frac{2^{n-1}}{9\cdot(2^{n-3})^2} \\
+      &= \frac{1}{2^{n-2}}+\frac{2^{n-2}-2}{2^{n-2}}+\frac{1}{2^{n-2}} \\
+      &= 1.
+    \end{align*}
+  \end{itemize}
 \end{proof}
 
 \note{Viernes\\2022-04-01}
 
 \begin{probEG}[MEMO 2018 I-4]
-	\begin{enumerate}[(a)]
-		\ii Demuestre que para todo $m\in\ZZ^+$ existe un entero $n\ge m$ tal que
-		\begin{equation}\label{eq:floor_product}\tag{$\ast$}
-			\floor{\frac n1}\cdot\floor{\frac n2}\cdots\floor{\frac nm}=\binom nm.
-		\end{equation}
-		\ii Sea $p(m)$ el menor entero $n\ge m$ tal que la ecuación \eqref{eq:floor_product} cumple. Demuestre que $p(2018)=p(2019)$.
-	\end{enumerate}
-	\begin{hint}
-		\begin{enumerate}[(a)]
-			\ii Prove that for every positive integer $m$ there exists an integer $n\ge m$ such that
-			\begin{equation}\tag{$\ast$}
-				\floor{\frac n1}\cdot\floor{\frac n2}\cdots\floor{\frac nm}=\binom nm.
-			\end{equation}
-			\ii Denote by $p(m)$ the smallest integer $n\ge m$ such that the equation ($\ast$) holds. Prove that $p(2018)=p(2019)$.
-		\end{enumerate}
-	\end{hint}
-	\forum[aops]{10959197}
+  \begin{enumerate}[(a)]
+    \ii Demuestre que para todo $m\in\ZZ^+$ existe un entero $n\ge m$ tal que
+    \begin{equation}\label{eq:floor_product}\tag{$\ast$}
+      \floor{\frac n1}\cdot\floor{\frac n2}\cdots\floor{\frac nm}=\binom nm.
+    \end{equation}
+    \ii Sea $p(m)$ el menor entero $n\ge m$ tal que la ecuación
+    \eqref{eq:floor_product} cumple. Demuestre que $p(2018)=p(2019)$.
+  \end{enumerate}
+  \begin{hint}
+    \begin{enumerate}[(a)]
+      \ii Prove that for every positive integer $m$ there exists an integer
+      $n\ge m$ such that
+      \begin{equation}\tag{$\ast$}
+        \floor{\frac n1}\cdot\floor{\frac n2}\cdots\floor{\frac nm}=\binom nm.
+      \end{equation}
+      \ii Denote by $p(m)$ the smallest integer $n\ge m$ such that the equation
+      ($\ast$) holds. Prove that $p(2018)=p(2019)$.
+    \end{enumerate}
+  \end{hint}
+  \forum[aops]{10959197}
 \end{probEG}
 
 \begin{proof}
-	Note que
-	\[\prod_{i=1}^m\floor{\frac ni}\ge\prod_{i=1}^m\frac{n-i+1}{i}=\binom nm\]
-	de donde $i\mid n-i+1$ para todo $1\le i\le m$. Es decir, $n=k\cdot\mcm(1,2,\dots,m)-1$ para algún $k\in\ZZ^+$. De esto tenemos que $p(m)=\mcm(1,2,\dots,m)-1$ para todo $m>1$. Como $2019=3\times 673$ divide a $\mcm(1,2,\dots,2018)$, tenemos que
-	\[p(2018)=\mcm(1,2,\dots,2018)-1=\mcm(1,2,\dots,2019)-1=p(2019).\]
-	Con esto se termina la prueba.
+  Note que
+  \[\prod_{i=1}^m\floor{\frac ni}\ge\prod_{i=1}^m\frac{n-i+1}{i}=\binom nm\]
+  de donde $i\mid n-i+1$ para todo $1\le i\le m$. Es decir,
+  $n=k\cdot\mcm(1,2,\dots,m)-1$ para algún $k\in\ZZ^+$. De esto tenemos que
+  $p(m)=\mcm(1,2,\dots,m)-1$ para todo $m>1$. Como $2019=3\times 673$ divide a
+  $\mcm(1,2,\dots,2018)$, tenemos que
+  \[p(2018)=\mcm(1,2,\dots,2018)-1=\mcm(1,2,\dots,2019)-1=p(2019).\]
+  Con esto se termina la prueba.
 \end{proof}
 
 \begin{probEG}[MEMO 2018 T-7]
-	Sea $(a_n)_{n\ge 1}$ una secuencia definida por
-	\[a_1=1\quad\text{y}\quad a_{k+1}=a_k^3+1,\text{ para todo }k\in\ZZ^+.\]
-	Demuestre que para todo número primo $p$ de la forma $3\ell+2$ con $\ell\in\ZZ^+_0$, existe $n\in\ZZ^+$ tal que $p\mid a_n$.
-	\begin{hint}
-		Let $a_1,a_2,a_3,\dots$ be the sequence of positive integers such that
-		\[a_1=1\quad\text{and}\quad a_{k+1}=a_k^3+1,\text{ for all positive integers }k.\]
-		Prove that for every prime number $p$ of the form $3\ell+2$, where $\ell$ is a non-negative integer, there exists a positive integer $n$ such that $a_n$ is divisible by $p$.
-	\end{hint}
-	\forum[aops]{10935321}
+  Sea $(a_n)_{n\ge 1}$ una secuencia definida por
+  \[a_1=1\quad\text{y}\quad a_{k+1}=a_k^3+1,\text{ para todo }k\in\ZZ^+.\]
+  Demuestre que para todo número primo $p$ de la forma $3\ell+2$ con
+  $\ell\in\ZZ^+_0$, existe $n\in\ZZ^+$ tal que $p\mid a_n$.
+  \begin{hint}
+    Let $a_1,a_2,a_3,\dots$ be the sequence of positive integers such that
+    \[
+      a_1
+      =1\quad\text{and}\quad a_{k+1}
+      =a_k^3+1,\text{ for all positive integers }k.
+    \]
+    Prove that for every prime number $p$ of the form $3\ell+2$, where $\ell$ is
+    a non-negative integer, there exists a positive integer $n$ such that $a_n$
+    is divisible by $p$.
+  \end{hint}
+  \forum[aops]{10935321}
 \end{probEG}
 
 \begin{proof}
-	Note que si $x^3\equiv y^3\pmod p$, tenemos que
-	\[x\equiv(x^3)^\frac{2p-1}{3}\equiv(y^3)^\frac{2p-1}{3}\equiv y\pmod p.\]
-	Como el mapeo $x\mapsto x^3+1\pmod p$ es biyectivo, la secuencia $(a_i)$ es periódica en módulo $p$. Es decir, $a_{n+1}\equiv a_1\equiv 1\pmod p$ para algún $n\in\ZZ^+$, de donde $a_n\equiv 0\pmod p$.
+  Note que si $x^3\equiv y^3\pmod p$, tenemos que
+  \[x\equiv(x^3)^\frac{2p-1}{3}\equiv(y^3)^\frac{2p-1}{3}\equiv y\pmod p.\]
+  Como el mapeo $x\mapsto x^3+1\pmod p$ es biyectivo, la secuencia $(a_i)$ es
+  periódica en módulo $p$. Es decir, $a_{n+1}\equiv a_1\equiv 1\pmod p$ para
+  algún $n\in\ZZ^+$, de donde $a_n\equiv 0\pmod p$.
 \end{proof}
 
 \begin{probMB}[MEMO 2018 T-8]
-	Un entero positivo $n$ es llamado \emph{interesante} si existen enteros positivos $a$, $b$ y $c$ tales que
-	\[n=\frac{a^2+b^2+c^2}{ab+bc+ca}.\]
-	\begin{enumerate}[(a)]
-		\ii Demuestre que existen infinitos números interesantes.
-		\ii Demuestre que no todos los enteros positivos son interesantes.
-	\end{enumerate}
-	\begin{hint}
-		An integer $n$ is called \emph{Silesian} if there exist positive integers $a$, $b$ and $c$ such that
-		\[n=\frac{a^2+b^2+c^2}{ab+bc+ca}.\]
-		\begin{enumerate}[(a)]
-			\ii Prove that there are infinitely many Silesian integers.
-			\ii Prove that not every positive integer is Silesian.
-		\end{enumerate}
-	\end{hint}
-	\forum[aops]{10931715}
+  Un entero positivo $n$ es llamado \emph{interesante} si existen enteros
+  positivos $a$, $b$ y $c$ tales que
+  \[n=\frac{a^2+b^2+c^2}{ab+bc+ca}.\]
+  \begin{enumerate}[(a)]
+    \ii Demuestre que existen infinitos números interesantes.
+    \ii Demuestre que no todos los enteros positivos son interesantes.
+  \end{enumerate}
+  \begin{hint}
+    An integer $n$ is called \emph{Silesian} if there exist positive integers
+    $a$, $b$ and $c$ such that
+    \[n=\frac{a^2+b^2+c^2}{ab+bc+ca}.\]
+    \begin{enumerate}[(a)]
+      \ii Prove that there are infinitely many Silesian integers.
+      \ii Prove that not every positive integer is Silesian.
+    \end{enumerate}
+  \end{hint}
+  \forum[aops]{10931715}
 \end{probMB}
 
 \begin{proof}
-	Si $n=4$, digamos que $\mcd(a,b,c)=1$. Luego, $4\mid a^2+b^2+c^2$ de donde $a,b,c$ son pares, lo cual es un absurdo. Por lo tanto, $4$ no es Silesio. Ahora, supongamos que $n=a^2+(1-a)^2+(a^2-a+1)^2$, donde $b=1-a$ y $c=a^2-a+1$ para algún valor de $a$. Podemos comprobar que esto cumple, por lo que $b=1-a$ es una raíz de la ecuación $b^2-n(c+a)b+(c^2+a^2-nca)=0$. Es decir, la otra raíz es igual a $n(c+a)-(1-a)>0$. Por ende, $a^2+(1-a)^2+(a^2-a+1)^2$ es Silesio para todo $a\in\ZZ^+$. Aquí se termina la prueba.
+  Si $n=4$, digamos que $\mcd(a,b,c)=1$. Luego, $4\mid a^2+b^2+c^2$ de donde
+  $a,b,c$ son pares, lo cual es un absurdo. Por lo tanto, $4$ no es Silesio.
+  Ahora, supongamos que $n=a^2+(1-a)^2+(a^2-a+1)^2$, donde $b=1-a$ y $c=a^2-a+1$
+  para algún valor de $a$. Podemos comprobar que esto cumple, por lo que $b=1-a$
+  es una raíz de la ecuación $b^2-n(c+a)b+(c^2+a^2-nca)=0$. Es decir, la otra
+  raíz es igual a $n(c+a)-(1-a)>0$. Por ende, $a^2+(1-a)^2+(a^2-a+1)^2$ es
+  Silesio para todo $a\in\ZZ^+$. Aquí se termina la prueba.
 \end{proof}

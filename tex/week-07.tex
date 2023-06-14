@@ -3,169 +3,257 @@
 \note[Álgebra]{Lunes\\2022-04-25}
 
 \begin{probEG}
-	Determine todas las parejas $(a,b)$ de números reales tales que
-	\[a\floor{bn}=b\floor{an},\]
-	para todo entero positivo $n$.
+  Determine todas las parejas $(a,b)$ de números reales tales que
+  \[a\floor{bn}=b\floor{an},\]
+  para todo entero positivo $n$.
 \end{probEG}
 
 \begin{proof}
-	Respuesta: $a,b\in\ZZ$ o $(a,b)=(0,k),(k,0),(k,k)$ donde $k\in\RR$.
+  Respuesta: $a,b\in\ZZ$ o $(a,b)=(0,k),(k,0),(k,k)$ donde $k\in\RR$.
 \end{proof}
 
 \begin{probEG}[Indonesia MO Shortlist 2014/A1]
-	Sean $a$ y $b$ números reales positivos tales que $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$ para infinitos enteros positivos $k$. Demuestre que
-	\[\floor{a^{2014}}+\floor{b^{2014}}=\floor{a}^{2014}+\floor{b}^{2014}.\]
-	\begin{hint}
-		Let $a,b$ be positive real numbers such that there exist infinite number of natural numbers $k$ such that $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$. Prove that
-		\[\floor{a^{2014}}+\floor{b^{2014}}=\floor{a}^{2014}+\floor{b}^{2014}.\]
-	\end{hint}
-	\forum[aops]{12396258}
+  Sean $a$ y $b$ números reales positivos tales que
+  $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$ para infinitos enteros
+  positivos $k$. Demuestre que
+  \[\floor{a^{2014}}+\floor{b^{2014}}=\floor{a}^{2014}+\floor{b}^{2014}.\]
+  \begin{hint}
+    Let $a,b$ be positive real numbers such that there exist infinite number of
+    natural numbers $k$ such that
+    $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$. Prove that
+    \[\floor{a^{2014}}+\floor{b^{2014}}=\floor{a}^{2014}+\floor{b}^{2014}.\]
+  \end{hint}
+  \forum[aops]{12396258}
 \end{probEG}
 
 \begin{proof}
-	Note que $a^k\ge\floor{a}^k$ de donde $\floor{a^k}\ge\floor{a}^k$ para todo $k\in\ZZ^+$. Luego, se cumple la igualdad para infinitos $k\in\ZZ^+$ de donde $a,b\in\ZZ^+\cup(0,1)$. Finalmente, $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$ para todo $k\in\ZZ^+$.
+  Note que $a^k\ge\floor{a}^k$ de donde $\floor{a^k}\ge\floor{a}^k$ para todo
+  $k\in\ZZ^+$. Luego, se cumple la igualdad para infinitos $k\in\ZZ^+$ de donde
+  $a,b\in\ZZ^+\cup(0,1)$. Finalmente,
+  $\floor{a^k}+\floor{b^k}=\floor{a}^k+\floor{b}^k$ para todo $k\in\ZZ^+$.
 \end{proof}
 
 \begin{probEG}
-	Determine todas las parejas $(a,b)$ de números reales tales que
-	\[\floor{a\floor{bn}}=n-1,\]
-	para todo entero positivo $n$.
+  Determine todas las parejas $(a,b)$ de números reales tales que
+  \[\floor{a\floor{bn}}=n-1,\]
+  para todo entero positivo $n$.
 \end{probEG}
 
 \begin{proof}
-	Si $a>0$ tenemos que $-1\le n(ab-1)<a$ y si $a<0$ tenemos que $0>n(ab-1)>a-1$ de donde $n\abs{ab-1}$ es acotado. Por ende, $ab=1$ y $a>0$.
+  Si $a>0$ tenemos que $-1\le n(ab-1)<a$ y si $a<0$ tenemos que $0>n(ab-1)>a-1$
+  de donde $n\abs{ab-1}$ es acotado. Por ende, $ab=1$ y $a>0$.
 \end{proof}
 
 \begin{probMG}
-	Sea $n\ge 2$ un número entero. Los $n$ conjuntos finitos $A_1,A_2,\dots,A_n$ satisfacen:
-	\[\abs{A_i\,\triangle\,A_j}=\abs{i-j},\quad\forall\,i,j=1,2,\dots,n.\]
-	Determine el mínimo valor de
-	\[\sum_{i=1}^n\abs{A_i}.\]
+  Sea $n\ge 2$ un número entero. Los $n$ conjuntos finitos $A_1,A_2,\dots,A_n$
+  satisfacen:
+  \[\abs{A_i\,\triangle\,A_j}=\abs{i-j},\quad\forall\,i,j=1,2,\dots,n.\]
+  Determine el mínimo valor de
+  \[\sum_{i=1}^n\abs{A_i}.\]
 \end{probMG}
 
 \begin{proof}
-	La respuesta es $\floor{n^2/4}$ y un ejemplo es cuando $A_i$ es el conjunto de todos los enteros $x\ne\floor{\frac{n+1}{2}}$ que están entre $i$ y $\floor{\frac{n+1}{2}}$ (tendremos $\abs{A_i}=\abs{\floor{\frac{n+1}{2}}-i}$ en este caso). Ahora, note que
-	\[\abs{A_i}+\abs{A_{n+1-i}}\ge\abs{A_i\,\triangle\,A_{n+1-i}}=\abs{n+1-2i}\]
-	para todo $1\le i\le n$ de donde
-	\[\sum_{i=1}^n\abs{A_i}=\half\sum_{i=1}^n(\abs{A_i}+\abs{A_{n+1-i}})\ge\half\sum_{i=1}^n\abs{n+1-2i}=\floor{\frac{n^2}{4}}.\]
+  La respuesta es $\floor{n^2/4}$ y un ejemplo es cuando $A_i$ es el conjunto de
+  todos los enteros $x\ne\floor{\frac{n+1}{2}}$ que están entre $i$ y
+  $\floor{\frac{n+1}{2}}$ (tendremos $\abs{A_i}=\abs{\floor{\frac{n+1}{2}}-i}$
+  en este caso). Ahora, note que
+  \[\abs{A_i}+\abs{A_{n+1-i}}\ge\abs{A_i\,\triangle\,A_{n+1-i}}=\abs{n+1-2i}\]
+  para todo $1\le i\le n$ de donde
+  \[
+    \sum_{i=1}^n\abs{A_i}
+    =\half\sum_{i=1}^n(\abs{A_i}+\abs{A_{n+1-i}})
+    \ge\half\sum_{i=1}^n\abs{n+1-2i}
+    =\floor{\frac{n^2}{4}}.
+  \]
 \end{proof}
 
 \begin{problem}
-	Sea $\alpha\ge 1$ un número real y sea $n$ un entero positivo tal que
-	\[\floor{\alpha^{n+1}},\floor{\alpha^{n+2}},\dots,\floor{\alpha^{4n}}\]
-	son todos cuadrados perfectos. Demuestre que $\floor{\alpha}$ es un cuadrado perfecto.
+  Sea $\alpha\ge 1$ un número real y sea $n$ un entero positivo tal que
+  \[\floor{\alpha^{n+1}},\floor{\alpha^{n+2}},\dots,\floor{\alpha^{4n}}\]
+  son todos cuadrados perfectos. Demuestre que $\floor{\alpha}$ es un cuadrado
+  perfecto.
 \end{problem}
 
 \note[Combinatoria]{Martes\\2022-04-26}
 
 \begin{probEG}
-	Sea $A=(a_1,a_2,\dots,a_{2001})$ una secuencia de enteros positivos. Sea $m$ el número de subsecuencias de tres términos $(a_i,a_j,a_k)$ tales que $a_k=a_j+1$ y $a_j=a_i+1$. Considerando todas las secuencias $A$, determine el mayor valor de $m$.
+  Sea $A=(a_1,a_2,\dots,a_{2001})$ una secuencia de enteros positivos. Sea $m$
+  el número de subsecuencias de tres términos $(a_i,a_j,a_k)$ tales que
+  $a_k=a_j+1$ y $a_j=a_i+1$. Considerando todas las secuencias $A$, determine el
+  mayor valor de $m$.
 \end{probEG}
 
 \begin{proof}
-	Respuesta: $667^3$.
+  Respuesta: $667^3$.
 \end{proof}
 
 \begin{probEG}
-	Para $i=1,2,\dots,11$, sea $M_i$ un conjunto de $5$ elementos, y asuma que para $1\le i<j\le 11$, $M_i\cap M_j\ne\varnothing$. Sea $m$ el mayor número para el cual existen $m$ conjuntos $M_{x_1},M_{x_2},\dots,M_{x_m}$ tales que $M_{x_1}\cap M_{x_2}\cap\dots\cap M_{x_m}\ne\varnothing$. Determine el mínimo valor de $m$ sobre todos los posibles conjuntos iniciales.
+  Para $i=1,2,\dots,11$, sea $M_i$ un conjunto de $5$ elementos, y asuma que
+  para $1\le i<j\le 11$, $M_i\cap M_j\ne\varnothing$. Sea $m$ el mayor número
+  para el cual existen $m$ conjuntos $M_{x_1},M_{x_2},\dots,M_{x_m}$ tales que
+  $M_{x_1}\cap M_{x_2}\cap\dots\cap M_{x_m}\ne\varnothing$. Determine el mínimo
+  valor de $m$ sobre todos los posibles conjuntos iniciales.
 \end{probEG}
 
 \begin{proof}
-	Respuesta: $4$.
+  Respuesta: $4$.
 \end{proof}
 
-\begin{probMR}[High-School Mathematics 1994/1, China \cite{ref:titu-102}\protect\footnote{Un video de \href{https://www.youtube.com/c/3blue1brown}{3Blue1Brown} cubriendo este problema: \url{https://www.youtube.com/watch?v=bOXCLR3Wric}.}]
-	Determine cuantos subconjuntos de $\{1,2,\dots,2000\}$ tienen suma de elemento múltiplo de $5$.
-	\begin{hint}
-		Find the number of subsets of $\{1,\dots,2000\}$, the sum of whose elements is divisible by $5$.
-	\end{hint}
+\begin{probMR}[%
+    High-School Mathematics 1994/1, China \cite{ref:titu-102}\protect\footnote{%
+      Un video de \href{https://www.youtube.com/c/3blue1brown}{3Blue1Brown}
+      cubriendo este problema:
+      \url{https://www.youtube.com/watch?v=bOXCLR3Wric}.%
+    }%
+  ]
+  Determine cuantos subconjuntos de $\{1,2,\dots,2000\}$ tienen suma de elemento
+  múltiplo de $5$.
+  \begin{hint}
+    Find the number of subsets of $\{1,\dots,2000\}$, the sum of whose elements
+    is divisible by $5$.
+  \end{hint}
 \end{probMR}
 
 \begin{proof}
-	Sea
-	\[P(x)=\prod_{i=1}^{2000}(x^i+1)=\sum_{j=0}^{\deg P}c_jx^j\]
-	un polinomio y sea $\zeta=e^{2\pi i/5}$ una raíz compleja de la ecuación $z^5=1$. Luego, $1+\zeta^1+\zeta^2+\zeta^3+\zeta^4=0$ y
-	\[2^{2000}+4\cdot 2^{400}=\sum_{i=0}^4 P(\zeta^i)=\sum_{j=0}^{\deg P}c_j\cdot\sum_{i=0}^4\zeta^{ij}=5\sum_{5\,\mid\,j}c_j.\]
-	Por lo tanto, la respuesta es $\dfrac{2^{2000}+4\cdot 2^{400}}{5}$.
+  Sea
+  \[P(x)=\prod_{i=1}^{2000}(x^i+1)=\sum_{j=0}^{\deg P}c_jx^j\]
+  un polinomio y sea $\zeta=e^{2\pi i/5}$ una raíz compleja de la ecuación
+  $z^5=1$. Luego, $1+\zeta^1+\zeta^2+\zeta^3+\zeta^4=0$ y
+  \[
+    2^{2000}+4\cdot 2^{400}
+    =\sum_{i=0}^4 P(\zeta^i)
+    =\sum_{j=0}^{\deg P}c_j\cdot\sum_{i=0}^4\zeta^{ij}
+    =5\sum_{5\,\mid\,j}c_j.
+  \]
+  Por lo tanto, la respuesta es $\dfrac{2^{2000}+4\cdot 2^{400}}{5}$.
 \end{proof}
 
 \begin{probEG}[MOSP 1999]
-	Sea $X$ un conjunto finito y no vacío de enteros positivos, y sea $A$ un subconjunto de $X$. Demuestre que existe $B\subset X$ tal que $A$ es el conjunto de todos los elementos de $X$ que dividen a un número impar de elementos de $B$.
-	\begin{hint}
-		Let $X$ be a finite set of positive integers and $A$ a subset of $X$. Prove that there exists a subset $B$ of $X$ such that $A$ equals the set of elements of $X$ which divide an odd number of elements of $B$.
-	\end{hint}
+  Sea $X$ un conjunto finito y no vacío de enteros positivos, y sea $A$ un
+  subconjunto de $X$. Demuestre que existe $B\subset X$ tal que $A$ es el
+  conjunto de todos los elementos de $X$ que dividen a un número impar de
+  elementos de $B$.
+  \begin{hint}
+    Let $X$ be a finite set of positive integers and $A$ a subset of $X$. Prove
+    that there exists a subset $B$ of $X$ such that $A$ equals the set of
+    elements of $X$ which divide an odd number of elements of $B$.
+  \end{hint}
 \end{probEG}
 
 \begin{proof}
-	Nos basta probar que la función $f:X\to X$ tal que
-	\[f(A)=\{x\in X:x\text{ divide a un número impar de elementos de }A\}\]
-	es biyectiva. Primero, probaremos que $f$ es inyectiva y para eso supongamos que existen $A,B\subset X$ tales que $f(A)=f(B)$. Si $A\ne B$, sea $x$ el mayor elemento de $A\,\triangle\,B$ donde $x\in A$ sin pérdida de generalidad. Luego, $x$ divide a un número más del conjunto $A$ que de $B$, de donde $x\in f(A)\,\triangle\,f(B)=\varnothing$, lo cual es un absurdo. Por lo tanto, $f$ es inyectiva y por ende biyectiva pues $X$ es finito.
+  Nos basta probar que la función $f:X\to X$ tal que
+  \[f(A)=\{x\in X:x\text{ divide a un número impar de elementos de }A\}\]
+  es biyectiva. Primero, probaremos que $f$ es inyectiva y para eso supongamos
+  que existen $A,B\subset X$ tales que $f(A)=f(B)$. Si $A\ne B$, sea $x$ el
+  mayor elemento de $A\,\triangle\,B$ donde $x\in A$ sin pérdida de generalidad.
+  Luego, $x$ divide a un número más del conjunto $A$ que de $B$, de donde
+  $x\in f(A)\,\triangle\,f(B)=\varnothing$, lo cual es un absurdo. Por lo tanto,
+  $f$ es inyectiva y por ende biyectiva pues $X$ es finito.
 \end{proof}
 
 \note[Geometría]{Miércoles\\2022-04-27}
 
 \begin{probEG}
-	Las reflexiones de la diagonal $BD$ de un cuadrilátero convexo $ABCD$ (el cual no tiene lados iguales), con respecto a las bisectrices de los ángulos interiores $\angle B$ y $\angle D$, pasan por el punto medio del lado $AC$. Demuestre que las reflexiones de la diagonal $AC$ con respecto a las bisectrices interiores $\angle A$ y $\angle C$, pasan por el punto medio de $BD$.
+  Las reflexiones de la diagonal $BD$ de un cuadrilátero convexo $ABCD$ (el cual
+  no tiene lados iguales), con respecto a las bisectrices de los ángulos
+  interiores $\angle B$ y $\angle D$, pasan por el punto medio del lado $AC$.
+  Demuestre que las reflexiones de la diagonal $AC$ con respecto a las
+  bisectrices interiores $\angle A$ y $\angle C$, pasan por el punto medio de
+  $BD$.
 \end{probEG}
 
 \begin{probEG}
-	Sea $ABC$ un triángulo. Sobre los lados $BC$, $CA$ y $AB$ se toman los puntos $X$, $Y$ y $Z$, respectivamente, tales que las rectas $AX$, $BY$ y $CZ$ son concurrentes y $AY=AZ$. La bisectriz interior del ángulo $\angle BAC$ corta a la recta $XZ$ en el punto $T$. Si $M$ y $N$ son los puntos medios de los lados $BC$ y $CA$, respectivamente, demuestre que los puntos $M$, $N$ y $T$ son colineales.
+  Sea $ABC$ un triángulo. Sobre los lados $BC$, $CA$ y $AB$ se toman los puntos
+  $X$, $Y$ y $Z$, respectivamente, tales que las rectas $AX$, $BY$ y $CZ$ son
+  concurrentes y $AY=AZ$. La bisectriz interior del ángulo $\angle BAC$ corta a
+  la recta $XZ$ en el punto $T$. Si $M$ y $N$ son los puntos medios de los lados
+  $BC$ y $CA$, respectivamente, demuestre que los puntos $M$, $N$ y $T$ son
+  colineales.
 \end{probEG}
 
 \begin{probEG}
-	Sea $ABC$ un triángulo y sea $A'B'C'$ la reflexión de $ABC$ con respecto a un punto cualquiera $P$ del plano. Demuestre que los circuncírculos de $AB'C'$, $BC'A'$ y $CA'B'$ pasan por un mismo punto en el circuncírculo del triángulo $ABC$.
+  Sea $ABC$ un triángulo y sea $A'B'C'$ la reflexión de $ABC$ con respecto a un
+  punto cualquiera $P$ del plano. Demuestre que los circuncírculos de $AB'C'$,
+  $BC'A'$ y $CA'B'$ pasan por un mismo punto en el circuncírculo del triángulo
+  $ABC$.
 \end{probEG}
 
 \begin{probEG}
-	Sean $P$ y $Q$ dos puntos distintos sobre el circuncírculo del triángulo $ABC$ de tal manera que las rectas de Simson de $P$ y $Q$ se intersectan perpendicularmente en el punto $X$. Demuestre que $X$ es un punto de la circunferencia de los nueve puntos del triángulo $ABC$.
+  Sean $P$ y $Q$ dos puntos distintos sobre el circuncírculo del triángulo $ABC$
+  de tal manera que las rectas de Simson de $P$ y $Q$ se intersectan
+  perpendicularmente en el punto $X$. Demuestre que $X$ es un punto de la
+  circunferencia de los nueve puntos del triángulo $ABC$.
 \end{probEG}
 
 \begin{probEG}
-	Sea $\Omega$ el circuncírculo de un triángulo escaleno $ABC$. Las rectas tangentes a $\Omega$ que pasan por $B$ y $C$ se intersectan en el punto $Q$. Sea $P$ un punto sobre la semirecta $BC$ de tal manera que $AP$ y $AQ$ son perpendiculares. Los puntos $D$ y $E$ están sobre la semirecta $PQ$, con $E$ entre $D$ y $P$, y son tales que $DQ=BQ=EQ$. Demuestre que los triángulos $ABC$ y $ADE$ son semejantes.
+  Sea $\Omega$ el circuncírculo de un triángulo escaleno $ABC$. Las rectas
+  tangentes a $\Omega$ que pasan por $B$ y $C$ se intersectan en el punto $Q$.
+  Sea $P$ un punto sobre la semirecta $BC$ de tal manera que $AP$ y $AQ$ son
+  perpendiculares. Los puntos $D$ y $E$ están sobre la semirecta $PQ$, con $E$
+  entre $D$ y $P$, y son tales que $DQ=BQ=EQ$. Demuestre que los triángulos
+  $ABC$ y $ADE$ son semejantes.
 \end{probEG}
 
 \begin{probEG}
-	Sea $ABCD$ un rectángulo. Los puntos $P$, $Q$, $R$ y $S$ pertenecen a los lados $AB$, $BC$, $CD$ y $DA$, respectivamente. Demuestre que el perímetro de $PQRS$ es mayor o igual que el doble de la diagonal de $ABCD$.
+  Sea $ABCD$ un rectángulo. Los puntos $P$, $Q$, $R$ y $S$ pertenecen a los
+  lados $AB$, $BC$, $CD$ y $DA$, respectivamente. Demuestre que el perímetro de
+  $PQRS$ es mayor o igual que el doble de la diagonal de $ABCD$.
 \end{probEG}
 
 \begin{probEG}
-	Sea $\Gamma$ una circunferencia y sea $P$ un punto en su exterior. Las tangentes por $P$ a $\Gamma$ tocan a la circunferencia en $A$ y $B$. Sea $M$ el punto medio del segmento $AB$. La mediatriz de $AM$ intersecta a $\Gamma$ en un punto $C$ del interior del triángulo $ABP$. La recta $AC$ corta a $PM$ en $G$, y $PM$ corta a $\Gamma$ en un punto $D$ exterior al triángulo $ABP$. Si $BD\parallel AC$, demuestre que $G$ es el baricentro del triángulo $ABP$.
+  Sea $\Gamma$ una circunferencia y sea $P$ un punto en su exterior. Las
+  tangentes por $P$ a $\Gamma$ tocan a la circunferencia en $A$ y $B$. Sea $M$
+  el punto medio del segmento $AB$. La mediatriz de $AM$ intersecta a $\Gamma$
+  en un punto $C$ del interior del triángulo $ABP$. La recta $AC$ corta a $PM$
+  en $G$, y $PM$ corta a $\Gamma$ en un punto $D$ exterior al triángulo $ABP$.
+  Si $BD\parallel AC$, demuestre que $G$ es el baricentro del triángulo $ABP$.
 \end{probEG}
 
 \begin{probEG}
-	Determine el mayor entero positivo $k$ para el cual existe un polígono $P_1P_2\cdots P_{2015}$ tal que exactamente $k$ de los cuadriláteros $P_iP_{i+1}P_{i+2}P_{i+3}$, con $i=1,2,\dots,2015$ (con índices en el módulo $2015$) tienen una circunferencia inscrita.
+  Determine el mayor entero positivo $k$ para el cual existe un polígono
+  $P_1P_2\cdots P_{2015}$ tal que exactamente $k$ de los cuadriláteros
+  $P_iP_{i+1}P_{i+2}P_{i+3}$, con $i=1,2,\dots,2015$ (con índices en el módulo
+  $2015$) tienen una circunferencia inscrita.
 \end{probEG}
 
 \begin{proof}
-	Respuesta: $1007$. Se puede probar que no existen $\abs{i_1-i_2}=1$ tales que $P_iP_{i+1}P_{i+2}P_{i+3}$ tenga una circunferencia inscrita para $i=i_1,i_2$. Ahora, si $k=2007$, el polígono debe ser cíclico y se puede probar que existe uno que cumple.
+  Respuesta: $1007$. Se puede probar que no existen $\abs{i_1-i_2}=1$ tales que
+  $P_iP_{i+1}P_{i+2}P_{i+3}$ tenga una circunferencia inscrita para $i=i_1,i_2$.
+  Ahora, si $k=2007$, el polígono debe ser cíclico y se puede probar que existe
+  uno que cumple.
 \end{proof}
 
 \note[Teoría de Números]{Viernes\\2022-04-29}
 
 \begin{probEG}[ISL 2001/N1]
-	Prove that there is no positive integer $n$ such that, for $k=1,2,\dots,9$, the leftmost digit (in decimal notation) of $(n+k)!$ equals $k$.
+  Prove that there is no positive integer $n$ such that, for $k=1,2,\dots,9$,
+  the leftmost digit (in decimal notation) of $(n+k)!$ equals $k$.
 \end{probEG}
 
 \begin{probMR}[ISL 2001/N3]
-	Let $a_1=11^{11},a_2=12^{12},a_3=13^{13}$, and
-	\[a_n=\abs{a_{n-1}-a_{n-2}}+\abs{a_{n-2}-a_{n-3}},\quad\forall\,n\ge 4.\]
-	Determine $a_{14^{14}}$.
+  Let $a_1=11^{11},a_2=12^{12},a_3=13^{13}$, and
+  \[a_n=\abs{a_{n-1}-a_{n-2}}+\abs{a_{n-2}-a_{n-3}},\quad\forall\,n\ge 4.\]
+  Determine $a_{14^{14}}$.
 \end{probMR}
 
 \begin{proof}
-	Respuesta: $1$. Primero, demuestre que $(\abs{a_{i+1}-a_i})_{i\ge 1}$ es decreciente y que $a_{7k}$ es impar para todo $k\in\ZZ^+$.
+  Respuesta: $1$. Primero, demuestre que $(\abs{a_{i+1}-a_i})_{i\ge 1}$ es
+  decreciente y que $a_{7k}$ es impar para todo $k\in\ZZ^+$.
 \end{proof}
 
 \begin{problem}[ISL 2001/N4]
-	Let $p\ge 5$ be a prime number. Prove that there exists an integer $a$ with $1\le a\le p-2$ such that neither $a^{p-1}-1$ nor $(a+1)^{p-1}-1$ is divisible by $p^2$.
+  Let $p\ge 5$ be a prime number. Prove that there exists an integer $a$ with
+  $1\le a\le p-2$ such that neither $a^{p-1}-1$ nor $(a+1)^{p-1}-1$ is divisible
+  by $p^2$.
 \end{problem}
 
 \begin{problem}[ISL 2001/N5]
-	Let $a>b>c>d$ be positive integers and suppose
-	\[ac+bd=(b+d+a-c)(b+d-a+c).\]
-	Prove that $ab+cd$ is not prime.
+  Let $a>b>c>d$ be positive integers and suppose
+  \[ac+bd=(b+d+a-c)(b+d-a+c).\]
+  Prove that $ab+cd$ is not prime.
 \end{problem}
 
 \begin{problem}[ISL 2001/N6]
-	Is it possible to find $100$ positive integers not exceeding $25000$, such that all pairwise sums of them are different?
+  Is it possible to find $100$ positive integers not exceeding $25000$, such
+  that all pairwise sums of them are different?
 \end{problem}

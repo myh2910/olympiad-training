@@ -3,152 +3,242 @@
 \note{Miércoles\\2022-03-16}
 
 \begin{probEG}[ISL 2006/A5]
-	If $a,b,c$ are the sides of a triangle, prove that
-	\[\frac{\sqrt{b+c-a}}{\sqrt b+\sqrt c-\sqrt a}+\frac{\sqrt{c+a-b}}{\sqrt c+\sqrt a-\sqrt b}+\frac{\sqrt{a+b-c}}{\sqrt a+\sqrt b-\sqrt c}\le 3.\]
+  If $a,b,c$ are the sides of a triangle, prove that
+  \[
+    \frac{\sqrt{b+c-a}}{\sqrt b+\sqrt c-\sqrt a}
+    +\frac{\sqrt{c+a-b}}{\sqrt c+\sqrt a-\sqrt b}
+    +\frac{\sqrt{a+b-c}}{\sqrt a+\sqrt b-\sqrt c}
+    \le 3.
+  \]
 \end{probEG}
 
 \begin{proof}
-	Sea $x=\sqrt b+\sqrt c-\sqrt a>0$ y análogamente se definen $y$ y $z$. Por la desigualdad de Schur tenemos que
-	\[\cycsum\frac{(x-y)(x-z)}{x^2}\ge 0.\]
-	Note que
-	\[b+c-a=\left(\frac{x+y}{2}\right)^2+\left(\frac{x+z}{2}\right)^2-\left(\frac{y+z}{2}\right)^2=\frac{x^2+xy+xz-yz}{2}\]
-	de donde
-	\begin{align*}
-		\frac13\left(\cycsum\frac{\sqrt{b+c-a}}{\sqrt b+\sqrt c-\sqrt a}\right)^2
-		&\le\cycsum\left(\frac{\sqrt{b+c-a}}{\sqrt b+\sqrt c-\sqrt a}\right)^2\\
-		&=\frac{x^2+xy+xz-yz}{2x^2}\\
-		&=3-\cycsum\frac{(x-y)(x-z)}{2x^2}\\
-		&\le 3
-	\end{align*}
-	y esto resuelve el problema.
+  Sea $x=\sqrt b+\sqrt c-\sqrt a>0$ y análogamente se definen $y$ y $z$. Por la
+  desigualdad de Schur tenemos que
+  \[\cycsum\frac{(x-y)(x-z)}{x^2}\ge 0.\]
+  Note que
+  \[
+    b+c-a
+    =\left(\frac{x+y}{2}\right)^2
+    +\left(\frac{x+z}{2}\right)^2
+    -\left(\frac{y+z}{2}\right)^2
+    =\frac{x^2+xy+xz-yz}{2}
+  \]
+  de donde
+  \begin{align*}
+    \frac13\left(\cycsum\frac{\sqrt{b+c-a}}{\sqrt b+\sqrt c-\sqrt a}\right)^2
+    &\le \cycsum\left(\frac{\sqrt{b+c-a}}{\sqrt b+\sqrt c-\sqrt a}\right)^2 \\
+    &= \frac{x^2+xy+xz-yz}{2x^2} \\
+    &= 3-\cycsum\frac{(x-y)(x-z)}{2x^2} \\
+    &\le 3
+  \end{align*}
+  y esto resuelve el problema.
 \end{proof}
 
 \begin{probEB}[ISL 2006/N7]
-	Demuestre que para todo entero positivo $n$, existe un entero positivo $m$ tal que $n\mid 2^m+m$.
-	\begin{hint}
-		For all positive integers $n$, show that there exists a positive integer $m$ such that $n$ divides $2^m+m$.
-	\end{hint}
-	\forum[aops]{867486}
+  Demuestre que para todo entero positivo $n$, existe un entero positivo $m$ tal
+  que $n\mid 2^m+m$.
+  \begin{hint}
+    For all positive integers $n$, show that there exists a positive integer $m$
+    such that $n$ divides $2^m+m$.
+  \end{hint}
+  \forum[aops]{867486}
 \end{probEB}
 
 \begin{proof}
-	El problema es trivial cuando $n$ es una potencia de $2$. Ahora, supongamos que para algún $n\in\ZZ^+$ existe un $m\in\ZZ^+$ tal que $n\mid 2^m+m$. En efecto, sea $k=\frac{2^m+m}{n}$ y sea $p$ un primo impar arbitrario mayor o igual que todos los factores primos de $n$. Sea $n=p^en_0$ donde $p\nmid n_0$. Sea $m_0=m+\phi(p^{e+1}n_0)t$ para algún $n_0\mid t$ tal que $n_0k\equiv\phi(n_0)t\pmod p$. Luego,
-	\begin{align*}
-		2^{m_0}+m_0
-		&\equiv 2^m+m+p^e(p-1)\phi(n_0)t\\
-		&=p^e\left(n_0k+(p-1)\phi(n_0)t\right)\\
-		&\equiv 0\pmod{p^{e+1}n_0}
-	\end{align*}
-	y aquí terminamos por inducción.
+  El problema es trivial cuando $n$ es una potencia de $2$. Ahora, supongamos
+  que para algún $n\in\ZZ^+$ existe un $m\in\ZZ^+$ tal que $n\mid 2^m+m$. En
+  efecto, sea $k=\frac{2^m+m}{n}$ y sea $p$ un primo impar arbitrario mayor o
+  igual que todos los factores primos de $n$. Sea $n=p^en_0$ donde $p\nmid n_0$.
+  Sea $m_0=m+\phi(p^{e+1}n_0)t$ para algún $n_0\mid t$ tal que
+  $n_0k\equiv\phi(n_0)t\pmod p$. Luego,
+  \begin{align*}
+    2^{m_0}+m_0
+    &\equiv 2^m+m+p^e(p-1)\phi(n_0)t \\
+    &= p^e\left(n_0k+(p-1)\phi(n_0)t\right) \\
+    &\equiv 0\pmod{p^{e+1}n_0}
+  \end{align*}
+  y aquí terminamos por inducción.
 \end{proof}
 
 \begin{probMR}[ISL 2007/A4]
-	Determine todas las funciones $f:\RR^+\to\RR^+$ tales que $f(x+f(y))=f(x+y)+f(y)$ para todo $x,y\in\RR^+$.
-	\begin{hint}
-		Find all functions $f:\RR^+\to\RR^+$ satisfying $f(x+f(y))=f(x+y)+f(y)$ for all pairs of positive reals $x$ and $y$.
-	\end{hint}
-	\forum[aops]{1165901}
+  Determine todas las funciones $f:\RR^+\to\RR^+$ tales que
+  $f(x+f(y))=f(x+y)+f(y)$ para todo $x,y\in\RR^+$.
+  \begin{hint}
+    Find all functions $f:\RR^+\to\RR^+$ satisfying $f(x+f(y))=f(x+y)+f(y)$ for
+    all pairs of positive reals $x$ and $y$.
+  \end{hint}
+  \forum[aops]{1165901}
 \end{probMR}
 
 \begin{probMR}[ISL 2007/N3]
-	Sea $X$ un conjunto de $10000$ enteros no divisibles por $47$. Demuestre que existe $Y\subset X$ con $\abs{Y}=2007$, tal que $47\nmid a-b+c-d+e$ para todo $a,b,c,d,e\in Y$.
-	\begin{hint}
-		Let $X$ be a set of $10000$ integers, none of them is divisible by $47$. Prove that there exists a $2007$-element subset $Y$ of $X$ such that $a-b+c-d+e$ is not divisible by $47$ for any $a,b,c,d,e\in Y$.
-	\end{hint}
-	\forum[aops]{1187204}
+  Sea $X$ un conjunto de $10000$ enteros no divisibles por $47$. Demuestre que
+  existe $Y\subset X$ con $\abs{Y}=2007$, tal que $47\nmid a-b+c-d+e$ para todo
+  $a,b,c,d,e\in Y$.
+  \begin{hint}
+    Let $X$ be a set of $10000$ integers, none of them is divisible by $47$.
+    Prove that there exists a $2007$-element subset $Y$ of $X$ such that
+    $a-b+c-d+e$ is not divisible by $47$ for any $a,b,c,d,e\in Y$.
+  \end{hint}
+  \forum[aops]{1187204}
 \end{probMR}
 
 \begin{probEG}[Iran MO 2000 3rd Round]
-	La secuencia $(c_i)_{i\ge 1}$ de enteros positivos satisface la siguiente condición: para todo $m,n\in\ZZ^+$ con $1\le m\le c_1+c_2+\dots+c_n$, existen enteros positivos $a_1,a_2,\dots,a_n$ tales que
-	\[m=\frac{c_1}{a_1}+\frac{c_2}{a_2}+\dots+\frac{c_n}{a_n}.\]
-	Para cada índice $i$, hallar el mayor valor de $c_i$.
-	\begin{hint}
-		A sequence of natural numbers $c_1,c_2,\dots$ is called \emph{perfect} if every natural number $m$ with $1\le m\le c_1+c_2+\dots+c_n$ can be represented as
-		\[m=\frac{c_1}{a_1}+\frac{c_2}{a_2}+\dots+\frac{c_n}{a_n}.\]
-		Given $n$, find the maximum possible value of $c_n$ in a perfect sequence $(c_i)$.
-	\end{hint}
-	\forum[aops]{389506}
+  La secuencia $(c_i)_{i\ge 1}$ de enteros positivos satisface la siguiente
+  condición: para todo $m,n\in\ZZ^+$ con $1\le m\le c_1+c_2+\dots+c_n$, existen
+  enteros positivos $a_1,a_2,\dots,a_n$ tales que
+  \[m=\frac{c_1}{a_1}+\frac{c_2}{a_2}+\dots+\frac{c_n}{a_n}.\]
+  Para cada índice $i$, hallar el mayor valor de $c_i$.
+  \begin{hint}
+    A sequence of natural numbers $c_1,c_2,\dots$ is called \emph{perfect} if
+    every natural number $m$ with $1\le m\le c_1+c_2+\dots+c_n$ can be
+    represented as
+    \[m=\frac{c_1}{a_1}+\frac{c_2}{a_2}+\dots+\frac{c_n}{a_n}.\]
+    Given $n$, find the maximum possible value of $c_n$ in a perfect sequence
+    $(c_i)$.
+  \end{hint}
+  \forum[aops]{389506}
 \end{probEG}
 
 \begin{probMR}[ISL 2008/N3]
-	Sea $(a_i)_{i\ge 0}$ una secuencia de enteros positivos tal que $\mcd(a_i,a_{i+1})>a_{i-1}$ para todo $i\ge 1$. Demuestre que $a_n\ge 2^n$ para todo $n\ge 0$.
-	\begin{hint}
-		Let $a_0,a_1,a_2,\dots$ be a sequence of positive integers such that $\gcd(a_i,a_{i+1})>a_{i-1}$. Prove that $a_n\ge 2^n$ for all $n\ge 0$.
-	\end{hint}
-	\forum[aops]{1555931}
+  Sea $(a_i)_{i\ge 0}$ una secuencia de enteros positivos tal que
+  $\mcd(a_i,a_{i+1})>a_{i-1}$ para todo $i\ge 1$. Demuestre que $a_n\ge 2^n$
+  para todo $n\ge 0$.
+  \begin{hint}
+    Let $a_0,a_1,a_2,\dots$ be a sequence of positive integers such that
+    $\gcd(a_i,a_{i+1})>a_{i-1}$. Prove that $a_n\ge 2^n$ for all $n\ge 0$.
+  \end{hint}
+  \forum[aops]{1555931}
 \end{probMR}
 
 \note{Viernes\\2022-03-18}
 
 \begin{probEG}[ISL 2018/A1]
-	Determine todas las funciones $f:\QQ^+\to\QQ^+$ tales que
-	\[f(x^2f(y)^2)=f(x)^2f(y)\]
-	para todo $x,y\in\QQ^+$.
-	\begin{hint}
-		Determine all functions $f:\QQ^+\to\QQ^+$ satisfying
-		\[f(x^2f(y)^2)=f(x)^2f(y)\]
-		for all $x,y\in\QQ^+$.
-	\end{hint}
-	\forum[aops]{12752810}
+  Determine todas las funciones $f:\QQ^+\to\QQ^+$ tales que
+  \[f(x^2f(y)^2)=f(x)^2f(y)\]
+  para todo $x,y\in\QQ^+$.
+  \begin{hint}
+    Determine all functions $f:\QQ^+\to\QQ^+$ satisfying
+    \[f(x^2f(y)^2)=f(x)^2f(y)\]
+    for all $x,y\in\QQ^+$.
+  \end{hint}
+  \forum[aops]{12752810}
 \end{probEG}
 
 \begin{proof}
-	Si $x^2f(y)^2=y$ entonces $f(x)=1$. Si $f(y)=1$ tenemos que $f(x^2)=f(x)^2$ para todo $x\in\QQ^+$. Es decir, $f(xf(y))^2=f(x)^2f(y)$ de donde existe una función $f_1:\QQ^+\to\QQ^+$ tal que $f(x)=f_1(x)^2$. Luego, $f_1(xf(y))^2=f_1(x)^2f_1(y)$ de donde existe una función $f_2:\QQ^+\to\QQ^+$ tal que $f_1(x)=f_2(x)^2$. Luego, $f_2(xf(y))^2=f_2(x)^2f_2(y)$ y así sucesivamente. Por lo tanto, $f(x)\equiv 1$.
+  Si $x^2f(y)^2=y$ entonces $f(x)=1$. Si $f(y)=1$ tenemos que $f(x^2)=f(x)^2$
+  para todo $x\in\QQ^+$. Es decir, $f(xf(y))^2=f(x)^2f(y)$ de donde existe una
+  función $f_1:\QQ^+\to\QQ^+$ tal que $f(x)=f_1(x)^2$. Luego,
+  $f_1(xf(y))^2=f_1(x)^2f_1(y)$ de donde existe una función $f_2:\QQ^+\to\QQ^+$
+  tal que $f_1(x)=f_2(x)^2$. Luego, $f_2(xf(y))^2=f_2(x)^2f_2(y)$ y así
+  sucesivamente. Por lo tanto, $f(x)\equiv 1$.
 \end{proof}
 
 \begin{probMR}[ISL 2018/A2]
-	Determine todos los enteros $n\ge 3$ para los cuales existen números reales $a_1,a_2,\dots,a_{n+2}$ donde $a_{n+1}=a_1$ y $a_{n+2}=a_2$, tales que
-	\[a_ia_{i+1}+1=a_{i+2}\]
-	para todo $i=1,2,\dots,n$.
-	\begin{hint}
-		Find all integers $n\ge 3$ for which there exist real numbers $a_1,a_2,\dots,a_n,a_{n+1}=a_1,a_{n+2}=a_2$ such that
-		\[a_ia_{i+1}+1=a_{i+2}\]
-		for all $i=1,2,\dots,n$.
-	\end{hint}
-	\forum[aops]{10626524}
+  Determine todos los enteros $n\ge 3$ para los cuales existen números reales
+  $a_1,a_2,\dots,a_{n+2}$ donde $a_{n+1}=a_1$ y $a_{n+2}=a_2$, tales que
+  \[a_ia_{i+1}+1=a_{i+2}\]
+  para todo $i=1,2,\dots,n$.
+  \begin{hint}
+    Find all integers $n\ge 3$ for which there exist real numbers
+    $a_1,a_2,\dots,a_n,a_{n+1}=a_1,a_{n+2}=a_2$ such that
+    \[a_ia_{i+1}+1=a_{i+2}\]
+    for all $i=1,2,\dots,n$.
+  \end{hint}
+  \forum[aops]{10626524}
 \end{probMR}
 
 \begin{proof}
-	Respuesta: múltiplos de $3$.
+  Respuesta: múltiplos de $3$.
 \end{proof}
 
 \begin{probMB}[ISL 2018/A3]
-	Dado un conjunto $S$ de enteros positivos, demuestre que al menos una de las siguientes dos proposiciones es verdadera:
-	\begin{enumerate}[(1)]
-		\ii \label{enumi:finite_subsets} Existen dos subconjuntos finitos y distintos $F$ y $G$ de $S$ tales que $\sum_{x\in F}1/x=\sum_{x\in G}1/x$;
-		\ii \label{enumi:rational_number} Existe un número racional positivo $r<1$ tal que $\sum_{x\in F}1/x\ne r$ para todo subconjunto finito $F$ de $S$.
-	\end{enumerate}
-	\begin{hint}
-		Given any set $S$ of positive integers, show that at least one of the following two assertions holds:
-		\begin{enumerate}[(1)]
-			\ii There exist distinct finite subsets $F$ and $G$ of $S$ such that $\sum_{x\in F}1/x=\sum_{x\in G}1/x$;
-			\ii There exists a positive rational number $r<1$ such that $\sum_{x\in F}1/x\ne r$ for all finite subsets $F$ of $S$.
-		\end{enumerate}
-	\end{hint}
+  Dado un conjunto $S$ de enteros positivos, demuestre que al menos una de las
+  siguientes dos proposiciones es verdadera:
+  \begin{enumerate}[(1)]
+    \ii\label{enumi:finite_subsets} Existen dos subconjuntos finitos y distintos
+    $F$ y $G$ de $S$ tales que $\sum_{x\in F}1/x=\sum_{x\in G}1/x$;
+    \ii\label{enumi:rational_number} Existe un número racional positivo $r<1$
+    tal que $\sum_{x\in F}1/x\ne r$ para todo subconjunto finito $F$ de $S$.
+  \end{enumerate}
+  \begin{hint}
+    Given any set $S$ of positive integers, show that at least one of the
+    following two assertions holds:
+    \begin{enumerate}[(1)]
+      \ii There exist distinct finite subsets $F$ and $G$ of $S$ such that
+      $\sum_{x\in F}1/x=\sum_{x\in G}1/x$;
+      \ii There exists a positive rational number $r<1$ such that
+      $\sum_{x\in F}1/x\ne r$ for all finite subsets $F$ of $S$.
+    \end{enumerate}
+  \end{hint}
 \end{probMB}
 
 \begin{proof}
-	Si $S$ es un conjunto finito, es claro que la \ref{enumi:rational_number} es verdadera. Ahora, supongamos que $S$ es infinito y la \ref{enumi:rational_number} no se cumple. Sean $a_1<a_2<\cdots$ los elementos de $S$. Sea $i\ge 1$ un índice cualquiera. Si $\frac{1}{a_i}\le\frac{1}{a_{i+1}}+\frac{1}{a_{i+2}}+\dots+\frac{1}{a_j}<\frac{2}{a_i}$, sea $r=\frac{1}{a_{i+1}}+\frac{1}{a_{i+2}}+\dots+\frac{1}{a_j}-\frac{1}{a_i}<\frac{1}{a_i}\le 1$. Es decir, $r=\frac{1}{a_{x_1}}+\dots+\frac{1}{a_{x_k}}<\frac{1}{a_i}$ de donde
-	\[\frac{1}{a_i}+\frac{1}{a_{x_1}}+\dots+\frac{1}{a_{x_k}}=\frac{1}{a_i}+r=\frac{1}{a_{i+1}}+\frac{1}{a_{i+2}}+\dots+\frac{1}{a_j}\]
-	y la \ref{enumi:finite_subsets} es verdadera. Ahora, supongamos que
-	\[\frac{1}{a_{i+1}}+\frac{1}{a_{i+2}}+\dots+\frac{1}{a_j}<\frac{1}{a_i}\]
-	para todo $j>i>0$. Si $a_{i+1}>2a_i$, sea $\frac{1}{a_{i+1}}<r=\frac{2}{a_{i+1}}<\frac{1}{a_i}\le 1$. Es decir, $r=\frac{1}{a_{x_1}}+\dots+\frac{1}{a_{x_k}}<\frac{1}{a_i}$. Si $x_1,\dots,x_k>i+1$ entonces $r<\frac{1}{a_{i+1}}$ lo cual es una contradicción. Por ende, $r=\frac{1}{a_{i+1}}+\frac{1}{a_{y_1}}+\dots+\frac{1}{a_{y_l}}<\frac{2}{a_{i+1}}$ lo cual es un absurdo. Por lo tanto, $a_{i+1}\le 2a_i$ para todo $i\in\ZZ^+$. Luego, \[\frac{1}{a_{i+1}}\left(2-\frac{1}{2^{j-i-1}}\right)=\sum_{k=0}^{j-i-1}\frac{1}{2^ka_{i+1}}\le\frac{1}{a_{i+1}}+\dots+\frac{1}{a_j}<\frac{1}{a_i}\]
-	de donde $a_{i+1}\ge 2a_i$ para todo $i\in\ZZ^+$. Es decir, $a_{i+1}=2a_i$ para todo $i\in\ZZ^+$. Si $r=\frac{1}{3a_1}<\frac{1}{a_1}<1$, tenemos que
-	\[\frac{1}{3}=\frac{a_1}{a_{x_1}}+\dots+\frac{a_1}{a_{x_k}}=\frac{1}{2^{x_1-1}}+\dots+\frac{1}{2^{x_k-1}}=\frac{M}{N}\]
-	donde $M$ es impar y $N$ es par, lo cual es un absurdo.
+  Si $S$ es un conjunto finito, es claro que la \ref{enumi:rational_number} es
+  verdadera. Ahora, supongamos que $S$ es infinito y la
+  \ref{enumi:rational_number} no se cumple. Sean $a_1<a_2<\cdots$ los elementos
+  de $S$. Sea $i\ge 1$ un índice cualquiera. Si
+  $
+    \frac{1}{a_i}
+    \le\frac{1}{a_{i+1}}+\frac{1}{a_{i+2}}+\dots+\frac{1}{a_j}
+    <\frac{2}{a_i}
+  $, sea
+  $
+    r
+    =\frac{1}{a_{i+1}}+\frac{1}{a_{i+2}}+\dots+\frac{1}{a_j}-\frac{1}{a_i}
+    <\frac{1}{a_i}
+    \le 1
+  $. Es decir, $r=\frac{1}{a_{x_1}}+\dots+\frac{1}{a_{x_k}}<\frac{1}{a_i}$ de
+  donde
+  \[
+    \frac{1}{a_i}+\frac{1}{a_{x_1}}+\dots+\frac{1}{a_{x_k}}
+    =\frac{1}{a_i}+r
+    =\frac{1}{a_{i+1}}+\frac{1}{a_{i+2}}+\dots+\frac{1}{a_j}
+  \]
+  y la \ref{enumi:finite_subsets} es verdadera. Ahora, supongamos que
+  \[\frac{1}{a_{i+1}}+\frac{1}{a_{i+2}}+\dots+\frac{1}{a_j}<\frac{1}{a_i}\]
+  para todo $j>i>0$. Si $a_{i+1}>2a_i$, sea
+  $\frac{1}{a_{i+1}}<r=\frac{2}{a_{i+1}}<\frac{1}{a_i}\le 1$. Es decir,
+  $r=\frac{1}{a_{x_1}}+\dots+\frac{1}{a_{x_k}}<\frac{1}{a_i}$. Si
+  $x_1,\dots,x_k>i+1$ entonces $r<\frac{1}{a_{i+1}}$ lo cual es una
+  contradicción. Por ende,
+  $
+    r
+    =\frac{1}{a_{i+1}}+\frac{1}{a_{y_1}}+\dots+\frac{1}{a_{y_l}}
+    <\frac{2}{a_{i+1}}
+  $ lo cual es un absurdo. Por lo tanto, $a_{i+1}\le 2a_i$ para todo
+  $i\in\ZZ^+$. Luego,
+  \[
+    \frac{1}{a_{i+1}}\left(2-\frac{1}{2^{j-i-1}}\right)
+    =\sum_{k=0}^{j-i-1}\frac{1}{2^ka_{i+1}}
+    \le\frac{1}{a_{i+1}}+\dots+\frac{1}{a_j}
+    <\frac{1}{a_i}
+  \]
+  de donde $a_{i+1}\ge 2a_i$ para todo $i\in\ZZ^+$. Es decir, $a_{i+1}=2a_i$
+  para todo $i\in\ZZ^+$. Si $r=\frac{1}{3a_1}<\frac{1}{a_1}<1$, tenemos que
+  \[
+    \frac{1}{3}
+    =\frac{a_1}{a_{x_1}}+\dots+\frac{a_1}{a_{x_k}}
+    =\frac{1}{2^{x_1-1}}+\dots+\frac{1}{2^{x_k-1}}
+    =\frac{M}{N}
+  \]
+  donde $M$ es impar y $N$ es par, lo cual es un absurdo.
 \end{proof}
 
 \begin{problem}[ISL 2018/A4]
-	Sea $(a_i)_{i\ge 0}$ una secuencia de números reales tal que $a_0=0$, $a_1=1$, y para todo $n\ge 2$ existe un $1\le k\le n$ tal que
-	\[a_n=\frac{a_{n-1}+\dots+a_{n-k}}{k}.\]
-	Determine el máximo valor de $a_{2018}-a_{2017}$.
-	\begin{hint}
-		Let $a_0,a_1,a_2,\dots$ be a sequence of real numbers such that $a_0=0$, $a_1=1$, and for every $n\ge 2$ there exists $1\le k\le n$ satisfying
-		\[a_n=\frac{a_{n-1}+\dots+a_{n-k}}{k}.\]
-		Find the maximal possible value of $a_{2018}-a_{2017}$.
-	\end{hint}
+  Sea $(a_i)_{i\ge 0}$ una secuencia de números reales tal que $a_0=0$, $a_1=1$,
+  y para todo $n\ge 2$ existe un $1\le k\le n$ tal que
+  \[a_n=\frac{a_{n-1}+\dots+a_{n-k}}{k}.\]
+  Determine el máximo valor de $a_{2018}-a_{2017}$.
+  \begin{hint}
+    Let $a_0,a_1,a_2,\dots$ be a sequence of real numbers such that $a_0=0$,
+    $a_1=1$, and for every $n\ge 2$ there exists $1\le k\le n$ satisfying
+    \[a_n=\frac{a_{n-1}+\dots+a_{n-k}}{k}.\]
+    Find the maximal possible value of $a_{2018}-a_{2017}$.
+  \end{hint}
 \end{problem}
 
 \begin{proof}
-	La respuesta es $\frac{2016}{2017^2}$, cuando $a_1=a_2=\dots=a_{2016}=1$ y $(a_{2017},a_{2018})=\left(\frac{2016}{2017},1-\frac{1}{2017^2}\right)$.
+  La respuesta es $\frac{2016}{2017^2}$, cuando $a_1=a_2=\dots=a_{2016}=1$ y
+  $(a_{2017},a_{2018})=\left(\frac{2016}{2017},1-\frac{1}{2017^2}\right)$.
 \end{proof}

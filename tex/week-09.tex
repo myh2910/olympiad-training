@@ -3,126 +3,174 @@
 \note[Álgebra]{Lunes\\2022-05-09}
 
 \begin{probMG}[ISL 2001/A4]
-	Find all functions $f:\RR\to\RR$, satisfying
-	\[f(xy)(f(x)-f(y))=(x-y)f(x)f(y)\]
-	for all $x,y$.
+  Find all functions $f:\RR\to\RR$, satisfying
+  \[f(xy)(f(x)-f(y))=(x-y)f(x)f(y)\]
+  for all $x,y$.
 \end{probMG}
 
 \begin{proof}
-	Con $(x,y)=(1,0)$ y $(x,1)$ tenemos que $f(0)=0$ y que $f(x)=0$ o $f(x)=xf(1)$. Luego, $f(x)=xc$ para todo $x\in G$, y $f(x)=0$ para todo $x\not\in G$ donde $(G,\cdot)$ es un grupo multiplicativo y $c$ es una constante.
+  Con $(x,y)=(1,0)$ y $(x,1)$ tenemos que $f(0)=0$ y que $f(x)=0$ o
+  $f(x)=xf(1)$. Luego, $f(x)=xc$ para todo $x\in G$, y $f(x)=0$ para todo
+  $x\not\in G$ donde $(G,\cdot)$ es un grupo multiplicativo y $c$ es una
+  constante.
 \end{proof}
 
 \begin{probMB}[ISL 2001/A5]
-	Find all positive integers $a_1,a_2,\dots,a_n$ such that
-	\[\frac{99}{100}=\frac{a_0}{a_1}+\frac{a_1}{a_2}+\dots+\frac{a_{n-1}}{a_n},\]
-	where $a_0=1$ and $(a_{k+1}-1)a_{k-1}\ge a_k^2(a_k-1)$ for $k=1,2,\dots,n-1$.
+  Find all positive integers $a_1,a_2,\dots,a_n$ such that
+  \[\frac{99}{100}=\frac{a_0}{a_1}+\frac{a_1}{a_2}+\dots+\frac{a_{n-1}}{a_n},\]
+  where $a_0=1$ and $(a_{k+1}-1)a_{k-1}\ge a_k^2(a_k-1)$ for $k=1,2,\dots,n-1$.
 \end{probMB}
 
 \note[Combinatoria]{Martes\\2022-05-10}
 
 \begin{probEG}[ISL 1998/N3]
-	Determine the smallest integer $n$, $n\ge 4$, for which one can choose four different numbers $a,b,c,d$ from any $n$ distinct integers such that $a+b-c-d$ is divisible by $20$.
-	\forum[aops]{124432}
+  Determine the smallest integer $n$, $n\ge 4$, for which one can choose four
+  different numbers $a,b,c,d$ from any $n$ distinct integers such that $a+b-c-d$
+  is divisible by $20$.
+  \forum[aops]{124432}
 \end{probEG}
 
 \begin{probER}
-	Form a $2000\times 2002$ screen with unit screens. Initially, there are more than $1999\times 2001$ unit screens which are \emph{on}. In any $2\times 2$ screen, as soon as there are $3$ unit screens which are \emph{off}, the $4^\text{th}$ screen turns off automatically. Prove that the whole screen can never be totally off.
+  Form a $2000\times 2002$ screen with unit screens. Initially, there are more
+  than $1999\times 2001$ unit screens which are \emph{on}. In any $2\times 2$
+  screen, as soon as there are $3$ unit screens which are \emph{off}, the
+  $4^\text{th}$ screen turns off automatically. Prove that the whole screen can
+  never be totally off.
 \end{probER}
 
 \begin{proof}
-	Pista: considere a la cantidad de cuadrados de $2\times 2$.
+  Pista: considere a la cantidad de cuadrados de $2\times 2$.
 \end{proof}
 
 \begin{probMR}
-	Given an initial sequence $a_1,a_2,\dots,a_n$ of real numbers, we perform a series of steps. At each step, we replace the current sequence $x_1,x_2,\dots,x_n$ with $\abs{x_1-a},\abs{x_2-a},\dots,\abs{x_n-a}$ for some $a$. For each step, the value of $a$ can be different.
-	\begin{enumerate}[(a)]
-		\ii Prove that it is always possible to obtain the null sequence consisting of all $0$'s.
-		\ii Determine with proof the minimum number of steps required, regardless of initial sequence, to obtain the null sequence.
-	\end{enumerate}
+  Given an initial sequence $a_1,a_2,\dots,a_n$ of real numbers, we perform a
+  series of steps. At each step, we replace the current sequence
+  $x_1,x_2,\dots,x_n$ with $\abs{x_1-a},\abs{x_2-a},\dots,\abs{x_n-a}$ for some
+  $a$. For each step, the value of $a$ can be different.
+  \begin{enumerate}[(a)]
+    \ii Prove that it is always possible to obtain the null sequence consisting
+    of all $0$'s.
+    \ii Determine with proof the minimum number of steps required, regardless of
+    initial sequence, to obtain the null sequence.
+  \end{enumerate}
 \end{probMR}
 
 \note[Teoría de Números]{Miércoles\\2022-05-11}
 
 \begin{probEG}
-	Sean $1\le a_1,a_2,\dots,a_{10^6}\le 9$ algunos dígitos. Demuestre que el conjunto
-	\[A=\left\{\ol{a_1a_2\cdots a_k}:1\le k\le 10^6\right\}\]
-	contiene a lo más $100$ cuadrados perfectos.
+  Sean $1\le a_1,a_2,\dots,a_{10^6}\le 9$ algunos dígitos. Demuestre que el conjunto
+  \[A=\left\{\ol{a_1a_2\cdots a_k}:1\le k\le 10^6\right\}\]
+  contiene a lo más $100$ cuadrados perfectos.
 \end{probEG}
 
 \begin{proof}
-	Por el absurdo, supongamos que existen más de $100$ índices $k$ tales que $\ol{a_1a_2\cdots a_k}$ es un cuadrado perfecto. Entonces, hay $50$ de la misma paridad. Como $2^{50}>2^{20}=1024^2>1000^2=10^6$, existen índices $j<i<2j$ tales que $2\mid i-j$ y
-	\begin{align*}
-		\ol{a_1a_2\cdots a_i}
-		&=\ol{a_1a_2\cdots a_j}\cdot 10^{i-j}+\ol{a_{j+1}a_{j+2}\cdots a_i}\\
-		&=\left(n\cdot 10^\frac{i-j}{2}\right)^2+\ol{a_{j+1}a_{j+2}\cdots a_i}\\
-		&\ge\left(n\cdot 10^\frac{i-j}{2}+1\right)^2
-	\end{align*}
-	de donde
-	\[10^{i-j}>\ol{a_{j+1}a_{j+2}\cdots a_i}>2n\cdot 10^\frac{i-j}{2}>10^\frac{i-1}{2}\]
-	y $i\ge 2j$, lo cual es un absurdo.
+  Por el absurdo, supongamos que existen más de $100$ índices $k$ tales que
+  $\ol{a_1a_2\cdots a_k}$ es un cuadrado perfecto. Entonces, hay $50$ de la
+  misma paridad. Como $2^{50}>2^{20}=1024^2>1000^2=10^6$, existen índices
+  $j<i<2j$ tales que $2\mid i-j$ y
+  \begin{align*}
+    \ol{a_1a_2\cdots a_i}
+    &= \ol{a_1a_2\cdots a_j}\cdot 10^{i-j}+\ol{a_{j+1}a_{j+2}\cdots a_i} \\
+    &= \left(n\cdot 10^\frac{i-j}{2}\right)^2+\ol{a_{j+1}a_{j+2}\cdots a_i} \\
+    &\ge \left(n\cdot 10^\frac{i-j}{2}+1\right)^2
+  \end{align*}
+  de donde
+  \[
+    10^{i-j}
+    >\ol{a_{j+1}a_{j+2}\cdots a_i}
+    >2n\cdot 10^\frac{i-j}{2}
+    >10^\frac{i-1}{2}
+  \]
+  y $i\ge 2j$, lo cual es un absurdo.
 \end{proof}
 
 \note{Viernes\\2022-05-13}
 
 \begin{probMG}[IberoAmerican 2012/6]
-	Demostrar que, para todo entero positivo $n$, existen $n$ enteros positivos consecutivos tales que ninguno es divisible por la suma de sus respectivos dígitos.
-	\begin{hint}
-		Show that, for every positive integer $n$, there exist $n$ consecutive positive integers such that none is divisible by the sum of its digits.
-	\end{hint}
-	\forum[aops]{2814652}
-	\forum[oma]{1201}
+  Demostrar que, para todo entero positivo $n$, existen $n$ enteros positivos
+  consecutivos tales que ninguno es divisible por la suma de sus respectivos
+  dígitos.
+  \begin{hint}
+    Show that, for every positive integer $n$, there exist $n$ consecutive
+    positive integers such that none is divisible by the sum of its digits.
+  \end{hint}
+  \forum[aops]{2814652}
+  \forum[oma]{1201}
 \end{probMG}
 
 \begin{proof}
-	Procederemos por inducción sobre $n$. Si $n=1$, es claro que $s(11)\nmid 11$ donde $s(x)$ denota la suma de dígitos de $x$. Ahora, supongamos que existe un $m\in\ZZ^+_0$ tal que $s(m+i)\nmid m+i$ para todo $1\le i\le n$. Sea $m'=M\cdot 10^k+m$ donde $M$ es un número formado por $N!$ bloques consecutivos de $N!$, siendo $k,N\in\ZZ^+$ suficientemente grandes. Si $s(m'+i)\mid m'+i$ para algún $1\le i\le n$, entonces
-	\[s(m+i)\mid N!\cdot s(N!)+s(m+i)=s(m'+i)\mid m'+i=M\cdot 10^k+m+i\]
-	de donde $s(m+i)\mid m+i$, absurdo. Si $s(m'+n+1)\mid m'+n+1$ para $k$ y $k+1$, entonces $s(M)+s(m+n+1)$ divide simultáneamente a $M\cdot 10^k+m+n+1$ y a $M\cdot 10^{k+1}+m+n+1$. Luego,
-	\[N!\cdot s(N!)+s(m+n+1)\mid 9(m+n+1)\]
-	lo cual no es posible para un valor grande de $N$. Por lo tanto, existe un $m'\in\ZZ^+_0$ tal que $s(m'+i)\nmid m'+i$ para todo $1\le i\le n+1$.
+  Procederemos por inducción sobre $n$. Si $n=1$, es claro que $s(11)\nmid 11$
+  donde $s(x)$ denota la suma de dígitos de $x$. Ahora, supongamos que existe un
+  $m\in\ZZ^+_0$ tal que $s(m+i)\nmid m+i$ para todo $1\le i\le n$. Sea
+  $m'=M\cdot 10^k+m$ donde $M$ es un número formado por $N!$ bloques
+  consecutivos de $N!$, siendo $k,N\in\ZZ^+$ suficientemente grandes. Si
+  $s(m'+i)\mid m'+i$ para algún $1\le i\le n$, entonces
+  \[s(m+i)\mid N!\cdot s(N!)+s(m+i)=s(m'+i)\mid m'+i=M\cdot 10^k+m+i\]
+  de donde $s(m+i)\mid m+i$, absurdo. Si $s(m'+n+1)\mid m'+n+1$ para $k$ y
+  $k+1$, entonces $s(M)+s(m+n+1)$ divide simultáneamente a $M\cdot 10^k+m+n+1$ y
+  a $M\cdot 10^{k+1}+m+n+1$. Luego,
+  \[N!\cdot s(N!)+s(m+n+1)\mid 9(m+n+1)\]
+  lo cual no es posible para un valor grande de $N$. Por lo tanto, existe un
+  $m'\in\ZZ^+_0$ tal que $s(m'+i)\nmid m'+i$ para todo $1\le i\le n+1$.
 \end{proof}
 
 \begin{probEG}
-	Hallar la menor cantidad de dígitos de un número $N$ que contiene a todas las permutaciones de $1234$.
+  Hallar la menor cantidad de dígitos de un número $N$ que contiene a todas las
+  permutaciones de $1234$.
 \end{probEG}
 
 \begin{proof}
-	Vamos a dividir las $24$ permutaciones en $6$ ciclos. Digamos que dos bloques de $4$ son \emph{adyacentes} si esos bloques son de la forma $abcd$ y $bcde$ donde los dígitos $a,b,c,d,e$ son consecutivos. Si dos bloques son de distintos ciclos, esos bloques no pueden ser adyacentes. Luego, si $t$ es la cantidad de bloques que no son permutaciones de $1234$, entonces $n-3\ge 24+t$. Como existen a lo sumo $t+1$ ciclos, entonces $t+1\ge 6$ de donde $n\ge 27+t\ge 32$, pero es fácil ver que no se da la igualdad. Un ejemplo con $33$ es \[N=123412314231243121342132413214321.\]
+  Vamos a dividir las $24$ permutaciones en $6$ ciclos. Digamos que dos bloques
+  de $4$ son \emph{adyacentes} si esos bloques son de la forma $abcd$ y $bcde$
+  donde los dígitos $a,b,c,d,e$ son consecutivos. Si dos bloques son de
+  distintos ciclos, esos bloques no pueden ser adyacentes. Luego, si $t$ es la
+  cantidad de bloques que no son permutaciones de $1234$, entonces
+  $n-3\ge 24+t$. Como existen a lo sumo $t+1$ ciclos, entonces $t+1\ge 6$ de
+  donde $n\ge 27+t\ge 32$, pero es fácil ver que no se da la igualdad. Un
+  ejemplo con $33$ es
+  \[N=123412314231243121342132413214321.\]
 \end{proof}
 
 \begin{probEG}
-	Un número es \emph{ascendente} si sus dígitos están en orden creciente, de izquierda a derecha. Por ejemplo, $123$ y $11224$ son ascendentes. Demuestre que para todo entero positivo $n$, es posible encontrar un cuadrado perfecto de exactamente $n$ dígitos que sea ascendente.
+  Un número es \emph{ascendente} si sus dígitos están en orden creciente, de
+  izquierda a derecha. Por ejemplo, $123$ y $11224$ son ascendentes. Demuestre
+  que para todo entero positivo $n$, es posible encontrar un cuadrado perfecto
+  de exactamente $n$ dígitos que sea ascendente.
 \end{probEG}
 
 \begin{proof}
-	Note que
-	\begin{align*}
-		2^2&=4\\
-		17^2&=289\\
-		167^2&=27889\\
-		1667^2&=2778889\\
-		&\vdotswithin{=}
-	\end{align*}
-	y
-	\begin{align*}
-		4^2&=16\\
-		34^2&=1156\\
-		334^2&=111556\\
-		3334^2&=11115556\\
-		&\vdotswithin{=}
-	\end{align*}
-	así que con esto es suficiente.
+  Note que
+  \begin{align*}
+    2^2    &= 4 \\
+    17^2   &= 289 \\
+    167^2  &= 27889 \\
+    1667^2 &= 2778889 \\
+    &\vdotswithin{=}
+  \end{align*}
+  y
+  \begin{align*}
+    4^2    &= 16 \\
+    34^2   &= 1156 \\
+    334^2  &= 111556 \\
+    3334^2 &= 11115556 \\
+    &\vdotswithin{=}
+  \end{align*}
+  así que con esto es suficiente.
 \end{proof}
 
 \begin{probEG}
-	Demostrar que para cualquier entero positivo $N$, al menos uno de los números $N$ y $N+1$ se puede representar de la forma $k+s(k)$ para algún entero positivo $k$.
+  Demostrar que para cualquier entero positivo $N$, al menos uno de los números
+  $N$ y $N+1$ se puede representar de la forma $k+s(k)$ para algún entero
+  positivo $k$.
 \end{probEG}
 
 \begin{proof}
-	Note que si $k=\ol{(a-1)\underbrace{99\dots 9}_{t\text{ veces}}}$ donde $1\le a\le 9$ y $t\ge 0$ son enteros, tenemos que
-	\begin{align*}
-		k+s(k)&=a\cdot 10^t+s(a)+9t-2\\
-		k+1+s(k+1)&=a\cdot 10^t+s(a)
-	\end{align*}
-	y por inducción,
-	\[\bigcup_{k=1}^\infty\{k+s(k)-1,k+s(k)\}=\ZZ^+.\]
+  Note que si $k=\ol{(a-1)\underbrace{99\dots 9}_{t\text{ veces}}}$ donde
+  $1\le a\le 9$ y $t\ge 0$ son enteros, tenemos que
+  \begin{align*}
+    k+s(k)     &= a\cdot 10^t+s(a)+9t-2 \\
+    k+1+s(k+1) &= a\cdot 10^t+s(a)
+  \end{align*}
+  y por inducción,
+  \[\bigcup_{k=1}^\infty\{k+s(k)-1,k+s(k)\}=\ZZ^+.\]
 \end{proof}
